@@ -1,0 +1,12 @@
+{
+  "name": "Ophthalmic AI Evidence Portal",
+  "short_name": "Ophthalmic AI",
+  "description": "Static evidence portal for a structured review of accountable clinical AI in ophthalmology.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#f7f8f6",
+  "theme_color": "#172126",
+  "icons": [
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

@@ -1,0 +1,358 @@
+{
+  "title": "Ophthalmic Artificial Intelligence From Data Integration to Accountable Clinical Impact: Challenges and Opportunities",
+  "shortTitle": "Ophthalmic AI: From Data Integration to Accountable Clinical Impact",
+  "abstract": "Ophthalmology is a leading domain for clinical artificial intelligence (AI) because high-volume imaging, structured measurements, longitudinal follow-up, and screening pathways create unusually clear routes from data to care. We synthesized 427 studies from 6,482 records in PubMed, ACM Digital Library, IEEE Xplore, and Scopus; all included studies addressed ophthalmic imaging data. No lower date limit was set, and studies ranged from January 2010 to April 2026. The evidence shows that ophthalmic AI is moving from image classification toward three clinically important functions: multimodal interpretation, prediction of disease course or treatment need, and clinical workflow integration. Technical performance is no longer the main bottleneck. Accountable clinical value now depends on interoperable data, representative validation, transparent and fair models, privacy and cybersecurity safeguards, regulatory oversight, workflow fit, cost-effectiveness assessment, and post-deployment monitoring. Ophthalmology therefore offers a rigorous model for translating algorithmic performance into clinical benefit.",
+  "keywords": [
+    "Artificial Intelligence",
+    "Ophthalmology",
+    "Optical Coherence Tomography",
+    "Clinical Translation",
+    "Predictive Modeling",
+    "Workflow Integration",
+    "Governance"
+  ],
+  "journal": "The Lancet Digital Health",
+  "status": "Review manuscript prepared for The Lancet Digital Health",
+  "authors": [
+    {
+      "name": "Tobias Schlosser",
+      "orcid": "0000-0002-0682-4284",
+      "affiliationIds": [
+        "TUD_CMI"
+      ],
+      "affiliations": [
+        {
+          "organization": "Dresden University of Technology, Faculty of Medicine Carl Gustav Carus, Center for Medical Informatics",
+          "addressline": "Fetscherstraße 74",
+          "city": "Dresden",
+          "postcode": "01307",
+          "state": "Saxony",
+          "country": "Germany"
+        }
+      ]
+    },
+    {
+      "name": "Michael Friedrich",
+      "orcid": "0000-0001-6326-4749",
+      "affiliationIds": [
+        "TUC"
+      ],
+      "affiliations": [
+        {
+          "organization": "Chemnitz University of Technology, Faculty of Computer Science, Junior Professorship of Media Computing",
+          "addressline": "Straße der Nationen 62",
+          "city": "Chemnitz",
+          "postcode": "09107",
+          "state": "Saxony",
+          "country": "Germany"
+        }
+      ]
+    },
+    {
+      "name": "Richard Vogel",
+      "orcid": "0009-0006-4306-0769",
+      "affiliationIds": [
+        "HSMW_SDMAS"
+      ],
+      "affiliations": [
+        {
+          "organization": "University of Applied Sciences Mittweida, Faculty of Applied Computer and Biosciences, Professorship of Software Development for Media and Application Systems",
+          "addressline": "Technikumplatz 17",
+          "city": "Mittweida",
+          "postcode": "09648",
+          "state": "Saxony",
+          "country": "Germany"
+        }
+      ]
+    },
+    {
+      "name": "Benny Platte",
+      "orcid": "0000-0001-7754-5170",
+      "affiliationIds": [
+        "HSMW_MI"
+      ],
+      "affiliations": [
+        {
+          "organization": "University of Applied Sciences Mittweida, Faculty of Applied Computer and Biosciences, Professorship of Media Informatics",
+          "addressline": "Technikumplatz 17",
+          "city": "Mittweida",
+          "postcode": "09648",
+          "state": "Saxony",
+          "country": "Germany"
+        }
+      ]
+    },
+    {
+      "name": "Matthias Vodel",
+      "orcid": "0000-0002-5669-9872",
+      "affiliationIds": [
+        "HSMW_SDMAS"
+      ],
+      "affiliations": [
+        {
+          "organization": "University of Applied Sciences Mittweida, Faculty of Applied Computer and Biosciences, Professorship of Software Development for Media and Application Systems",
+          "addressline": "Technikumplatz 17",
+          "city": "Mittweida",
+          "postcode": "09648",
+          "state": "Saxony",
+          "country": "Germany"
+        }
+      ]
+    },
+    {
+      "name": "Danny Kowerko",
+      "orcid": "0000-0002-4538-7814",
+      "affiliationIds": [
+        "TUC"
+      ],
+      "affiliations": [
+        {
+          "organization": "Chemnitz University of Technology, Faculty of Computer Science, Junior Professorship of Media Computing",
+          "addressline": "Straße der Nationen 62",
+          "city": "Chemnitz",
+          "postcode": "09107",
+          "state": "Saxony",
+          "country": "Germany"
+        }
+      ]
+    },
+    {
+      "name": "Marc Ritter",
+      "orcid": "0009-0004-0204-8275",
+      "affiliationIds": [
+        "HSMW_MI"
+      ],
+      "affiliations": [
+        {
+          "organization": "University of Applied Sciences Mittweida, Faculty of Applied Computer and Biosciences, Professorship of Media Informatics",
+          "addressline": "Technikumplatz 17",
+          "city": "Mittweida",
+          "postcode": "09648",
+          "state": "Saxony",
+          "country": "Germany"
+        }
+      ]
+    },
+    {
+      "name": "Miriam Goldammer",
+      "orcid": "0000-0003-2126-290X",
+      "affiliationIds": [
+        "TUD_CMI"
+      ],
+      "affiliations": [
+        {
+          "organization": "Dresden University of Technology, Faculty of Medicine Carl Gustav Carus, Center for Medical Informatics",
+          "addressline": "Fetscherstraße 74",
+          "city": "Dresden",
+          "postcode": "01307",
+          "state": "Saxony",
+          "country": "Germany"
+        }
+      ]
+    },
+    {
+      "name": "Markus Wolfien",
+      "orcid": "0000-0002-1887-4772",
+      "affiliationIds": [
+        "TUD_CMI",
+        "TUD_ScaDS.AI"
+      ],
+      "affiliations": [
+        {
+          "organization": "Dresden University of Technology, Faculty of Medicine Carl Gustav Carus, Center for Medical Informatics",
+          "addressline": "Fetscherstraße 74",
+          "city": "Dresden",
+          "postcode": "01307",
+          "state": "Saxony",
+          "country": "Germany"
+        },
+        {
+          "organization": "Dresden University of Technology, Center for Scalable Data Analytics and Artificial Intelligence (ScaDS.AI) Dresden/Leipzig",
+          "addressline": "Strehlener Straße 12, 14",
+          "city": "Dresden",
+          "postcode": "01069",
+          "state": "Saxony",
+          "country": "Germany"
+        }
+      ]
+    }
+  ],
+  "affiliations": {
+    "TUD_CMI": {
+      "organization": "Dresden University of Technology, Faculty of Medicine Carl Gustav Carus, Center for Medical Informatics",
+      "addressline": "Fetscherstraße 74",
+      "city": "Dresden",
+      "postcode": "01307",
+      "state": "Saxony",
+      "country": "Germany"
+    },
+    "TUC": {
+      "organization": "Chemnitz University of Technology, Faculty of Computer Science, Junior Professorship of Media Computing",
+      "addressline": "Straße der Nationen 62",
+      "city": "Chemnitz",
+      "postcode": "09107",
+      "state": "Saxony",
+      "country": "Germany"
+    },
+    "HSMW_SDMAS": {
+      "organization": "University of Applied Sciences Mittweida, Faculty of Applied Computer and Biosciences, Professorship of Software Development for Media and Application Systems",
+      "addressline": "Technikumplatz 17",
+      "city": "Mittweida",
+      "postcode": "09648",
+      "state": "Saxony",
+      "country": "Germany"
+    },
+    "HSMW_MI": {
+      "organization": "University of Applied Sciences Mittweida, Faculty of Applied Computer and Biosciences, Professorship of Media Informatics",
+      "addressline": "Technikumplatz 17",
+      "city": "Mittweida",
+      "postcode": "09648",
+      "state": "Saxony",
+      "country": "Germany"
+    },
+    "TUD_ScaDS.AI": {
+      "organization": "Dresden University of Technology, Center for Scalable Data Analytics and Artificial Intelligence (ScaDS.AI) Dresden/Leipzig",
+      "addressline": "Strehlener Straße 12, 14",
+      "city": "Dresden",
+      "postcode": "01069",
+      "state": "Saxony",
+      "country": "Germany"
+    }
+  },
+  "statistics": {
+    "harmonizedRecords": 6482,
+    "includedStudies": 427,
+    "generalEvidenceAssignments": 1094,
+    "searchStart": "January 2010",
+    "searchEnd": "April 2026",
+    "searchCutoff": "April 30, 2026"
+  },
+  "databases": [
+    "PubMed",
+    "ACM Digital Library",
+    "IEEE Xplore",
+    "Scopus"
+  ],
+  "progression": [
+    "Multimodal interpretation",
+    "Prediction of disease course or treatment need",
+    "Clinical workflow integration"
+  ],
+  "prisma": [
+    {
+      "stage": "Records identified",
+      "count": 6482
+    },
+    {
+      "stage": "Preliminary exclusions",
+      "count": 1460
+    },
+    {
+      "stage": "Records screened",
+      "count": 5022
+    },
+    {
+      "stage": "Title-and-abstract exclusions",
+      "count": 4552
+    },
+    {
+      "stage": "Full texts assessed",
+      "count": 470
+    },
+    {
+      "stage": "Full-text exclusions",
+      "count": 43
+    },
+    {
+      "stage": "Studies included",
+      "count": 427
+    }
+  ],
+  "prismaExclusionNote": "Exclusion subcategories overlap and are not additive.",
+  "prismaExclusions": {
+    "preliminary": [
+      {
+        "reason": "Duplicates",
+        "count": 39
+      },
+      {
+        "reason": "Not written in English",
+        "count": 1421
+      }
+    ],
+    "titleAndAbstract": [
+      {
+        "reason": "Did not examine AI",
+        "count": 2729
+      },
+      {
+        "reason": "Did not focus on ophthalmology",
+        "count": 3686
+      },
+      {
+        "reason": "Did not address a relevant task",
+        "count": 4552
+      }
+    ],
+    "fullText": [
+      {
+        "reason": "Did not examine AI",
+        "count": 30
+      },
+      {
+        "reason": "Did not focus on ophthalmology",
+        "count": 10
+      },
+      {
+        "reason": "Did not address a relevant task",
+        "count": 43
+      }
+    ]
+  },
+  "figures": [
+    {
+      "number": 1,
+      "label": "figure:motivation",
+      "caption": "Conceptual overview of artificial intelligence in ophthalmology, tracing the pathway from multimodal ophthalmic data through data integration and AI-enabled clinical tasks to accountable clinical impact. Translation into practice depends on cross-cutting safeguards, including privacy protection, fairness, explainability, regulation, infrastructure, and clinician oversight."
+    },
+    {
+      "number": 2,
+      "label": "figure:flow_diagram",
+      "caption": "PRISMA-style flow diagram of study identification, screening, eligibility assessment, and inclusion for this systematic review on artificial intelligence in ophthalmology. Records were retrieved from PubMed, ACM Digital Library, IEEE Xplore, and Scopus, and studies were excluded according to predefined criteria at title and abstract screening and full-text review. Overall, 427 studies were included in the final analysis."
+    },
+    {
+      "number": 3,
+      "label": "figure:co-occurrence_network",
+      "caption": "Keyword co-occurrence network of the included literature on artificial intelligence in ophthalmology. (A) Network visualization, in which node size reflects keyword frequency, line thickness indicates co-occurrence strength, and colors indicate data-driven keyword clusters interpreted into thematic areas. Visible labels denote prominent terms, whereas unlabeled nodes represent less frequent connected keywords. (B) Overlay visualization by average publication year, highlighting temporal shifts in research attention. Four major thematic areas can be discerned: core AI methods and computational approaches; OCT-based retinal imaging and biomarker analysis; retinal disease diagnosis, prognosis, and treatment monitoring; and screening, clinical workflow, and emerging translational applications."
+    },
+    {
+      "number": 4,
+      "label": "figure:collaboration_map",
+      "caption": "Global distribution of publications and international co-authorship in the included literature on artificial intelligence in ophthalmology. Countries are shaded according to the number of publications, and links indicate international co-authorship relations, with stronger links reflecting more frequent collaboration. The map shows that publication activity and collaboration are concentrated in a limited number of countries, with the strongest publication output and collaboration links centered on the United States, China, and India, while other world regions remain comparatively underrepresented."
+    },
+    {
+      "number": 5,
+      "label": "figure:EGM",
+      "caption": "Evidence gap maps summarizing the thematic orientation of the 427 included articles on artificial intelligence in ophthalmology. Each panel combines evidence volume with row-wise framing. (A) General dimensions, where the left bars show how many articles addressed each dimension, and the diverging bars show whether the dimension was framed as predominantly positive, negative, or balanced. (B) Ethical dimensions, where the left bars show how many articles addressed each ethical dimension, and the diverging bars show whether the issue was framed as caused by AI, resolved by AI, or both. Percentages for diverging-bar categories are calculated within each row. Because individual articles contribute to multiple dimensions, totals across rows and categories exceed the number of included studies."
+    },
+    {
+      "number": 6,
+      "label": "figure:statistics",
+      "caption": "Illustrative implementation context for clinical AI from external survey and report sources. (A) Use cases aimed at improving care quality, such as clinical decision support tools, are top priorities, with providers also favoring AI applications such as predictive analytics and workflow optimization . (B) Despite their significant potential, barriers including regulatory and legal considerations, resource constraints, and model accuracy and safety are impeding broader AI adoption, while the need for governance, transparency, and accountability remains substantial . (C) Fewer than half of U.S. adults expect AI to improve patient outcomes in health and medicine, particularly in tasks such as diagnosing diseases and recommending treatments . These data are geographically and institutionally contextual rather than globally representative."
+    }
+  ],
+  "supplementaryFigures": [
+    {
+      "number": 1,
+      "label": "fig:publication-trends-combined",
+      "caption": "Annual publication trend variants for retained AI/OCT ophthalmology records. (A) Normalized document type. (B) Primary clinical target. (C) Primary method family. (D) Primary task family. Bars show deduplicated literature records per publication year, and stacked colors show the assigned category for each panel. Primary-label encodings preserve annual record totals; multi-label task, clinical-target, and method-family mentions were retained separately for audit purposes. The 2026 count is incomplete because the publication year was ongoing at the time of corpus construction."
+    },
+    {
+      "number": 2,
+      "label": "fig:supplementary-heatmaps-combined",
+      "caption": "Heatmap summaries of task, clinical-target, and method-family assignments among AI, OCT, and ophthalmology literature records. (A) Task-family by clinical-target distribution. (B) Method-family by task-family distribution. Cell values are literature-record counts, not experiment counts. Multi-label coding was used, so one record may contribute to multiple cells. Works using large language models or multimodal LLMs were explicitly audited; the LLM row includes only validated papers where LLM use was part of the study, not this review's screening workflow."
+    }
+  ],
+  "scopeStatement": "All included studies addressed ophthalmic imaging data. The 427-study evidence map is distinct from contextual references in the bibliography.",
+  "evidenceMapCaution": "The evidence-gap maps summarize how publications frame each dimension. They do not represent pooled effect sizes, diagnostic-accuracy estimates, risk-of-bias ratings, or certainty-of-evidence assessments."
+}

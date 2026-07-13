@@ -1,0 +1,109 @@
+x,y,x_label,y_label,count
+0,0,Classification / diagnosis,CNN / convolutional networks,185
+1,0,Detection / localization,CNN / convolutional networks,122
+2,0,Prediction / prognosis,CNN / convolutional networks,74
+3,0,Segmentation,CNN / convolutional networks,74
+4,0,Quality assessment / grading,CNN / convolutional networks,28
+5,0,Image enhancement / denoising,CNN / convolutional networks,24
+6,0,Explainability / interpretability,CNN / convolutional networks,24
+7,0,Synthesis / augmentation,CNN / convolutional networks,21
+8,0,Registration / reconstruction,CNN / convolutional networks,3
+0,1,Classification / diagnosis,Classical machine learning,104
+1,1,Detection / localization,Classical machine learning,59
+2,1,Prediction / prognosis,Classical machine learning,38
+3,1,Segmentation,Classical machine learning,39
+4,1,Quality assessment / grading,Classical machine learning,8
+5,1,Image enhancement / denoising,Classical machine learning,18
+6,1,Explainability / interpretability,Classical machine learning,15
+7,1,Synthesis / augmentation,Classical machine learning,10
+8,1,Registration / reconstruction,Classical machine learning,2
+0,2,Classification / diagnosis,Other deep learning,81
+1,2,Detection / localization,Other deep learning,49
+2,2,Prediction / prognosis,Other deep learning,35
+3,2,Segmentation,Other deep learning,40
+4,2,Quality assessment / grading,Other deep learning,15
+5,2,Image enhancement / denoising,Other deep learning,8
+6,2,Explainability / interpretability,Other deep learning,8
+7,2,Synthesis / augmentation,Other deep learning,5
+8,2,Registration / reconstruction,Other deep learning,2
+0,3,Classification / diagnosis,Residual / Dense / Efficient architectures,58
+1,3,Detection / localization,Residual / Dense / Efficient architectures,33
+2,3,Prediction / prognosis,Residual / Dense / Efficient architectures,18
+3,3,Segmentation,Residual / Dense / Efficient architectures,16
+4,3,Quality assessment / grading,Residual / Dense / Efficient architectures,7
+5,3,Image enhancement / denoising,Residual / Dense / Efficient architectures,9
+6,3,Explainability / interpretability,Residual / Dense / Efficient architectures,6
+7,3,Synthesis / augmentation,Residual / Dense / Efficient architectures,8
+8,3,Registration / reconstruction,Residual / Dense / Efficient architectures,0
+0,4,Classification / diagnosis,Transformer / attention / ViT,48
+1,4,Detection / localization,Transformer / attention / ViT,23
+2,4,Prediction / prognosis,Transformer / attention / ViT,16
+3,4,Segmentation,Transformer / attention / ViT,25
+4,4,Quality assessment / grading,Transformer / attention / ViT,6
+5,4,Image enhancement / denoising,Transformer / attention / ViT,13
+6,4,Explainability / interpretability,Transformer / attention / ViT,9
+7,4,Synthesis / augmentation,Transformer / attention / ViT,3
+8,4,Registration / reconstruction,Transformer / attention / ViT,1
+0,5,Classification / diagnosis,Ensemble / hybrid methods,43
+1,5,Detection / localization,Ensemble / hybrid methods,27
+2,5,Prediction / prognosis,Ensemble / hybrid methods,19
+3,5,Segmentation,Ensemble / hybrid methods,16
+4,5,Quality assessment / grading,Ensemble / hybrid methods,4
+5,5,Image enhancement / denoising,Ensemble / hybrid methods,11
+6,5,Explainability / interpretability,Ensemble / hybrid methods,7
+7,5,Synthesis / augmentation,Ensemble / hybrid methods,3
+8,5,Registration / reconstruction,Ensemble / hybrid methods,1
+0,6,Classification / diagnosis,U-Net / encoder-decoder segmentation,41
+1,6,Detection / localization,U-Net / encoder-decoder segmentation,19
+2,6,Prediction / prognosis,U-Net / encoder-decoder segmentation,13
+3,6,Segmentation,U-Net / encoder-decoder segmentation,41
+4,6,Quality assessment / grading,U-Net / encoder-decoder segmentation,4
+5,6,Image enhancement / denoising,U-Net / encoder-decoder segmentation,3
+6,6,Explainability / interpretability,U-Net / encoder-decoder segmentation,1
+7,6,Synthesis / augmentation,U-Net / encoder-decoder segmentation,0
+8,6,Registration / reconstruction,U-Net / encoder-decoder segmentation,0
+0,7,Classification / diagnosis,Foundation models,11
+1,7,Detection / localization,Foundation models,4
+2,7,Prediction / prognosis,Foundation models,16
+3,7,Segmentation,Foundation models,4
+4,7,Quality assessment / grading,Foundation models,1
+5,7,Image enhancement / denoising,Foundation models,0
+6,7,Explainability / interpretability,Foundation models,0
+7,7,Synthesis / augmentation,Foundation models,0
+8,7,Registration / reconstruction,Foundation models,0
+0,8,Classification / diagnosis,Self-supervised / semi-supervised / weakly supervised learning,13
+1,8,Detection / localization,Self-supervised / semi-supervised / weakly supervised learning,4
+2,8,Prediction / prognosis,Self-supervised / semi-supervised / weakly supervised learning,7
+3,8,Segmentation,Self-supervised / semi-supervised / weakly supervised learning,5
+4,8,Quality assessment / grading,Self-supervised / semi-supervised / weakly supervised learning,1
+5,8,Image enhancement / denoising,Self-supervised / semi-supervised / weakly supervised learning,4
+6,8,Explainability / interpretability,Self-supervised / semi-supervised / weakly supervised learning,0
+7,8,Synthesis / augmentation,Self-supervised / semi-supervised / weakly supervised learning,1
+8,8,Registration / reconstruction,Self-supervised / semi-supervised / weakly supervised learning,0
+0,9,Classification / diagnosis,GAN / generative models,9
+1,9,Detection / localization,GAN / generative models,2
+2,9,Prediction / prognosis,GAN / generative models,4
+3,9,Segmentation,GAN / generative models,4
+4,9,Quality assessment / grading,GAN / generative models,2
+5,9,Image enhancement / denoising,GAN / generative models,3
+6,9,Explainability / interpretability,GAN / generative models,1
+7,9,Synthesis / augmentation,GAN / generative models,6
+8,9,Registration / reconstruction,GAN / generative models,0
+0,10,Classification / diagnosis,Large language models / multimodal LLMs,1
+1,10,Detection / localization,Large language models / multimodal LLMs,0
+2,10,Prediction / prognosis,Large language models / multimodal LLMs,1
+3,10,Segmentation,Large language models / multimodal LLMs,0
+4,10,Quality assessment / grading,Large language models / multimodal LLMs,0
+5,10,Image enhancement / denoising,Large language models / multimodal LLMs,0
+6,10,Explainability / interpretability,Large language models / multimodal LLMs,0
+7,10,Synthesis / augmentation,Large language models / multimodal LLMs,0
+8,10,Registration / reconstruction,Large language models / multimodal LLMs,0
+0,11,Classification / diagnosis,Other / unclear,8
+1,11,Detection / localization,Other / unclear,5
+2,11,Prediction / prognosis,Other / unclear,5
+3,11,Segmentation,Other / unclear,2
+4,11,Quality assessment / grading,Other / unclear,2
+5,11,Image enhancement / denoising,Other / unclear,0
+6,11,Explainability / interpretability,Other / unclear,0
+7,11,Synthesis / augmentation,Other / unclear,0
+8,11,Registration / reconstruction,Other / unclear,0

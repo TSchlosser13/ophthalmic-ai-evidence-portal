@@ -1,0 +1,23 @@
+panel,category,percent
+priorityUseCases,Clinical decision support tools,29.0
+priorityUseCases,Predictive analysis and risk stratification,25.0
+priorityUseCases,Clinical workflow optimization and automation,23.0
+priorityUseCases,Treatment and therapy recommendations for providers,19.0
+priorityUseCases,Diagnosis and treatment recommendations,16.0
+priorityUseCases,Clinical documentation and dictation,15.0
+implementationBarriers,Regulatory and legal considerations,43.0
+implementationBarriers,Resource constraints,40.0
+implementationBarriers,"Accuracy, safety, and hallucinations",39.0
+implementationBarriers,Lack of technical expertise,33.0
+implementationBarriers,Cybersecurity risk,32.0
+implementationBarriers,Lack of transparency for many AI models,28.0
+implementationBarriers,Data access and quality,27.0
+implementationBarriers,Unclear benefits,26.0
+implementationBarriers,"Fairness, bias, or equity problems",23.0
+publicComfort,Comfortable,39.0
+publicComfort,Uncomfortable,60.0
+publicComfort,No answer (1%),1.0
+expectedOutcomes,Better,38.0
+expectedOutcomes,Worse,33.0
+expectedOutcomes,It would make no difference,27.0
+expectedOutcomes,No answer (2%),2.0

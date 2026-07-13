@@ -1,0 +1,98 @@
+[
+  {
+    "field": "citationKey",
+    "type": "string",
+    "description": "Unchanged BibTeX citation key and stable article identifier.",
+    "missing": "Never missing for included records."
+  },
+  {
+    "field": "title",
+    "type": "string",
+    "description": "Publication title from BibTeX, with the inclusion table as fallback.",
+    "missing": "Critical error."
+  },
+  {
+    "field": "authors",
+    "type": "string[]",
+    "description": "Author names from BibTeX, deduplicated across repeated source variants.",
+    "missing": "Empty array."
+  },
+  {
+    "field": "year",
+    "type": "integer",
+    "description": "Publication year from the authoritative included-publication table.",
+    "missing": "Critical error."
+  },
+  {
+    "field": "abstract",
+    "type": "string|null",
+    "description": "Abstract from the merged extraction table when available.",
+    "missing": "null."
+  },
+  {
+    "field": "publicationMode",
+    "type": "enum",
+    "description": "Copyright-aware publication mode: full_text_public, abstract_only, external_link_only, or restricted.",
+    "missing": "Never missing."
+  },
+  {
+    "field": "sourceType",
+    "type": "string|null",
+    "description": "Selected local source format after deterministic source precedence.",
+    "missing": "null when no source file is matched."
+  },
+  {
+    "field": "ophthalmicConditions",
+    "type": "string[]",
+    "description": "Conservative rule-based categories derived from the curated article summary and abstract.",
+    "missing": "Other / unspecified."
+  },
+  {
+    "field": "modalities",
+    "type": "string[]",
+    "description": "Explicit imaging or clinical-data modalities found in the curated article text.",
+    "missing": "Empty array."
+  },
+  {
+    "field": "aiMethods",
+    "type": "string[]",
+    "description": "Explicit AI method families found in the curated article text.",
+    "missing": "Empty array."
+  },
+  {
+    "field": "clinicalTasks",
+    "type": "string[]",
+    "description": "Explicit task families found in the curated article text.",
+    "missing": "Empty array."
+  },
+  {
+    "field": "datasets",
+    "type": "string[]",
+    "description": "Named registry resources explicitly mentioned in the curated article text.",
+    "missing": "Empty array."
+  },
+  {
+    "field": "countries",
+    "type": "string[]",
+    "description": "Countries explicitly present in source affiliation text; never inferred from names.",
+    "missing": "Empty array."
+  },
+  {
+    "field": "validationTypes",
+    "type": "string[]",
+    "description": "Validation descriptors only when explicit textual evidence is present.",
+    "missing": "Empty array."
+  },
+  {
+    "field": "generalEvidenceAssignments",
+    "type": "object[]",
+    "description": "General EGM dimension and framing assignments parsed from EGM_20260712.tex.",
+    "missing": "Empty array."
+  },
+  {
+    "field": "ethicsEvidenceAssignments",
+    "type": "object[]",
+    "description": "Ethics EGM dimension and framed role parsed from EGM_20260712.tex.",
+    "missing": "Empty array."
+  }
+]

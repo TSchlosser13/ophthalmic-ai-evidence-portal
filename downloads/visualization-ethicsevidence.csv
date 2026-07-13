@@ -1,0 +1,28 @@
+dimension,articleCount,stance,count,articleKeys
+Privacy,68,caused,20,"[""07c78b773a9e"", ""1904798abdde"", ""1ce8b917da06"", ""2573e4102c86"", ""26abc95edfa3"", ""3610864516d6"", ""38c21f05f613"", ""4764e0c69fc7"", ""4caa01410b29"", ""4f7cb7df4f7d"", ""508a17977cd2"", ""5b4074fce93a"", ""68f0266deb95"", ""6fe05a02f932"", ""7043d68f5440"", ""942a7c645311"", ""d28892d42ec2"", ""d44a9529bdde"", ""e8a1de4c2f1b"", ""fbe51d7b5d32""]"
+Privacy,68,resolved,41,"[""155874664ca6"", ""1f86b4feb99a"", ""211a1f5e8c68"", ""253ecd7dc13d"", ""2b6fbc4f0508"", ""2d9526998521"", ""2eea02f82a91"", ""345f15624795"", ""3756a39ea98c"", ""45eb1a2f75ff"", ""646313884044"", ""6b5df424652b"", ""6f739da64bf7"", ""740599fb90ce"", ""74bd3176c1ed"", ""7a8d717e87c8"", ""7c9a28561793"", ""7d76dcad4fd1"", ""889c08799ba4"", ""92b0beaeeada"", ""94eb03d655e3"", ""a1593fedce90"", ""a619076b267e"", ""a82536bb0043"", ""b2d92e326400"", ""b5784b25a496"", ""c0c5966a3f98"", ""c207fd307df3"", ""c3ee99b25fe5"", ""c9fafe5b4ef7"", ""cc173c68aaf4"", ""cfc9b29316ca"", ""d4ea2c3251e9"", ""d6066a07ba35"", ""df4ac708eecf"", ""ed3fec0ec1cd"", ""eed82e7dd133"", ""f2a564301b9e"", ""f486c8a77ee9"", ""fb4151a5b803"", ""fb61b5e416fe""]"
+Privacy,68,both,7,"[""30f9c197297e"", ""32e2ad0d0e6f"", ""5d93b7069e25"", ""62966ef9fdb8"", ""853e0b588e73"", ""9a4a7b8bc450"", ""a32e088bd521""]"
+Transparency,31,caused,4,"[""3610864516d6"", ""393240c7cec2"", ""d44a9529bdde"", ""ea263bf4d04c""]"
+Transparency,31,resolved,27,"[""043684769543"", ""0a91bafc9ed3"", ""0ab3fcfd31cd"", ""0d9a70ede5cc"", ""1408e75c41f8"", ""17819e10c66b"", ""28d93b251ada"", ""2f01198b23e4"", ""353e3e1970fc"", ""3a1c9f961d8f"", ""508a17977cd2"", ""6347ea09d2bd"", ""6f739da64bf7"", ""750835f3e51d"", ""769ac8041ab3"", ""873a9a16cc28"", ""87f3cd94ec74"", ""8a5b73028348"", ""8d687ff87530"", ""c3c03d9a26df"", ""c4ed68d9a886"", ""c644d5188019"", ""d05cac5388fa"", ""d0f160c2f77b"", ""d2f5621f7596"", ""e2f6a88e3abc"", ""fabdee03a10a""]"
+Transparency,31,both,0,[]
+Integrity,22,caused,7,"[""17819e10c66b"", ""3ea2dfffb32d"", ""5426dc9b583d"", ""a2bfc8cc3fd8"", ""b5813c22bda8"", ""e8a1de4c2f1b"", ""e8da82ecca34""]"
+Integrity,22,resolved,12,"[""155874664ca6"", ""18bd8aebe09b"", ""2d9526998521"", ""480eeed24bbb"", ""5eda0c15ead9"", ""740599fb90ce"", ""772fab385995"", ""7a8d717e87c8"", ""866ff7d14ed2"", ""a6448a70e993"", ""d50d012dbe1d"", ""e842ed2e802d""]"
+Integrity,22,both,3,"[""0c4c0c9dfa22"", ""12df428f0bc9"", ""ffa998359094""]"
+Security,8,caused,3,"[""3610864516d6"", ""6fe05a02f932"", ""e8a1de4c2f1b""]"
+Security,8,resolved,4,"[""508a17977cd2"", ""c9fafe5b4ef7"", ""ddb8a8742a4d"", ""df4ac708eecf""]"
+Security,8,both,1,"[""f2a564301b9e""]"
+Non-maleficence,8,caused,4,"[""0ab3fcfd31cd"", ""439dfd13b723"", ""4f7cb7df4f7d"", ""a54c7820e8a1""]"
+Non-maleficence,8,resolved,1,"[""f32b6992dba5""]"
+Non-maleficence,8,both,3,"[""873a9a16cc28"", ""8a5b73028348"", ""f6efab0f4258""]"
+Trust,6,caused,0,[]
+Trust,6,resolved,6,"[""1ce8b917da06"", ""508a17977cd2"", ""87f3cd94ec74"", ""8a5b73028348"", ""d2f5621f7596"", ""e842ed2e802d""]"
+Trust,6,both,0,[]
+Accountability,5,caused,1,"[""3610864516d6""]"
+Accountability,5,resolved,4,"[""1a93f0883cd2"", ""32e2ad0d0e6f"", ""480eeed24bbb"", ""ef7005cea0a5""]"
+Accountability,5,both,0,[]
+Equity,3,caused,2,"[""3610864516d6"", ""e4edbaa2c127""]"
+Equity,3,resolved,0,[]
+Equity,3,both,1,"[""9be93b20f768""]"
+Autonomy,1,caused,0,[]
+Autonomy,1,resolved,1,"[""e2f6a88e3abc""]"
+Autonomy,1,both,0,[]

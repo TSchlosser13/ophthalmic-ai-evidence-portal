@@ -1,0 +1,1062 @@
+[
+  {
+    "id": "a2asdoct",
+    "slug": "a2asdoct",
+    "name": "A2ASDOCT",
+    "aliases": [
+      "A2ASDOCT"
+    ],
+    "area": "Age-related macular degeneration",
+    "modality": "SD-OCT",
+    "scale": "AREDS2 ancillary SD-OCT cohort with 38,400 B-scans from 384 subjects; 269 intermediate AMD and 115 control subjects",
+    "typicalTasks": "Public AMD-focused OCT cohort used for quantitative classification of eyes with and without intermediate AMD.",
+    "resourceUrl": "https://people.duke.edu/~sf59/RPEDC_Ophth_2013_dataset.htm",
+    "licence": null,
+    "originalPublicationKeys": [
+      "clinicaltrials2008areds",
+      "farsiu2014quantitative"
+    ],
+    "sourceLine": 24,
+    "articleCount": 0,
+    "linkedArticles": [],
+    "originalPublications": [
+      {
+        "citationKey": "clinicaltrials2008areds",
+        "title": "AREDS 2 Ancillary Spectral Domain Optical Coherence Tomography Study (A2ASDOCT)",
+        "doi": null
+      },
+      {
+        "citationKey": "farsiu2014quantitative",
+        "title": "Quantitative Classification of Eyes with and without Intermediate Age-Related Macular Degeneration Using Optical Coherence Tomography",
+        "doi": "10.1016/j.ophtha.2013.07.013"
+      }
+    ]
+  },
+  {
+    "id": "acrima",
+    "slug": "acrima",
+    "name": "ACRIMA",
+    "aliases": [
+      "ACRIMA"
+    ],
+    "area": "Glaucoma",
+    "modality": "Color fundus photographs",
+    "scale": "705 fundus images",
+    "typicalTasks": "Optic-disc-centered fundus benchmark with 396 glaucomatous and 309 normal images.",
+    "resourceUrl": "https://www.kaggle.com/datasets/orvile/acrima-glaucoma-assessment-using-fundus-images",
+    "licence": null,
+    "originalPublicationKeys": [
+      "diaz2019cnnsdataset",
+      "diaz2019cnns"
+    ],
+    "sourceLine": 26,
+    "articleCount": 1,
+    "linkedArticles": [
+      {
+        "citationKey": "e5136d5c95b2",
+        "slug": "e5136d5c95b2",
+        "title": "Deep Learning Approaches for Retinal Disease Diagnosis: Insights from Fundus and OCT Analysis",
+        "year": 2025
+      }
+    ],
+    "originalPublications": [
+      {
+        "citationKey": "diaz2019cnnsdataset",
+        "title": "CNNs for Automatic Glaucoma Assessment Using Fundus Images: An Extensive Validation",
+        "doi": "10.6084/m9.figshare.7613135"
+      },
+      {
+        "citationKey": "diaz2019cnns",
+        "title": "CNNs for Automatic Glaucoma Assessment Using Fundus Images: An Extensive Validation",
+        "doi": "10.1186/s12938-019-0649-y"
+      }
+    ]
+  },
+  {
+    "id": "ai-challenger-oct-dataset",
+    "slug": "ai-challenger-oct-dataset",
+    "name": "AI Challenger OCT dataset",
+    "aliases": [
+      "AI Challenger OCT dataset"
+    ],
+    "area": "Macular edema / retinal OCT lesion segmentation",
+    "modality": "Retinal OCT volumes",
+    "scale": "AI Challenger 2018 macular edema dataset with 83 OCT volumes and 10,880 OCT slices",
+    "typicalTasks": "Used for macular-edema-related lesion segmentation, including subretinal fluid and pigment epithelial detachment.",
+    "resourceUrl": null,
+    "licence": null,
+    "originalPublicationKeys": [
+      "aichallenger2018retinal",
+      "hu2019automated"
+    ],
+    "sourceLine": 28,
+    "articleCount": 0,
+    "linkedArticles": [],
+    "originalPublications": [
+      {
+        "citationKey": "aichallenger2018retinal",
+        "title": "AI Challenger 2018 Retinal Edema Lesion Segmentation Challenge",
+        "doi": null
+      },
+      {
+        "citationKey": "hu2019automated",
+        "title": "Automated Segmentation of Macular Edema in OCT Using Deep Neural Networks",
+        "doi": "10.1016/j.media.2019.05.002"
+      }
+    ]
+  },
+  {
+    "id": "aroi-dataset",
+    "slug": "aroi-dataset",
+    "name": "AROI dataset",
+    "aliases": [
+      "AROI dataset"
+    ],
+    "area": "Retinal layers and fluid in neovascular AMD",
+    "modality": "Retinal OCT",
+    "scale": "1,136 annotated B-scans from 25 patients out of 3,200 B-scans",
+    "typicalTasks": "Public annotated retinal OCT image database. Used for joint retinal layer, lesion, and fluid segmentation in healthy and neovascular AMD eyes.",
+    "resourceUrl": "https://ipg.fer.hr/ipg/resources/oct_image_database",
+    "licence": null,
+    "originalPublicationKeys": [
+      "melinscak2021annotateddataset",
+      "melinscak2021annotated"
+    ],
+    "sourceLine": 30,
+    "articleCount": 2,
+    "linkedArticles": [
+      {
+        "citationKey": "40e5cd2458a7",
+        "slug": "40e5cd2458a7",
+        "title": "Structural-prior guided and feature-enhanced transformer with masked image modeling pretraining for retinal layers and fluid segmentation in macular edema OCT images",
+        "year": 2025
+      },
+      {
+        "citationKey": "c3ee99b25fe5",
+        "slug": "c3ee99b25fe5",
+        "title": "HyFormer: a hybrid transformer-CNN architecture for retinal OCT image segmentation",
+        "year": 2024
+      }
+    ],
+    "originalPublications": [
+      {
+        "citationKey": "melinscak2021annotateddataset",
+        "title": "Annotated Retinal OCT Images Database -- AROI Database",
+        "doi": null
+      },
+      {
+        "citationKey": "melinscak2021annotated",
+        "title": "Annotated Retinal Optical Coherence Tomography Images (AROI) Database for Joint Retinal Layer and Fluid Segmentation",
+        "doi": "10.1080/00051144.2021.1973298"
+      }
+    ]
+  },
+  {
+    "id": "drac-2022",
+    "slug": "drac-2022",
+    "name": "DRAC 2022 / OCTA-DR",
+    "aliases": [
+      "DRAC 2022",
+      "OCTA-DR"
+    ],
+    "area": "Diabetic retinopathy",
+    "modality": "Ultra-widefield OCTA",
+    "scale": "1,103 UW-OCTA images",
+    "typicalTasks": "Consolidates DRAC 2022, Diabetic Retinopathy Analysis Challenge 2022, DRAC OCTA, and OCTA-DR where used for the same DR challenge context. Tasks include DR lesion segmentation, image-quality assessment, and DR grading.",
+    "resourceUrl": "https://drac22.grand-challenge.org/",
+    "licence": null,
+    "originalPublicationKeys": [
+      "drac2023diabetic",
+      "qian2024drac"
+    ],
+    "sourceLine": 32,
+    "articleCount": 2,
+    "linkedArticles": [
+      {
+        "citationKey": "1a93f0883cd2",
+        "slug": "1a93f0883cd2",
+        "title": "CSANet: a lightweight channel and spatial attention neural network for grading diabetic retinopathy with optical coherence tomography angiography",
+        "year": 2024
+      },
+      {
+        "citationKey": "8ba2213f7ff2",
+        "slug": "8ba2213f7ff2",
+        "title": "A Vision Transformer Based Deep Learning Architecture for Automatic Diagnosis of Diabetic Retinopathy in Optical Coherence Tomography Angiography",
+        "year": 2023
+      }
+    ],
+    "originalPublications": [
+      {
+        "citationKey": "drac2023diabetic",
+        "title": "DRAC 2022: Diabetic Retinopathy Analysis Challenge 2022 Dataset",
+        "doi": "10.17632/s8kbw25s3x.1"
+      },
+      {
+        "citationKey": "qian2024drac",
+        "title": "DRAC 2022: A Public Benchmark for Diabetic Retinopathy Analysis on Ultra-Wide Optical Coherence Tomography Angiography Images",
+        "doi": "10.1016/j.patter.2024.100929"
+      }
+    ]
+  },
+  {
+    "id": "duke",
+    "slug": "duke",
+    "name": "Duke / DUKE SD-OCT / Duke DME OCT dataset",
+    "aliases": [
+      "Duke",
+      "DUKE SD-OCT",
+      "Duke DME OCT dataset"
+    ],
+    "area": "Diabetic macular edema; retinal layer and fluid analysis",
+    "modality": "SD-OCT B-scans",
+    "scale": "110 annotated B-scans from 10 DME patients",
+    "typicalTasks": "Consolidates Duke dataset, DUKE, DUKE OCT dataset, Duke SD-OCT, Duke spectral domain OCT dataset, and Chiu-style Duke DME references. Used for retinal layer, boundary, and fluid segmentation.",
+    "resourceUrl": "https://people.duke.edu/~sf59/Chiu_BOE_2014_dataset.htm",
+    "licence": null,
+    "originalPublicationKeys": [
+      "chiu2015dukedataset",
+      "chiu2015kernel"
+    ],
+    "sourceLine": 34,
+    "articleCount": 9,
+    "linkedArticles": [
+      {
+        "citationKey": "52c9f6e04e8b",
+        "slug": "52c9f6e04e8b",
+        "title": "ADCFormer: A hybrid model of Adaptive Depth-wise Convolution and Transformer for retinal macular edema segmentation in OCT images",
+        "year": 2025
+      },
+      {
+        "citationKey": "cb6fb691c745",
+        "slug": "cb6fb691c745",
+        "title": "Deep Learning-Based Retinal OCT Segmentation: A Comparative Study",
+        "year": 2025
+      },
+      {
+        "citationKey": "769ac8041ab3",
+        "slug": "769ac8041ab3",
+        "title": "Integrating lightweight convolutional neural network with entropy-informed channel attention and adaptive spatial attention for OCT-based retinal disease classification",
+        "year": 2025
+      },
+      {
+        "citationKey": "8a272a0621a3",
+        "slug": "8a272a0621a3",
+        "title": "A new intelligent system based deep learning to detect DME and AMD in OCT images",
+        "year": 2024
+      },
+      {
+        "citationKey": "05e2688a7bc5",
+        "slug": "05e2688a7bc5",
+        "title": "A lightweight deep learning model for retinal optical coherence tomography image classification",
+        "year": 2023
+      },
+      {
+        "citationKey": "d2268865c638",
+        "slug": "d2268865c638",
+        "title": "AN EARLY RETINAL DISEASE DIAGNOSIS SYSTEM USING OCT IMAGES VIA CNN-BASED STACKING ENSEMBLE LEARNING",
+        "year": 2023
+      },
+      {
+        "citationKey": "8c8e1aed8a11",
+        "slug": "8c8e1aed8a11",
+        "title": "Deep learning network with differentiable dynamic programming for retina OCT surface segmentation",
+        "year": 2023
+      },
+      {
+        "citationKey": "ad6ea1627565",
+        "slug": "ad6ea1627565",
+        "title": "Improving OCT Image Segmentation of Retinal Layers by Utilizing a Machine Learning Based Multistage System of Stacked Multiscale Encoders and Decoders",
+        "year": 2023
+      },
+      {
+        "citationKey": "3ea2dfffb32d",
+        "slug": "3ea2dfffb32d",
+        "title": "Automatic diagnosis of macular diseases from OCT volume based on its two-dimensional feature map and convolutional neural network with attention mechanism",
+        "year": 2020
+      }
+    ],
+    "originalPublications": [
+      {
+        "citationKey": "chiu2015dukedataset",
+        "title": "Duke DME OCT Dataset",
+        "doi": null
+      },
+      {
+        "citationKey": "chiu2015kernel",
+        "title": "Kernel Regression Based Segmentation of Optical Coherence Tomography Images with Diabetic Macular Edema",
+        "doi": "10.1364/boe.6.001172"
+      }
+    ]
+  },
+  {
+    "id": "eyepacs",
+    "slug": "eyepacs",
+    "name": "EyePACS",
+    "aliases": [
+      "EyePACS"
+    ],
+    "area": "Diabetic retinopathy",
+    "modality": "Color fundus photographs",
+    "scale": "35,126 labeled training images in the Kaggle DR release",
+    "typicalTasks": "Fundus benchmark for diabetic retinopathy grading. Included where studies combine fundus and OCT / OCTA resources.",
+    "resourceUrl": "https://www.kaggle.com/c/diabetic-retinopathy-detection/data",
+    "licence": null,
+    "originalPublicationKeys": [
+      "kaggle2015diabetic",
+      "gulshan2016development"
+    ],
+    "sourceLine": 36,
+    "articleCount": 1,
+    "linkedArticles": [
+      {
+        "citationKey": "e5136d5c95b2",
+        "slug": "e5136d5c95b2",
+        "title": "Deep Learning Approaches for Retinal Disease Diagnosis: Insights from Fundus and OCT Analysis",
+        "year": 2025
+      }
+    ],
+    "originalPublications": [
+      {
+        "citationKey": "kaggle2015diabetic",
+        "title": "Diabetic Retinopathy Detection",
+        "doi": null
+      },
+      {
+        "citationKey": "gulshan2016development",
+        "title": "Development and Validation of a Deep Learning Algorithm for Detection of Diabetic Retinopathy in Retinal Fundus Photographs",
+        "doi": "10.1001/jama.2016.17216"
+      }
+    ]
+  },
+  {
+    "id": "faros",
+    "slug": "faros",
+    "name": "FAROS",
+    "aliases": [
+      "FAROS"
+    ],
+    "area": "Retinal OCTA microstructure segmentation",
+    "modality": "OCTA",
+    "scale": "40 OCTA images from 40 subjects",
+    "typicalTasks": "Fully Annotated Retinal OCTA Segmentation dataset. Used for retinal microstructure segmentation and quantitative OCTA analysis.",
+    "resourceUrl": "https://zenodo.org/records/6381668",
+    "licence": null,
+    "originalPublicationKeys": [
+      "zenodo2022faros",
+      "xiao2022omsn"
+    ],
+    "sourceLine": 38,
+    "articleCount": 1,
+    "linkedArticles": [
+      {
+        "citationKey": "b5f971387b12",
+        "slug": "b5f971387b12",
+        "title": "Deep learning-based segmentation and quantitative analysis of retinal microstructures in optical coherence tomography angiography images using RS_Unet3+",
+        "year": 2026
+      }
+    ],
+    "originalPublications": [
+      {
+        "citationKey": "zenodo2022faros",
+        "title": "FAROS: Fully Annotated Retinal OCTA Segmentation Dataset",
+        "doi": "10.5281/zenodo.6381668"
+      },
+      {
+        "citationKey": "xiao2022omsn",
+        "title": "OMSN and FAROS: OCTA Microstructure Segmentation Network and Fully Annotated Retinal OCTA Segmentation Dataset",
+        "doi": "10.48550/arxiv.2212.13059"
+      }
+    ]
+  },
+  {
+    "id": "kermany",
+    "slug": "kermany",
+    "name": "Kermany / UCSD / Kaggle / Mendeley / OCT2017 / LOCT retinal OCT dataset",
+    "aliases": [
+      "Kermany",
+      "UCSD",
+      "Kaggle",
+      "Mendeley",
+      "OCT2017",
+      "LOCT retinal OCT dataset"
+    ],
+    "area": "Retinal disease; CNV, DME, drusen, normal",
+    "modality": "Retinal OCT B-scans",
+    "scale": "108,312 labeled OCT images in the original report; approximately 84,495 images in common Kaggle mirrors",
+    "typicalTasks": "Consolidates UCSD, Kermany, Kaggle OCT, Mendeley OCT, OCT2017, OCT 2017, labeled OCT, publicly available validated OCT, and similar aliases. Used mainly for four-class retinal disease classification.",
+    "resourceUrl": "https://data.mendeley.com/datasets/rscbjbr9sj/2",
+    "licence": null,
+    "originalPublicationKeys": [
+      "kermany2018large",
+      "kermany2018identifying"
+    ],
+    "sourceLine": 40,
+    "articleCount": 23,
+    "linkedArticles": [
+      {
+        "citationKey": "740599fb90ce",
+        "slug": "740599fb90ce",
+        "title": "A robust deep learning classifier for screening multiple retinal diseases on optical coherence tomography",
+        "year": 2025
+      },
+      {
+        "citationKey": "a5c99b438a02",
+        "slug": "a5c99b438a02",
+        "title": "Adaptive and Explainable Deep Learning for Automated Retinal Disease Diagnosis Using OCT Images",
+        "year": 2025
+      },
+      {
+        "citationKey": "6b8a4c5793dc",
+        "slug": "6b8a4c5793dc",
+        "title": "Automated Retinal Disease Detection: VGG16-Based Deep Learning Approach for OCT Image Classification",
+        "year": 2025
+      },
+      {
+        "citationKey": "e5136d5c95b2",
+        "slug": "e5136d5c95b2",
+        "title": "Deep Learning Approaches for Retinal Disease Diagnosis: Insights from Fundus and OCT Analysis",
+        "year": 2025
+      },
+      {
+        "citationKey": "aec455f4c0cd",
+        "slug": "aec455f4c0cd",
+        "title": "Deep Learning for Retinal OCT Disease Classification using EfficientNetB0: A Transfer Learning Approach",
+        "year": 2025
+      },
+      {
+        "citationKey": "7abb94fc2719",
+        "slug": "7abb94fc2719",
+        "title": "Enhanced AMD detection in OCT images using GLCM texture features with Machine Learning and CNN methods",
+        "year": 2025
+      },
+      {
+        "citationKey": "769ac8041ab3",
+        "slug": "769ac8041ab3",
+        "title": "Integrating lightweight convolutional neural network with entropy-informed channel attention and adaptive spatial attention for OCT-based retinal disease classification",
+        "year": 2025
+      },
+      {
+        "citationKey": "20e75922954b",
+        "slug": "20e75922954b",
+        "title": "SF Net: A Pyramid-Based Feature Fusion Convolutional Neural Network With Embedded Squeeze-and-Excitation Mechanism for Retinal OCT Image Classification",
+        "year": 2025
+      },
+      {
+        "citationKey": "d05cac5388fa",
+        "slug": "d05cac5388fa",
+        "title": "A new computer-aided diagnosis tool based on deep learning methods for automatic detection of retinal disorders from OCT images",
+        "year": 2024
+      },
+      {
+        "citationKey": "b22f521050d7",
+        "slug": "b22f521050d7",
+        "title": "Utilizing Swin Transformer for the Classification of Ophthalmic Diseases in Optical Coherence Tomography (OCT) Images: A Novel Approach",
+        "year": 2024
+      },
+      {
+        "citationKey": "05e2688a7bc5",
+        "slug": "05e2688a7bc5",
+        "title": "A lightweight deep learning model for retinal optical coherence tomography image classification",
+        "year": 2023
+      },
+      {
+        "citationKey": "d2268865c638",
+        "slug": "d2268865c638",
+        "title": "AN EARLY RETINAL DISEASE DIAGNOSIS SYSTEM USING OCT IMAGES VIA CNN-BASED STACKING ENSEMBLE LEARNING",
+        "year": 2023
+      },
+      {
+        "citationKey": "2169dad77619",
+        "slug": "2169dad77619",
+        "title": "Automated classification of age-related macular degeneration from optical coherence tomography images using deep learning approach",
+        "year": 2023
+      },
+      {
+        "citationKey": "eed82e7dd133",
+        "slug": "eed82e7dd133",
+        "title": "Automatic segmentation of multitype retinal fluid from optical coherence tomography images using semisupervised deep learning network",
+        "year": 2023
+      },
+      {
+        "citationKey": "685a023a1f71",
+        "slug": "685a023a1f71",
+        "title": "Deep Learning Classification of Drusen, Choroidal Neovascularization, and Diabetic Macular Edema in Optical Coherence Tomography (OCT) Images",
+        "year": 2023
+      },
+      {
+        "citationKey": "185bfa237de7",
+        "slug": "185bfa237de7",
+        "title": "Generative adversarial network-based deep learning approach in classification of retinal conditions with optical coherence tomography images",
+        "year": 2023
+      },
+      {
+        "citationKey": "c4ed68d9a886",
+        "slug": "c4ed68d9a886",
+        "title": "Multi-Fundus Diseases Classification Using Retinal Optical Coherence Tomography Images with Swin Transformer V2",
+        "year": 2023
+      },
+      {
+        "citationKey": "d4aa814e85dd",
+        "slug": "d4aa814e85dd",
+        "title": "Optimizing Deep Learning Based Retinal Diseases Classification On Optical Coherence Tomography Scans",
+        "year": 2023
+      },
+      {
+        "citationKey": "0612ea3873e7",
+        "slug": "0612ea3873e7",
+        "title": "Retinal pathologies detection in OCT images based on Bilinear convolutional neural network",
+        "year": 2023
+      },
+      {
+        "citationKey": "aaf83180b688",
+        "slug": "aaf83180b688",
+        "title": "RETRACTION:MAC-Leonets-A novel optimized hybrid convolutional neural networks for the segmentation and diagnosis of Edema diseases using retinal OCT images",
+        "year": 2023
+      },
+      {
+        "citationKey": "3fa94aec9761",
+        "slug": "3fa94aec9761",
+        "title": "A multi-scale anomaly detection framework for retinal OCT images based on the Bayesian neural network",
+        "year": 2022
+      },
+      {
+        "citationKey": "4419aec5ed0a",
+        "slug": "4419aec5ed0a",
+        "title": "Multi-scale convolutional neural network for automated AMD classification using retinal OCT images",
+        "year": 2022
+      },
+      {
+        "citationKey": "d1c34bb65deb",
+        "slug": "d1c34bb65deb",
+        "title": "Deep CNN framework for retinal disease diagnosis using optical coherence tomography images",
+        "year": 2021
+      }
+    ],
+    "originalPublications": [
+      {
+        "citationKey": "kermany2018large",
+        "title": "Large Dataset of Labeled Optical Coherence Tomography (OCT) and Chest X-Ray Images",
+        "doi": "10.17632/rscbjbr9sj.3"
+      },
+      {
+        "citationKey": "kermany2018identifying",
+        "title": "Identifying Medical Diagnoses and Treatable Diseases by Image-Based Deep Learning",
+        "doi": "10.1016/j.cell.2018.02.010"
+      }
+    ]
+  },
+  {
+    "id": "octdl",
+    "slug": "octdl",
+    "name": "OCTDL",
+    "aliases": [
+      "OCTDL"
+    ],
+    "area": "Multi-disease retinal OCT",
+    "modality": "Retinal OCT B-scans",
+    "scale": "2,064 high-resolution OCT images from 821 patients; seven disease / condition groups",
+    "typicalTasks": "Consolidates OCTDL and OCTDL dataset entries. Used for image-level retinal disease classification across AMD, DME, ERM, RAO, RVO, VID, and normal classes.",
+    "resourceUrl": "https://data.mendeley.com/datasets/sncdhf53xc/4",
+    "licence": null,
+    "originalPublicationKeys": [
+      "kulyabin2024octdldataset",
+      "kulyabin2024octdl"
+    ],
+    "sourceLine": 42,
+    "articleCount": 3,
+    "linkedArticles": [
+      {
+        "citationKey": "769ac8041ab3",
+        "slug": "769ac8041ab3",
+        "title": "Integrating lightweight convolutional neural network with entropy-informed channel attention and adaptive spatial attention for OCT-based retinal disease classification",
+        "year": 2025
+      },
+      {
+        "citationKey": "96ce472e1aee",
+        "slug": "96ce472e1aee",
+        "title": "OCT Vision: Retinal Disease Detection Using Deep Learning",
+        "year": 2024
+      },
+      {
+        "citationKey": "0d6a03135510",
+        "slug": "0d6a03135510",
+        "title": "Segmentation of Retinal Layers in OCT Images Using Deep Learning Algorithms for Medical Diagnostics",
+        "year": 2024
+      }
+    ],
+    "originalPublications": [
+      {
+        "citationKey": "kulyabin2024octdldataset",
+        "title": "OCTDL: Optical Coherence Tomography Dataset for Image-Based Deep Learning Methods",
+        "doi": "10.17632/sncdhf53xc.4"
+      },
+      {
+        "citationKey": "kulyabin2024octdl",
+        "title": "OCTDL: Optical Coherence Tomography Dataset for Image-Based Deep Learning Methods",
+        "doi": "10.1038/s41597-024-03182-7"
+      }
+    ]
+  },
+  {
+    "id": "octid",
+    "slug": "octid",
+    "name": "OCTID",
+    "aliases": [
+      "OCTID"
+    ],
+    "area": "Multi-disease retinal OCT",
+    "modality": "Retinal OCT B-scans",
+    "scale": "572 OCT images; five classes",
+    "typicalTasks": "Consolidates OCTID benchmark / public entries. Used for classification of normal, AMD, CSR, macular hole, and diabetic retinopathy.",
+    "resourceUrl": "https://www.openicpsr.org/openicpsr/project/108503/version/V1/view",
+    "licence": null,
+    "originalPublicationKeys": [
+      "gholami2018optical",
+      "gholami2020octid"
+    ],
+    "sourceLine": 44,
+    "articleCount": 2,
+    "linkedArticles": [
+      {
+        "citationKey": "7abb94fc2719",
+        "slug": "7abb94fc2719",
+        "title": "Enhanced AMD detection in OCT images using GLCM texture features with Machine Learning and CNN methods",
+        "year": 2025
+      },
+      {
+        "citationKey": "769ac8041ab3",
+        "slug": "769ac8041ab3",
+        "title": "Integrating lightweight convolutional neural network with entropy-informed channel attention and adaptive spatial attention for OCT-based retinal disease classification",
+        "year": 2025
+      }
+    ],
+    "originalPublications": [
+      {
+        "citationKey": "gholami2018optical",
+        "title": "Optical Coherence Tomography Image Retinal Database",
+        "doi": "10.5683/sp2/w43pfi"
+      },
+      {
+        "citationKey": "gholami2020octid",
+        "title": "OCTID: Optical Coherence Tomography Image Database",
+        "doi": "10.1016/j.compeleceng.2019.106532"
+      }
+    ]
+  },
+  {
+    "id": "octmnist",
+    "slug": "octmnist",
+    "name": "OCTMNIST",
+    "aliases": [
+      "OCTMNIST"
+    ],
+    "area": "Retinal disease benchmark",
+    "modality": "Downsampled retinal OCT",
+    "scale": "109,309 source OCT images standardized to a resolution of 28 × 28 pixel",
+    "typicalTasks": "MedMNIST benchmark for four-class OCT classification derived from OCT2017 / Kermany-style OCT data. Kept separate from the clinical-resolution Kermany / UCSD dataset because MedMNIST provides standardized low-resolution benchmark images and predefined splits.",
+    "resourceUrl": "https://medmnist.com/v2",
+    "licence": null,
+    "originalPublicationKeys": [
+      "yang2023medmnistdataset",
+      "yang2023medmnist"
+    ],
+    "sourceLine": 46,
+    "articleCount": 1,
+    "linkedArticles": [
+      {
+        "citationKey": "cf8018eec68f",
+        "slug": "cf8018eec68f",
+        "title": "A Hybrid CBAM-Vision Transformer for Enhanced Classification of Retinal Diseases in Optical Coherence Tomography Imagery",
+        "year": 2025
+      }
+    ],
+    "originalPublications": [
+      {
+        "citationKey": "yang2023medmnistdataset",
+        "title": "MedMNIST v2",
+        "doi": null
+      },
+      {
+        "citationKey": "yang2023medmnist",
+        "title": "MedMNIST v2: A Large-Scale Lightweight Benchmark for 2D and 3D Biomedical Image Classification",
+        "doi": "10.1038/s41597-022-01721-8"
+      }
+    ]
+  },
+  {
+    "id": "octa-500",
+    "slug": "octa-500",
+    "name": "OCTA-500 / OCTA-3M / OCTA-6M",
+    "aliases": [
+      "OCTA-500",
+      "OCTA-3M",
+      "OCTA-6M"
+    ],
+    "area": "Retinal vasculature; multi-disease OCTA",
+    "modality": "OCT and OCTA volumes, projections, labels",
+    "scale": "500 subjects with 3 mm × 3 mm and 6 mm × 6 mm fields of view",
+    "typicalTasks": "Consolidates OCTA-500 benchmark / public entries and OCTA-3M / OCTA-6M aliases where used as OCTA-500 subsets. Used for vessel, FAZ, artery, vein, capillary, and retinal-layer segmentation.",
+    "resourceUrl": "https://ieee-dataport.org/open-access/octa-500",
+    "licence": null,
+    "originalPublicationKeys": [
+      "li2020octa",
+      "li2024octa"
+    ],
+    "sourceLine": 48,
+    "articleCount": 3,
+    "linkedArticles": [
+      {
+        "citationKey": "1af22a193a23",
+        "slug": "1af22a193a23",
+        "title": "Retinal Disease Classification from Bimodal OCT and OCTA Using a CNN–ViT Hybrid Architecture",
+        "year": 2025
+      },
+      {
+        "citationKey": "7f80043b52dd",
+        "slug": "7f80043b52dd",
+        "title": "OCT(2)Former: A retinal OCT-angiography vessel segmentation transformer",
+        "year": 2023
+      },
+      {
+        "citationKey": "4491e0db91c1",
+        "slug": "4491e0db91c1",
+        "title": "VCT-NET: An Octa Retinal Vessel Segmentation Network Based on Convolution and Transformer",
+        "year": 2022
+      }
+    ],
+    "originalPublications": [
+      {
+        "citationKey": "li2020octa",
+        "title": "OCTA-500",
+        "doi": null
+      },
+      {
+        "citationKey": "li2024octa",
+        "title": "OCTA-500: A Retinal Dataset for Optical Coherence Tomography Angiography Study",
+        "doi": "10.1016/j.media.2024.103092"
+      }
+    ]
+  },
+  {
+    "id": "octa-ss",
+    "slug": "octa-ss",
+    "name": "OCTA-SS",
+    "aliases": [
+      "OCTA-SS"
+    ],
+    "area": "Retinal vasculature",
+    "modality": "OCTA",
+    "scale": "55 parafoveal ROI slices from 3 mm × 3 mm OCTA images of 11 participants",
+    "typicalTasks": "Used for OCTA vessel segmentation. Kept separate because it is referenced as a distinct OCTA benchmark and provides detailed superficial-layer vessel annotations.",
+    "resourceUrl": "https://datashare.ed.ac.uk/handle/10283/3528",
+    "licence": null,
+    "originalPublicationKeys": [
+      "giarratano2019optical",
+      "pissas2020deep"
+    ],
+    "sourceLine": 50,
+    "articleCount": 1,
+    "linkedArticles": [
+      {
+        "citationKey": "7f80043b52dd",
+        "slug": "7f80043b52dd",
+        "title": "OCT(2)Former: A retinal OCT-angiography vessel segmentation transformer",
+        "year": 2023
+      }
+    ],
+    "originalPublications": [
+      {
+        "citationKey": "giarratano2019optical",
+        "title": "Optical Coherence Tomography Angiography Retinal Scans and Segmentations",
+        "doi": "10.7488/ds/2729"
+      },
+      {
+        "citationKey": "pissas2020deep",
+        "title": "Deep Iterative Vessel Segmentation in OCT Angiography",
+        "doi": "10.1364/boe.384919"
+      }
+    ]
+  },
+  {
+    "id": "optima-challenge",
+    "slug": "optima-challenge",
+    "name": "OPTIMA challenge",
+    "aliases": [
+      "OPTIMA challenge"
+    ],
+    "area": "Retinal fluid / macular disease",
+    "modality": "Retinal OCT",
+    "scale": "Challenge retinal-fluid dataset commonly described as 30 OCT volumes",
+    "typicalTasks": "Consolidates Optima and OPTIMA challenge. Used for intraretinal cystoid fluid segmentation in OCT. Kept separate from RETOUCH because the dataset names and challenge lineage differ.",
+    "resourceUrl": "https://optima.meduniwien.ac.at/optima-segmentation-challenge-1/",
+    "licence": null,
+    "originalPublicationKeys": [
+      "optima2015cyst",
+      "oguz2016optimal"
+    ],
+    "sourceLine": 52,
+    "articleCount": 1,
+    "linkedArticles": [
+      {
+        "citationKey": "7f53aa5cb1c9",
+        "slug": "7f53aa5cb1c9",
+        "title": "Deep learning architectures analysis for age-related macular degeneration segmentation on optical coherence tomography scans",
+        "year": 2020
+      }
+    ],
+    "originalPublications": [
+      {
+        "citationKey": "optima2015cyst",
+        "title": "OPTIMA Cyst Segmentation Challenge",
+        "doi": null
+      },
+      {
+        "citationKey": "oguz2016optimal",
+        "title": "Optimal Retinal Cyst Segmentation from OCT Images",
+        "doi": "10.1117/12.2217355"
+      }
+    ]
+  },
+  {
+    "id": "origa",
+    "slug": "origa",
+    "name": "ORIGA",
+    "aliases": [
+      "ORIGA"
+    ],
+    "area": "Glaucoma",
+    "modality": "Color fundus photographs",
+    "scale": "650 fundus images in ORIGA-light; commonly reported as 168 glaucoma and 482 normal images",
+    "typicalTasks": "Fundus benchmark for optic disc / cup analysis and glaucoma detection. Included where paired or externally compared with OCT measurements.",
+    "resourceUrl": "https://figshare.com/articles/dataset/Retinal_Fundus_Glaucoma_Image_dataset/24549217",
+    "licence": null,
+    "originalPublicationKeys": [
+      "figshare2023retinal",
+      "zhang2010origa"
+    ],
+    "sourceLine": 54,
+    "articleCount": 1,
+    "linkedArticles": [
+      {
+        "citationKey": "8d687ff87530",
+        "slug": "8d687ff87530",
+        "title": "IoT based automatic detection of glaucoma disease in OCT and fundus images using deep learning techniques",
+        "year": 2020
+      }
+    ],
+    "originalPublications": [
+      {
+        "citationKey": "figshare2023retinal",
+        "title": "Retinal Fundus Glaucoma Image Dataset",
+        "doi": null
+      },
+      {
+        "citationKey": "zhang2010origa",
+        "title": "ORIGA(-light): An Online Retinal Fundus Image Database for Glaucoma Analysis and Research",
+        "doi": "10.1109/iembs.2010.5626137"
+      }
+    ]
+  },
+  {
+    "id": "retinaloct-c8",
+    "slug": "retinaloct-c8",
+    "name": "RetinalOCT-C8 / OCT-C8",
+    "aliases": [
+      "RetinalOCT-C8",
+      "OCT-C8"
+    ],
+    "area": "Multi-disease retinal OCT",
+    "modality": "Retinal OCT B-scans",
+    "scale": "24,000 OCT images across eight classes, balanced at 3,000 images per class",
+    "typicalTasks": "Consolidates OCT-C8, OCT-C8 dataset, and RetinalOCT-C8. Used for eight-class retinal OCT disease classification across AMD, CNV, CSR, DME, DR, drusen, macular hole, and normal.",
+    "resourceUrl": "https://www.kaggle.com/datasets/obulisainaren/retinal-oct-c8",
+    "licence": null,
+    "originalPublicationKeys": [
+      "sainaren2021retinal",
+      "subramanian2022classification"
+    ],
+    "sourceLine": 56,
+    "articleCount": 4,
+    "linkedArticles": [
+      {
+        "citationKey": "00c860e05574",
+        "slug": "00c860e05574",
+        "title": "Automated Diagnosis of Eight Retinal Diseases from OCT Images Using Deep Learning with Attention Mechanisms",
+        "year": 2025
+      },
+      {
+        "citationKey": "e10d72f899b9",
+        "slug": "e10d72f899b9",
+        "title": "HTC-retina: A hybrid retinal diseases classification model using transformer-Convolutional Neural Network from optical coherence tomography images",
+        "year": 2024
+      },
+      {
+        "citationKey": "c4ed68d9a886",
+        "slug": "c4ed68d9a886",
+        "title": "Multi-Fundus Diseases Classification Using Retinal Optical Coherence Tomography Images with Swin Transformer V2",
+        "year": 2023
+      },
+      {
+        "citationKey": "7043d68f5440",
+        "slug": "7043d68f5440",
+        "title": "Using Machine Learning to Detect Different Eye Diseases from OCT Images",
+        "year": 2023
+      }
+    ],
+    "originalPublications": [
+      {
+        "citationKey": "sainaren2021retinal",
+        "title": "Retinal OCT Image Classification - C8",
+        "doi": "10.34740/kaggle/dsv/2736749"
+      },
+      {
+        "citationKey": "subramanian2022classification",
+        "title": "Classification of Retinal OCT Images Using Deep Learning",
+        "doi": "10.1109/iccci54379.2022.9740985"
+      }
+    ]
+  },
+  {
+    "id": "retouch-challenge",
+    "slug": "retouch-challenge",
+    "name": "RETOUCH challenge",
+    "aliases": [
+      "RETOUCH challenge"
+    ],
+    "area": "Retinal fluid; AMD and retinal vein occlusion",
+    "modality": "Multi-vendor retinal OCT volumes",
+    "scale": "112 OCT volumes and 11,334 B-scans overall",
+    "typicalTasks": "Consolidates RETOUCH, ReTOUCH, MICCAI RETOUCH challenge, RETOUCH challenge dataset, and RETOUCH retinal OCT fluid detection challenge. Used for IRF, SRF, and PED detection and segmentation.",
+    "resourceUrl": "https://retouch.grand-challenge.org/",
+    "licence": null,
+    "originalPublicationKeys": [
+      "retouch2017retinal",
+      "bogunovic2019retouch"
+    ],
+    "sourceLine": 58,
+    "articleCount": 5,
+    "linkedArticles": [
+      {
+        "citationKey": "ac26cb0e9249",
+        "slug": "ac26cb0e9249",
+        "title": "A Deep Ensemble Learning-Based CNN Architecture for Multiclass Retinal Fluid Segmentation in OCT Images",
+        "year": 2023
+      },
+      {
+        "citationKey": "7f53aa5cb1c9",
+        "slug": "7f53aa5cb1c9",
+        "title": "Deep learning architectures analysis for age-related macular degeneration segmentation on optical coherence tomography scans",
+        "year": 2020
+      },
+      {
+        "citationKey": "36d500e38d2a",
+        "slug": "36d500e38d2a",
+        "title": "Retinal Fluids Segmentation Using Volumetric Deep Neural Networks on Optical Coherence Tomography Scans",
+        "year": 2020
+      },
+      {
+        "citationKey": "bd6e9fab3138",
+        "slug": "bd6e9fab3138",
+        "title": "Deep-learning based multiclass retinal fluid segmentation and detection in optical coherence tomography images using a fully convolutional neural network",
+        "year": 2019
+      },
+      {
+        "citationKey": "e1bb7788d422",
+        "slug": "e1bb7788d422",
+        "title": "Retinal fluid segmentation in OCT images using adversarial loss based convolutional neural networks",
+        "year": 2018
+      }
+    ],
+    "originalPublications": [
+      {
+        "citationKey": "retouch2017retinal",
+        "title": "RETOUCH: Retinal OCT Fluid Challenge",
+        "doi": null
+      },
+      {
+        "citationKey": "bogunovic2019retouch",
+        "title": "RETOUCH: The Retinal OCT Fluid Detection and Segmentation Benchmark and Challenge",
+        "doi": "10.1109/tmi.2019.2901398"
+      }
+    ]
+  },
+  {
+    "id": "rose-1",
+    "slug": "rose-1",
+    "name": "ROSE-1",
+    "aliases": [
+      "ROSE-1"
+    ],
+    "area": "Retinal OCTA vessel segmentation",
+    "modality": "En face OCTA",
+    "scale": "117 OCTA images from 39 subjects in ROSE-1",
+    "typicalTasks": "Consolidates ROSE-1 and Retinal OCTA vessel Segmentation-1. Used for OCTA vessel segmentation.",
+    "resourceUrl": "https://imed.nimte.ac.cn/dataofrose.html",
+    "licence": null,
+    "originalPublicationKeys": [
+      "ma2024rose",
+      "ma2021rose"
+    ],
+    "sourceLine": 60,
+    "articleCount": 2,
+    "linkedArticles": [
+      {
+        "citationKey": "b5f971387b12",
+        "slug": "b5f971387b12",
+        "title": "Deep learning-based segmentation and quantitative analysis of retinal microstructures in optical coherence tomography angiography images using RS_Unet3+",
+        "year": 2026
+      },
+      {
+        "citationKey": "7f80043b52dd",
+        "slug": "7f80043b52dd",
+        "title": "OCT(2)Former: A retinal OCT-angiography vessel segmentation transformer",
+        "year": 2023
+      }
+    ],
+    "originalPublications": [
+      {
+        "citationKey": "ma2024rose",
+        "title": "ROSE: Retinal OCT-Angiography Vessel Segmentation Dataset",
+        "doi": "10.5281/zenodo.12775880"
+      },
+      {
+        "citationKey": "ma2021rose",
+        "title": "ROSE: A Retinal OCT-Angiography Vessel Segmentation Dataset and New Model",
+        "doi": "10.1109/tmi.2020.3042802"
+      }
+    ]
+  },
+  {
+    "id": "seri-cuhk-sd-oct",
+    "slug": "seri-cuhk-sd-oct",
+    "name": "SERI-CUHK SD-OCT",
+    "aliases": [
+      "SERI-CUHK SD-OCT"
+    ],
+    "area": "Diabetes-related retinal disease",
+    "modality": "SD-OCT",
+    "scale": "SERI dataset reported as 32 SD-OCT volumes; CUHK dataset reported as 43 SD-OCT volumes",
+    "typicalTasks": "Used for diabetes-related retinal disease classification, including healthy, DME, and DR-DME categories in source studies. Kept separate from A2A because the names indicate distinct source datasets.",
+    "resourceUrl": null,
+    "licence": null,
+    "originalPublicationKeys": [
+      "alsaih2017machine",
+      "perdomo2019classification"
+    ],
+    "sourceLine": 62,
+    "articleCount": 0,
+    "linkedArticles": [],
+    "originalPublications": [
+      {
+        "citationKey": "alsaih2017machine",
+        "title": "Machine Learning Techniques for Diabetic Macular Edema Classification on SD-OCT Images",
+        "doi": "10.1186/s12938-017-0352-9"
+      },
+      {
+        "citationKey": "perdomo2019classification",
+        "title": "Classification of Diabetes-Related Retinal Diseases Using a Deep Learning Approach in Optical Coherence Tomography",
+        "doi": "10.1016/j.cmpb.2019.06.016"
+      }
+    ]
+  }
+]

@@ -1,0 +1,18 @@
+year,CNN / convolutional networks,Classical machine learning,Other deep learning,Residual / Dense / Efficient architectures,Transformer / attention / ViT,Ensemble / hybrid methods,U-Net / encoder-decoder segmentation,Foundation models,Self-supervised / semi-supervised / weakly supervised learning,GAN / generative models,Large language models / multimodal LLMs,Other / unclear,Total,is_incomplete_year
+2010,0,1,0,0,0,0,0,0,0,0,0,0,1,false
+2011,0,0,0,0,0,0,0,0,0,0,0,0,0,false
+2012,0,0,0,0,0,0,0,0,0,0,0,0,0,false
+2013,0,1,0,0,0,0,0,0,0,0,0,1,2,false
+2014,0,0,0,0,0,0,0,0,0,0,0,0,0,false
+2015,0,0,0,0,0,0,0,0,0,0,0,0,0,false
+2016,0,0,0,0,0,0,0,0,0,0,0,0,0,false
+2017,3,0,1,0,0,0,0,0,0,0,0,0,4,false
+2018,5,1,2,0,0,2,1,0,0,1,0,1,13,false
+2019,14,1,3,3,1,1,3,0,0,0,0,0,26,false
+2020,18,2,9,4,0,3,4,1,0,0,0,0,41,false
+2021,18,3,6,4,0,3,0,0,0,1,0,1,36,false
+2022,17,2,12,4,3,2,4,2,0,1,0,1,48,false
+2023,19,6,24,7,7,6,3,2,1,1,0,1,77,false
+2024,25,6,17,4,7,5,4,3,1,1,0,1,74,false
+2025,23,11,17,4,18,4,8,1,0,1,1,2,90,false
+2026,2,4,0,0,5,1,2,1,0,0,0,0,15,true

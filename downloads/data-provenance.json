@@ -1,0 +1,48 @@
+{
+  "authoritativeInclusionSource": "supplementary_material/publications_20260712.tex",
+  "sources": [
+    {
+      "path": "main_20260712.tex",
+      "sha256": "ac6523c337b0ca3f2ac2ad6a607f06ecd59996b2d8306f51ec6f2bf7e88e1468"
+    },
+    {
+      "path": "main_supplementary_material_20260712.tex",
+      "sha256": "915fb268eb39bd53cf7c27af3d15b79ccb6881262fd0288a8fb9430cc3649aef"
+    },
+    {
+      "path": "supplementary_material/publications_20260712.tex",
+      "sha256": "324908920c8f1f1903ac86d6e6595529d9c046954e3a259643091f059d2f960c"
+    },
+    {
+      "path": "supplementary_material/datasets.tex",
+      "sha256": "5e3a62edc33c3618ecaa31b3fdbf01dc46bb735a308217b909dc62a807d5861e"
+    },
+    {
+      "path": "supplementary_material/EGM_20260712.tex",
+      "sha256": "2824bf86860a8ad95d2e5641b2af3af215fd0bec6cfc249914cbe84261ef5680"
+    },
+    {
+      "path": "_scripts/data_all_merged_step7.csv",
+      "sha256": "114ad2cf4017be32fb58f3baf0dd08b8ee300dc263049e88315e41594e4509f5"
+    },
+    {
+      "path": "_scripts/manuscripts/log/manifest.csv",
+      "sha256": "20786d670a0021efef5a7b7457b5f9fe1c5598a91c33fb7d28c46ab81fc42e6f"
+    }
+  ],
+  "matchingPrecedence": [
+    "citation key",
+    "DOI",
+    "normalized exact title",
+    "conservative fuzzy title flagged for review"
+  ],
+  "sourceSelectionPrecedence": [
+    "PDF full text",
+    "structured HTML/XML full text",
+    "PDF-derived text",
+    "TXT full text",
+    "abstract-only text"
+  ],
+  "copyrightDefault": "Unknown licence status is not treated as permission to redistribute full text.",
+  "generatedAt": "2026-07-13T19:56:38Z"
+}

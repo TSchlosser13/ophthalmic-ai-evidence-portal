@@ -1,0 +1,21 @@
+category,count,articleKeys
+Kermany / UCSD / Kaggle / Mendeley / OCT2017 / LOCT retinal OCT dataset,23,"[""740599fb90ce"", ""a5c99b438a02"", ""6b8a4c5793dc"", ""e5136d5c95b2"", ""aec455f4c0cd"", ""7abb94fc2719"", ""769ac8041ab3"", ""20e75922954b"", ""d05cac5388fa"", ""b22f521050d7"", ""05e2688a7bc5"", ""d2268865c638"", ""2169dad77619"", ""eed82e7dd133"", ""685a023a1f71"", ""185bfa237de7"", ""c4ed68d9a886"", ""d4aa814e85dd"", ""0612ea3873e7"", ""aaf83180b688"", ""3fa94aec9761"", ""4419aec5ed0a"", ""d1c34bb65deb""]"
+Duke / DUKE SD-OCT / Duke DME OCT dataset,9,"[""52c9f6e04e8b"", ""cb6fb691c745"", ""769ac8041ab3"", ""8a272a0621a3"", ""05e2688a7bc5"", ""d2268865c638"", ""8c8e1aed8a11"", ""ad6ea1627565"", ""3ea2dfffb32d""]"
+RETOUCH challenge,5,"[""ac26cb0e9249"", ""7f53aa5cb1c9"", ""36d500e38d2a"", ""bd6e9fab3138"", ""e1bb7788d422""]"
+RetinalOCT-C8 / OCT-C8,4,"[""00c860e05574"", ""e10d72f899b9"", ""c4ed68d9a886"", ""7043d68f5440""]"
+OCTA-500 / OCTA-3M / OCTA-6M,3,"[""1af22a193a23"", ""7f80043b52dd"", ""4491e0db91c1""]"
+OCTDL,3,"[""769ac8041ab3"", ""96ce472e1aee"", ""0d6a03135510""]"
+AROI dataset,2,"[""40e5cd2458a7"", ""c3ee99b25fe5""]"
+DRAC 2022 / OCTA-DR,2,"[""1a93f0883cd2"", ""8ba2213f7ff2""]"
+OCTID,2,"[""7abb94fc2719"", ""769ac8041ab3""]"
+ROSE-1,2,"[""b5f971387b12"", ""7f80043b52dd""]"
+ACRIMA,1,"[""e5136d5c95b2""]"
+EyePACS,1,"[""e5136d5c95b2""]"
+FAROS,1,"[""b5f971387b12""]"
+OCTA-SS,1,"[""7f80043b52dd""]"
+OCTMNIST,1,"[""cf8018eec68f""]"
+OPTIMA challenge,1,"[""7f53aa5cb1c9""]"
+ORIGA,1,"[""8d687ff87530""]"
+A2ASDOCT,0,[]
+AI Challenger OCT dataset,0,[]
+SERI-CUHK SD-OCT,0,[]

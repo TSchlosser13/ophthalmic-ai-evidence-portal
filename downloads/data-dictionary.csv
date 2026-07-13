@@ -1,0 +1,17 @@
+field,type,description,missing
+citationKey,string,Unchanged BibTeX citation key and stable article identifier.,Never missing for included records.
+title,string,"Publication title from BibTeX, with the inclusion table as fallback.",Critical error.
+authors,string[],"Author names from BibTeX, deduplicated across repeated source variants.",Empty array.
+year,integer,Publication year from the authoritative included-publication table.,Critical error.
+abstract,string|null,Abstract from the merged extraction table when available.,null.
+publicationMode,enum,"Copyright-aware publication mode: full_text_public, abstract_only, external_link_only, or restricted.",Never missing.
+sourceType,string|null,Selected local source format after deterministic source precedence.,null when no source file is matched.
+ophthalmicConditions,string[],Conservative rule-based categories derived from the curated article summary and abstract.,Other / unspecified.
+modalities,string[],Explicit imaging or clinical-data modalities found in the curated article text.,Empty array.
+aiMethods,string[],Explicit AI method families found in the curated article text.,Empty array.
+clinicalTasks,string[],Explicit task families found in the curated article text.,Empty array.
+datasets,string[],Named registry resources explicitly mentioned in the curated article text.,Empty array.
+countries,string[],Countries explicitly present in source affiliation text; never inferred from names.,Empty array.
+validationTypes,string[],Validation descriptors only when explicit textual evidence is present.,Empty array.
+generalEvidenceAssignments,object[],General EGM dimension and framing assignments parsed from EGM_20260712.tex.,Empty array.
+ethicsEvidenceAssignments,object[],Ethics EGM dimension and framed role parsed from EGM_20260712.tex.,Empty array.

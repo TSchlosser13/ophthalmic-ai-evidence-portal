@@ -1,0 +1,18 @@
+year,Retinal layers / macula morphology,Diabetic retinopathy / diabetic macular edema,Retinal fluid / cysts / edema,Age-related macular degeneration / CNV / drusen,General retina / multi-disease / benchmark,Glaucoma / optic nerve / RNFL,Retinal vessels / OCTA / vascular disease,Other ophthalmic disease,Myopia / choroid / axial-related disease,Other / unclear,Total,is_incomplete_year
+2010,0,0,0,0,0,1,0,0,0,0,1,false
+2011,0,0,0,0,0,0,0,0,0,0,0,false
+2012,0,0,0,0,0,0,0,0,0,0,0,false
+2013,0,0,0,0,0,2,0,0,0,0,2,false
+2014,0,0,0,0,0,0,0,0,0,0,0,false
+2015,0,0,0,0,0,0,0,0,0,0,0,false
+2016,0,0,0,0,0,0,0,0,0,0,0,false
+2017,0,0,0,3,0,0,0,0,1,0,4,false
+2018,3,3,2,2,1,2,0,0,0,0,13,false
+2019,1,5,7,5,0,5,1,1,1,0,26,false
+2020,7,6,0,8,1,11,3,0,1,4,41,false
+2021,6,5,3,5,4,9,1,0,1,2,36,false
+2022,8,12,3,7,4,5,4,0,3,2,48,false
+2023,9,14,8,18,10,8,5,0,0,5,77,false
+2024,9,16,4,15,12,8,6,1,1,2,74,false
+2025,10,27,5,10,11,12,8,1,2,4,90,false
+2026,1,1,1,1,1,4,2,2,0,2,15,true
