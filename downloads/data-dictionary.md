@@ -40,6 +40,22 @@ Abstract from the merged extraction table when available.
 
 Missing values: null.
 
+## `overallReasoning`
+
+Type: `string`
+
+Concise article-level reasoning transcribed from the final included-publication table.
+
+Missing values: Critical error.
+
+## `contributionSummary`
+
+Type: `string`
+
+Concise article-level contribution and summary transcribed from the final included-publication table.
+
+Missing values: Critical error.
+
 ## `publicationMode`
 
 Type: `enum`
@@ -116,7 +132,7 @@ Missing values: Empty array.
 
 Type: `object[]`
 
-General EGM dimension and framing assignments parsed from EGM_20260712.tex.
+General EGM dimension and framing assignments parsed from EGM_20260720.tex.
 
 Missing values: Empty array.
 
@@ -124,6 +140,6 @@ Missing values: Empty array.
 
 Type: `object[]`
 
-Ethics EGM dimension and framed role parsed from EGM_20260712.tex.
+Ethics EGM dimension and framed role parsed from EGM_20260720.tex.
 
 Missing values: Empty array.

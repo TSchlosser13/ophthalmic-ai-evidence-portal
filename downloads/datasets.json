@@ -42,7 +42,7 @@
     "area": "Glaucoma",
     "modality": "Color fundus photographs",
     "scale": "705 fundus images",
-    "typicalTasks": "Optic-disc-centered fundus benchmark with 396 glaucomatous and 309 normal images.",
+    "typicalTasks": "Optic disc-centered fundus benchmark with 396 glaucomatous and 309 normal images.",
     "resourceUrl": "https://www.kaggle.com/datasets/orvile/acrima-glaucoma-assessment-using-fundus-images",
     "licence": null,
     "originalPublicationKeys": [
@@ -82,7 +82,7 @@
     "area": "Macular edema / retinal OCT lesion segmentation",
     "modality": "Retinal OCT volumes",
     "scale": "AI Challenger 2018 macular edema dataset with 83 OCT volumes and 10,880 OCT slices",
-    "typicalTasks": "Used for macular-edema-related lesion segmentation, including subretinal fluid and pigment epithelial detachment.",
+    "typicalTasks": "Used for macular edema-related lesion segmentation, including subretinal fluid and pigment epithelial detachment.",
     "resourceUrl": null,
     "licence": null,
     "originalPublicationKeys": [
@@ -695,7 +695,7 @@
     "area": "Retinal vasculature; multi-disease OCTA",
     "modality": "OCT and OCTA volumes, projections, labels",
     "scale": "500 subjects with 3 mm × 3 mm and 6 mm × 6 mm fields of view",
-    "typicalTasks": "Consolidates OCTA-500 benchmark / public entries and OCTA-3M / OCTA-6M aliases where used as OCTA-500 subsets. Used for vessel, FAZ, artery, vein, capillary, and retinal-layer segmentation.",
+    "typicalTasks": "Consolidates OCTA-500 benchmark / public entries and OCTA-3M / OCTA-6M aliases where used as OCTA-500 subsets. Used for vessel, FAZ, artery, vein, capillary, and retinal layer segmentation.",
     "resourceUrl": "https://ieee-dataport.org/open-access/octa-500",
     "licence": null,
     "originalPublicationKeys": [
@@ -786,7 +786,7 @@
     ],
     "area": "Retinal fluid / macular disease",
     "modality": "Retinal OCT",
-    "scale": "Challenge retinal-fluid dataset commonly described as 30 OCT volumes",
+    "scale": "Challenge retinal fluid dataset commonly described as 30 OCT volumes",
     "typicalTasks": "Consolidates Optima and OPTIMA challenge. Used for intraretinal cystoid fluid segmentation in OCT. Kept separate from RETOUCH because the dataset names and challenge lineage differ.",
     "resourceUrl": "https://optima.meduniwien.ac.at/optima-segmentation-challenge-1/",
     "licence": null,

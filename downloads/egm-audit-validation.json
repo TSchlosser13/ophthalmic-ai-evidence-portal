@@ -1,0 +1,151 @@
+{
+  "status": "pass",
+  "checks": [
+    {
+      "scope": "de_novo_current_source_canonical",
+      "name": "all_427_articles_freshly_reassessed",
+      "status": "pass",
+      "expected": 427,
+      "actual": 427,
+      "details": "No article-level allocation was hash-carried without a fresh review."
+    },
+    {
+      "scope": "de_novo_current_source_canonical",
+      "name": "canonical_matrix_has_7686_unique_pairs",
+      "status": "pass",
+      "expected": 7686,
+      "actual": 7686,
+      "details": "Exactly 18 dimensions per article."
+    },
+    {
+      "scope": "de_novo_current_source_canonical",
+      "name": "best_available_source_scope_preserved",
+      "status": "pass",
+      "expected": "314 full_text; 113 abstract_only",
+      "actual": "314 full_text; 113 abstract_only",
+      "details": "The evaluated-text type was not altered by the allocation review."
+    },
+    {
+      "scope": "de_novo_current_source_canonical",
+      "name": "source_metadata_and_hashes_match_pre_de_novo_canonical",
+      "status": "pass",
+      "expected": 7686,
+      "actual": 7686,
+      "details": "Citation, source path, byte hash, extracted-text hash, map, and dimension matched."
+    },
+    {
+      "scope": "de_novo_current_source_canonical",
+      "name": "assigned_evidence_exactly_grounded",
+      "status": "pass",
+      "expected": 1284,
+      "actual": 1284,
+      "details": "Inherited from the passing category-specialist semantic-QA validator."
+    },
+    {
+      "scope": "de_novo_current_source_canonical",
+      "name": "all_comparison_queue_rows_reconciled",
+      "status": "pass",
+      "expected": 1568,
+      "actual": 1568,
+      "details": "Every allocation/stance disagreement and every non-high-confidence de novo row received adversarial second review."
+    },
+    {
+      "scope": "de_novo_current_source_canonical",
+      "name": "latex_input_has_54_complete_cells",
+      "status": "pass",
+      "expected": 54,
+      "actual": 54,
+      "details": "Nine dimensions x three stances in each of two maps."
+    }
+  ],
+  "articles": 427,
+  "matrix_rows": 7686,
+  "assignments": 1284,
+  "general_assignments": 1049,
+  "ethics_assignments": 235,
+  "changes_vs_pre_de_novo_current": 628,
+  "change_types": {
+    "stance_change": 253,
+    "add": 211,
+    "remove": 164
+  },
+  "source_scope": {
+    "full_text": 314,
+    "abstract_only": 113
+  },
+  "final_reconciliation_validation": {
+    "status": "pass",
+    "articles": 427,
+    "matrix_rows": 7686,
+    "assignments": 1427,
+    "general_assignments": 1169,
+    "ethics_assignments": 258,
+    "reconciliation_rows": 1568,
+    "reconciliation_articles": 384,
+    "resolution_counts": {
+      "not_queued": 6118,
+      "retain_de_novo": 1045,
+      "retain_current": 416,
+      "independent_resolution": 107
+    },
+    "changes_vs_current": 548,
+    "change_types": {
+      "stance_change": 242,
+      "add": 248,
+      "remove": 58
+    },
+    "final_confidence": {
+      "high": 7518,
+      "moderate": 168
+    },
+    "checks": {
+      "all_427_articles_present": true,
+      "all_7686_article_dimension_rows_present": true,
+      "all_queued_rows_second_reviewed": true,
+      "all_assigned_evidence_grounded": true,
+      "all_status_stance_pairs_valid": true
+    }
+  },
+  "final_semantic_qa_validation": {
+    "status": "pass",
+    "articles": 427,
+    "matrix_rows": 7686,
+    "semantic_qa_rows": 1493,
+    "semantic_qa_articles": 426,
+    "semantic_qa_group_counts": {
+      "core_general": 1021,
+      "ethics": 261,
+      "sparse_general": 211
+    },
+    "semantic_qa_outcomes": {
+      "changed": 248,
+      "retained": 1245
+    },
+    "final_assignments": 1284,
+    "changes_vs_pre_de_novo": 628,
+    "change_types": {
+      "addition": 211,
+      "removal": 164,
+      "stance_change": 253
+    },
+    "confidence_counts": {
+      "high": 7686
+    },
+    "moderate_rows": [],
+    "input_hashes": {
+      "final_reconciled_decision_matrix_20260720.csv": "d7ee9fcacbc5e88a8973d0ded2e073d4aab3b5fbc09095335ea89baa28bb4b92",
+      "current_source_full_decision_matrix_20260720.csv": "6d5339f1ab0e1c2d19cf3493ad3a540f2e06596d901e06717a6e9577393e4ab6",
+      "final_semantic_qa_core_general_queue_20260720.csv": "70530560078210a5114273f6ae124d5988b4d88b8fcd1ca12c4ba3a3d5c862fc",
+      "final_semantic_qa_sparse_general_queue_20260720.csv": "2c2c60fd2049b8e79d9eff16c906906837a80d46c313f495fd45bd2989b93d20",
+      "final_semantic_qa_ethics_queue_20260720.csv": "0de2d5d026d77132493aaa793590727d64cf887b03880d361551d81aaed2df5d",
+      "final_semantic_qa_core_general_decisions_20260720.csv": "925300664501eb739d9a6a6b84635b4f020aa7355cbc48ec905905e374e811c7",
+      "final_semantic_qa_sparse_general_decisions_20260720.csv": "9701b1efbca2a27b764ae26b57b0fca3d71bac4971e39cd2a5a244596333a8d6",
+      "final_semantic_qa_ethics_decisions_20260720.csv": "559637f8c554346688f9ea3b770c31cf495a9b58e9e1274531fb6c14a2dc5b53"
+    },
+    "outputs": {
+      "final_semantic_qa_decision_matrix_20260720.csv": "84365b70de2b47255ae115ae34f784767267b0843710248a6f1abd266b255a07",
+      "final_semantic_qa_vs_current_changes_20260720.csv": "3d8be280a78c32bcf6752b1d38d1a49ebbe70841a16ff9a7bb88bb10739eb50e",
+      "final_semantic_qa_category_summary_20260720.csv": "67545386305ed7d2f87009ad7de779c3b5bef0093bfc5ad2f7adaba1bca1b1c2"
+    }
+  }
+}

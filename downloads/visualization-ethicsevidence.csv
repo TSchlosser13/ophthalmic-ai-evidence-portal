@@ -1,28 +1,28 @@
 dimension,articleCount,stance,count,articleKeys
-Privacy,68,caused,20,"[""07c78b773a9e"", ""1904798abdde"", ""1ce8b917da06"", ""2573e4102c86"", ""26abc95edfa3"", ""3610864516d6"", ""38c21f05f613"", ""4764e0c69fc7"", ""4caa01410b29"", ""4f7cb7df4f7d"", ""508a17977cd2"", ""5b4074fce93a"", ""68f0266deb95"", ""6fe05a02f932"", ""7043d68f5440"", ""942a7c645311"", ""d28892d42ec2"", ""d44a9529bdde"", ""e8a1de4c2f1b"", ""fbe51d7b5d32""]"
-Privacy,68,resolved,41,"[""155874664ca6"", ""1f86b4feb99a"", ""211a1f5e8c68"", ""253ecd7dc13d"", ""2b6fbc4f0508"", ""2d9526998521"", ""2eea02f82a91"", ""345f15624795"", ""3756a39ea98c"", ""45eb1a2f75ff"", ""646313884044"", ""6b5df424652b"", ""6f739da64bf7"", ""740599fb90ce"", ""74bd3176c1ed"", ""7a8d717e87c8"", ""7c9a28561793"", ""7d76dcad4fd1"", ""889c08799ba4"", ""92b0beaeeada"", ""94eb03d655e3"", ""a1593fedce90"", ""a619076b267e"", ""a82536bb0043"", ""b2d92e326400"", ""b5784b25a496"", ""c0c5966a3f98"", ""c207fd307df3"", ""c3ee99b25fe5"", ""c9fafe5b4ef7"", ""cc173c68aaf4"", ""cfc9b29316ca"", ""d4ea2c3251e9"", ""d6066a07ba35"", ""df4ac708eecf"", ""ed3fec0ec1cd"", ""eed82e7dd133"", ""f2a564301b9e"", ""f486c8a77ee9"", ""fb4151a5b803"", ""fb61b5e416fe""]"
-Privacy,68,both,7,"[""30f9c197297e"", ""32e2ad0d0e6f"", ""5d93b7069e25"", ""62966ef9fdb8"", ""853e0b588e73"", ""9a4a7b8bc450"", ""a32e088bd521""]"
-Transparency,31,caused,4,"[""3610864516d6"", ""393240c7cec2"", ""d44a9529bdde"", ""ea263bf4d04c""]"
-Transparency,31,resolved,27,"[""043684769543"", ""0a91bafc9ed3"", ""0ab3fcfd31cd"", ""0d9a70ede5cc"", ""1408e75c41f8"", ""17819e10c66b"", ""28d93b251ada"", ""2f01198b23e4"", ""353e3e1970fc"", ""3a1c9f961d8f"", ""508a17977cd2"", ""6347ea09d2bd"", ""6f739da64bf7"", ""750835f3e51d"", ""769ac8041ab3"", ""873a9a16cc28"", ""87f3cd94ec74"", ""8a5b73028348"", ""8d687ff87530"", ""c3c03d9a26df"", ""c4ed68d9a886"", ""c644d5188019"", ""d05cac5388fa"", ""d0f160c2f77b"", ""d2f5621f7596"", ""e2f6a88e3abc"", ""fabdee03a10a""]"
-Transparency,31,both,0,[]
-Integrity,22,caused,7,"[""17819e10c66b"", ""3ea2dfffb32d"", ""5426dc9b583d"", ""a2bfc8cc3fd8"", ""b5813c22bda8"", ""e8a1de4c2f1b"", ""e8da82ecca34""]"
-Integrity,22,resolved,12,"[""155874664ca6"", ""18bd8aebe09b"", ""2d9526998521"", ""480eeed24bbb"", ""5eda0c15ead9"", ""740599fb90ce"", ""772fab385995"", ""7a8d717e87c8"", ""866ff7d14ed2"", ""a6448a70e993"", ""d50d012dbe1d"", ""e842ed2e802d""]"
-Integrity,22,both,3,"[""0c4c0c9dfa22"", ""12df428f0bc9"", ""ffa998359094""]"
-Security,8,caused,3,"[""3610864516d6"", ""6fe05a02f932"", ""e8a1de4c2f1b""]"
-Security,8,resolved,4,"[""508a17977cd2"", ""c9fafe5b4ef7"", ""ddb8a8742a4d"", ""df4ac708eecf""]"
-Security,8,both,1,"[""f2a564301b9e""]"
-Non-maleficence,8,caused,4,"[""0ab3fcfd31cd"", ""439dfd13b723"", ""4f7cb7df4f7d"", ""a54c7820e8a1""]"
-Non-maleficence,8,resolved,1,"[""f32b6992dba5""]"
-Non-maleficence,8,both,3,"[""873a9a16cc28"", ""8a5b73028348"", ""f6efab0f4258""]"
-Trust,6,caused,0,[]
-Trust,6,resolved,6,"[""1ce8b917da06"", ""508a17977cd2"", ""87f3cd94ec74"", ""8a5b73028348"", ""d2f5621f7596"", ""e842ed2e802d""]"
-Trust,6,both,0,[]
-Accountability,5,caused,1,"[""3610864516d6""]"
-Accountability,5,resolved,4,"[""1a93f0883cd2"", ""32e2ad0d0e6f"", ""480eeed24bbb"", ""ef7005cea0a5""]"
-Accountability,5,both,0,[]
-Equity,3,caused,2,"[""3610864516d6"", ""e4edbaa2c127""]"
-Equity,3,resolved,0,[]
-Equity,3,both,1,"[""9be93b20f768""]"
-Autonomy,1,caused,0,[]
-Autonomy,1,resolved,1,"[""e2f6a88e3abc""]"
-Autonomy,1,both,0,[]
+Privacy,9,caused,7,"[""1904798abdde"", ""3610864516d6"", ""442a6774b300"", ""508a17977cd2"", ""75bba223bc94"", ""c08f2f3d3e8b"", ""e8a1de4c2f1b""]"
+Privacy,9,resolved,0,[]
+Privacy,9,both,2,"[""050876505c41"", ""d44a9529bdde""]"
+Transparency,118,caused,26,"[""124df92e6d47"", ""1408e75c41f8"", ""1852aed2b535"", ""2169dad77619"", ""453d7dda7136"", ""740599fb90ce"", ""74bd3176c1ed"", ""75bba223bc94"", ""8529576161e7"", ""88ef6ab637e1"", ""8b31cb8429dc"", ""8f6d0f5c5cf3"", ""99087a376207"", ""9c51cf880908"", ""a3bb1eb6a59a"", ""a823efcedabd"", ""b5813c22bda8"", ""c9fafe5b4ef7"", ""ddb8a8742a4d"", ""e4edbaa2c127"", ""e5136d5c95b2"", ""e8a1de4c2f1b"", ""ea263bf4d04c"", ""ef74a70b4670"", ""f6efab0f4258"", ""schlosser2024visualacuity""]"
+Transparency,118,resolved,71,"[""043684769543"", ""0a91bafc9ed3"", ""0c2ef5f5f239"", ""0d9a70ede5cc"", ""12df428f0bc9"", ""1904798abdde"", ""1a93f0883cd2"", ""1e84cfa9a875"", ""204d1f7e2d50"", ""20c42a23585e"", ""26abc95edfa3"", ""2720fc4ea82f"", ""28d93b251ada"", ""2b6fbc4f0508"", ""2f01198b23e4"", ""30f9c197297e"", ""353e3e1970fc"", ""3a1c9f961d8f"", ""3e68f9e61c54"", ""4419aec5ed0a"", ""442a6774b300"", ""45eb1a2f75ff"", ""508a17977cd2"", ""5426dc9b583d"", ""557e974d0f58"", ""586a2b8617e4"", ""5a7f975813f3"", ""5b4074fce93a"", ""62966ef9fdb8"", ""6347ea09d2bd"", ""671fa968ac45"", ""68f0266deb95"", ""6f739da64bf7"", ""7098a160108d"", ""769ac8041ab3"", ""7a8d717e87c8"", ""7bda019936ec"", ""7c9a28561793"", ""7d76dcad4fd1"", ""853e0b588e73"", ""87f3cd94ec74"", ""8fdeab605f31"", ""9a4a7b8bc450"", ""a32e088bd521"", ""a5c99b438a02"", ""a610a9d426b3"", ""b0bb1f653298"", ""b43746032b9d"", ""bdec5046af38"", ""c3c03d9a26df"", ""c4ed68d9a886"", ""c9bcbbcd10e9"", ""cc173c68aaf4"", ""d0f160c2f77b"", ""d2f5621f7596"", ""d384c5486fec"", ""d4ea2c3251e9"", ""d50d012dbe1d"", ""d5d70edc6cef"", ""daaa7bd24f6d"", ""e783fc3a548e"", ""ecb3e566bf6f"", ""ed3fec0ec1cd"", ""ed7fd7675fc5"", ""ef7005cea0a5"", ""f32b6992dba5"", ""f41ca0b8e8aa"", ""f486c8a77ee9"", ""fb4151a5b803"", ""fbe51d7b5d32"", ""fbe81ad8d55c""]"
+Transparency,118,both,21,"[""050876505c41"", ""15409c146949"", ""3610864516d6"", ""393240c7cec2"", ""5eda0c15ead9"", ""607838e1b84c"", ""642c3c0cd617"", ""646313884044"", ""750835f3e51d"", ""7e500df4fae1"", ""873a9a16cc28"", ""8a5b73028348"", ""94eb03d655e3"", ""a55c19870c66"", ""c08f2f3d3e8b"", ""c207fd307df3"", ""c644d5188019"", ""d05cac5388fa"", ""d44a9529bdde"", ""d66c54ff5654"", ""ddff51574c2b""]"
+Integrity,0,caused,0,[]
+Integrity,0,resolved,0,[]
+Integrity,0,both,0,[]
+Security,3,caused,1,"[""e8a1de4c2f1b""]"
+Security,3,resolved,1,"[""8e81837a5861""]"
+Security,3,both,1,"[""ddb8a8742a4d""]"
+Non-maleficence,26,caused,7,"[""2d9526998521"", ""439dfd13b723"", ""453d7dda7136"", ""873a9a16cc28"", ""8a0a26e0ad28"", ""d44a9529bdde"", ""fcf0638d98ab""]"
+Non-maleficence,26,resolved,14,"[""043684769543"", ""12df428f0bc9"", ""586a2b8617e4"", ""61ee33ea2db5"", ""6fe05a02f932"", ""a82536bb0043"", ""ae427adb3d51"", ""b5784b25a496"", ""c4ed68d9a886"", ""cb1c58355a32"", ""ceb81af82ec8"", ""ef7005cea0a5"", ""f0f02ae9c681"", ""f2a564301b9e""]"
+Non-maleficence,26,both,5,"[""0ab3fcfd31cd"", ""0ce423384fd5"", ""17531fd94ff0"", ""8a5b73028348"", ""f6efab0f4258""]"
+Trust,28,caused,8,"[""2169dad77619"", ""442a6774b300"", ""453d7dda7136"", ""75bba223bc94"", ""9431a95feac7"", ""99087a376207"", ""c08f2f3d3e8b"", ""e8a1de4c2f1b""]"
+Trust,28,resolved,13,"[""043684769543"", ""15409c146949"", ""1ce8b917da06"", ""28d93b251ada"", ""393240c7cec2"", ""508a17977cd2"", ""557e974d0f58"", ""607838e1b84c"", ""873a9a16cc28"", ""a5c99b438a02"", ""c08be1c96b75"", ""d05cac5388fa"", ""d0f160c2f77b""]"
+Trust,28,both,7,"[""050876505c41"", ""3610864516d6"", ""7e500df4fae1"", ""8a5b73028348"", ""d44a9529bdde"", ""ddb8a8742a4d"", ""f6efab0f4258""]"
+Accountability,6,caused,1,"[""3610864516d6""]"
+Accountability,6,resolved,5,"[""0cd301461c99"", ""15409c146949"", ""30f9c197297e"", ""b2d92e326400"", ""e2f6a88e3abc""]"
+Accountability,6,both,0,[]
+Equity,38,caused,25,"[""06c0f2ce8149"", ""0a91bafc9ed3"", ""15409c146949"", ""15e0a0244e47"", ""185bfa237de7"", ""204d1f7e2d50"", ""3610864516d6"", ""5d93b7069e25"", ""5eda0c15ead9"", ""642c3c0cd617"", ""646313884044"", ""685a023a1f71"", ""750835f3e51d"", ""75bba223bc94"", ""853e0b588e73"", ""88ef6ab637e1"", ""9be93b20f768"", ""b2d92e326400"", ""b83bed0b0c18"", ""c08f2f3d3e8b"", ""cc173c68aaf4"", ""d44a9529bdde"", ""e4edbaa2c127"", ""ea263bf4d04c"", ""f486c8a77ee9""]"
+Equity,38,resolved,10,"[""043684769543"", ""1852aed2b535"", ""345f15624795"", ""3c2419267f61"", ""ad6ea1627565"", ""b520d4ed8f29"", ""b5784b25a496"", ""ceb81af82ec8"", ""d2883190c5b7"", ""f8c4d3c38c89""]"
+Equity,38,both,3,"[""12df428f0bc9"", ""508a17977cd2"", ""d384c5486fec""]"
+Autonomy,7,caused,0,[]
+Autonomy,7,resolved,7,"[""0cd301461c99"", ""30f9c197297e"", ""44ce6e703d06"", ""b2d92e326400"", ""e2f6a88e3abc"", ""ed3fec0ec1cd"", ""fcf0638d98ab""]"
+Autonomy,7,both,0,[]

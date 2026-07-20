@@ -30,6 +30,18 @@
     "missing": "null."
   },
   {
+    "field": "overallReasoning",
+    "type": "string",
+    "description": "Concise article-level reasoning transcribed from the final included-publication table.",
+    "missing": "Critical error."
+  },
+  {
+    "field": "contributionSummary",
+    "type": "string",
+    "description": "Concise article-level contribution and summary transcribed from the final included-publication table.",
+    "missing": "Critical error."
+  },
+  {
     "field": "publicationMode",
     "type": "enum",
     "description": "Copyright-aware publication mode: full_text_public, abstract_only, external_link_only, or restricted.",
@@ -86,13 +98,13 @@
   {
     "field": "generalEvidenceAssignments",
     "type": "object[]",
-    "description": "General EGM dimension and framing assignments parsed from EGM_20260712.tex.",
+    "description": "General EGM dimension and framing assignments parsed from EGM_20260720.tex.",
     "missing": "Empty array."
   },
   {
     "field": "ethicsEvidenceAssignments",
     "type": "object[]",
-    "description": "Ethics EGM dimension and framed role parsed from EGM_20260712.tex.",
+    "description": "Ethics EGM dimension and framed role parsed from EGM_20260720.tex.",
     "missing": "Empty array."
   }
 ]

@@ -1,7 +1,7 @@
 {
   "title": "Ophthalmic Artificial Intelligence From Data Integration to Accountable Clinical Impact: Challenges and Opportunities",
   "shortTitle": "Ophthalmic AI: From Data Integration to Accountable Clinical Impact",
-  "abstract": "Ophthalmology is a leading domain for clinical artificial intelligence (AI) because high-volume imaging, structured measurements, longitudinal follow-up, and screening pathways create unusually clear routes from data to care. We synthesized 427 studies from 6,482 records in PubMed, ACM Digital Library, IEEE Xplore, and Scopus; all included studies addressed ophthalmic imaging data. No lower date limit was set, and studies ranged from January 2010 to April 2026. The evidence shows that ophthalmic AI is moving from image classification toward three clinically important functions: multimodal interpretation, prediction of disease course or treatment need, and clinical workflow integration. Technical performance is no longer the main bottleneck. Accountable clinical value now depends on interoperable data, representative validation, transparent and fair models, privacy and cybersecurity safeguards, regulatory oversight, workflow fit, cost-effectiveness assessment, and post-deployment monitoring. Ophthalmology therefore offers a rigorous model for translating algorithmic performance into clinical benefit.",
+  "abstract": "Ophthalmology is a leading domain for clinical artificial intelligence (AI) because high-volume imaging, structured measurements, longitudinal follow-up, and screening pathways create unusually clear routes from data to care. We synthesized 427 studies from 6,482 records in PubMed, ACM Digital Library, IEEE Xplore, and Scopus. All included studies addressed ophthalmic imaging data. No lower date limit was set, and studies ranged from January 2010 to April 2026. The evidence shows that ophthalmic AI is moving from image classification toward three clinically important functions: multimodal interpretation, prediction of disease course or treatment need, and clinical workflow integration. Technical performance alone is no longer sufficient for clinical translation. Accountable clinical value now depends on interoperable data, representative validation, transparent and fair models, privacy and cybersecurity safeguards, regulatory oversight, workflow fit, cost-effectiveness assessment, and post-deployment monitoring. Ophthalmology therefore offers a rigorous model for translating algorithmic performance into clinical benefit.",
   "keywords": [
     "Artificial Intelligence",
     "Ophthalmology",
@@ -222,7 +222,7 @@
   "statistics": {
     "harmonizedRecords": 6482,
     "includedStudies": 427,
-    "generalEvidenceAssignments": 1094,
+    "generalEvidenceAssignments": 1049,
     "searchStart": "January 2010",
     "searchEnd": "April 2026",
     "searchCutoff": "April 30, 2026"
@@ -333,7 +333,7 @@
     {
       "number": 5,
       "label": "figure:EGM",
-      "caption": "Evidence gap maps summarizing the thematic orientation of the 427 included articles on artificial intelligence in ophthalmology. Each panel combines evidence volume with row-wise framing. (A) General dimensions, where the left bars show how many articles addressed each dimension, and the diverging bars show whether the dimension was framed as predominantly positive, negative, or balanced. (B) Ethical dimensions, where the left bars show how many articles addressed each ethical dimension, and the diverging bars show whether the issue was framed as caused by AI, resolved by AI, or both. Percentages for diverging-bar categories are calculated within each row. Because individual articles contribute to multiple dimensions, totals across rows and categories exceed the number of included studies."
+      "caption": "Evidence gap maps summarizing the thematic orientation of the 427 included articles on artificial intelligence in ophthalmology. Within each panel, dimensions are ordered by descending evidence volume. Each panel combines evidence volume with row-wise framing. (A) General dimensions, where the left bars show how many articles addressed each dimension, and the diverging bars show whether the dimension was framed as predominantly positive, negative, or balanced. The neutral gray balanced segment is centered on zero, with half extending to each side. (B) Ethical dimensions, where the left bars show how many articles addressed each ethical dimension, and the diverging bars show whether the issue was framed as caused by AI, resolved by AI, or caused and resolved. The neutral gray caused-and-resolved segment is likewise centered on zero, with half extending to each side. Percentages for diverging-bar categories are calculated within each row. Because individual articles contribute to multiple dimensions, totals across rows and categories exceed the number of included studies."
     },
     {
       "number": 6,

@@ -1,10 +1,9 @@
 {
-  "generatedAt": "2026-07-13T19:56:38Z",
+  "generatedAt": "2026-07-20T21:11:06Z",
   "status": "valid",
   "criticalErrors": [],
   "warnings": [
     "1 included study is absent from the 426-row merged extraction table: schlosser2024visualacuity. Its final LaTeX table and BibTeX data are retained without fabricated enrichment.",
-    "1 included study is absent from the 426-row download manifest but has an exact-key manuscript file: schlosser2024visualacuity.",
     "1 record(s) have no abstract in the normalized metadata; no abstract was invented.",
     "Local full-text files are not published unless an explicit CC BY or CC0 licence and a structured full-text source are both present; unknown licences default to a restrictive mode.",
     "Machine-readable node/edge data for the keyword network and country-level collaboration counts are not present; the existing authored figures are exposed with descriptive alternatives, not reverse-engineered values."
@@ -12,27 +11,28 @@
   "counts": {
     "normalizedArticles": 427,
     "sourceMergedRows": 426,
-    "sourceManifestRows": 426,
+    "sourceManifestRows": 427,
     "datasets": 20,
-    "generalEvidenceAssignments": 1094,
-    "ethicsEvidenceAssignments": 152,
+    "generalEvidenceAssignments": 1049,
+    "ethicsEvidenceAssignments": 235,
+    "canonicalEgmMatrixRows": 7686,
+    "canonicalEgmAssignments": 1284,
     "recordsWithoutAbstracts": 1,
-    "recordsWithFullTextLocated": 215,
-    "recordsWithPublicFullTextRendered": 1
+    "recordsWithFullTextLocated": 314,
+    "recordsWithPublicFullTextRendered": 0
   },
   "sourceFormatCounts": {
-    "html": 92,
-    "pdf": 123,
-    "txt": 212
+    "html": 13,
+    "pdf": 300,
+    "txt": 114
   },
   "sourceScopeCounts": {
-    "abstract_or_metadata": 212,
-    "full_text": 215
+    "abstract_or_metadata": 113,
+    "full_text": 314
   },
   "publicationModeCounts": {
-    "abstract_only": 425,
-    "external_link_only": 1,
-    "full_text_public": 1
+    "abstract_only": 426,
+    "external_link_only": 1
   },
   "articleCountsByYear": {
     "2010": 1,
@@ -63,12 +63,15 @@
   "malformedExternalUrls": [],
   "sourceDiscrepancies": {
     "includedVsMergedExtraction": 1,
-    "includedVsManifest": 1,
+    "includedVsManifest": 0,
     "includedMissingFromMergedExtraction": [
       "schlosser2024visualacuity"
     ],
-    "includedMissingFromManifest": [
-      "schlosser2024visualacuity"
-    ]
+    "includedMissingFromManifest": []
+  },
+  "egmCanonicalComparison": {
+    "matches": true,
+    "missingAssignments": 0,
+    "extraAssignments": 0
   }
 }

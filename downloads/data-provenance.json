@@ -1,33 +1,41 @@
 {
-  "authoritativeInclusionSource": "supplementary_material/publications_20260712.tex",
+  "authoritativeInclusionSource": "supplementary_material/publications_20260720.tex",
   "sources": [
     {
-      "path": "main_20260712.tex",
-      "sha256": "ac6523c337b0ca3f2ac2ad6a607f06ecd59996b2d8306f51ec6f2bf7e88e1468"
+      "path": "main_20260720.tex",
+      "sha256": "26e112ca965075031a23db9bc8d7fafd02f2e941fa3d2846093761d67c4a33a6"
     },
     {
-      "path": "main_supplementary_material_20260712.tex",
-      "sha256": "915fb268eb39bd53cf7c27af3d15b79ccb6881262fd0288a8fb9430cc3649aef"
+      "path": "main_supplementary_material_20260720.tex",
+      "sha256": "e6c97726a381e59d2e47d362ccba33b3e2d7ad74a659fef0c8bae819a8408b27"
     },
     {
-      "path": "supplementary_material/publications_20260712.tex",
-      "sha256": "324908920c8f1f1903ac86d6e6595529d9c046954e3a259643091f059d2f960c"
+      "path": "supplementary_material/publications_20260720.tex",
+      "sha256": "c10fc888d8c869474195ce99c73f7e6d6e02f2d13ecc79c40624086b39d23fc4"
     },
     {
       "path": "supplementary_material/datasets.tex",
-      "sha256": "5e3a62edc33c3618ecaa31b3fdbf01dc46bb735a308217b909dc62a807d5861e"
+      "sha256": "8d95033b96ea27d87afe502456f42e5b82f7b0fb5ba5c26e62701d70df25cce9"
     },
     {
-      "path": "supplementary_material/EGM_20260712.tex",
-      "sha256": "2824bf86860a8ad95d2e5641b2af3af215fd0bec6cfc249914cbe84261ef5680"
+      "path": "supplementary_material/EGM_20260720.tex",
+      "sha256": "bf859764384d6a05d951b20408cacf241e8ce03ef0a55c297ea89f7f13ce0fcd"
+    },
+    {
+      "path": "_scripts/egm_audit_20260720/current_source_full_decision_matrix_20260720.csv",
+      "sha256": "68f0cb0e7d9fc373bdd2fe1460833d0042f37d352bb7c0a3e6d7c63fb4d82470"
+    },
+    {
+      "path": "_scripts/egm_audit_20260720/current_source_validation_20260720.json",
+      "sha256": "1ef083842396babf0a5cd85d9802ef4e7960df2c382a68527b63ed7c6de4ee0e"
     },
     {
       "path": "_scripts/data_all_merged_step7.csv",
       "sha256": "114ad2cf4017be32fb58f3baf0dd08b8ee300dc263049e88315e41594e4509f5"
     },
     {
-      "path": "_scripts/manuscripts/log/manifest.csv",
-      "sha256": "20786d670a0021efef5a7b7457b5f9fe1c5598a91c33fb7d28c46ab81fc42e6f"
+      "path": "_scripts/manuscripts_v2_manual/log/manifest.csv",
+      "sha256": "3fb6c126f6eec8b2e917e1c54b22693fa1af8a3052c97b30e0985dd35e12c9dd"
     }
   ],
   "matchingPrecedence": [
@@ -44,5 +52,5 @@
     "abstract-only text"
   ],
   "copyrightDefault": "Unknown licence status is not treated as permission to redistribute full text.",
-  "generatedAt": "2026-07-13T19:56:38Z"
+  "generatedAt": "2026-07-20T21:11:06Z"
 }

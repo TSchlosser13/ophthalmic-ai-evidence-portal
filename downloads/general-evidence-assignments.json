@@ -6,12 +6,6 @@
     "kind": "general"
   },
   {
-    "citationKey": "043684769543",
-    "dimension": "Model performance",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
     "citationKey": "0491ca402c2d",
     "dimension": "Model performance",
     "stance": "positive",
@@ -60,12 +54,6 @@
     "kind": "general"
   },
   {
-    "citationKey": "0a91bafc9ed3",
-    "dimension": "Model performance",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
     "citationKey": "0ab3fcfd31cd",
     "dimension": "Model performance",
     "stance": "positive",
@@ -79,6 +67,12 @@
   },
   {
     "citationKey": "0c4c0c9dfa22",
+    "dimension": "Model performance",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "0cd301461c99",
     "dimension": "Model performance",
     "stance": "positive",
     "kind": "general"
@@ -108,19 +102,13 @@
     "kind": "general"
   },
   {
-    "citationKey": "0db96a4e3a4b",
+    "citationKey": "0d9a70ede5cc",
     "dimension": "Model performance",
     "stance": "positive",
     "kind": "general"
   },
   {
     "citationKey": "0dc2e29b3cdc",
-    "dimension": "Model performance",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "0ff0aa3f6a75",
     "dimension": "Model performance",
     "stance": "positive",
     "kind": "general"
@@ -138,6 +126,12 @@
     "kind": "general"
   },
   {
+    "citationKey": "12df428f0bc9",
+    "dimension": "Model performance",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
     "citationKey": "132472fc1f98",
     "dimension": "Model performance",
     "stance": "positive",
@@ -145,6 +139,12 @@
   },
   {
     "citationKey": "1408e75c41f8",
+    "dimension": "Model performance",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "141b13698665",
     "dimension": "Model performance",
     "stance": "positive",
     "kind": "general"
@@ -186,25 +186,19 @@
     "kind": "general"
   },
   {
-    "citationKey": "174dea9e9f2f",
-    "dimension": "Model performance",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
     "citationKey": "175fe9b54084",
     "dimension": "Model performance",
     "stance": "positive",
     "kind": "general"
   },
   {
-    "citationKey": "1852aed2b535",
+    "citationKey": "180d4efefd11",
     "dimension": "Model performance",
     "stance": "positive",
     "kind": "general"
   },
   {
-    "citationKey": "185bfa237de7",
+    "citationKey": "1852aed2b535",
     "dimension": "Model performance",
     "stance": "positive",
     "kind": "general"
@@ -240,12 +234,6 @@
     "kind": "general"
   },
   {
-    "citationKey": "1a2acf19df20",
-    "dimension": "Model performance",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
     "citationKey": "1a93f0883cd2",
     "dimension": "Model performance",
     "stance": "positive",
@@ -276,13 +264,13 @@
     "kind": "general"
   },
   {
-    "citationKey": "1d162408014e",
+    "citationKey": "1d4e02a1a00d",
     "dimension": "Model performance",
     "stance": "positive",
     "kind": "general"
   },
   {
-    "citationKey": "1d4e02a1a00d",
+    "citationKey": "1d794ad5abad",
     "dimension": "Model performance",
     "stance": "positive",
     "kind": "general"
@@ -313,6 +301,12 @@
   },
   {
     "citationKey": "204d1f7e2d50",
+    "dimension": "Model performance",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "20c42a23585e",
     "dimension": "Model performance",
     "stance": "positive",
     "kind": "general"
@@ -372,7 +366,19 @@
     "kind": "general"
   },
   {
+    "citationKey": "26b86f0f7104",
+    "dimension": "Model performance",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
     "citationKey": "2720fc4ea82f",
+    "dimension": "Model performance",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "27c8caa3938d",
     "dimension": "Model performance",
     "stance": "positive",
     "kind": "general"
@@ -408,12 +414,6 @@
     "kind": "general"
   },
   {
-    "citationKey": "2c2ad7b1aef3",
-    "dimension": "Model performance",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
     "citationKey": "2ce8cb442667",
     "dimension": "Model performance",
     "stance": "positive",
@@ -432,13 +432,13 @@
     "kind": "general"
   },
   {
-    "citationKey": "2d9526998521",
+    "citationKey": "2da4eab59436",
     "dimension": "Model performance",
     "stance": "positive",
     "kind": "general"
   },
   {
-    "citationKey": "2da4eab59436",
+    "citationKey": "2e6b2c0b76cd",
     "dimension": "Model performance",
     "stance": "positive",
     "kind": "general"
@@ -456,19 +456,7 @@
     "kind": "general"
   },
   {
-    "citationKey": "2eea02f82a91",
-    "dimension": "Model performance",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
     "citationKey": "2f01198b23e4",
-    "dimension": "Model performance",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "30f9c197297e",
     "dimension": "Model performance",
     "stance": "positive",
     "kind": "general"
@@ -481,12 +469,6 @@
   },
   {
     "citationKey": "32e2ad0d0e6f",
-    "dimension": "Model performance",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "345f15624795",
     "dimension": "Model performance",
     "stance": "positive",
     "kind": "general"
@@ -511,6 +493,12 @@
   },
   {
     "citationKey": "35cf76e0902a",
+    "dimension": "Model performance",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "3610864516d6",
     "dimension": "Model performance",
     "stance": "positive",
     "kind": "general"
@@ -588,6 +576,12 @@
     "kind": "general"
   },
   {
+    "citationKey": "3ea2dfffb32d",
+    "dimension": "Model performance",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
     "citationKey": "3f146b610a1c",
     "dimension": "Model performance",
     "stance": "positive",
@@ -624,13 +618,7 @@
     "kind": "general"
   },
   {
-    "citationKey": "4491e0db91c1",
-    "dimension": "Model performance",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "44ce6e703d06",
+    "citationKey": "442a6774b300",
     "dimension": "Model performance",
     "stance": "positive",
     "kind": "general"
@@ -690,12 +678,6 @@
     "kind": "general"
   },
   {
-    "citationKey": "4f7cb7df4f7d",
-    "dimension": "Model performance",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
     "citationKey": "5025397cedec",
     "dimension": "Model performance",
     "stance": "positive",
@@ -732,12 +714,6 @@
     "kind": "general"
   },
   {
-    "citationKey": "52f6c2705903",
-    "dimension": "Model performance",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
     "citationKey": "5426dc9b583d",
     "dimension": "Model performance",
     "stance": "positive",
@@ -768,12 +744,6 @@
     "kind": "general"
   },
   {
-    "citationKey": "58564251d58c",
-    "dimension": "Model performance",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
     "citationKey": "586a2b8617e4",
     "dimension": "Model performance",
     "stance": "positive",
@@ -798,19 +768,7 @@
     "kind": "general"
   },
   {
-    "citationKey": "5b4074fce93a",
-    "dimension": "Model performance",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
     "citationKey": "5c42c3c92f41",
-    "dimension": "Model performance",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "5d93b7069e25",
     "dimension": "Model performance",
     "stance": "positive",
     "kind": "general"
@@ -840,12 +798,6 @@
     "kind": "general"
   },
   {
-    "citationKey": "617a92840067",
-    "dimension": "Model performance",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
     "citationKey": "61ee33ea2db5",
     "dimension": "Model performance",
     "stance": "positive",
@@ -864,6 +816,12 @@
     "kind": "general"
   },
   {
+    "citationKey": "6347ea09d2bd",
+    "dimension": "Model performance",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
     "citationKey": "642c3c0cd617",
     "dimension": "Model performance",
     "stance": "positive",
@@ -877,6 +835,12 @@
   },
   {
     "citationKey": "64d31fb56e0d",
+    "dimension": "Model performance",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "671fa968ac45",
     "dimension": "Model performance",
     "stance": "positive",
     "kind": "general"
@@ -912,12 +876,6 @@
     "kind": "general"
   },
   {
-    "citationKey": "6d00851b6b2f",
-    "dimension": "Model performance",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
     "citationKey": "6d1a19e2da14",
     "dimension": "Model performance",
     "stance": "positive",
@@ -942,12 +900,6 @@
     "kind": "general"
   },
   {
-    "citationKey": "7098a160108d",
-    "dimension": "Model performance",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
     "citationKey": "7170b8cc9dcd",
     "dimension": "Model performance",
     "stance": "positive",
@@ -955,24 +907,6 @@
   },
   {
     "citationKey": "71adaf3d927c",
-    "dimension": "Model performance",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "720229a10c92",
-    "dimension": "Model performance",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "740599fb90ce",
-    "dimension": "Model performance",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "74bd3176c1ed",
     "dimension": "Model performance",
     "stance": "positive",
     "kind": "general"
@@ -1008,12 +942,6 @@
     "kind": "general"
   },
   {
-    "citationKey": "793fba531335",
-    "dimension": "Model performance",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
     "citationKey": "79e8d2ce0b3d",
     "dimension": "Model performance",
     "stance": "positive",
@@ -1026,19 +954,7 @@
     "kind": "general"
   },
   {
-    "citationKey": "7abb94fc2719",
-    "dimension": "Model performance",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
     "citationKey": "7bda019936ec",
-    "dimension": "Model performance",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "7c9a28561793",
     "dimension": "Model performance",
     "stance": "positive",
     "kind": "general"
@@ -1146,12 +1062,6 @@
     "kind": "general"
   },
   {
-    "citationKey": "889c08799ba4",
-    "dimension": "Model performance",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
     "citationKey": "88f59ea42ad7",
     "dimension": "Model performance",
     "stance": "positive",
@@ -1171,12 +1081,6 @@
   },
   {
     "citationKey": "8a272a0621a3",
-    "dimension": "Model performance",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "8a37722508f8",
     "dimension": "Model performance",
     "stance": "positive",
     "kind": "general"
@@ -1224,13 +1128,13 @@
     "kind": "general"
   },
   {
-    "citationKey": "8cd265f63120",
+    "citationKey": "8e39b70ae840",
     "dimension": "Model performance",
     "stance": "positive",
     "kind": "general"
   },
   {
-    "citationKey": "8e39b70ae840",
+    "citationKey": "8e81837a5861",
     "dimension": "Model performance",
     "stance": "positive",
     "kind": "general"
@@ -1261,12 +1165,6 @@
   },
   {
     "citationKey": "925beb945b38",
-    "dimension": "Model performance",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "92b0beaeeada",
     "dimension": "Model performance",
     "stance": "positive",
     "kind": "general"
@@ -1368,12 +1266,6 @@
     "kind": "general"
   },
   {
-    "citationKey": "9e08b543a80f",
-    "dimension": "Model performance",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
     "citationKey": "9f0384c0591e",
     "dimension": "Model performance",
     "stance": "positive",
@@ -1398,25 +1290,7 @@
     "kind": "general"
   },
   {
-    "citationKey": "a1593fedce90",
-    "dimension": "Model performance",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
     "citationKey": "a25c2affba2e",
-    "dimension": "Model performance",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "a2bfc8cc3fd8",
-    "dimension": "Model performance",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "a32e088bd521",
     "dimension": "Model performance",
     "stance": "positive",
     "kind": "general"
@@ -1434,18 +1308,6 @@
     "kind": "general"
   },
   {
-    "citationKey": "a54c7820e8a1",
-    "dimension": "Model performance",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "a55c19870c66",
-    "dimension": "Model performance",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
     "citationKey": "a5c99b438a02",
     "dimension": "Model performance",
     "stance": "positive",
@@ -1458,31 +1320,13 @@
     "kind": "general"
   },
   {
-    "citationKey": "a6145efd1a25",
-    "dimension": "Model performance",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
     "citationKey": "a619076b267e",
     "dimension": "Model performance",
     "stance": "positive",
     "kind": "general"
   },
   {
-    "citationKey": "a7d06d07e6c3",
-    "dimension": "Model performance",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
     "citationKey": "a7e84a899e78",
-    "dimension": "Model performance",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "a823efcedabd",
     "dimension": "Model performance",
     "stance": "positive",
     "kind": "general"
@@ -1572,12 +1416,6 @@
     "kind": "general"
   },
   {
-    "citationKey": "b238b5929a0a",
-    "dimension": "Model performance",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
     "citationKey": "b2d92e326400",
     "dimension": "Model performance",
     "stance": "positive",
@@ -1602,13 +1440,13 @@
     "kind": "general"
   },
   {
-    "citationKey": "b43746032b9d",
+    "citationKey": "b520d4ed8f29",
     "dimension": "Model performance",
     "stance": "positive",
     "kind": "general"
   },
   {
-    "citationKey": "b58821328fea",
+    "citationKey": "b5784b25a496",
     "dimension": "Model performance",
     "stance": "positive",
     "kind": "general"
@@ -1620,19 +1458,13 @@
     "kind": "general"
   },
   {
-    "citationKey": "b6aa9a3abc0f",
-    "dimension": "Model performance",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
     "citationKey": "b6ab3131bcdd",
     "dimension": "Model performance",
     "stance": "positive",
     "kind": "general"
   },
   {
-    "citationKey": "b83bed0b0c18",
+    "citationKey": "b89fd305580c",
     "dimension": "Model performance",
     "stance": "positive",
     "kind": "general"
@@ -1692,18 +1524,6 @@
     "kind": "general"
   },
   {
-    "citationKey": "c3ee99b25fe5",
-    "dimension": "Model performance",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "c40cef1157c4",
-    "dimension": "Model performance",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
     "citationKey": "c4e8e79b0dc1",
     "dimension": "Model performance",
     "stance": "positive",
@@ -1746,12 +1566,6 @@
     "kind": "general"
   },
   {
-    "citationKey": "c9bcbbcd10e9",
-    "dimension": "Model performance",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
     "citationKey": "c9fafe5b4ef7",
     "dimension": "Model performance",
     "stance": "positive",
@@ -1777,12 +1591,6 @@
   },
   {
     "citationKey": "cb11e397dac4",
-    "dimension": "Model performance",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "cb1c58355a32",
     "dimension": "Model performance",
     "stance": "positive",
     "kind": "general"
@@ -1884,12 +1692,6 @@
     "kind": "general"
   },
   {
-    "citationKey": "d384c5486fec",
-    "dimension": "Model performance",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
     "citationKey": "d44a9529bdde",
     "dimension": "Model performance",
     "stance": "positive",
@@ -1909,18 +1711,6 @@
   },
   {
     "citationKey": "d4aa814e85dd",
-    "dimension": "Model performance",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "d4ea2c3251e9",
-    "dimension": "Model performance",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "d50d012dbe1d",
     "dimension": "Model performance",
     "stance": "positive",
     "kind": "general"
@@ -1992,18 +1782,6 @@
     "kind": "general"
   },
   {
-    "citationKey": "df4ac708eecf",
-    "dimension": "Model performance",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "e09d7e8e0f06",
-    "dimension": "Model performance",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
     "citationKey": "e10d72f899b9",
     "dimension": "Model performance",
     "stance": "positive",
@@ -2022,19 +1800,13 @@
     "kind": "general"
   },
   {
-    "citationKey": "e295ef4e6849",
-    "dimension": "Model performance",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
     "citationKey": "e2f6a88e3abc",
     "dimension": "Model performance",
     "stance": "positive",
     "kind": "general"
   },
   {
-    "citationKey": "e4edbaa2c127",
+    "citationKey": "e4ff9553115d",
     "dimension": "Model performance",
     "stance": "positive",
     "kind": "general"
@@ -2070,13 +1842,19 @@
     "kind": "general"
   },
   {
+    "citationKey": "e8da82ecca34",
+    "dimension": "Model performance",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
     "citationKey": "ea263bf4d04c",
     "dimension": "Model performance",
     "stance": "positive",
     "kind": "general"
   },
   {
-    "citationKey": "ecb3e566bf6f",
+    "citationKey": "ed3fec0ec1cd",
     "dimension": "Model performance",
     "stance": "positive",
     "kind": "general"
@@ -2100,7 +1878,7 @@
     "kind": "general"
   },
   {
-    "citationKey": "ef7005cea0a5",
+    "citationKey": "f0f02ae9c681",
     "dimension": "Model performance",
     "stance": "positive",
     "kind": "general"
@@ -2130,18 +1908,6 @@
     "kind": "general"
   },
   {
-    "citationKey": "f3443e988e2f",
-    "dimension": "Model performance",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "f3d102f534b6",
-    "dimension": "Model performance",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
     "citationKey": "f41ca0b8e8aa",
     "dimension": "Model performance",
     "stance": "positive",
@@ -2161,12 +1927,6 @@
   },
   {
     "citationKey": "f5532f1b6916",
-    "dimension": "Model performance",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "f61d97acc9da",
     "dimension": "Model performance",
     "stance": "positive",
     "kind": "general"
@@ -2226,12 +1986,6 @@
     "kind": "general"
   },
   {
-    "citationKey": "fbe51d7b5d32",
-    "dimension": "Model performance",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
     "citationKey": "fbe81ad8d55c",
     "dimension": "Model performance",
     "stance": "positive",
@@ -2280,13 +2034,31 @@
     "kind": "general"
   },
   {
+    "citationKey": "043684769543",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
     "citationKey": "050876505c41",
     "dimension": "Model performance",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "0cd301461c99",
+    "citationKey": "0a91bafc9ed3",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "0db96a4e3a4b",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "0ff0aa3f6a75",
     "dimension": "Model performance",
     "stance": "balanced",
     "kind": "general"
@@ -2304,7 +2076,55 @@
     "kind": "general"
   },
   {
-    "citationKey": "281cfd2b1e25",
+    "citationKey": "185bfa237de7",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "18696a72d2e6",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "1a2acf19df20",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "1d162408014e",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "2c2ad7b1aef3",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "2d9526998521",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "2eea02f82a91",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "30f9c197297e",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "345f15624795",
     "dimension": "Model performance",
     "stance": "balanced",
     "kind": "general"
@@ -2322,7 +2142,19 @@
     "kind": "general"
   },
   {
-    "citationKey": "3ea2dfffb32d",
+    "citationKey": "4491e0db91c1",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "44ce6e703d06",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "4afc2a924102",
     "dimension": "Model performance",
     "stance": "balanced",
     "kind": "general"
@@ -2334,7 +2166,97 @@
     "kind": "general"
   },
   {
+    "citationKey": "4f7cb7df4f7d",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "52f6c2705903",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
     "citationKey": "569ab5ce6be4",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "58564251d58c",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "59533aad7727",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "5b4074fce93a",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "5d93b7069e25",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "617a92840067",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "6d00851b6b2f",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "7098a160108d",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "720229a10c92",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "740599fb90ce",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "74bd3176c1ed",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "7abb94fc2719",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "7c9a28561793",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "889c08799ba4",
     "dimension": "Model performance",
     "stance": "balanced",
     "kind": "general"
@@ -2346,7 +2268,55 @@
     "kind": "general"
   },
   {
+    "citationKey": "8a37722508f8",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
     "citationKey": "8d687ff87530",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "92b0beaeeada",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "9e08b543a80f",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "a1593fedce90",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "a2bfc8cc3fd8",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "a32e088bd521",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "a54c7820e8a1",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "a55c19870c66",
     "dimension": "Model performance",
     "stance": "balanced",
     "kind": "general"
@@ -2358,13 +2328,133 @@
     "kind": "general"
   },
   {
+    "citationKey": "a7d06d07e6c3",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "a823efcedabd",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "b43746032b9d",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "b5813c22bda8",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "b6aa9a3abc0f",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "b83bed0b0c18",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "bc46a6372070",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "c08be1c96b75",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "c3ee99b25fe5",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "c9bcbbcd10e9",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "cb1c58355a32",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "cc173c68aaf4",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "d384c5486fec",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "d4ea2c3251e9",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "d50d012dbe1d",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
     "citationKey": "d5963dc2e2a1",
     "dimension": "Model performance",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "ed3fec0ec1cd",
+    "citationKey": "df4ac708eecf",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "e09d7e8e0f06",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "e295ef4e6849",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "e4edbaa2c127",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "ecb3e566bf6f",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "ef7005cea0a5",
     "dimension": "Model performance",
     "stance": "balanced",
     "kind": "general"
@@ -2376,9 +2466,75 @@
     "kind": "general"
   },
   {
+    "citationKey": "f3443e988e2f",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "f3d102f534b6",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "f61d97acc9da",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "fbe51d7b5d32",
+    "dimension": "Model performance",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
     "citationKey": "fcf0638d98ab",
     "dimension": "Model performance",
     "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "00c860e05574",
+    "dimension": "Technological limitations",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "0a00ff13084b",
+    "dimension": "Technological limitations",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "0cd301461c99",
+    "dimension": "Technological limitations",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "0ce423384fd5",
+    "dimension": "Technological limitations",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "0ff0aa3f6a75",
+    "dimension": "Technological limitations",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "1408e75c41f8",
+    "dimension": "Technological limitations",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "155874664ca6",
+    "dimension": "Technological limitations",
+    "stance": "positive",
     "kind": "general"
   },
   {
@@ -2388,7 +2544,73 @@
     "kind": "general"
   },
   {
-    "citationKey": "382c85dc1773",
+    "citationKey": "1852aed2b535",
+    "dimension": "Technological limitations",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "1ce8b917da06",
+    "dimension": "Technological limitations",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "1e84cfa9a875",
+    "dimension": "Technological limitations",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "26b86f0f7104",
+    "dimension": "Technological limitations",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "28d93b251ada",
+    "dimension": "Technological limitations",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "2d159997288c",
+    "dimension": "Technological limitations",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "2edcd32ecfef",
+    "dimension": "Technological limitations",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "3a42efb6c3e0",
+    "dimension": "Technological limitations",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "3ea2dfffb32d",
+    "dimension": "Technological limitations",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "40af85c6a674",
+    "dimension": "Technological limitations",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "4f765ccd9085",
+    "dimension": "Technological limitations",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "4f7cb7df4f7d",
     "dimension": "Technological limitations",
     "stance": "positive",
     "kind": "general"
@@ -2400,13 +2622,181 @@
     "kind": "general"
   },
   {
-    "citationKey": "b520d4ed8f29",
+    "citationKey": "769ac8041ab3",
     "dimension": "Technological limitations",
     "stance": "positive",
     "kind": "general"
   },
   {
-    "citationKey": "f0f02ae9c681",
+    "citationKey": "7f80043b52dd",
+    "dimension": "Technological limitations",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "8a272a0621a3",
+    "dimension": "Technological limitations",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "8cc1cc25b209",
+    "dimension": "Technological limitations",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "8d687ff87530",
+    "dimension": "Technological limitations",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "8fdeab605f31",
+    "dimension": "Technological limitations",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "95091e88a995",
+    "dimension": "Technological limitations",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "9adf89905665",
+    "dimension": "Technological limitations",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "a55c19870c66",
+    "dimension": "Technological limitations",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "ac26cb0e9249",
+    "dimension": "Technological limitations",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "b14e75f5029e",
+    "dimension": "Technological limitations",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "b40acd215682",
+    "dimension": "Technological limitations",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "c4ed68d9a886",
+    "dimension": "Technological limitations",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "cf651cb4eb97",
+    "dimension": "Technological limitations",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "cf8018eec68f",
+    "dimension": "Technological limitations",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "d03d952857ab",
+    "dimension": "Technological limitations",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "d0f160c2f77b",
+    "dimension": "Technological limitations",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "d1c34bb65deb",
+    "dimension": "Technological limitations",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "d50d012dbe1d",
+    "dimension": "Technological limitations",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "daaa7bd24f6d",
+    "dimension": "Technological limitations",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "dd322ca792a6",
+    "dimension": "Technological limitations",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "ddb8a8742a4d",
+    "dimension": "Technological limitations",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "de99037c54a3",
+    "dimension": "Technological limitations",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "e1bb7788d422",
+    "dimension": "Technological limitations",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "e2803d839281",
+    "dimension": "Technological limitations",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "e4ff9553115d",
+    "dimension": "Technological limitations",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "e8da82ecca34",
+    "dimension": "Technological limitations",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "ed7fd7675fc5",
+    "dimension": "Technological limitations",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "fad54041dcf2",
+    "dimension": "Technological limitations",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "fe5fbf92daa6",
     "dimension": "Technological limitations",
     "stance": "positive",
     "kind": "general"
@@ -2418,43 +2808,7 @@
     "kind": "general"
   },
   {
-    "citationKey": "05e48832d20e",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "07c78b773a9e",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "07fc94724eec",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "0a00ff13084b",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "0a91bafc9ed3",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "0c4c0c9dfa22",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "12df428f0bc9",
+    "citationKey": "0ce6275d5e29",
     "dimension": "Technological limitations",
     "stance": "negative",
     "kind": "general"
@@ -2466,43 +2820,7 @@
     "kind": "general"
   },
   {
-    "citationKey": "15409c146949",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "155874664ca6",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "15e0a0244e47",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "174dea9e9f2f",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
     "citationKey": "17531fd94ff0",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "17819e10c66b",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "18696a72d2e6",
     "dimension": "Technological limitations",
     "stance": "negative",
     "kind": "general"
@@ -2514,55 +2832,19 @@
     "kind": "general"
   },
   {
-    "citationKey": "196caa492075",
+    "citationKey": "1d162408014e",
     "dimension": "Technological limitations",
     "stance": "negative",
     "kind": "general"
   },
   {
-    "citationKey": "1a2acf19df20",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "1a93f0883cd2",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "1e84cfa9a875",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "1ecb685fcb6b",
+    "citationKey": "204d1f7e2d50",
     "dimension": "Technological limitations",
     "stance": "negative",
     "kind": "general"
   },
   {
     "citationKey": "211a1f5e8c68",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "21574e4309b4",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "2169dad77619",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "22edae5415fa",
     "dimension": "Technological limitations",
     "stance": "negative",
     "kind": "general"
@@ -2580,37 +2862,13 @@
     "kind": "general"
   },
   {
-    "citationKey": "26abc95edfa3",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "26b86f0f7104",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
     "citationKey": "281cfd2b1e25",
     "dimension": "Technological limitations",
     "stance": "negative",
     "kind": "general"
   },
   {
-    "citationKey": "28d93b251ada",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "2b6fbc4f0508",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "2ce8cb442667",
+    "citationKey": "2c2ad7b1aef3",
     "dimension": "Technological limitations",
     "stance": "negative",
     "kind": "general"
@@ -2622,19 +2880,7 @@
     "kind": "general"
   },
   {
-    "citationKey": "2da4eab59436",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
     "citationKey": "2eca1541a3a2",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "2eea02f82a91",
     "dimension": "Technological limitations",
     "stance": "negative",
     "kind": "general"
@@ -2646,25 +2892,13 @@
     "kind": "general"
   },
   {
-    "citationKey": "328d12f07b05",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
     "citationKey": "32e2ad0d0e6f",
     "dimension": "Technological limitations",
     "stance": "negative",
     "kind": "general"
   },
   {
-    "citationKey": "3546add1d637",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "35bc3ce0c206",
+    "citationKey": "345f15624795",
     "dimension": "Technological limitations",
     "stance": "negative",
     "kind": "general"
@@ -2676,61 +2910,13 @@
     "kind": "general"
   },
   {
-    "citationKey": "3756a39ea98c",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "38c21f05f613",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "392467f34a8e",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "393240c7cec2",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "3a1c9f961d8f",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "3db5f67e924b",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "40e5cd2458a7",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "439dfd13b723",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "442a6774b300",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
     "citationKey": "4491e0db91c1",
+    "dimension": "Technological limitations",
+    "stance": "negative",
+    "kind": "general"
+  },
+  {
+    "citationKey": "453d7dda7136",
     "dimension": "Technological limitations",
     "stance": "negative",
     "kind": "general"
@@ -2742,79 +2928,19 @@
     "kind": "general"
   },
   {
-    "citationKey": "4764e0c69fc7",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "4a43cf41c93c",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "4f7cb7df4f7d",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "508a17977cd2",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
     "citationKey": "50e92c5d79ed",
     "dimension": "Technological limitations",
     "stance": "negative",
     "kind": "general"
   },
   {
-    "citationKey": "5228248f6fb3",
+    "citationKey": "569ab5ce6be4",
     "dimension": "Technological limitations",
     "stance": "negative",
     "kind": "general"
   },
   {
-    "citationKey": "52c9f6e04e8b",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "59533aad7727",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "5a7f975813f3",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "5b4074fce93a",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "5eb5c2661c10",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "607838e1b84c",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "617a92840067",
+    "citationKey": "58564251d58c",
     "dimension": "Technological limitations",
     "stance": "negative",
     "kind": "general"
@@ -2832,19 +2958,7 @@
     "kind": "general"
   },
   {
-    "citationKey": "671fa968ac45",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
     "citationKey": "685a023a1f71",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "68f0266deb95",
     "dimension": "Technological limitations",
     "stance": "negative",
     "kind": "general"
@@ -2862,55 +2976,19 @@
     "kind": "general"
   },
   {
-    "citationKey": "6fe05a02f932",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "7170b8cc9dcd",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "720229a10c92",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "740599fb90ce",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "74bd3176c1ed",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "750835f3e51d",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
     "citationKey": "75bba223bc94",
     "dimension": "Technological limitations",
     "stance": "negative",
     "kind": "general"
   },
   {
-    "citationKey": "772fab385995",
+    "citationKey": "7a8d717e87c8",
     "dimension": "Technological limitations",
     "stance": "negative",
     "kind": "general"
   },
   {
-    "citationKey": "7a8d717e87c8",
+    "citationKey": "7bda019936ec",
     "dimension": "Technological limitations",
     "stance": "negative",
     "kind": "general"
@@ -2928,61 +3006,25 @@
     "kind": "general"
   },
   {
-    "citationKey": "7e500df4fae1",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "853e0b588e73",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
     "citationKey": "8548942b07da",
     "dimension": "Technological limitations",
     "stance": "negative",
     "kind": "general"
   },
   {
-    "citationKey": "889c08799ba4",
+    "citationKey": "88f59ea42ad7",
     "dimension": "Technological limitations",
     "stance": "negative",
     "kind": "general"
   },
   {
-    "citationKey": "88ef6ab637e1",
+    "citationKey": "8a0a26e0ad28",
     "dimension": "Technological limitations",
     "stance": "negative",
     "kind": "general"
   },
   {
-    "citationKey": "8a5b73028348",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "8b31cb8429dc",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "8c8e1aed8a11",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "8e81837a5861",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "9128d022254b",
+    "citationKey": "8f6d0f5c5cf3",
     "dimension": "Technological limitations",
     "stance": "negative",
     "kind": "general"
@@ -2994,25 +3036,7 @@
     "kind": "general"
   },
   {
-    "citationKey": "942a7c645311",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
     "citationKey": "9431a95feac7",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "94eb03d655e3",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "9649fa53145e",
     "dimension": "Technological limitations",
     "stance": "negative",
     "kind": "general"
@@ -3024,37 +3048,13 @@
     "kind": "general"
   },
   {
-    "citationKey": "9e08b543a80f",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "a0c9a468cb84",
+    "citationKey": "9c5dde5cbaf5",
     "dimension": "Technological limitations",
     "stance": "negative",
     "kind": "general"
   },
   {
     "citationKey": "a1593fedce90",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "a25c2affba2e",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "a2bfc8cc3fd8",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "a32e088bd521",
     "dimension": "Technological limitations",
     "stance": "negative",
     "kind": "general"
@@ -3072,61 +3072,19 @@
     "kind": "general"
   },
   {
-    "citationKey": "a55c19870c66",
+    "citationKey": "a6448a70e993",
     "dimension": "Technological limitations",
     "stance": "negative",
     "kind": "general"
   },
   {
-    "citationKey": "a5c99b438a02",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "a610a9d426b3",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "a7d06d07e6c3",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "aaf83180b688",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "ae427adb3d51",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "b3e18537a972",
+    "citationKey": "acf81cbadaec",
     "dimension": "Technological limitations",
     "stance": "negative",
     "kind": "general"
   },
   {
     "citationKey": "b42bb6aa4bd0",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "b43746032b9d",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "b531b62923e4",
     "dimension": "Technological limitations",
     "stance": "negative",
     "kind": "general"
@@ -3150,13 +3108,7 @@
     "kind": "general"
   },
   {
-    "citationKey": "b83bed0b0c18",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "b89fd305580c",
+    "citationKey": "baabcdd9106b",
     "dimension": "Technological limitations",
     "stance": "negative",
     "kind": "general"
@@ -3174,19 +3126,7 @@
     "kind": "general"
   },
   {
-    "citationKey": "c3c03d9a26df",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "c3ee99b25fe5",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "c4ed68d9a886",
+    "citationKey": "c08f2f3d3e8b",
     "dimension": "Technological limitations",
     "stance": "negative",
     "kind": "general"
@@ -3198,55 +3138,7 @@
     "kind": "general"
   },
   {
-    "citationKey": "c9fafe5b4ef7",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "cb1c58355a32",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
     "citationKey": "cc173c68aaf4",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "cda6f5d653f0",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "cf8018eec68f",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "cfa141a99804",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "cfc9b29316ca",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "d2883190c5b7",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "d2f5621f7596",
     "dimension": "Technological limitations",
     "stance": "negative",
     "kind": "general"
@@ -3258,13 +3150,13 @@
     "kind": "general"
   },
   {
-    "citationKey": "d485cdc6f95b",
+    "citationKey": "d4ea2c3251e9",
     "dimension": "Technological limitations",
     "stance": "negative",
     "kind": "general"
   },
   {
-    "citationKey": "d66c54ff5654",
+    "citationKey": "d5d70edc6cef",
     "dimension": "Technological limitations",
     "stance": "negative",
     "kind": "general"
@@ -3282,19 +3174,7 @@
     "kind": "general"
   },
   {
-    "citationKey": "e295ef4e6849",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "e2f6a88e3abc",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "e5136d5c95b2",
+    "citationKey": "e4edbaa2c127",
     "dimension": "Technological limitations",
     "stance": "negative",
     "kind": "general"
@@ -3312,37 +3192,13 @@
     "kind": "general"
   },
   {
-    "citationKey": "e842ed2e802d",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
     "citationKey": "e8a1de4c2f1b",
     "dimension": "Technological limitations",
     "stance": "negative",
     "kind": "general"
   },
   {
-    "citationKey": "e8da82ecca34",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "ea263bf4d04c",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "ed3fec0ec1cd",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "ed7fd7675fc5",
+    "citationKey": "ef7005cea0a5",
     "dimension": "Technological limitations",
     "stance": "negative",
     "kind": "general"
@@ -3354,25 +3210,25 @@
     "kind": "general"
   },
   {
+    "citationKey": "f0f02ae9c681",
+    "dimension": "Technological limitations",
+    "stance": "negative",
+    "kind": "general"
+  },
+  {
     "citationKey": "f2a564301b9e",
     "dimension": "Technological limitations",
     "stance": "negative",
     "kind": "general"
   },
   {
-    "citationKey": "f2c1c0d92f35",
+    "citationKey": "f3443e988e2f",
     "dimension": "Technological limitations",
     "stance": "negative",
     "kind": "general"
   },
   {
-    "citationKey": "f32b6992dba5",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "f41ca0b8e8aa",
+    "citationKey": "f3d102f534b6",
     "dimension": "Technological limitations",
     "stance": "negative",
     "kind": "general"
@@ -3384,31 +3240,7 @@
     "kind": "general"
   },
   {
-    "citationKey": "f6efab0f4258",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
     "citationKey": "fabdee03a10a",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "fbe51d7b5d32",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "fbe81ad8d55c",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "fc6b7ff31bec",
     "dimension": "Technological limitations",
     "stance": "negative",
     "kind": "general"
@@ -3420,37 +3252,43 @@
     "kind": "general"
   },
   {
-    "citationKey": "ff2b7a54d21d",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "ffa998359094",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "schlosser2024visualacuity",
-    "dimension": "Technological limitations",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "00c860e05574",
-    "dimension": "Technological limitations",
-    "stance": "balanced",
-    "kind": "general"
-  },
-  {
     "citationKey": "043684769543",
     "dimension": "Technological limitations",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "0491ca402c2d",
+    "citationKey": "05e2688a7bc5",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "05e48832d20e",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "06c0f2ce8149",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "07c78b773a9e",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "07fc94724eec",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "0a91bafc9ed3",
     "dimension": "Technological limitations",
     "stance": "balanced",
     "kind": "general"
@@ -3462,25 +3300,67 @@
     "kind": "general"
   },
   {
+    "citationKey": "0c4c0c9dfa22",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
     "citationKey": "0d9a70ede5cc",
     "dimension": "Technological limitations",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "0dc2e29b3cdc",
+    "citationKey": "0db96a4e3a4b",
     "dimension": "Technological limitations",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "150bc8d96d43",
+    "citationKey": "115dec251e53",
     "dimension": "Technological limitations",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "1d162408014e",
+    "citationKey": "12df428f0bc9",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "18696a72d2e6",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "1904798abdde",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "196caa492075",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "19cb602b2f26",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "1a2acf19df20",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "1a93f0883cd2",
     "dimension": "Technological limitations",
     "stance": "balanced",
     "kind": "general"
@@ -3492,13 +3372,25 @@
     "kind": "general"
   },
   {
-    "citationKey": "204d1f7e2d50",
+    "citationKey": "21574e4309b4",
     "dimension": "Technological limitations",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "2573e4102c86",
+    "citationKey": "2169dad77619",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "22edae5415fa",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "26abc95edfa3",
     "dimension": "Technological limitations",
     "stance": "balanced",
     "kind": "general"
@@ -3510,43 +3402,67 @@
     "kind": "general"
   },
   {
-    "citationKey": "2d159997288c",
+    "citationKey": "2da4eab59436",
     "dimension": "Technological limitations",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "2e6b2c0b76cd",
+    "citationKey": "2eea02f82a91",
     "dimension": "Technological limitations",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "2f01198b23e4",
+    "citationKey": "328d12f07b05",
     "dimension": "Technological limitations",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "353e3e1970fc",
+    "citationKey": "35bc3ce0c206",
     "dimension": "Technological limitations",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "39421d06c383",
+    "citationKey": "36d500e38d2a",
     "dimension": "Technological limitations",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "44ce6e703d06",
+    "citationKey": "382c85dc1773",
     "dimension": "Technological limitations",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "480eeed24bbb",
+    "citationKey": "38c21f05f613",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "392467f34a8e",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "3c2419267f61",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "40e5cd2458a7",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "4419aec5ed0a",
     "dimension": "Technological limitations",
     "stance": "balanced",
     "kind": "general"
@@ -3558,13 +3474,37 @@
     "kind": "general"
   },
   {
-    "citationKey": "4f765ccd9085",
+    "citationKey": "4caa01410b29",
     "dimension": "Technological limitations",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "557e974d0f58",
+    "citationKey": "508a17977cd2",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "5228248f6fb3",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "52c9f6e04e8b",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "5426dc9b583d",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "586a2b8617e4",
     "dimension": "Technological limitations",
     "stance": "balanced",
     "kind": "general"
@@ -3576,19 +3516,133 @@
     "kind": "general"
   },
   {
-    "citationKey": "5b2edc0853a8",
+    "citationKey": "59533aad7727",
     "dimension": "Technological limitations",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "6d1a19e2da14",
+    "citationKey": "5a7f975813f3",
     "dimension": "Technological limitations",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "769ac8041ab3",
+    "citationKey": "5b4074fce93a",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "5c42c3c92f41",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "5d93b7069e25",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "5eb5c2661c10",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "5fe18c92b5b8",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "617a92840067",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "62c5fb0e0006",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "671fa968ac45",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "68f0266deb95",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "6f739da64bf7",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "6fe05a02f932",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "7170b8cc9dcd",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "740599fb90ce",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "74bd3176c1ed",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "772fab385995",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "7abb94fc2719",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "7e500df4fae1",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "7f53aa5cb1c9",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "8529576161e7",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "866ff7d14ed2",
     "dimension": "Technological limitations",
     "stance": "balanced",
     "kind": "general"
@@ -3600,7 +3654,13 @@
     "kind": "general"
   },
   {
-    "citationKey": "87f3cd94ec74",
+    "citationKey": "87ad60e39c6e",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "88ef6ab637e1",
     "dimension": "Technological limitations",
     "stance": "balanced",
     "kind": "general"
@@ -3612,31 +3672,37 @@
     "kind": "general"
   },
   {
-    "citationKey": "8a3e4d6925f4",
+    "citationKey": "8b31cb8429dc",
     "dimension": "Technological limitations",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "8cd265f63120",
+    "citationKey": "8ba2213f7ff2",
     "dimension": "Technological limitations",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "8fdeab605f31",
+    "citationKey": "8c8e1aed8a11",
     "dimension": "Technological limitations",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "901e5a28ee43",
+    "citationKey": "8e39b70ae840",
     "dimension": "Technological limitations",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "98a6512e9253",
+    "citationKey": "8e81837a5861",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "9128d022254b",
     "dimension": "Technological limitations",
     "stance": "balanced",
     "kind": "general"
@@ -3648,25 +3714,61 @@
     "kind": "general"
   },
   {
+    "citationKey": "9be93b20f768",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
     "citationKey": "9c51cf880908",
     "dimension": "Technological limitations",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "a7e84a899e78",
+    "citationKey": "9e08b543a80f",
     "dimension": "Technological limitations",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "a82536bb0043",
+    "citationKey": "9f429b61566a",
     "dimension": "Technological limitations",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "a927b9e1445f",
+    "citationKey": "a0c9a468cb84",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "a25c2affba2e",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "a5c99b438a02",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "a7d06d07e6c3",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "a823efcedabd",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "a8a58cac35be",
     "dimension": "Technological limitations",
     "stance": "balanced",
     "kind": "general"
@@ -3678,19 +3780,37 @@
     "kind": "general"
   },
   {
+    "citationKey": "ae427adb3d51",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
     "citationKey": "afc412821b08",
     "dimension": "Technological limitations",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "b238b5929a0a",
+    "citationKey": "b3e18537a972",
     "dimension": "Technological limitations",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "b40acd215682",
+    "citationKey": "b531b62923e4",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "b89fd305580c",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "bbf1a9c65c10",
     "dimension": "Technological limitations",
     "stance": "balanced",
     "kind": "general"
@@ -3702,13 +3822,25 @@
     "kind": "general"
   },
   {
-    "citationKey": "c40cef1157c4",
+    "citationKey": "c207fd307df3",
     "dimension": "Technological limitations",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "c68d30aef47a",
+    "citationKey": "c3ee99b25fe5",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "c4e8e79b0dc1",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "c644d5188019",
     "dimension": "Technological limitations",
     "stance": "balanced",
     "kind": "general"
@@ -3720,25 +3852,61 @@
     "kind": "general"
   },
   {
-    "citationKey": "d03d952857ab",
+    "citationKey": "c9bcbbcd10e9",
     "dimension": "Technological limitations",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "d0f160c2f77b",
+    "citationKey": "cb11e397dac4",
     "dimension": "Technological limitations",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "dd322ca792a6",
+    "citationKey": "cb1c58355a32",
     "dimension": "Technological limitations",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "ddb8a8742a4d",
+    "citationKey": "cda6f5d653f0",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "cfc9b29316ca",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "d2883190c5b7",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "d2f5621f7596",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "d384c5486fec",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "d465424b3564",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "d485cdc6f95b",
     "dimension": "Technological limitations",
     "stance": "balanced",
     "kind": "general"
@@ -3762,319 +3930,79 @@
     "kind": "general"
   },
   {
-    "citationKey": "e1bb7788d422",
+    "citationKey": "e295ef4e6849",
     "dimension": "Technological limitations",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "ef7005cea0a5",
+    "citationKey": "e2f6a88e3abc",
     "dimension": "Technological limitations",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "fad54041dcf2",
+    "citationKey": "f2c1c0d92f35",
     "dimension": "Technological limitations",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "00c860e05574",
-    "dimension": "Real-world impact",
-    "stance": "positive",
+    "citationKey": "f41ca0b8e8aa",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "0491ca402c2d",
-    "dimension": "Real-world impact",
-    "stance": "positive",
+    "citationKey": "f49beac306e5",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "050876505c41",
-    "dimension": "Real-world impact",
-    "stance": "positive",
+    "citationKey": "f61d97acc9da",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "0a00ff13084b",
-    "dimension": "Real-world impact",
-    "stance": "positive",
+    "citationKey": "f6efab0f4258",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "fbe51d7b5d32",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "fbe81ad8d55c",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "fc6b7ff31bec",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "ff2b7a54d21d",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "ffa998359094",
+    "dimension": "Technological limitations",
+    "stance": "balanced",
     "kind": "general"
   },
   {
     "citationKey": "0cd301461c99",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "0d3ed148cd7e",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "0d6a03135510",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "0d9a70ede5cc",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "0ff0aa3f6a75",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "115dec251e53",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "124df92e6d47",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "1408e75c41f8",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "141b13698665",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "14ebc0156334",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "155874664ca6",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "1648261eab20",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "17531fd94ff0",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "180d4efefd11",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "1904798abdde",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "196caa492075",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "1a2acf19df20",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "1af22a193a23",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "1c265355c2df",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "1ce8b917da06",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "2169dad77619",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "22edae5415fa",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "2573e4102c86",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "260b9335a18b",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "26b86f0f7104",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "2720fc4ea82f",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "281cfd2b1e25",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "28d93b251ada",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "2a6359a3d36d",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "2add5b135634",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "2b6fbc4f0508",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "2c2ad7b1aef3",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "2d749d9e9d78",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "2d9526998521",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "2e6b2c0b76cd",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "2eea02f82a91",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "2f01198b23e4",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "30f9c197297e",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "35bc3ce0c206",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "35cf76e0902a",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "3610864516d6",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "3756a39ea98c",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "38ae9a4c720f",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "391d2af4c04b",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "393240c7cec2",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "39421d06c383",
     "dimension": "Real-world impact",
     "stance": "positive",
     "kind": "general"
@@ -4086,31 +4014,7 @@
     "kind": "general"
   },
   {
-    "citationKey": "3e68f9e61c54",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "3f146b610a1c",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "40af85c6a674",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "40e5cd2458a7",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "4419aec5ed0a",
+    "citationKey": "442a6774b300",
     "dimension": "Real-world impact",
     "stance": "positive",
     "kind": "general"
@@ -4122,49 +4026,7 @@
     "kind": "general"
   },
   {
-    "citationKey": "45030507cc63",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "453d7dda7136",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
     "citationKey": "45eb1a2f75ff",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "47542dbde500",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "4a43cf41c93c",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "4caa01410b29",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "4d67266653bd",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "5025397cedec",
     "dimension": "Real-world impact",
     "stance": "positive",
     "kind": "general"
@@ -4188,247 +4050,13 @@
     "kind": "general"
   },
   {
-    "citationKey": "52c9f6e04e8b",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "5426dc9b583d",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "557e974d0f58",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "573280ef5d40",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "586a2b8617e4",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "59533aad7727",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "5b4074fce93a",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "5c42c3c92f41",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "5d93b7069e25",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "607838e1b84c",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "62c5fb0e0006",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "646313884044",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "64d31fb56e0d",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "685a023a1f71",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "68f0266deb95",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "69c68a670872",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "6b5df424652b",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "6b8a4c5793dc",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "6f739da64bf7",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "6fe05a02f932",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "7098a160108d",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "7170b8cc9dcd",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "720229a10c92",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "740599fb90ce",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "75bba223bc94",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "772fab385995",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "7883c54e265c",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "793fba531335",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "7a8d717e87c8",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "7abb94fc2719",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "7bda019936ec",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "7c9a28561793",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
     "citationKey": "7e500df4fae1",
     "dimension": "Real-world impact",
     "stance": "positive",
     "kind": "general"
   },
   {
-    "citationKey": "83cf8efd6fa3",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "8529576161e7",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "853e0b588e73",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
     "citationKey": "86b8dd7b0271",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "86c7ff548539",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "87f3cd94ec74",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "889c08799ba4",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "88ef6ab637e1",
     "dimension": "Real-world impact",
     "stance": "positive",
     "kind": "general"
@@ -4440,109 +4068,7 @@
     "kind": "general"
   },
   {
-    "citationKey": "89ed1d75a62e",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "8a3e4d6925f4",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "8a5b73028348",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "8b31cb8429dc",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "8ba2213f7ff2",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "8e39b70ae840",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "8e81837a5861",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "8f6d0f5c5cf3",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "8fdeab605f31",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "901e5a28ee43",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "92b0beaeeada",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "9431a95feac7",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "95091e88a995",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "95b36061c90b",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "96ce472e1aee",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "99087a376207",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "9c1c75b00f71",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "9c2426e5689a",
+    "citationKey": "9128d022254b",
     "dimension": "Real-world impact",
     "stance": "positive",
     "kind": "general"
@@ -4554,55 +4080,7 @@
     "kind": "general"
   },
   {
-    "citationKey": "a0537c1f5b2f",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "a25c2affba2e",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "a2bfc8cc3fd8",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
     "citationKey": "a3bb1eb6a59a",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "a54c7820e8a1",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "a5c99b438a02",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "a6145efd1a25",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "a7e84a899e78",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "a823efcedabd",
     "dimension": "Real-world impact",
     "stance": "positive",
     "kind": "general"
@@ -4614,307 +4092,7 @@
     "kind": "general"
   },
   {
-    "citationKey": "a8a58cac35be",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "ae048462feb9",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "ae427adb3d51",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "aec455f4c0cd",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "b14e75f5029e",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "b22f521050d7",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "b2d92e326400",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "b3e18537a972",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "b42bb6aa4bd0",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "b5784b25a496",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "b5f971387b12",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "b6aa9a3abc0f",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "b83bed0b0c18",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "babd088bc54d",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "bbf1a9c65c10",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "bdec5046af38",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "c0c5966a3f98",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "c3ee99b25fe5",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "c644d5188019",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "cb1c58355a32",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "cc173c68aaf4",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "cda6f5d653f0",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "ceb81af82ec8",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "cfc9b29316ca",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "d0f160c2f77b",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "d2268865c638",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "d28892d42ec2",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "d2f5621f7596",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "d465424b3564",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "d485cdc6f95b",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "d4ea2c3251e9",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "d80e6b8deec9",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "da86f734d8a3",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "daaa7bd24f6d",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "ddb8a8742a4d",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "df4ac708eecf",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "e09d7e8e0f06",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "e2f6a88e3abc",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "e842ed2e802d",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "ea263bf4d04c",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "ed7fd7675fc5",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "ef7005cea0a5",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "ef74a70b4670",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "f49beac306e5",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "f6efab0f4258",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "f7ff1f18afea",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "fabdee03a10a",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "fad54041dcf2",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "fc6b7ff31bec",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "fe5fbf92daa6",
-    "dimension": "Real-world impact",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "ffa998359094",
+    "citationKey": "e4ff9553115d",
     "dimension": "Real-world impact",
     "stance": "positive",
     "kind": "general"
@@ -4926,45 +4104,9 @@
     "kind": "general"
   },
   {
-    "citationKey": "569ab5ce6be4",
-    "dimension": "Real-world impact",
-    "stance": "balanced",
-    "kind": "general"
-  },
-  {
-    "citationKey": "61ee33ea2db5",
-    "dimension": "Real-world impact",
-    "stance": "balanced",
-    "kind": "general"
-  },
-  {
-    "citationKey": "6347ea09d2bd",
-    "dimension": "Real-world impact",
-    "stance": "balanced",
-    "kind": "general"
-  },
-  {
-    "citationKey": "8c8e1aed8a11",
-    "dimension": "Real-world impact",
-    "stance": "balanced",
-    "kind": "general"
-  },
-  {
-    "citationKey": "a55c19870c66",
-    "dimension": "Real-world impact",
-    "stance": "balanced",
-    "kind": "general"
-  },
-  {
-    "citationKey": "c4e8e79b0dc1",
-    "dimension": "Real-world impact",
-    "stance": "balanced",
-    "kind": "general"
-  },
-  {
-    "citationKey": "cc7cb78e54ff",
-    "dimension": "Real-world impact",
-    "stance": "balanced",
+    "citationKey": "00c860e05574",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "positive",
     "kind": "general"
   },
   {
@@ -4974,13 +4116,13 @@
     "kind": "general"
   },
   {
-    "citationKey": "0ce423384fd5",
+    "citationKey": "115dec251e53",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "positive",
     "kind": "general"
   },
   {
-    "citationKey": "12df428f0bc9",
+    "citationKey": "1408e75c41f8",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "positive",
     "kind": "general"
@@ -4992,13 +4134,7 @@
     "kind": "general"
   },
   {
-    "citationKey": "1648261eab20",
-    "dimension": "Data availability, integration, quality, and standardization",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "185bfa237de7",
+    "citationKey": "180d4efefd11",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "positive",
     "kind": "general"
@@ -5010,31 +4146,25 @@
     "kind": "general"
   },
   {
+    "citationKey": "19cb602b2f26",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
     "citationKey": "1a2acf19df20",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "positive",
     "kind": "general"
   },
   {
-    "citationKey": "1f86b4feb99a",
+    "citationKey": "1d794ad5abad",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "positive",
     "kind": "general"
   },
   {
-    "citationKey": "20e75922954b",
-    "dimension": "Data availability, integration, quality, and standardization",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "211a1f5e8c68",
-    "dimension": "Data availability, integration, quality, and standardization",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "281cfd2b1e25",
+    "citationKey": "2573e4102c86",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "positive",
     "kind": "general"
@@ -5046,43 +4176,25 @@
     "kind": "general"
   },
   {
-    "citationKey": "2da4eab59436",
+    "citationKey": "382c85dc1773",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "positive",
     "kind": "general"
   },
   {
-    "citationKey": "391d2af4c04b",
+    "citationKey": "3a42efb6c3e0",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "positive",
     "kind": "general"
   },
   {
-    "citationKey": "3fa94aec9761",
+    "citationKey": "3c2419267f61",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "positive",
     "kind": "general"
   },
   {
-    "citationKey": "40e5cd2458a7",
-    "dimension": "Data availability, integration, quality, and standardization",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "4419aec5ed0a",
-    "dimension": "Data availability, integration, quality, and standardization",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "453d7dda7136",
-    "dimension": "Data availability, integration, quality, and standardization",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "4d67266653bd",
+    "citationKey": "439dfd13b723",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "positive",
     "kind": "general"
@@ -5094,7 +4206,7 @@
     "kind": "general"
   },
   {
-    "citationKey": "5426dc9b583d",
+    "citationKey": "50e92c5d79ed",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "positive",
     "kind": "general"
@@ -5106,55 +4218,37 @@
     "kind": "general"
   },
   {
-    "citationKey": "6f739da64bf7",
+    "citationKey": "671fa968ac45",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "positive",
     "kind": "general"
   },
   {
-    "citationKey": "7098a160108d",
+    "citationKey": "6b8a4c5793dc",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "positive",
     "kind": "general"
   },
   {
-    "citationKey": "79e8d2ce0b3d",
+    "citationKey": "6d00851b6b2f",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "positive",
     "kind": "general"
   },
   {
-    "citationKey": "83cf8efd6fa3",
+    "citationKey": "7a8d717e87c8",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "positive",
     "kind": "general"
   },
   {
-    "citationKey": "86b8dd7b0271",
+    "citationKey": "8bade6a0ab7c",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "positive",
     "kind": "general"
   },
   {
-    "citationKey": "87ad60e39c6e",
-    "dimension": "Data availability, integration, quality, and standardization",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "8b31cb8429dc",
-    "dimension": "Data availability, integration, quality, and standardization",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "8fdeab605f31",
-    "dimension": "Data availability, integration, quality, and standardization",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "9128d022254b",
+    "citationKey": "94eb03d655e3",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "positive",
     "kind": "general"
@@ -5172,25 +4266,19 @@
     "kind": "general"
   },
   {
-    "citationKey": "9c2426e5689a",
+    "citationKey": "9f0384c0591e",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "positive",
     "kind": "general"
   },
   {
-    "citationKey": "a55c19870c66",
+    "citationKey": "a1593fedce90",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "positive",
     "kind": "general"
   },
   {
-    "citationKey": "a823efcedabd",
-    "dimension": "Data availability, integration, quality, and standardization",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "ae048462feb9",
+    "citationKey": "a8a58cac35be",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "positive",
     "kind": "general"
@@ -5202,13 +4290,7 @@
     "kind": "general"
   },
   {
-    "citationKey": "b3e18537a972",
-    "dimension": "Data availability, integration, quality, and standardization",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "b43746032b9d",
+    "citationKey": "b40acd215682",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "positive",
     "kind": "general"
@@ -5220,13 +4302,7 @@
     "kind": "general"
   },
   {
-    "citationKey": "c68d30aef47a",
-    "dimension": "Data availability, integration, quality, and standardization",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "c9fafe5b4ef7",
+    "citationKey": "b83bed0b0c18",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "positive",
     "kind": "general"
@@ -5238,13 +4314,13 @@
     "kind": "general"
   },
   {
-    "citationKey": "cf651cb4eb97",
+    "citationKey": "ceb81af82ec8",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "positive",
     "kind": "general"
   },
   {
-    "citationKey": "d0f160c2f77b",
+    "citationKey": "cf8018eec68f",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "positive",
     "kind": "general"
@@ -5256,69 +4332,33 @@
     "kind": "general"
   },
   {
-    "citationKey": "d5d70edc6cef",
+    "citationKey": "e1bb7788d422",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "positive",
     "kind": "general"
   },
   {
-    "citationKey": "da86f734d8a3",
+    "citationKey": "e783fc3a548e",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "positive",
     "kind": "general"
   },
   {
-    "citationKey": "de99037c54a3",
+    "citationKey": "f5532f1b6916",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "positive",
     "kind": "general"
   },
   {
-    "citationKey": "e295ef4e6849",
+    "citationKey": "fb61b5e416fe",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "positive",
     "kind": "general"
   },
   {
-    "citationKey": "e4edbaa2c127",
+    "citationKey": "fc6b7ff31bec",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "ed3fec0ec1cd",
-    "dimension": "Data availability, integration, quality, and standardization",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "f3d102f534b6",
-    "dimension": "Data availability, integration, quality, and standardization",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "fbc53be7c1ec",
-    "dimension": "Data availability, integration, quality, and standardization",
-    "stance": "positive",
-    "kind": "general"
-  },
-  {
-    "citationKey": "050876505c41",
-    "dimension": "Data availability, integration, quality, and standardization",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "07c78b773a9e",
-    "dimension": "Data availability, integration, quality, and standardization",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "0ab3fcfd31cd",
-    "dimension": "Data availability, integration, quality, and standardization",
-    "stance": "negative",
     "kind": "general"
   },
   {
@@ -5334,13 +4374,19 @@
     "kind": "general"
   },
   {
-    "citationKey": "141b13698665",
+    "citationKey": "0ce6275d5e29",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "negative",
     "kind": "general"
   },
   {
-    "citationKey": "17819e10c66b",
+    "citationKey": "15e0a0244e47",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "negative",
+    "kind": "general"
+  },
+  {
+    "citationKey": "17531fd94ff0",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "negative",
     "kind": "general"
@@ -5352,13 +4398,7 @@
     "kind": "general"
   },
   {
-    "citationKey": "1904798abdde",
-    "dimension": "Data availability, integration, quality, and standardization",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "1a93f0883cd2",
+    "citationKey": "204d1f7e2d50",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "negative",
     "kind": "general"
@@ -5370,25 +4410,43 @@
     "kind": "general"
   },
   {
-    "citationKey": "2573e4102c86",
+    "citationKey": "2d9526998521",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "negative",
     "kind": "general"
   },
   {
-    "citationKey": "26abc95edfa3",
+    "citationKey": "2e6b2c0b76cd",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "negative",
     "kind": "general"
   },
   {
-    "citationKey": "28d93b251ada",
+    "citationKey": "32e2ad0d0e6f",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "negative",
     "kind": "general"
   },
   {
-    "citationKey": "2ce8cb442667",
+    "citationKey": "345f15624795",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "negative",
+    "kind": "general"
+  },
+  {
+    "citationKey": "353e3e1970fc",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "negative",
+    "kind": "general"
+  },
+  {
+    "citationKey": "3546add1d637",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "negative",
+    "kind": "general"
+  },
+  {
+    "citationKey": "35bc3ce0c206",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "negative",
     "kind": "general"
@@ -5412,19 +4470,7 @@
     "kind": "general"
   },
   {
-    "citationKey": "3db5f67e924b",
-    "dimension": "Data availability, integration, quality, and standardization",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "3ea2dfffb32d",
-    "dimension": "Data availability, integration, quality, and standardization",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "44ce6e703d06",
+    "citationKey": "45eb1a2f75ff",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "negative",
     "kind": "general"
@@ -5436,13 +4482,13 @@
     "kind": "general"
   },
   {
-    "citationKey": "4a43cf41c93c",
+    "citationKey": "480eeed24bbb",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "negative",
     "kind": "general"
   },
   {
-    "citationKey": "4caa01410b29",
+    "citationKey": "4a43cf41c93c",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "negative",
     "kind": "general"
@@ -5460,19 +4506,19 @@
     "kind": "general"
   },
   {
-    "citationKey": "50e92c5d79ed",
+    "citationKey": "5b4074fce93a",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "negative",
     "kind": "general"
   },
   {
-    "citationKey": "569ab5ce6be4",
+    "citationKey": "5fe18c92b5b8",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "negative",
     "kind": "general"
   },
   {
-    "citationKey": "62966ef9fdb8",
+    "citationKey": "62c5fb0e0006",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "negative",
     "kind": "general"
@@ -5484,13 +4530,13 @@
     "kind": "general"
   },
   {
-    "citationKey": "646313884044",
+    "citationKey": "685a023a1f71",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "negative",
     "kind": "general"
   },
   {
-    "citationKey": "68f0266deb95",
+    "citationKey": "6f739da64bf7",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "negative",
     "kind": "general"
@@ -5502,13 +4548,19 @@
     "kind": "general"
   },
   {
-    "citationKey": "7043d68f5440",
+    "citationKey": "740599fb90ce",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "negative",
     "kind": "general"
   },
   {
-    "citationKey": "772fab385995",
+    "citationKey": "7bda019936ec",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "negative",
+    "kind": "general"
+  },
+  {
+    "citationKey": "7c9a28561793",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "negative",
     "kind": "general"
@@ -5526,12 +4578,6 @@
     "kind": "general"
   },
   {
-    "citationKey": "7e500df4fae1",
-    "dimension": "Data availability, integration, quality, and standardization",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
     "citationKey": "853e0b588e73",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "negative",
@@ -5539,6 +4585,30 @@
   },
   {
     "citationKey": "88ef6ab637e1",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "negative",
+    "kind": "general"
+  },
+  {
+    "citationKey": "88f59ea42ad7",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "negative",
+    "kind": "general"
+  },
+  {
+    "citationKey": "8a0a26e0ad28",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "negative",
+    "kind": "general"
+  },
+  {
+    "citationKey": "8a37722508f8",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "negative",
+    "kind": "general"
+  },
+  {
+    "citationKey": "8b31cb8429dc",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "negative",
     "kind": "general"
@@ -5556,7 +4626,13 @@
     "kind": "general"
   },
   {
-    "citationKey": "942a7c645311",
+    "citationKey": "8f6d0f5c5cf3",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "negative",
+    "kind": "general"
+  },
+  {
+    "citationKey": "9431a95feac7",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "negative",
     "kind": "general"
@@ -5592,19 +4668,37 @@
     "kind": "general"
   },
   {
-    "citationKey": "ae427adb3d51",
+    "citationKey": "a55c19870c66",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "negative",
     "kind": "general"
   },
   {
-    "citationKey": "b5813c22bda8",
+    "citationKey": "a6448a70e993",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "negative",
     "kind": "general"
   },
   {
-    "citationKey": "b83bed0b0c18",
+    "citationKey": "a7d06d07e6c3",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "negative",
+    "kind": "general"
+  },
+  {
+    "citationKey": "acf81cbadaec",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "negative",
+    "kind": "general"
+  },
+  {
+    "citationKey": "bc46a6372070",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "negative",
+    "kind": "general"
+  },
+  {
+    "citationKey": "bdec5046af38",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "negative",
     "kind": "general"
@@ -5616,7 +4710,25 @@
     "kind": "general"
   },
   {
-    "citationKey": "cfa141a99804",
+    "citationKey": "c08f2f3d3e8b",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "negative",
+    "kind": "general"
+  },
+  {
+    "citationKey": "cab0c62174f2",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "negative",
+    "kind": "general"
+  },
+  {
+    "citationKey": "cb1c58355a32",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "negative",
+    "kind": "general"
+  },
+  {
+    "citationKey": "cfc9b29316ca",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "negative",
     "kind": "general"
@@ -5628,19 +4740,49 @@
     "kind": "general"
   },
   {
-    "citationKey": "d66c54ff5654",
+    "citationKey": "d5963dc2e2a1",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "negative",
     "kind": "general"
   },
   {
-    "citationKey": "df4ac708eecf",
+    "citationKey": "d6066a07ba35",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "negative",
     "kind": "general"
   },
   {
-    "citationKey": "e53f05541439",
+    "citationKey": "e09d7e8e0f06",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "negative",
+    "kind": "general"
+  },
+  {
+    "citationKey": "e4edbaa2c127",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "negative",
+    "kind": "general"
+  },
+  {
+    "citationKey": "e5136d5c95b2",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "negative",
+    "kind": "general"
+  },
+  {
+    "citationKey": "e842ed2e802d",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "negative",
+    "kind": "general"
+  },
+  {
+    "citationKey": "e8a1de4c2f1b",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "negative",
+    "kind": "general"
+  },
+  {
+    "citationKey": "e8da82ecca34",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "negative",
     "kind": "general"
@@ -5652,7 +4794,37 @@
     "kind": "general"
   },
   {
+    "citationKey": "ecb3e566bf6f",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "negative",
+    "kind": "general"
+  },
+  {
+    "citationKey": "ed3fec0ec1cd",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "negative",
+    "kind": "general"
+  },
+  {
+    "citationKey": "ef74a70b4670",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "negative",
+    "kind": "general"
+  },
+  {
     "citationKey": "f2a564301b9e",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "negative",
+    "kind": "general"
+  },
+  {
+    "citationKey": "f32b6992dba5",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "negative",
+    "kind": "general"
+  },
+  {
+    "citationKey": "f3443e988e2f",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "negative",
     "kind": "general"
@@ -5664,13 +4836,103 @@
     "kind": "general"
   },
   {
-    "citationKey": "f6efab0f4258",
+    "citationKey": "fabdee03a10a",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "negative",
     "kind": "general"
   },
   {
+    "citationKey": "fbe51d7b5d32",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "negative",
+    "kind": "general"
+  },
+  {
+    "citationKey": "fbe81ad8d55c",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "negative",
+    "kind": "general"
+  },
+  {
+    "citationKey": "ff2b7a54d21d",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "negative",
+    "kind": "general"
+  },
+  {
+    "citationKey": "043684769543",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
     "citationKey": "05e2688a7bc5",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "05e48832d20e",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "06c0f2ce8149",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "0a00ff13084b",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "0a91bafc9ed3",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "0ab3fcfd31cd",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "0c2ef5f5f239",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "0ce423384fd5",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "0d9a70ede5cc",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "124df92e6d47",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "12df428f0bc9",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "141b13698665",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "balanced",
     "kind": "general"
@@ -5688,13 +4950,19 @@
     "kind": "general"
   },
   {
-    "citationKey": "15e0a0244e47",
+    "citationKey": "185bfa237de7",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "18bd8aebe09b",
+    "citationKey": "1904798abdde",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "1af22a193a23",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "balanced",
     "kind": "general"
@@ -5706,25 +4974,49 @@
     "kind": "general"
   },
   {
-    "citationKey": "1ce8b917da06",
+    "citationKey": "1e84cfa9a875",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "1d162408014e",
+    "citationKey": "20e75922954b",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "1ecb685fcb6b",
+    "citationKey": "211a1f5e8c68",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "2eca1541a3a2",
+    "citationKey": "253ecd7dc13d",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "26abc95edfa3",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "26b86f0f7104",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "28d93b251ada",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "2ce8cb442667",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "balanced",
     "kind": "general"
@@ -5736,31 +5028,43 @@
     "kind": "general"
   },
   {
-    "citationKey": "3546add1d637",
+    "citationKey": "30f9c197297e",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "392467f34a8e",
+    "citationKey": "3fa94aec9761",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "3a1c9f961d8f",
+    "citationKey": "40e5cd2458a7",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "3c2419267f61",
+    "citationKey": "442a6774b300",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "439dfd13b723",
+    "citationKey": "453d7dda7136",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "5426dc9b583d",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "569ab5ce6be4",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "balanced",
     "kind": "general"
@@ -5772,19 +5076,13 @@
     "kind": "general"
   },
   {
-    "citationKey": "5b4074fce93a",
+    "citationKey": "59533aad7727",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "5d93b7069e25",
-    "dimension": "Data availability, integration, quality, and standardization",
-    "stance": "balanced",
-    "kind": "general"
-  },
-  {
-    "citationKey": "685a023a1f71",
+    "citationKey": "68f0266deb95",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "balanced",
     "kind": "general"
@@ -5802,18 +5100,6 @@
     "kind": "general"
   },
   {
-    "citationKey": "71adaf3d927c",
-    "dimension": "Data availability, integration, quality, and standardization",
-    "stance": "balanced",
-    "kind": "general"
-  },
-  {
-    "citationKey": "740599fb90ce",
-    "dimension": "Data availability, integration, quality, and standardization",
-    "stance": "balanced",
-    "kind": "general"
-  },
-  {
     "citationKey": "74bd3176c1ed",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "balanced",
@@ -5826,25 +5112,13 @@
     "kind": "general"
   },
   {
-    "citationKey": "7c9a28561793",
-    "dimension": "Data availability, integration, quality, and standardization",
-    "stance": "balanced",
-    "kind": "general"
-  },
-  {
-    "citationKey": "7f53aa5cb1c9",
+    "citationKey": "7e500df4fae1",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "balanced",
     "kind": "general"
   },
   {
     "citationKey": "8529576161e7",
-    "dimension": "Data availability, integration, quality, and standardization",
-    "stance": "balanced",
-    "kind": "general"
-  },
-  {
-    "citationKey": "8548942b07da",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "balanced",
     "kind": "general"
@@ -5862,19 +5136,49 @@
     "kind": "general"
   },
   {
+    "citationKey": "87ad60e39c6e",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "884497e0ee92",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
     "citationKey": "8a272a0621a3",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "8bade6a0ab7c",
+    "citationKey": "8ba2213f7ff2",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "94eb03d655e3",
+    "citationKey": "8c8e1aed8a11",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "8cc1cc25b209",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "8d687ff87530",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "901e5a28ee43",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "balanced",
     "kind": "general"
@@ -5898,13 +5202,13 @@
     "kind": "general"
   },
   {
-    "citationKey": "9f429b61566a",
+    "citationKey": "a0c9a468cb84",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "a0c9a468cb84",
+    "citationKey": "a5c99b438a02",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "balanced",
     "kind": "general"
@@ -5916,7 +5220,25 @@
     "kind": "general"
   },
   {
-    "citationKey": "a8a58cac35be",
+    "citationKey": "a823efcedabd",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "ad6ea1627565",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "ae427adb3d51",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "afc412821b08",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "balanced",
     "kind": "general"
@@ -5928,13 +5250,19 @@
     "kind": "general"
   },
   {
-    "citationKey": "b40acd215682",
+    "citationKey": "b3e18537a972",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "b6aa9a3abc0f",
+    "citationKey": "b42bb6aa4bd0",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "b43746032b9d",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "balanced",
     "kind": "general"
@@ -5946,13 +5274,13 @@
     "kind": "general"
   },
   {
-    "citationKey": "c40cef1157c4",
+    "citationKey": "c207fd307df3",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "c4ed68d9a886",
+    "citationKey": "c3ee99b25fe5",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "balanced",
     "kind": "general"
@@ -5964,7 +5292,13 @@
     "kind": "general"
   },
   {
-    "citationKey": "c989782a8bba",
+    "citationKey": "c68d30aef47a",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "c7d15e21d947",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "balanced",
     "kind": "general"
@@ -5976,19 +5310,49 @@
     "kind": "general"
   },
   {
-    "citationKey": "cc173c68aaf4",
+    "citationKey": "c9fafe5b4ef7",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "d05cac5388fa",
+    "citationKey": "cf651cb4eb97",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "d2268865c638",
+    "citationKey": "cfa141a99804",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "d03d952857ab",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "d1c34bb65deb",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "d2883190c5b7",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "d2f5621f7596",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "d384c5486fec",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "balanced",
     "kind": "general"
@@ -6006,13 +5370,31 @@
     "kind": "general"
   },
   {
-    "citationKey": "d50d012dbe1d",
+    "citationKey": "d5d70edc6cef",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "ddff51574c2b",
+    "citationKey": "d66c54ff5654",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "da86f734d8a3",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "ddb8a8742a4d",
+    "dimension": "Data availability, integration, quality, and standardization",
+    "stance": "balanced",
+    "kind": "general"
+  },
+  {
+    "citationKey": "de99037c54a3",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "balanced",
     "kind": "general"
@@ -6024,37 +5406,37 @@
     "kind": "general"
   },
   {
-    "citationKey": "e5136d5c95b2",
+    "citationKey": "df4ac708eecf",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "e783fc3a548e",
+    "citationKey": "e2803d839281",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "e842ed2e802d",
+    "citationKey": "e295ef4e6849",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "e8a1de4c2f1b",
+    "citationKey": "e2f6a88e3abc",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "eed82e7dd133",
+    "citationKey": "e53f05541439",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "ef74a70b4670",
+    "citationKey": "f0f02ae9c681",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "balanced",
     "kind": "general"
@@ -6072,25 +5454,19 @@
     "kind": "general"
   },
   {
-    "citationKey": "f5532f1b6916",
+    "citationKey": "f6efab0f4258",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "fb61b5e416fe",
+    "citationKey": "fcf0638d98ab",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "fba527f6ce22",
-    "dimension": "Data availability, integration, quality, and standardization",
-    "stance": "balanced",
-    "kind": "general"
-  },
-  {
-    "citationKey": "fbe51d7b5d32",
+    "citationKey": "ffa998359094",
     "dimension": "Data availability, integration, quality, and standardization",
     "stance": "balanced",
     "kind": "general"
@@ -6102,7 +5478,103 @@
     "kind": "general"
   },
   {
+    "citationKey": "0a91bafc9ed3",
+    "dimension": "Infrastructural demands",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "1bf504b7350f",
+    "dimension": "Infrastructural demands",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "1f86b4feb99a",
+    "dimension": "Infrastructural demands",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "211a1f5e8c68",
+    "dimension": "Infrastructural demands",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "22edae5415fa",
+    "dimension": "Infrastructural demands",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "2573e4102c86",
+    "dimension": "Infrastructural demands",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "27c8caa3938d",
+    "dimension": "Infrastructural demands",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "2edcd32ecfef",
+    "dimension": "Infrastructural demands",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "2eea02f82a91",
+    "dimension": "Infrastructural demands",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "345f15624795",
+    "dimension": "Infrastructural demands",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "442a6774b300",
+    "dimension": "Infrastructural demands",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "44ce6e703d06",
+    "dimension": "Infrastructural demands",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
     "citationKey": "47542dbde500",
+    "dimension": "Infrastructural demands",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "4afc2a924102",
+    "dimension": "Infrastructural demands",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "59533aad7727",
+    "dimension": "Infrastructural demands",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "5b4074fce93a",
+    "dimension": "Infrastructural demands",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "617a92840067",
     "dimension": "Infrastructural demands",
     "stance": "positive",
     "kind": "general"
@@ -6114,13 +5586,85 @@
     "kind": "general"
   },
   {
+    "citationKey": "64d31fb56e0d",
+    "dimension": "Infrastructural demands",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "671fa968ac45",
+    "dimension": "Infrastructural demands",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "6b5df424652b",
+    "dimension": "Infrastructural demands",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
     "citationKey": "74603fc07566",
     "dimension": "Infrastructural demands",
     "stance": "positive",
     "kind": "general"
   },
   {
-    "citationKey": "b520d4ed8f29",
+    "citationKey": "7a8d717e87c8",
+    "dimension": "Infrastructural demands",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "8b31cb8429dc",
+    "dimension": "Infrastructural demands",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "8d687ff87530",
+    "dimension": "Infrastructural demands",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "8e39b70ae840",
+    "dimension": "Infrastructural demands",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "8fdeab605f31",
+    "dimension": "Infrastructural demands",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "901e5a28ee43",
+    "dimension": "Infrastructural demands",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "96ce472e1aee",
+    "dimension": "Infrastructural demands",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "99087a376207",
+    "dimension": "Infrastructural demands",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "a3bb1eb6a59a",
+    "dimension": "Infrastructural demands",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "a55c19870c66",
     "dimension": "Infrastructural demands",
     "stance": "positive",
     "kind": "general"
@@ -6132,7 +5676,25 @@
     "kind": "general"
   },
   {
-    "citationKey": "d03d952857ab",
+    "citationKey": "ceb81af82ec8",
+    "dimension": "Infrastructural demands",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "ddb8a8742a4d",
+    "dimension": "Infrastructural demands",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "e4ff9553115d",
+    "dimension": "Infrastructural demands",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "f2a564301b9e",
     "dimension": "Infrastructural demands",
     "stance": "positive",
     "kind": "general"
@@ -6144,37 +5706,13 @@
     "kind": "general"
   },
   {
-    "citationKey": "05e48832d20e",
+    "citationKey": "0ce423384fd5",
     "dimension": "Infrastructural demands",
     "stance": "negative",
     "kind": "general"
   },
   {
-    "citationKey": "0a91bafc9ed3",
-    "dimension": "Infrastructural demands",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "141b13698665",
-    "dimension": "Infrastructural demands",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "17531fd94ff0",
-    "dimension": "Infrastructural demands",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "211a1f5e8c68",
-    "dimension": "Infrastructural demands",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "21574e4309b4",
+    "citationKey": "18696a72d2e6",
     "dimension": "Infrastructural demands",
     "stance": "negative",
     "kind": "general"
@@ -6186,19 +5724,7 @@
     "kind": "general"
   },
   {
-    "citationKey": "508a17977cd2",
-    "dimension": "Infrastructural demands",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "5677c19959ca",
-    "dimension": "Infrastructural demands",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "6b5df424652b",
+    "citationKey": "453d7dda7136",
     "dimension": "Infrastructural demands",
     "stance": "negative",
     "kind": "general"
@@ -6210,13 +5736,7 @@
     "kind": "general"
   },
   {
-    "citationKey": "88ef6ab637e1",
-    "dimension": "Infrastructural demands",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "8a5b73028348",
+    "citationKey": "7d76dcad4fd1",
     "dimension": "Infrastructural demands",
     "stance": "negative",
     "kind": "general"
@@ -6228,13 +5748,19 @@
     "kind": "general"
   },
   {
-    "citationKey": "a25c2affba2e",
+    "citationKey": "9be93b20f768",
     "dimension": "Infrastructural demands",
     "stance": "negative",
     "kind": "general"
   },
   {
-    "citationKey": "b5813c22bda8",
+    "citationKey": "9c51cf880908",
+    "dimension": "Infrastructural demands",
+    "stance": "negative",
+    "kind": "general"
+  },
+  {
+    "citationKey": "c644d5188019",
     "dimension": "Infrastructural demands",
     "stance": "negative",
     "kind": "general"
@@ -6246,25 +5772,25 @@
     "kind": "general"
   },
   {
-    "citationKey": "e5136d5c95b2",
+    "citationKey": "ea263bf4d04c",
     "dimension": "Infrastructural demands",
     "stance": "negative",
     "kind": "general"
   },
   {
-    "citationKey": "e8a1de4c2f1b",
+    "citationKey": "ed3fec0ec1cd",
     "dimension": "Infrastructural demands",
     "stance": "negative",
     "kind": "general"
   },
   {
-    "citationKey": "0ab3fcfd31cd",
+    "citationKey": "f32b6992dba5",
     "dimension": "Infrastructural demands",
-    "stance": "balanced",
+    "stance": "negative",
     "kind": "general"
   },
   {
-    "citationKey": "0c4c0c9dfa22",
+    "citationKey": "00c860e05574",
     "dimension": "Infrastructural demands",
     "stance": "balanced",
     "kind": "general"
@@ -6276,67 +5802,25 @@
     "kind": "general"
   },
   {
-    "citationKey": "1f86b4feb99a",
+    "citationKey": "0dc2e29b3cdc",
     "dimension": "Infrastructural demands",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "22edae5415fa",
+    "citationKey": "141b13698665",
     "dimension": "Infrastructural demands",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "281cfd2b1e25",
+    "citationKey": "508a17977cd2",
     "dimension": "Infrastructural demands",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "2d9526998521",
-    "dimension": "Infrastructural demands",
-    "stance": "balanced",
-    "kind": "general"
-  },
-  {
-    "citationKey": "32e2ad0d0e6f",
-    "dimension": "Infrastructural demands",
-    "stance": "balanced",
-    "kind": "general"
-  },
-  {
-    "citationKey": "35bc3ce0c206",
-    "dimension": "Infrastructural demands",
-    "stance": "balanced",
-    "kind": "general"
-  },
-  {
-    "citationKey": "392467f34a8e",
-    "dimension": "Infrastructural demands",
-    "stance": "balanced",
-    "kind": "general"
-  },
-  {
-    "citationKey": "40af85c6a674",
-    "dimension": "Infrastructural demands",
-    "stance": "balanced",
-    "kind": "general"
-  },
-  {
-    "citationKey": "442a6774b300",
-    "dimension": "Infrastructural demands",
-    "stance": "balanced",
-    "kind": "general"
-  },
-  {
-    "citationKey": "480eeed24bbb",
-    "dimension": "Infrastructural demands",
-    "stance": "balanced",
-    "kind": "general"
-  },
-  {
-    "citationKey": "4caa01410b29",
+    "citationKey": "5228248f6fb3",
     "dimension": "Infrastructural demands",
     "stance": "balanced",
     "kind": "general"
@@ -6348,37 +5832,13 @@
     "kind": "general"
   },
   {
-    "citationKey": "8548942b07da",
+    "citationKey": "88ef6ab637e1",
     "dimension": "Infrastructural demands",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "8b31cb8429dc",
-    "dimension": "Infrastructural demands",
-    "stance": "balanced",
-    "kind": "general"
-  },
-  {
-    "citationKey": "8d687ff87530",
-    "dimension": "Infrastructural demands",
-    "stance": "balanced",
-    "kind": "general"
-  },
-  {
-    "citationKey": "8e39b70ae840",
-    "dimension": "Infrastructural demands",
-    "stance": "balanced",
-    "kind": "general"
-  },
-  {
-    "citationKey": "9be93b20f768",
-    "dimension": "Infrastructural demands",
-    "stance": "balanced",
-    "kind": "general"
-  },
-  {
-    "citationKey": "a619076b267e",
+    "citationKey": "8a5b73028348",
     "dimension": "Infrastructural demands",
     "stance": "balanced",
     "kind": "general"
@@ -6390,49 +5850,97 @@
     "kind": "general"
   },
   {
-    "citationKey": "a927b9e1445f",
+    "citationKey": "b520d4ed8f29",
     "dimension": "Infrastructural demands",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "ad6ea1627565",
+    "citationKey": "e2f6a88e3abc",
     "dimension": "Infrastructural demands",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "b6aa9a3abc0f",
+    "citationKey": "schlosser2024visualacuity",
     "dimension": "Infrastructural demands",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "c4e8e79b0dc1",
-    "dimension": "Infrastructural demands",
-    "stance": "balanced",
+    "citationKey": "043684769543",
+    "dimension": "Financial costs",
+    "stance": "positive",
     "kind": "general"
   },
   {
-    "citationKey": "c4ed68d9a886",
-    "dimension": "Infrastructural demands",
-    "stance": "balanced",
+    "citationKey": "141b13698665",
+    "dimension": "Financial costs",
+    "stance": "positive",
     "kind": "general"
   },
   {
-    "citationKey": "c644d5188019",
-    "dimension": "Infrastructural demands",
-    "stance": "balanced",
+    "citationKey": "21574e4309b4",
+    "dimension": "Financial costs",
+    "stance": "positive",
     "kind": "general"
   },
   {
-    "citationKey": "ed3fec0ec1cd",
-    "dimension": "Infrastructural demands",
-    "stance": "balanced",
+    "citationKey": "22edae5415fa",
+    "dimension": "Financial costs",
+    "stance": "positive",
     "kind": "general"
   },
   {
-    "citationKey": "508a17977cd2",
+    "citationKey": "253ecd7dc13d",
+    "dimension": "Financial costs",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "345f15624795",
+    "dimension": "Financial costs",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "39421d06c383",
+    "dimension": "Financial costs",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "3e68f9e61c54",
+    "dimension": "Financial costs",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "40e5cd2458a7",
+    "dimension": "Financial costs",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "586a2b8617e4",
+    "dimension": "Financial costs",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "59533aad7727",
+    "dimension": "Financial costs",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "5b4074fce93a",
+    "dimension": "Financial costs",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "617a92840067",
     "dimension": "Financial costs",
     "stance": "positive",
     "kind": "general"
@@ -6444,13 +5952,109 @@
     "kind": "general"
   },
   {
+    "citationKey": "64d31fb56e0d",
+    "dimension": "Financial costs",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "671fa968ac45",
+    "dimension": "Financial costs",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "6b5df424652b",
+    "dimension": "Financial costs",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "6d00851b6b2f",
+    "dimension": "Financial costs",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "6fe05a02f932",
+    "dimension": "Financial costs",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
     "citationKey": "74603fc07566",
     "dimension": "Financial costs",
     "stance": "positive",
     "kind": "general"
   },
   {
-    "citationKey": "7883c54e265c",
+    "citationKey": "75bba223bc94",
+    "dimension": "Financial costs",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "7bda019936ec",
+    "dimension": "Financial costs",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "7d76dcad4fd1",
+    "dimension": "Financial costs",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "7e500df4fae1",
+    "dimension": "Financial costs",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "889c08799ba4",
+    "dimension": "Financial costs",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "88ef6ab637e1",
+    "dimension": "Financial costs",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "94eb03d655e3",
+    "dimension": "Financial costs",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "a3bb1eb6a59a",
+    "dimension": "Financial costs",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "a55c19870c66",
+    "dimension": "Financial costs",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "ad6ea1627565",
+    "dimension": "Financial costs",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "b2d92e326400",
+    "dimension": "Financial costs",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "b520d4ed8f29",
     "dimension": "Financial costs",
     "stance": "positive",
     "kind": "general"
@@ -6462,73 +6066,139 @@
     "kind": "general"
   },
   {
-    "citationKey": "d485cdc6f95b",
+    "citationKey": "c08be1c96b75",
     "dimension": "Financial costs",
     "stance": "positive",
     "kind": "general"
   },
   {
-    "citationKey": "17531fd94ff0",
+    "citationKey": "c08f2f3d3e8b",
+    "dimension": "Financial costs",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "ceb81af82ec8",
+    "dimension": "Financial costs",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "d05cac5388fa",
+    "dimension": "Financial costs",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "d28892d42ec2",
+    "dimension": "Financial costs",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "ef7005cea0a5",
+    "dimension": "Financial costs",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "05e2688a7bc5",
     "dimension": "Financial costs",
     "stance": "negative",
     "kind": "general"
   },
   {
-    "citationKey": "204d1f7e2d50",
+    "citationKey": "1904798abdde",
     "dimension": "Financial costs",
     "stance": "negative",
     "kind": "general"
   },
   {
-    "citationKey": "64d31fb56e0d",
+    "citationKey": "ea263bf4d04c",
     "dimension": "Financial costs",
     "stance": "negative",
     "kind": "general"
   },
   {
-    "citationKey": "6d00851b6b2f",
+    "citationKey": "ed3fec0ec1cd",
     "dimension": "Financial costs",
     "stance": "negative",
     "kind": "general"
   },
   {
-    "citationKey": "88ef6ab637e1",
-    "dimension": "Financial costs",
-    "stance": "negative",
-    "kind": "general"
-  },
-  {
-    "citationKey": "253ecd7dc13d",
+    "citationKey": "194a129d30b7",
     "dimension": "Financial costs",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "69c68a670872",
+    "citationKey": "4f765ccd9085",
     "dimension": "Financial costs",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "b5813c22bda8",
+    "citationKey": "5228248f6fb3",
     "dimension": "Financial costs",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "c4e8e79b0dc1",
+    "citationKey": "d44a9529bdde",
     "dimension": "Financial costs",
     "stance": "balanced",
     "kind": "general"
   },
   {
-    "citationKey": "d03d952857ab",
-    "dimension": "Financial costs",
-    "stance": "balanced",
+    "citationKey": "393240c7cec2",
+    "dimension": "Regulatory requirements",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "c08f2f3d3e8b",
+    "dimension": "Regulatory requirements",
+    "stance": "positive",
     "kind": "general"
   },
   {
     "citationKey": "3610864516d6",
+    "dimension": "Regulatory requirements",
+    "stance": "negative",
+    "kind": "general"
+  },
+  {
+    "citationKey": "44ce6e703d06",
+    "dimension": "Regulatory requirements",
+    "stance": "negative",
+    "kind": "general"
+  },
+  {
+    "citationKey": "508a17977cd2",
+    "dimension": "Regulatory requirements",
+    "stance": "negative",
+    "kind": "general"
+  },
+  {
+    "citationKey": "75bba223bc94",
+    "dimension": "Regulatory requirements",
+    "stance": "negative",
+    "kind": "general"
+  },
+  {
+    "citationKey": "8b31cb8429dc",
+    "dimension": "Regulatory requirements",
+    "stance": "negative",
+    "kind": "general"
+  },
+  {
+    "citationKey": "9e08b543a80f",
+    "dimension": "Regulatory requirements",
+    "stance": "negative",
+    "kind": "general"
+  },
+  {
+    "citationKey": "b6aa9a3abc0f",
     "dimension": "Regulatory requirements",
     "stance": "negative",
     "kind": "general"
@@ -6540,15 +6210,27 @@
     "kind": "general"
   },
   {
-    "citationKey": "508a17977cd2",
+    "citationKey": "ddb8a8742a4d",
     "dimension": "Regulatory requirements",
-    "stance": "balanced",
+    "stance": "negative",
     "kind": "general"
   },
   {
-    "citationKey": "b0bb1f653298",
+    "citationKey": "f49beac306e5",
+    "dimension": "Regulatory requirements",
+    "stance": "negative",
+    "kind": "general"
+  },
+  {
+    "citationKey": "8e81837a5861",
     "dimension": "Cybersecurity risks",
-    "stance": "balanced",
+    "stance": "positive",
+    "kind": "general"
+  },
+  {
+    "citationKey": "e8a1de4c2f1b",
+    "dimension": "Cybersecurity risks",
+    "stance": "negative",
     "kind": "general"
   },
   {
@@ -6558,7 +6240,55 @@
     "kind": "general"
   },
   {
-    "citationKey": "e4edbaa2c127",
+    "citationKey": "15409c146949",
+    "dimension": "Ethical concerns",
+    "stance": "negative",
+    "kind": "general"
+  },
+  {
+    "citationKey": "3610864516d6",
+    "dimension": "Ethical concerns",
+    "stance": "negative",
+    "kind": "general"
+  },
+  {
+    "citationKey": "508a17977cd2",
+    "dimension": "Ethical concerns",
+    "stance": "negative",
+    "kind": "general"
+  },
+  {
+    "citationKey": "75bba223bc94",
+    "dimension": "Ethical concerns",
+    "stance": "negative",
+    "kind": "general"
+  },
+  {
+    "citationKey": "8b31cb8429dc",
+    "dimension": "Ethical concerns",
+    "stance": "negative",
+    "kind": "general"
+  },
+  {
+    "citationKey": "c08f2f3d3e8b",
+    "dimension": "Ethical concerns",
+    "stance": "negative",
+    "kind": "general"
+  },
+  {
+    "citationKey": "d44a9529bdde",
+    "dimension": "Ethical concerns",
+    "stance": "negative",
+    "kind": "general"
+  },
+  {
+    "citationKey": "ddb8a8742a4d",
+    "dimension": "Ethical concerns",
+    "stance": "negative",
+    "kind": "general"
+  },
+  {
+    "citationKey": "f49beac306e5",
     "dimension": "Ethical concerns",
     "stance": "negative",
     "kind": "general"
