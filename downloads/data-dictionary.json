@@ -1,0 +1,92 @@
+[
+  {
+    "field": "citationKey",
+    "type": "string",
+    "description": "Unchanged BibTeX citation key and stable article identifier.",
+    "missing": "Never missing for included records."
+  },
+  {
+    "field": "title",
+    "type": "string",
+    "description": "Publication title.",
+    "missing": "Critical error."
+  },
+  {
+    "field": "authors",
+    "type": "string[]",
+    "description": "Publication author names.",
+    "missing": "Empty array."
+  },
+  {
+    "field": "year",
+    "type": "integer",
+    "description": "Publication year.",
+    "missing": "Critical error."
+  },
+  {
+    "field": "overallReasoning",
+    "type": "string",
+    "description": "Curated publication-level synopsis.",
+    "missing": "Critical error."
+  },
+  {
+    "field": "contributionSummary",
+    "type": "string",
+    "description": "Curated publication-level contribution summary.",
+    "missing": "Critical error."
+  },
+  {
+    "field": "ophthalmicConditions",
+    "type": "string[]",
+    "description": "Conservative clinical-context categories derived from curated publication information.",
+    "missing": "Other / unspecified."
+  },
+  {
+    "field": "modalities",
+    "type": "string[]",
+    "description": "Explicit imaging or clinical-data modalities found in the curated publication text.",
+    "missing": "Empty array."
+  },
+  {
+    "field": "aiMethods",
+    "type": "string[]",
+    "description": "Explicit AI method families found in the curated publication text.",
+    "missing": "Empty array."
+  },
+  {
+    "field": "clinicalTasks",
+    "type": "string[]",
+    "description": "Explicit task families found in the curated publication text.",
+    "missing": "Empty array."
+  },
+  {
+    "field": "datasets",
+    "type": "string[]",
+    "description": "Named registry resources explicitly mentioned in the curated publication text.",
+    "missing": "Empty array."
+  },
+  {
+    "field": "countries",
+    "type": "string[]",
+    "description": "Countries explicitly present in affiliation metadata; never inferred from names.",
+    "missing": "Empty array."
+  },
+  {
+    "field": "validationTypes",
+    "type": "string[]",
+    "description": "Validation descriptors only when explicit textual evidence is present.",
+    "missing": "Empty array."
+  },
+  {
+    "field": "generalEvidenceAssignments",
+    "type": "object[]",
+    "description": "General evidence-map dimension and framing assignments.",
+    "missing": "Empty array."
+  },
+  {
+    "field": "ethicsEvidenceAssignments",
+    "type": "object[]",
+    "description": "Ethics evidence-map dimension and framed role assignments.",
+    "missing": "Empty array."
+  }
+]

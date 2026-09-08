@@ -1,0 +1,91 @@
+x,y,x_label,y_label,count
+0,0,Retinal layers / macula morphology,Classification / diagnosis,257
+1,0,Diabetic retinopathy / diabetic macular edema,Classification / diagnosis,164
+2,0,Retinal fluid / cysts / edema,Classification / diagnosis,147
+3,0,Age-related macular degeneration / CNV / drusen,Classification / diagnosis,138
+4,0,General retina / multi-disease / benchmark,Classification / diagnosis,116
+5,0,Glaucoma / optic nerve / RNFL,Classification / diagnosis,88
+6,0,Retinal vessels / OCTA / vascular disease,Classification / diagnosis,91
+7,0,Other ophthalmic disease,Classification / diagnosis,38
+8,0,Myopia / choroid / axial-related disease,Classification / diagnosis,27
+9,0,Other / unclear,Classification / diagnosis,17
+0,1,Retinal layers / macula morphology,Detection / localization,159
+1,1,Diabetic retinopathy / diabetic macular edema,Detection / localization,112
+2,1,Retinal fluid / cysts / edema,Detection / localization,100
+3,1,Age-related macular degeneration / CNV / drusen,Detection / localization,96
+4,1,General retina / multi-disease / benchmark,Detection / localization,72
+5,1,Glaucoma / optic nerve / RNFL,Detection / localization,51
+6,1,Retinal vessels / OCTA / vascular disease,Detection / localization,46
+7,1,Other ophthalmic disease,Detection / localization,19
+8,1,Myopia / choroid / axial-related disease,Detection / localization,13
+9,1,Other / unclear,Detection / localization,7
+0,2,Retinal layers / macula morphology,Prediction / prognosis,124
+1,2,Diabetic retinopathy / diabetic macular edema,Prediction / prognosis,57
+2,2,Retinal fluid / cysts / edema,Prediction / prognosis,59
+3,2,Age-related macular degeneration / CNV / drusen,Prediction / prognosis,52
+4,2,General retina / multi-disease / benchmark,Prediction / prognosis,28
+5,2,Glaucoma / optic nerve / RNFL,Prediction / prognosis,52
+6,2,Retinal vessels / OCTA / vascular disease,Prediction / prognosis,46
+7,2,Other ophthalmic disease,Prediction / prognosis,24
+8,2,Myopia / choroid / axial-related disease,Prediction / prognosis,15
+9,2,Other / unclear,Prediction / prognosis,4
+0,3,Retinal layers / macula morphology,Segmentation,109
+1,3,Diabetic retinopathy / diabetic macular edema,Segmentation,53
+2,3,Retinal fluid / cysts / edema,Segmentation,57
+3,3,Age-related macular degeneration / CNV / drusen,Segmentation,45
+4,3,General retina / multi-disease / benchmark,Segmentation,38
+5,3,Glaucoma / optic nerve / RNFL,Segmentation,39
+6,3,Retinal vessels / OCTA / vascular disease,Segmentation,43
+7,3,Other ophthalmic disease,Segmentation,17
+8,3,Myopia / choroid / axial-related disease,Segmentation,12
+9,3,Other / unclear,Segmentation,10
+0,4,Retinal layers / macula morphology,Quality assessment / grading,34
+1,4,Diabetic retinopathy / diabetic macular edema,Quality assessment / grading,30
+2,4,Retinal fluid / cysts / edema,Quality assessment / grading,24
+3,4,Age-related macular degeneration / CNV / drusen,Quality assessment / grading,16
+4,4,General retina / multi-disease / benchmark,Quality assessment / grading,11
+5,4,Glaucoma / optic nerve / RNFL,Quality assessment / grading,13
+6,4,Retinal vessels / OCTA / vascular disease,Quality assessment / grading,17
+7,4,Other ophthalmic disease,Quality assessment / grading,4
+8,4,Myopia / choroid / axial-related disease,Quality assessment / grading,8
+9,4,Other / unclear,Quality assessment / grading,5
+0,5,Retinal layers / macula morphology,Image enhancement / denoising,28
+1,5,Diabetic retinopathy / diabetic macular edema,Image enhancement / denoising,20
+2,5,Retinal fluid / cysts / edema,Image enhancement / denoising,18
+3,5,Age-related macular degeneration / CNV / drusen,Image enhancement / denoising,14
+4,5,General retina / multi-disease / benchmark,Image enhancement / denoising,22
+5,5,Glaucoma / optic nerve / RNFL,Image enhancement / denoising,9
+6,5,Retinal vessels / OCTA / vascular disease,Image enhancement / denoising,8
+7,5,Other ophthalmic disease,Image enhancement / denoising,5
+8,5,Myopia / choroid / axial-related disease,Image enhancement / denoising,2
+9,5,Other / unclear,Image enhancement / denoising,1
+0,6,Retinal layers / macula morphology,Explainability / interpretability,21
+1,6,Diabetic retinopathy / diabetic macular edema,Explainability / interpretability,25
+2,6,Retinal fluid / cysts / edema,Explainability / interpretability,14
+3,6,Age-related macular degeneration / CNV / drusen,Explainability / interpretability,11
+4,6,General retina / multi-disease / benchmark,Explainability / interpretability,10
+5,6,Glaucoma / optic nerve / RNFL,Explainability / interpretability,12
+6,6,Retinal vessels / OCTA / vascular disease,Explainability / interpretability,11
+7,6,Other ophthalmic disease,Explainability / interpretability,1
+8,6,Myopia / choroid / axial-related disease,Explainability / interpretability,2
+9,6,Other / unclear,Explainability / interpretability,1
+0,7,Retinal layers / macula morphology,Synthesis / augmentation,18
+1,7,Diabetic retinopathy / diabetic macular edema,Synthesis / augmentation,16
+2,7,Retinal fluid / cysts / edema,Synthesis / augmentation,12
+3,7,Age-related macular degeneration / CNV / drusen,Synthesis / augmentation,10
+4,7,General retina / multi-disease / benchmark,Synthesis / augmentation,14
+5,7,Glaucoma / optic nerve / RNFL,Synthesis / augmentation,4
+6,7,Retinal vessels / OCTA / vascular disease,Synthesis / augmentation,4
+7,7,Other ophthalmic disease,Synthesis / augmentation,3
+8,7,Myopia / choroid / axial-related disease,Synthesis / augmentation,1
+9,7,Other / unclear,Synthesis / augmentation,4
+0,8,Retinal layers / macula morphology,Registration / reconstruction,4
+1,8,Diabetic retinopathy / diabetic macular edema,Registration / reconstruction,4
+2,8,Retinal fluid / cysts / edema,Registration / reconstruction,1
+3,8,Age-related macular degeneration / CNV / drusen,Registration / reconstruction,1
+4,8,General retina / multi-disease / benchmark,Registration / reconstruction,0
+5,8,Glaucoma / optic nerve / RNFL,Registration / reconstruction,1
+6,8,Retinal vessels / OCTA / vascular disease,Registration / reconstruction,3
+7,8,Other ophthalmic disease,Registration / reconstruction,0
+8,8,Myopia / choroid / axial-related disease,Registration / reconstruction,0
+9,8,Other / unclear,Registration / reconstruction,0

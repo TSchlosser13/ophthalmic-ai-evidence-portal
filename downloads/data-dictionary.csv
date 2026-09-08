@@ -1,0 +1,16 @@
+field,type,description,missing
+citationKey,string,Unchanged BibTeX citation key and stable article identifier.,Never missing for included records.
+title,string,Publication title.,Critical error.
+authors,string[],Publication author names.,Empty array.
+year,integer,Publication year.,Critical error.
+overallReasoning,string,Curated publication-level synopsis.,Critical error.
+contributionSummary,string,Curated publication-level contribution summary.,Critical error.
+ophthalmicConditions,string[],Conservative clinical-context categories derived from curated publication information.,Other / unspecified.
+modalities,string[],Explicit imaging or clinical-data modalities found in the curated publication text.,Empty array.
+aiMethods,string[],Explicit AI method families found in the curated publication text.,Empty array.
+clinicalTasks,string[],Explicit task families found in the curated publication text.,Empty array.
+datasets,string[],Named registry resources explicitly mentioned in the curated publication text.,Empty array.
+countries,string[],Countries explicitly present in affiliation metadata; never inferred from names.,Empty array.
+validationTypes,string[],Validation descriptors only when explicit textual evidence is present.,Empty array.
+generalEvidenceAssignments,object[],General evidence-map dimension and framing assignments.,Empty array.
+ethicsEvidenceAssignments,object[],Ethics evidence-map dimension and framed role assignments.,Empty array.
