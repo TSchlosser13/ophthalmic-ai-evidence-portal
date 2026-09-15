@@ -1,0 +1,98 @@
+---
+import { ExternalLink, Search } from '@lucide/astro';
+
+interface Reference {
+  number: number;
+  citationKey: string;
+  title: string;
+  authors: string[];
+  year: number | null;
+  venue: string | null;
+  doi: string | null;
+  url: string | null;
+}
+interface Props { references: Reference[]; }
+const { references } = Astro.props;
+---
+
+<div class="references" data-reference-browser>
+  <div class="reference-toolbar" data-pagefind-ignore>
+    <label class="reference-search">
+      <span class="field-label">Find a reference</span>
+      <span><Search size={17} aria-hidden="true" /><input class="input" type="search" placeholder="Title, author, year, or citation key" data-reference-search /></span>
+    </label>
+    <p aria-live="polite"><strong data-reference-count>{references.length.toLocaleString('en-GB')}</strong><span> references</span></p>
+  </div>
+  <ol class="reference-list">
+    {references.map((reference) => (
+      <li
+        id={`reference-${reference.citationKey.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}
+        data-reference
+        data-search={`${reference.title} ${reference.authors.join(' ')} ${reference.year ?? ''} ${reference.venue ?? ''} ${reference.citationKey}`.toLowerCase()}
+      >
+        <span class="reference-number" aria-label={`Reference ${reference.number}`}>{String(reference.number).padStart(2, '0')}</span>
+        <div class="reference-copy">
+          <span class="reference-authors">{reference.authors.length ? reference.authors.join(', ') : 'Authors not listed'}</span>
+          <strong>{reference.title}</strong>
+          <span class="reference-journal">{reference.venue ? `${reference.venue}${reference.year ? ` · ${reference.year}` : ''}` : reference.year ?? ''}</span>
+          <div class="reference-meta">
+            {reference.doi ? <a href={`https://doi.org/${reference.doi}`} rel="noopener noreferrer">doi:{reference.doi}<ExternalLink size={12} aria-hidden="true" /></a> : reference.url ? <a href={reference.url} rel="noopener noreferrer">Publication link<ExternalLink size={12} aria-hidden="true" /></a> : null}
+            <code>{reference.citationKey}</code>
+          </div>
+        </div>
+      </li>
+    ))}
+  </ol>
+  <div class="empty-state" hidden data-reference-empty><div><strong>No matching references</strong><p>Try a shorter title term, author surname, year, or citation key.</p></div></div>
+</div>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-reference-browser]').forEach((root) => {
+    const search = root.querySelector<HTMLInputElement>('[data-reference-search]');
+    const count = root.querySelector<HTMLElement>('[data-reference-count]');
+    const empty = root.querySelector<HTMLElement>('[data-reference-empty]');
+    const rows = [...root.querySelectorAll<HTMLElement>('[data-reference]')];
+    if (!search || !count || !empty) return;
+    search.addEventListener('input', () => {
+      const terms = search.value.trim().toLowerCase().split(/\s+/).filter(Boolean);
+      let visible = 0;
+      rows.forEach((row) => {
+        const haystack = row.dataset.search ?? '';
+        const show = terms.every((term) => haystack.includes(term));
+        row.hidden = !show;
+        if (show) visible += 1;
+      });
+      count.textContent = visible.toLocaleString('en-GB');
+      empty.hidden = visible !== 0;
+    });
+  });
+</script>
+
+<style>
+  .references { margin-top: 1.2rem; }
+  .reference-toolbar { position: sticky; z-index: 3; top: calc(var(--header-height) + 0.6rem); display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem; align-items: end; border: 1px solid var(--line); border-radius: 0.8rem; background: color-mix(in srgb, var(--surface) 92%, transparent); padding: 0.85rem; box-shadow: 0 8px 24px color-mix(in srgb, var(--ink) 6%, transparent); backdrop-filter: blur(14px); }
+  .reference-search > span:last-child { position: relative; display: block; }
+  .reference-search svg { position: absolute; z-index: 1; top: 12px; left: 12px; color: var(--faint); }
+  .reference-search input { width: 100%; padding-left: 2.35rem; }
+  .reference-toolbar p { min-width: 7rem; margin: 0 0 0.55rem; color: var(--muted); font-size: 0.75rem; text-align: right; }
+  .reference-toolbar p strong { color: var(--ink); font-size: 1rem; font-variant-numeric: tabular-nums; }
+  .reference-list { display: grid; gap: 0; padding: 0; margin-top: 1.5rem; list-style: none; }
+  li { display: grid; grid-template-columns: 42px minmax(0, 1fr); gap: 0.9rem; border-top: 1px solid var(--line); padding: 1.1rem 0; color: var(--muted); font-size: 0.82rem; line-height: 1.55; }
+  li:last-child { border-bottom: 1px solid var(--line); }
+  li:hover { background: linear-gradient(90deg, color-mix(in srgb, var(--teal) 5%, transparent), transparent); }
+  .reference-number { display: grid; width: 2rem; height: 2rem; place-items: center; border: 1px solid var(--line); border-radius: 50%; color: var(--teal); font-family: var(--font-sans); font-size: 0.65rem; font-weight: 760; font-variant-numeric: tabular-nums; }
+  .reference-copy > span, .reference-copy > strong { display: block; }
+  .reference-authors { margin-bottom: 0.2rem; color: var(--muted); }
+  .reference-copy > strong { color: var(--ink); font-family: var(--font-serif); font-size: 1rem; line-height: 1.4; }
+  .reference-journal { margin-top: 0.28rem; color: var(--faint); }
+  .reference-meta { display: flex; flex-wrap: wrap; gap: 0.65rem 1rem; align-items: center; margin-top: 0.55rem; }
+  .reference-meta a { display: inline-flex; gap: 0.25rem; align-items: center; overflow-wrap: anywhere; text-decoration: none; }
+  code { color: var(--faint); font-size: 0.68rem; }
+  .empty-state { margin-top: 1rem; border-radius: 0.8rem; }
+  .empty-state p { margin: 0.3rem 0 0; color: var(--muted); }
+  @media (max-width: 700px) {
+    .reference-toolbar { position: static; grid-template-columns: 1fr; }
+    .reference-toolbar p { margin: 0; text-align: left; }
+    li { grid-template-columns: 34px minmax(0, 1fr); gap: 0.65rem; }
+  }
+</style>

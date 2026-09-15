@@ -1,0 +1,226 @@
+---
+import { Search, Sparkles, X } from '@lucide/astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHeader from '@/components/PageHeader.astro';
+
+const suggestions = ['optical coherence tomography', 'external validation', 'equity', 'transformer', 'public datasets'];
+---
+
+<BaseLayout title="Search" description="Search included publications, manuscript sections, supplementary material, datasets, methods, and visualisations.">
+  <PageHeader
+    eyebrow="One index, every public page"
+    title="Search the evidence portal"
+    intro="Find publication titles, authors, contribution summaries, manuscript sections, supplementary synthesis, datasets, methods, and evidence dimensions from one focused interface."
+  />
+  <section class="container search-page" data-search-page data-base={import.meta.env.BASE_URL} aria-busy="true">
+    <div class="search-workspace">
+      <div class="search-controls">
+        <label class="search-box"><span class="field-label">Search term or phrase</span><span><Search size={21} /><input class="input" type="search" placeholder="Try a condition, method, author, or citation key" autocomplete="off" data-pagefind-query /></span></label>
+        <label><span class="field-label">Result type</span><select class="select" data-result-type><option value="">All content</option><option value="study">Included publications</option><option value="dataset">Datasets</option><option value="manuscript">Manuscript</option><option value="supplement">Supplementary material</option><option value="other">Methods and visualisations</option></select></label>
+        <button class="icon-button clear-search" type="button" aria-label="Clear search" title="Clear search" data-search-clear disabled><X size={18} /></button>
+      </div>
+      <div class="suggestion-row" data-search-suggestions>
+        <span><Sparkles size={14} aria-hidden="true" /> Try</span>
+        {suggestions.map((suggestion) => <button type="button" data-search-suggestion={suggestion}>{suggestion}</button>)}
+        <kbd>/</kbd><span>to focus</span>
+      </div>
+    </div>
+    <p class="search-status" role="status" aria-live="polite" aria-atomic="true" data-search-status>Preparing the search index…</p>
+    <div class="search-start" data-search-start>
+      <span class="start-mark" aria-hidden="true"><Search size={28} /></span>
+      <div><h2>Explore across the evidence portal</h2><p>Search for a clinical context, AI method, dataset, author, evidence dimension, or citation key. Combine a query with the result-type control to narrow the page list.</p></div>
+    </div>
+    <div class="search-results" data-search-results></div>
+  </section>
+</BaseLayout>
+
+<script is:inline type="module">
+  const root = document.querySelector('[data-search-page]');
+  if (root) {
+    const base = root.dataset.base ?? '/';
+    const input = root.querySelector('[data-pagefind-query]');
+    const type = root.querySelector('[data-result-type]');
+    const clear = root.querySelector('[data-search-clear]');
+    const status = root.querySelector('[data-search-status]');
+    const resultsNode = root.querySelector('[data-search-results]');
+    const start = root.querySelector('[data-search-start]');
+    let pagefind = null;
+    let latestResults = [];
+    let timer = 0;
+    const resetSearch = () => {
+      input.value = '';
+      type.value = '';
+      latestResults = [];
+      render();
+      input.focus();
+    };
+
+    const contentType = (url) => {
+      if (url.includes('/publications/')) return 'study';
+      if (url.includes('/datasets/')) return 'dataset';
+      if (url.includes('/manuscript/')) return 'manuscript';
+      if (url.includes('/supplementary/')) return 'supplement';
+      return 'other';
+    };
+    const typeLabel = (value) => ({ study: 'Included publication', dataset: 'Dataset', manuscript: 'Manuscript', supplement: 'Supplement', other: 'Portal page' }[value] ?? 'Page');
+
+    const syncUrl = () => {
+      const params = new URLSearchParams(window.location.search);
+      const query = input.value.trim();
+      query ? params.set('q', query) : params.delete('q');
+      type.value ? params.set('type', type.value) : params.delete('type');
+      history.replaceState(null, '', `${window.location.pathname}${params.toString() ? `?${params}` : ''}`);
+    };
+
+    const render = () => {
+      resultsNode.replaceChildren();
+      const query = input.value.trim();
+      const filtered = type.value ? latestResults.filter((result) => contentType(result.url) === type.value) : latestResults;
+      clear.disabled = !query && !type.value;
+      start.hidden = Boolean(query);
+      if (!query) {
+        status.textContent = 'Search ready. Enter a term or choose a suggestion.';
+        syncUrl();
+        return;
+      }
+      status.textContent = `${filtered.length} result${filtered.length === 1 ? '' : 's'}${type.value ? ` in ${typeLabel(type.value).toLowerCase()}` : ''}.`;
+      syncUrl();
+      if (!filtered.length) {
+        const empty = document.createElement('div');
+        empty.className = 'empty-state';
+        const content = document.createElement('div');
+        const heading = document.createElement('h2');
+        heading.textContent = 'No matching pages';
+        const help = document.createElement('p');
+        help.textContent = 'Try a broader term, a citation key, an author surname, or remove the result-type filter.';
+        const reset = document.createElement('button');
+        reset.className = 'button primary';
+        reset.type = 'button';
+        reset.textContent = 'Clear search and filters';
+        reset.addEventListener('click', resetSearch);
+        content.append(heading, help, reset);
+        empty.append(content);
+        resultsNode.append(empty);
+        return;
+      }
+      for (const [index, result] of filtered.slice(0, 80).entries()) {
+        const article = document.createElement('article');
+        article.className = 'search-result';
+        const number = document.createElement('span');
+        number.className = 'result-number';
+        number.textContent = String(index + 1).padStart(2, '0');
+        const body = document.createElement('div');
+        const meta = document.createElement('div');
+        meta.className = 'result-meta';
+        const badge = document.createElement('span');
+        badge.className = 'badge';
+        badge.textContent = typeLabel(contentType(result.url));
+        meta.append(badge);
+        const heading = document.createElement('h2');
+        const link = document.createElement('a');
+        link.href = result.url;
+        link.textContent = result.meta.title || 'Untitled page';
+        heading.append(link);
+        const excerpt = document.createElement('p');
+        excerpt.className = 'result-excerpt';
+        excerpt.innerHTML = result.excerpt;
+        body.append(meta, heading, excerpt);
+        article.append(number, body);
+        resultsNode.append(article);
+      }
+    };
+
+    const runSearch = async () => {
+      if (!pagefind) return;
+      const query = input.value.trim();
+      if (!query) { latestResults = []; render(); return; }
+      status.textContent = 'Searching the portal…';
+      root.setAttribute('aria-busy', 'true');
+      try {
+        const response = await pagefind.search(query);
+        latestResults = await Promise.all(response.results.slice(0, 160).map((result) => result.data()));
+        render();
+      } catch (error) {
+        latestResults = [];
+        resultsNode.replaceChildren();
+        status.textContent = 'The search could not be completed. Clear the query and try again.';
+        const retry = document.createElement('button');
+        retry.className = 'button primary';
+        retry.type = 'button';
+        retry.textContent = 'Clear and try again';
+        retry.addEventListener('click', resetSearch);
+        resultsNode.append(retry);
+        console.error(error);
+      } finally {
+        root.setAttribute('aria-busy', 'false');
+      }
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const initialQuery = params.get('q') ?? '';
+    input.value = initialQuery;
+    type.value = params.get('type') ?? '';
+    input.addEventListener('input', () => { window.clearTimeout(timer); timer = window.setTimeout(runSearch, 160); });
+    type.addEventListener('change', render);
+    clear.addEventListener('click', resetSearch);
+    root.querySelectorAll('[data-search-suggestion]').forEach((button) => button.addEventListener('click', () => { input.value = button.dataset.searchSuggestion ?? ''; void runSearch(); input.focus(); }));
+    document.addEventListener('keydown', (event) => { if (event.key === '/' && document.activeElement?.tagName !== 'INPUT' && document.activeElement?.tagName !== 'TEXTAREA') { event.preventDefault(); input.focus(); } });
+
+    import(/* @vite-ignore */ `${base}${base.endsWith('/') ? '' : '/'}pagefind/pagefind.js`)
+      .then(async (module) => {
+        pagefind = module;
+        if (pagefind.init) await pagefind.init();
+        status.dataset.ready = 'true';
+        if (initialQuery) await runSearch();
+        else { render(); root.setAttribute('aria-busy', 'false'); }
+      })
+      .catch((error) => {
+        start.hidden = true;
+        status.textContent = 'The search index is not available in this preview. Use the publication explorer instead.';
+        root.setAttribute('aria-busy', 'false');
+        const link = document.createElement('a');
+        link.className = 'button primary';
+        link.href = `${base}${base.endsWith('/') ? '' : '/'}publications/`.replace(/\/+/g, '/');
+        link.textContent = 'Open publication explorer';
+        resultsNode.replaceChildren(link);
+        console.error(error);
+      });
+  }
+</script>
+
+<style>
+  .search-page { max-width: 1020px; padding-block: clamp(2.5rem, 6vw, 5rem) 6rem; }
+  .search-workspace { position: relative; z-index: 4; border: 1px solid var(--line); border-radius: 1rem; background: linear-gradient(145deg, color-mix(in srgb, var(--surface) 94%, var(--blue) 6%), var(--surface)); padding: 1rem; box-shadow: 0 16px 44px color-mix(in srgb, var(--ink) 7%, transparent); }
+  .search-controls { display: grid; grid-template-columns: minmax(0, 1fr) 220px 42px; gap: 0.8rem; align-items: end; }
+  .search-box > span:last-child { position: relative; display: block; }
+  .search-box svg { position: absolute; z-index: 1; top: 14px; left: 14px; color: var(--teal); }
+  .search-box input { width: 100%; height: 50px; padding-left: 2.8rem; font-size: 1rem; }
+  .search-controls .select { width: 100%; height: 50px; }
+  .clear-search { height: 50px; }
+  .clear-search:disabled { cursor: not-allowed; opacity: 0.4; }
+  .suggestion-row { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; border-top: 1px solid var(--line); margin-top: 0.9rem; padding-top: 0.8rem; }
+  .suggestion-row > span { display: inline-flex; gap: 0.3rem; align-items: center; color: var(--faint); font-size: 0.68rem; }
+  .suggestion-row > span:first-child { margin-right: 0.15rem; color: var(--teal); font-weight: 720; }
+  .suggestion-row button { border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--muted); padding: 0.28rem 0.6rem; font-size: 0.69rem; }
+  .suggestion-row button:hover { border-color: var(--teal); color: var(--ink); }
+  .suggestion-row kbd { margin-left: auto; }
+  .search-status { min-height: 28px; margin: 1rem 0; color: var(--muted); font-size: 0.78rem; }
+  .search-start { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 1rem; align-items: start; border-top: 1px solid var(--line); padding-top: 2.2rem; }
+  .search-start[hidden] { display: none; }
+  .start-mark { display: grid; width: 3.6rem; height: 3.6rem; place-items: center; border: 1px solid color-mix(in srgb, var(--teal) 36%, var(--line)); border-radius: 50%; color: var(--teal); }
+  .search-start h2 { margin-bottom: 0.45rem; font-size: 1.45rem; }
+  .search-start p { max-width: 650px; margin: 0; color: var(--muted); }
+  .search-results { display: grid; gap: 0; }
+  .search-results :global(.search-result) { display: grid; grid-template-columns: 2rem minmax(0, 1fr); gap: 0.85rem; border-top: 1px solid var(--line); padding: 1.35rem 0; }
+  .search-results :global(.search-result:last-child) { border-bottom: 1px solid var(--line); }
+  .search-results :global(.result-number) { padding-top: 0.38rem; color: var(--faint); font-size: 0.62rem; font-weight: 760; font-variant-numeric: tabular-nums; }
+  .search-results :global(.search-result h2) { margin: 0.45rem 0; font-size: 1.32rem; }
+  .search-results :global(.search-result h2 a) { color: var(--ink); text-decoration: none; }
+  .search-results :global(.search-result h2 a:hover) { color: var(--blue); }
+  .search-results :global(.result-excerpt) { margin: 0; color: var(--muted); font-size: 0.86rem; line-height: 1.65; }
+  .search-results :global(mark) { border-radius: 0.15rem; background: color-mix(in srgb, var(--amber) 30%, transparent); color: inherit; padding-inline: 0.08rem; }
+  .search-results :global(.empty-state) { border-radius: 0.9rem; }
+  .search-results :global(.empty-state p) { margin: 0.35rem 0 0; color: var(--muted); }
+  .search-results :global(.empty-state .button) { margin-top: 0.9rem; }
+  @media (max-width: 700px) { .search-controls { grid-template-columns: minmax(0, 1fr) 42px; } .search-controls > label:nth-child(2) { grid-column: 1 / -1; grid-row: 2; } .suggestion-row kbd, .suggestion-row kbd + span { display: none; } .search-start { grid-template-columns: 1fr; } }
+</style>

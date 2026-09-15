@@ -1,0 +1,126 @@
+---
+import { ArrowRight, BookOpen, Database, Grid3x3, LibraryBig, ListTree } from '@lucide/astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import DocumentSections from '@/components/DocumentSections.astro';
+import ReferenceList from '@/components/ReferenceList.astro';
+import SectionNav from '@/components/SectionNav.astro';
+import { withBase } from '@/lib/base';
+import metadata from '@/data/generated/review-metadata.json';
+import supplement from '@/data/generated/supplement.json';
+
+interface PublicSection { level: number; heading: string; slug: string; html: string; }
+const introductorySection: PublicSection = {
+  level: 2,
+  heading: 'Publication-level evidence synthesis and supporting documentation',
+  slug: 'publication-level-evidence-synthesis-and-supporting-documentation',
+  html: '<p>This supplementary material provides the publication-level evidence and methodological detail underlying the review of artificial intelligence (AI) involving optical coherence tomography (OCT), OCT angiography (OCTA), and related ophthalmic imaging. It complements the main manuscript with analyses of publication trends, public datasets and benchmark resources, publication-level evidence gap assignments, and an extended interpretive synthesis of the included literature.</p>'
+};
+const publicSections = [introductorySection, ...supplement.sections.flatMap((section): PublicSection[] => {
+  switch (section.slug) {
+    case 'annual-publication-trend-variants':
+    case 'annual-publication-trends-by-category':
+    case 'task-family-clinical-target-and-method-family-heatmaps':
+    case 'heatmaps-of-task-clinical-target-and-method-family-assignments':
+      return [];
+    default:
+      return [section];
+  }
+})];
+
+const navItems = [
+  ...publicSections.map((section) => ({ slug: section.slug, heading: section.heading, level: section.level })),
+  { slug: 'interactive-tables', heading: 'Interactive tables' },
+  ...(supplement.references.length ? [{ slug: 'supplementary-references', heading: 'References' }] : [])
+];
+
+const resources = [
+  { href: '/publications/', icon: LibraryBig, title: 'Included-publication explorer', text: 'Search, combine filters, sort, and export all 427 publications.', label: 'Explore publications' },
+  { href: '/datasets/', icon: Database, title: 'Identifiable public datasets', text: 'Browse 20 named resources and follow conservative publication links.', label: 'Browse datasets' },
+  { href: '/supplementary/evidence-map/', icon: ListTree, title: 'Evidence-gap assignments', text: 'Filter every general and ethics assignment with direct publication links.', label: 'Inspect assignments' },
+  { href: '/visualizations/publication-timeline/', icon: BookOpen, title: 'Annual publication trends', text: 'Use the interactive timeline or download its aggregate data.', label: 'Open timeline' },
+  { href: '/visualizations/heatmaps/', icon: Grid3x3, title: 'Task, target, and method heatmaps', text: 'Read the supplementary matrices as interactive, accessible exhibits.', label: 'Open heatmaps' }
+];
+---
+
+<BaseLayout title="Supplementary material" description="Publication-level evidence synthesis, dataset registry, evidence-gap assignments, and extended interpretive synthesis for the ophthalmic AI review.">
+  <header class="supplement-header">
+    <div class="orbital-lines" aria-hidden="true"></div>
+    <div class="container header-grid">
+      <div>
+        <p class="eyebrow">Interactive supplementary edition</p>
+        <h1>Deeper evidence, directly explorable</h1>
+        <p class="standfirst">Publication-level classifications, public datasets, evidence-gap assignments, and extended synthesis accompanying <em>{metadata.title}</em>.</p>
+        <div class="header-actions"><a class="button primary" href="#publication-level-evidence-synthesis-and-supporting-documentation"><BookOpen size={17} /> Begin reading</a><a class="button" href={withBase('/manuscript/')}>Main manuscript <ArrowRight size={17} /></a></div>
+      </div>
+      <div class="scope-card">
+        <span>Supplement at a glance</span>
+        <strong>From synthesis to individual assignments</strong>
+        <p>Move between the scientific narrative, operational definitions, publication links, and reusable public data.</p>
+      </div>
+    </div>
+  </header>
+  <div class="container supplement-layout">
+    <aside class="navigation-column"><SectionNav title="Supplement sections" items={navItems} /></aside>
+    <article class="supplement-body">
+      <div class="reading-intro"><span>Reading guide</span><p>The navigator tracks your position. Interactive resources connect this narrative with filtered tables and visual exhibits.</p></div>
+      <DocumentSections sections={publicSections} base={import.meta.env.BASE_URL} />
+      <section class="resources-section" id="interactive-tables">
+        <p class="section-kicker">Explore the public evidence layer</p>
+        <h2>Interactive tables and supporting data</h2>
+        <p class="section-intro-copy">Move from the supplementary narrative into the publication-level classifications and aggregate views that support it.</p>
+        <div class="resource-list">
+          {resources.map(({ href, icon: Icon, title, text, label }, index) => (
+            <a href={withBase(href)}>
+              <span class="resource-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+              <span class="resource-icon"><Icon size={20} /></span>
+              <span class="resource-copy"><strong>{title}</strong><small>{text}</small></span>
+              <span class="resource-action">{label}<ArrowRight size={16} /></span>
+            </a>
+          ))}
+        </div>
+      </section>
+      {supplement.references.length > 0 && (
+        <section class="references-section" id="supplementary-references">
+          <p class="section-kicker">Bibliography</p>
+          <h2>References</h2>
+          <p class="section-intro-copy">Search the supplementary bibliography by title, author, year, or citation key.</p>
+          <ReferenceList references={supplement.references} />
+        </section>
+      )}
+    </article>
+  </div>
+</BaseLayout>
+
+<style>
+  .supplement-header { position: relative; isolation: isolate; overflow: hidden; border-bottom: 1px solid var(--line); padding: clamp(3.5rem, 7vw, 6rem) 0 clamp(3rem, 6vw, 5rem); background: linear-gradient(145deg, color-mix(in srgb, var(--teal) 9%, var(--bg)), color-mix(in srgb, var(--amber) 5%, var(--bg)) 72%); }
+  .orbital-lines { position: absolute; z-index: -1; right: -9rem; bottom: -15rem; width: 38rem; height: 38rem; border: 1px solid color-mix(in srgb, var(--teal) 22%, transparent); border-radius: 50%; box-shadow: 0 0 0 4.5rem color-mix(in srgb, var(--teal) 3%, transparent), 0 0 0 9rem color-mix(in srgb, var(--blue) 2%, transparent); }
+  .header-grid { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: clamp(2rem, 6vw, 6rem); align-items: end; }
+  .supplement-header h1 { max-width: 900px; margin-bottom: 1rem; font-size: clamp(2.3rem, 5vw, 4.4rem); line-height: 1.04; text-wrap: balance; }
+  .standfirst { max-width: 790px; margin-bottom: 1.6rem; color: var(--muted); font-family: var(--font-serif); font-size: clamp(1.08rem, 2vw, 1.3rem); line-height: 1.65; }
+  .header-actions { display: flex; flex-wrap: wrap; gap: 0.65rem; }
+  .scope-card { border: 1px solid var(--line); border-radius: 1rem; background: color-mix(in srgb, var(--surface) 89%, transparent); padding: 1.3rem; box-shadow: 0 18px 48px color-mix(in srgb, var(--ink) 8%, transparent); backdrop-filter: blur(14px); }
+  .scope-card span, .scope-card strong { display: block; }
+  .scope-card span { margin-bottom: 1.5rem; color: var(--teal); font-size: 0.68rem; font-weight: 760; letter-spacing: 0.08em; text-transform: uppercase; }
+  .scope-card strong { font-family: var(--font-serif); font-size: 1.25rem; line-height: 1.35; }
+  .scope-card p { margin: 0.7rem 0 0; color: var(--muted); font-size: 0.78rem; line-height: 1.55; }
+  .supplement-layout { display: grid; grid-template-columns: 250px minmax(0, 820px); gap: clamp(2.5rem, 6vw, 5rem); justify-content: center; padding-block: clamp(2.5rem, 6vw, 5rem) 6rem; }
+  .navigation-column, .supplement-body { min-width: 0; }
+  .reading-intro { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 1rem; align-items: start; border-bottom: 1px solid var(--line); margin-bottom: 2.6rem; padding-bottom: 1.3rem; }
+  .reading-intro span, .section-kicker { color: var(--teal); font-size: 0.67rem; font-weight: 760; letter-spacing: 0.08em; text-transform: uppercase; }
+  .reading-intro p { margin: 0; color: var(--muted); font-size: 0.82rem; }
+  .resources-section, .references-section { scroll-margin-top: calc(var(--header-height) + 5rem); border-top: 2px solid var(--line-strong); padding-top: clamp(3rem, 6vw, 5rem); margin-top: clamp(4rem, 8vw, 7rem); }
+  .resources-section h2, .references-section h2 { margin-bottom: 0.6rem; font-size: clamp(1.9rem, 4vw, 2.7rem); }
+  .section-kicker { margin-bottom: 0.5rem; }
+  .section-intro-copy { max-width: 680px; color: var(--muted); }
+  .resource-list { display: grid; gap: 0.75rem; margin-top: 1.7rem; }
+  .resource-list a { position: relative; display: grid; grid-template-columns: 2rem 2.6rem minmax(0, 1fr) auto; gap: 0.8rem; align-items: center; overflow: hidden; border: 1px solid var(--line); border-radius: 0.8rem; background: var(--surface); color: var(--ink); padding: 0.9rem; text-decoration: none; transition: border-color 150ms ease, transform 150ms ease, box-shadow 150ms ease; }
+  .resource-list a:hover { border-color: var(--teal); color: var(--ink); transform: translateX(3px); box-shadow: 0 10px 28px color-mix(in srgb, var(--ink) 7%, transparent); }
+  .resource-number { color: var(--faint); font-size: 0.62rem; font-weight: 760; }
+  .resource-icon { display: grid; width: 2.4rem; height: 2.4rem; place-items: center; border-radius: 0.55rem; background: color-mix(in srgb, var(--teal) 8%, var(--surface)); color: var(--teal); }
+  .resource-copy strong, .resource-copy small { display: block; }
+  .resource-copy small { margin-top: 0.2rem; color: var(--muted); font-size: 0.75rem; }
+  .resource-action { display: inline-flex; gap: 0.35rem; align-items: center; color: var(--blue); font-size: 0.72rem; font-weight: 720; }
+  @media (max-width: 980px) { .header-grid { grid-template-columns: 1fr; } .scope-card { max-width: 520px; } .supplement-layout { grid-template-columns: 1fr; } .navigation-column { position: relative; z-index: 9; } }
+  @media (max-width: 700px) { .header-actions .button { width: 100%; } .reading-intro { grid-template-columns: 1fr; gap: 0.3rem; } .resources-section, .references-section { scroll-margin-top: calc(var(--header-height) + 8rem); } .resource-list a { grid-template-columns: 1.8rem 2.4rem minmax(0, 1fr); } .resource-action { grid-column: 3; } }
+  @media (prefers-reduced-motion: reduce) { .resource-list a { transition: none; } }
+</style>

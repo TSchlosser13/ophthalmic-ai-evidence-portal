@@ -1,0 +1,8 @@
+site: dist
+output_path: dist/pagefind
+force_language: en
+verbose: true
+exclude_selectors:
+  - "[data-pagefind-ignore]"
+  - "nav"
+  - "footer"

@@ -1,0 +1,1491 @@
+{
+  "references": [
+    {
+      "number": 1,
+      "citationKey": "kermany2018large",
+      "title": "Large Dataset of Labeled Optical Coherence Tomography (OCT) and Chest X-Ray Images",
+      "authors": [
+        "Daniel Kermany",
+        "Kang Zhang",
+        "Michael Goldbaum"
+      ],
+      "year": 2018,
+      "venue": null,
+      "doi": "10.17632/rscbjbr9sj.3",
+      "url": "https://doi.org/10.17632/rscbjbr9sj.3"
+    },
+    {
+      "number": 2,
+      "citationKey": "kermany2018identifying",
+      "title": "Identifying Medical Diagnoses and Treatable Diseases by Image-Based Deep Learning",
+      "authors": [
+        "Daniel S. Kermany",
+        "Michael Goldbaum",
+        "Wenjia Cai",
+        "Carolina C. S. Valentim",
+        "Huiying Liang",
+        "Sally L. Baxter",
+        "Alex McKeown",
+        "Ge Yang",
+        "Xiaokang Wu",
+        "Fangbing Yan",
+        "Justin Dong",
+        "Made K. Prasadha",
+        "Jacqueline Pei",
+        "Magdalene Y. L. Ting",
+        "Jie Zhu",
+        "Christina Li",
+        "Sierra Hewett",
+        "Jason Dong",
+        "Ian Ziyar",
+        "Alexander Shi",
+        "Runze Zhang",
+        "Lianghong Zheng",
+        "Rui Hou",
+        "William Shi",
+        "Xin Fu",
+        "Yaou Duan",
+        "Viet Anh N. Huu",
+        "Cindy Wen",
+        "Edward D. Zhang",
+        "Charlotte L. Zhang",
+        "Oulan Li",
+        "Xiaobo Wang",
+        "Michael A. Singer",
+        "Xiaodong Sun",
+        "Jie Xu",
+        "Ali Tafreshi",
+        "Mark A. Lewis",
+        "Huimin Xia",
+        "Kang Zhang"
+      ],
+      "year": 2018,
+      "venue": "Cell",
+      "doi": "10.1016/j.cell.2018.02.010",
+      "url": "https://doi.org/10.1016/j.cell.2018.02.010"
+    },
+    {
+      "number": 3,
+      "citationKey": "kulyabin2024octdldataset",
+      "title": "OCTDL: Optical Coherence Tomography Dataset for Image-Based Deep Learning Methods",
+      "authors": [
+        "Mikhail Kulyabin"
+      ],
+      "year": 2024,
+      "venue": null,
+      "doi": "10.17632/sncdhf53xc.4",
+      "url": "https://doi.org/10.17632/sncdhf53xc.4"
+    },
+    {
+      "number": 4,
+      "citationKey": "kulyabin2024octdl",
+      "title": "OCTDL: Optical Coherence Tomography Dataset for Image-Based Deep Learning Methods",
+      "authors": [
+        "Mikhail Kulyabin"
+      ],
+      "year": 2024,
+      "venue": "Scientific Data",
+      "doi": "10.1038/s41597-024-03182-7",
+      "url": "https://doi.org/10.1038/s41597-024-03182-7"
+    },
+    {
+      "number": 5,
+      "citationKey": "gholami2018optical",
+      "title": "Optical Coherence Tomography Image Retinal Database",
+      "authors": [
+        "Peyman Gholami",
+        "Priyanka Roy",
+        "Mohana Kuppuswamy Parthasarathy",
+        "Vasudevan Lakshminarayanan"
+      ],
+      "year": 2018,
+      "venue": null,
+      "doi": "10.5683/sp2/w43pfi",
+      "url": "https://doi.org/10.5683/SP2/W43PFI"
+    },
+    {
+      "number": 6,
+      "citationKey": "gholami2020octid",
+      "title": "OCTID: Optical Coherence Tomography Image Database",
+      "authors": [
+        "Peyman Gholami",
+        "Priyanka Roy",
+        "Mohana Kuppuswamy Parthasarathy",
+        "Vasudevan Lakshminarayanan"
+      ],
+      "year": 2020,
+      "venue": "Computers & Electrical Engineering",
+      "doi": "10.1016/j.compeleceng.2019.106532",
+      "url": "https://doi.org/10.1016/j.compeleceng.2019.106532"
+    },
+    {
+      "number": 7,
+      "citationKey": "yang2023medmnistdataset",
+      "title": "MedMNIST v2",
+      "authors": [
+        "Jiancheng Yang",
+        "Rui Shi",
+        "Donglai Wei",
+        "Zequan Liu",
+        "Lin Zhao",
+        "Bilian Ke",
+        "Hanspeter Pfister",
+        "Bingbing Ni"
+      ],
+      "year": 2023,
+      "venue": null,
+      "doi": null,
+      "url": "https://medmnist.com/"
+    },
+    {
+      "number": 8,
+      "citationKey": "yang2023medmnist",
+      "title": "MedMNIST v2: A Large-Scale Lightweight Benchmark for 2D and 3D Biomedical Image Classification",
+      "authors": [
+        "Jiancheng Yang",
+        "Rui Shi",
+        "Donglai Wei",
+        "Zequan Liu",
+        "Lin Zhao",
+        "Bilian Ke",
+        "Hanspeter Pfister",
+        "Bingbing Ni"
+      ],
+      "year": 2023,
+      "venue": "Scientific Data",
+      "doi": "10.1038/s41597-022-01721-8",
+      "url": "https://doi.org/10.1038/s41597-022-01721-8"
+    },
+    {
+      "number": 9,
+      "citationKey": "sainaren2021retinal",
+      "title": "Retinal OCT Image Classification - C8",
+      "authors": [
+        "Obuli Sai Naren"
+      ],
+      "year": 2021,
+      "venue": null,
+      "doi": "10.34740/kaggle/dsv/2736749",
+      "url": "https://doi.org/10.34740/KAGGLE/DSV/2736749"
+    },
+    {
+      "number": 10,
+      "citationKey": "subramanian2022classification",
+      "title": "Classification of Retinal OCT Images Using Deep Learning",
+      "authors": [
+        "Malliga Subramanian",
+        "P. Shanmugavadivu",
+        "Obuli Sai Naren",
+        "K. Premkumar",
+        "K. Rankish"
+      ],
+      "year": 2022,
+      "venue": "2022 International Conference on Computer Communication and Informatics (ICCCI)",
+      "doi": "10.1109/iccci54379.2022.9740985",
+      "url": "https://doi.org/10.1109/ICCCI54379.2022.9740985"
+    },
+    {
+      "number": 11,
+      "citationKey": "clinicaltrials2008areds",
+      "title": "AREDS 2 Ancillary Spectral Domain Optical Coherence Tomography Study (A2ASDOCT)",
+      "authors": [],
+      "year": 2008,
+      "venue": null,
+      "doi": null,
+      "url": "https://clinicaltrials.gov/study/NCT00734487"
+    },
+    {
+      "number": 12,
+      "citationKey": "farsiu2014quantitative",
+      "title": "Quantitative Classification of Eyes with and without Intermediate Age-Related Macular Degeneration Using Optical Coherence Tomography",
+      "authors": [
+        "Sina Farsiu",
+        "Stephanie J. Chiu",
+        "Ryan V. O'Connell",
+        "Francisco A. Folgar",
+        "Eleonora Yuan",
+        "Joseph A. Izatt",
+        "Cynthia A. Toth"
+      ],
+      "year": 2014,
+      "venue": "Ophthalmology",
+      "doi": "10.1016/j.ophtha.2013.07.013",
+      "url": "https://doi.org/10.1016/j.ophtha.2013.07.013"
+    },
+    {
+      "number": 13,
+      "citationKey": "alsaih2017machine",
+      "title": "Machine Learning Techniques for Diabetic Macular Edema Classification on SD-OCT Images",
+      "authors": [
+        "Khalid Alsaih",
+        "Guillaume Lemaitre",
+        "Mojdeh Rastgoo",
+        "Joan Massich",
+        "Désiré Sidibé",
+        "Fabrice Mériaudeau"
+      ],
+      "year": 2017,
+      "venue": "BioMedical Engineering OnLine",
+      "doi": "10.1186/s12938-017-0352-9",
+      "url": "https://doi.org/10.1186/s12938-017-0352-9"
+    },
+    {
+      "number": 14,
+      "citationKey": "perdomo2019classification",
+      "title": "Classification of Diabetes-Related Retinal Diseases Using a Deep Learning Approach in Optical Coherence Tomography",
+      "authors": [
+        "Oscar Perdomo",
+        "Sebastian Otálora",
+        "Fabio A. González",
+        "Fabrice Mériaudeau",
+        "Henning Müller"
+      ],
+      "year": 2019,
+      "venue": "Computer Methods and Programs in Biomedicine",
+      "doi": "10.1016/j.cmpb.2019.06.016",
+      "url": "https://doi.org/10.1016/j.cmpb.2019.06.016"
+    },
+    {
+      "number": 15,
+      "citationKey": "retouch2017retinal",
+      "title": "RETOUCH: Retinal OCT Fluid Challenge",
+      "authors": [],
+      "year": 2017,
+      "venue": null,
+      "doi": null,
+      "url": "https://retouch.grand-challenge.org/"
+    },
+    {
+      "number": 16,
+      "citationKey": "bogunovic2019retouch",
+      "title": "RETOUCH: The Retinal OCT Fluid Detection and Segmentation Benchmark and Challenge",
+      "authors": [
+        "Hrvoje Bogunović",
+        "Freerk Venhuizen",
+        "Sophie Klimscha",
+        "Stamatios Apostolopoulos",
+        "Alireza Bab-Hadiashar",
+        "Ulas Bagci",
+        "Mirza Faisal Beg",
+        "Lasha Bekalo",
+        "Qiang Chen",
+        "Cristina Ciller",
+        "Karthik Gopinath",
+        "Jayden Hamwood",
+        "Xintong Han",
+        "Xiaowei Hu",
+        "Isaac Jang",
+        "Ivan Kirchberger",
+        "Karl Krissian",
+        "Seungyong Lee",
+        "Fabrice Mériaudeau"
+      ],
+      "year": 2019,
+      "venue": "IEEE Transactions on Medical Imaging",
+      "doi": "10.1109/tmi.2019.2901398",
+      "url": "https://doi.org/10.1109/TMI.2019.2901398"
+    },
+    {
+      "number": 17,
+      "citationKey": "optima2015cyst",
+      "title": "OPTIMA Cyst Segmentation Challenge",
+      "authors": [],
+      "year": 2015,
+      "venue": null,
+      "doi": null,
+      "url": "https://optima.meduniwien.ac.at/optima-segmentation-challenge-1/"
+    },
+    {
+      "number": 18,
+      "citationKey": "oguz2016optimal",
+      "title": "Optimal Retinal Cyst Segmentation from OCT Images",
+      "authors": [
+        "Ipek Oguz",
+        "Li Zhang",
+        "Michael D. Abràmoff",
+        "Milan Sonka"
+      ],
+      "year": 2016,
+      "venue": "Medical Imaging 2016: Image Processing",
+      "doi": "10.1117/12.2217355",
+      "url": "https://doi.org/10.1117/12.2217355"
+    },
+    {
+      "number": 19,
+      "citationKey": "aichallenger2018retinal",
+      "title": "AI Challenger 2018 Retinal Edema Lesion Segmentation Challenge",
+      "authors": [],
+      "year": 2018,
+      "venue": null,
+      "doi": null,
+      "url": null
+    },
+    {
+      "number": 20,
+      "citationKey": "hu2019automated",
+      "title": "Automated Segmentation of Macular Edema in OCT Using Deep Neural Networks",
+      "authors": [
+        "Junjie Hu",
+        "Yuanyuan Chen",
+        "Zhang Yi"
+      ],
+      "year": 2019,
+      "venue": "Medical Image Analysis",
+      "doi": "10.1016/j.media.2019.05.002",
+      "url": "https://doi.org/10.1016/j.media.2019.05.002"
+    },
+    {
+      "number": 21,
+      "citationKey": "chiu2015dukedataset",
+      "title": "Duke DME OCT Dataset",
+      "authors": [
+        "Stephanie J. Chiu",
+        "Sina Farsiu"
+      ],
+      "year": 2015,
+      "venue": null,
+      "doi": null,
+      "url": "https://people.duke.edu/ sf59/Chiu_BOE_2014_dataset.htm"
+    },
+    {
+      "number": 22,
+      "citationKey": "chiu2015kernel",
+      "title": "Kernel Regression Based Segmentation of Optical Coherence Tomography Images with Diabetic Macular Edema",
+      "authors": [
+        "Stephanie J. Chiu",
+        "Michael J. Allingham",
+        "Priyatham S. Mettu",
+        "Scott W. Cousins",
+        "Joseph A. Izatt",
+        "Sina Farsiu"
+      ],
+      "year": 2015,
+      "venue": "Biomedical Optics Express",
+      "doi": "10.1364/boe.6.001172",
+      "url": "https://doi.org/10.1364/BOE.6.001172"
+    },
+    {
+      "number": 23,
+      "citationKey": "melinscak2021annotateddataset",
+      "title": "Annotated Retinal OCT Images Database -- AROI Database",
+      "authors": [
+        "Martina Melinščak",
+        "Marin Radmilović",
+        "Zoran Vatavuk",
+        "Sven Lončarić"
+      ],
+      "year": 2021,
+      "venue": null,
+      "doi": null,
+      "url": "https://ipg.fer.hr/ipg/resources/oct_image_database"
+    },
+    {
+      "number": 24,
+      "citationKey": "melinscak2021annotated",
+      "title": "Annotated Retinal Optical Coherence Tomography Images (AROI) Database for Joint Retinal Layer and Fluid Segmentation",
+      "authors": [
+        "Martina Melinščak",
+        "Marin Radmilović",
+        "Zoran Vatavuk",
+        "Sven Lončarić"
+      ],
+      "year": 2021,
+      "venue": "Automatika",
+      "doi": "10.1080/00051144.2021.1973298",
+      "url": "https://doi.org/10.1080/00051144.2021.1973298"
+    },
+    {
+      "number": 25,
+      "citationKey": "li2020octa",
+      "title": "OCTA-500",
+      "authors": [
+        "Mingchao Li",
+        "Yerui Chen",
+        "Songtao Yuan",
+        "Qiang Chen"
+      ],
+      "year": 2020,
+      "venue": null,
+      "doi": null,
+      "url": "https://ieee-dataport.org/open-access/octa-500"
+    },
+    {
+      "number": 26,
+      "citationKey": "li2024octa",
+      "title": "OCTA-500: A Retinal Dataset for Optical Coherence Tomography Angiography Study",
+      "authors": [
+        "Mingchao Li",
+        "Kun Huang",
+        "Qiuzhuo Xu",
+        "Jiadong Yang",
+        "Yuhan Zhang",
+        "Zexuan Ji",
+        "Keren Xie",
+        "Songtao Yuan",
+        "Qinghuai Liu",
+        "Qiang Chen"
+      ],
+      "year": 2024,
+      "venue": "Medical Image Analysis",
+      "doi": "10.1016/j.media.2024.103092",
+      "url": "https://doi.org/10.1016/j.media.2024.103092"
+    },
+    {
+      "number": 27,
+      "citationKey": "giarratano2019optical",
+      "title": "Optical Coherence Tomography Angiography Retinal Scans and Segmentations",
+      "authors": [
+        "Ylenia Giarratano"
+      ],
+      "year": 2019,
+      "venue": null,
+      "doi": "10.7488/ds/2729",
+      "url": "https://doi.org/10.7488/ds/2729"
+    },
+    {
+      "number": 28,
+      "citationKey": "pissas2020deep",
+      "title": "Deep Iterative Vessel Segmentation in OCT Angiography",
+      "authors": [
+        "Theodoros Pissas",
+        "Elinor Bloch",
+        "Ben Flores",
+        "Orestis Georgiadis",
+        "Shafiq Jalali",
+        "Chiara Ravasio",
+        "Danail Stoyanov",
+        "Lyndon Da Cruz",
+        "Christos Bergeles"
+      ],
+      "year": 2020,
+      "venue": "Biomedical Optics Express",
+      "doi": "10.1364/boe.384919",
+      "url": "https://doi.org/10.1364/BOE.384919"
+    },
+    {
+      "number": 29,
+      "citationKey": "ma2024rose",
+      "title": "ROSE: Retinal OCT-Angiography Vessel Segmentation Dataset",
+      "authors": [
+        "Yuhui Ma",
+        "Huaying Hao",
+        "Huazhu Fu",
+        "Jiong Zhang",
+        "Jianlong Yang",
+        "Jiang Liu",
+        "Yalin Zheng",
+        "Yitian Zhao"
+      ],
+      "year": 2024,
+      "venue": null,
+      "doi": "10.5281/zenodo.12775880",
+      "url": "https://doi.org/10.5281/zenodo.12775880"
+    },
+    {
+      "number": 30,
+      "citationKey": "ma2021rose",
+      "title": "ROSE: A Retinal OCT-Angiography Vessel Segmentation Dataset and New Model",
+      "authors": [
+        "Yuhui Ma",
+        "Huaying Hao",
+        "Huazhu Fu",
+        "Jiong Zhang",
+        "Jianlong Yang",
+        "Jiang Liu",
+        "Yalin Zheng",
+        "Yitian Zhao"
+      ],
+      "year": 2021,
+      "venue": "IEEE Transactions on Medical Imaging",
+      "doi": "10.1109/tmi.2020.3042802",
+      "url": "https://doi.org/10.1109/TMI.2020.3042802"
+    },
+    {
+      "number": 31,
+      "citationKey": "zenodo2022faros",
+      "title": "FAROS: Fully Annotated Retinal OCTA Segmentation Dataset",
+      "authors": [],
+      "year": 2022,
+      "venue": null,
+      "doi": "10.5281/zenodo.6381668",
+      "url": "https://doi.org/10.5281/zenodo.6381668"
+    },
+    {
+      "number": 32,
+      "citationKey": "xiao2022omsn",
+      "title": "OMSN and FAROS: OCTA Microstructure Segmentation Network and Fully Annotated Retinal OCTA Segmentation Dataset",
+      "authors": [
+        "Peng Xiao"
+      ],
+      "year": 2022,
+      "venue": null,
+      "doi": "10.48550/arxiv.2212.13059",
+      "url": "https://doi.org/10.48550/arXiv.2212.13059"
+    },
+    {
+      "number": 33,
+      "citationKey": "drac2023diabetic",
+      "title": "DRAC 2022: Diabetic Retinopathy Analysis Challenge 2022 Dataset",
+      "authors": [],
+      "year": 2023,
+      "venue": null,
+      "doi": "10.17632/s8kbw25s3x.1",
+      "url": "https://doi.org/10.17632/s8kbw25s3x.1"
+    },
+    {
+      "number": 34,
+      "citationKey": "qian2024drac",
+      "title": "DRAC 2022: A Public Benchmark for Diabetic Retinopathy Analysis on Ultra-Wide Optical Coherence Tomography Angiography Images",
+      "authors": [
+        "Bo Qian",
+        "Hao Chen",
+        "Xiangning Wang"
+      ],
+      "year": 2024,
+      "venue": "Patterns",
+      "doi": "10.1016/j.patter.2024.100929",
+      "url": "https://doi.org/10.1016/j.patter.2024.100929"
+    },
+    {
+      "number": 35,
+      "citationKey": "diaz2019cnnsdataset",
+      "title": "CNNs for Automatic Glaucoma Assessment Using Fundus Images: An Extensive Validation",
+      "authors": [
+        "Andres Diaz-Pinto",
+        "Sandra Morales",
+        "Valery Naranjo",
+        "Thomas Köhler",
+        "Jose M. Mossi",
+        "Amparo Navea"
+      ],
+      "year": 2019,
+      "venue": null,
+      "doi": "10.6084/m9.figshare.7613135",
+      "url": "https://doi.org/10.6084/m9.figshare.7613135"
+    },
+    {
+      "number": 36,
+      "citationKey": "diaz2019cnns",
+      "title": "CNNs for Automatic Glaucoma Assessment Using Fundus Images: An Extensive Validation",
+      "authors": [
+        "Andres Diaz-Pinto",
+        "Sandra Morales",
+        "Valery Naranjo",
+        "Thomas Köhler",
+        "Jose M. Mossi",
+        "Amparo Navea"
+      ],
+      "year": 2019,
+      "venue": "BioMedical Engineering OnLine",
+      "doi": "10.1186/s12938-019-0649-y",
+      "url": "https://doi.org/10.1186/s12938-019-0649-y"
+    },
+    {
+      "number": 37,
+      "citationKey": "figshare2023retinal",
+      "title": "Retinal Fundus Glaucoma Image Dataset",
+      "authors": [],
+      "year": 2023,
+      "venue": null,
+      "doi": null,
+      "url": "https://figshare.com/articles/dataset/Retinal_Fundus_Glaucoma_Image_dataset/24549217"
+    },
+    {
+      "number": 38,
+      "citationKey": "zhang2010origa",
+      "title": "ORIGA(-light): An Online Retinal Fundus Image Database for Glaucoma Analysis and Research",
+      "authors": [
+        "Zhuo Zhang",
+        "F. S. Yin",
+        "Jiang Liu",
+        "Damon W. K. Wong",
+        "Ngan Meng Tan",
+        "Beng Hai Lee",
+        "Jun Cheng",
+        "Tien Yin Wong"
+      ],
+      "year": 2010,
+      "venue": "2010 Annual International Conference of the IEEE Engineering in Medicine and Biology",
+      "doi": "10.1109/iembs.2010.5626137",
+      "url": "https://doi.org/10.1109/IEMBS.2010.5626137"
+    },
+    {
+      "number": 39,
+      "citationKey": "kaggle2015diabetic",
+      "title": "Diabetic Retinopathy Detection",
+      "authors": [],
+      "year": 2015,
+      "venue": null,
+      "doi": null,
+      "url": "https://www.kaggle.com/competitions/diabetic-retinopathy-detection"
+    },
+    {
+      "number": 40,
+      "citationKey": "gulshan2016development",
+      "title": "Development and Validation of a Deep Learning Algorithm for Detection of Diabetic Retinopathy in Retinal Fundus Photographs",
+      "authors": [
+        "Varun Gulshan",
+        "Lily Peng",
+        "Marc Coram",
+        "Martin C. Stumpe",
+        "Derek Wu",
+        "Arunachalam Narayanaswamy",
+        "Subhashini Venugopalan",
+        "Kasumi Widner",
+        "Tom Madams",
+        "Jorge Cuadros",
+        "Ramasamy Kim",
+        "Rajiv Raman",
+        "Philip C. Nelson",
+        "Jessica L. Mega",
+        "Dale R. Webster"
+      ],
+      "year": 2016,
+      "venue": "JAMA",
+      "doi": "10.1001/jama.2016.17216",
+      "url": "https://doi.org/10.1001/jama.2016.17216"
+    },
+    {
+      "number": 41,
+      "citationKey": "573280ef5d40",
+      "title": "Detection of Retinal Disorders in Optical Coherence Tomography using Deep Learning",
+      "authors": [
+        "DIvyansh Rastogi",
+        "Ram Prasad Padhy",
+        "Pankaj Kumar Sa"
+      ],
+      "year": 2019,
+      "venue": "2019 10th International Conference on Computing, Communication and Networking Technologies, ICCCNT 2019",
+      "doi": "10.1109/icccnt45670.2019.8944406",
+      "url": "https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8944406"
+    },
+    {
+      "number": 42,
+      "citationKey": "e8da82ecca34",
+      "title": "A Deep Learning Framework for Segmentation of Retinal Layers from OCT Images",
+      "authors": [
+        "Karthik Gopinath",
+        "Samrudhdhi B Rangrej",
+        "Jayanthi Sivaswamy"
+      ],
+      "year": 2017,
+      "venue": "2017 4th IAPR Asian Conference on Pattern Recognition (ACPR)",
+      "doi": "10.1109/acpr.2017.121",
+      "url": "https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8575940"
+    },
+    {
+      "number": 43,
+      "citationKey": "35cf76e0902a",
+      "title": "Validation of a deep learning model for automatic detection and quantification of five OCT critical retinal features associated with neovascular age-related macular degeneration",
+      "authors": [
+        "Federico Ricardi",
+        "Jonathan Oakley",
+        "Daniel Russakoff",
+        "Giacomo Boscia",
+        "Paolo Caselgrandi",
+        "Francesco Gelormini",
+        "Andrea Ghilardi",
+        "Giulia Pintore",
+        "Tommaso Tibaldi",
+        "Paola Marolo",
+        "Francesco Bandello",
+        "Michele Reibaldi",
+        "Enrico Borrelli"
+      ],
+      "year": 2024,
+      "venue": "British Journal of Ophthalmology",
+      "doi": "10.1136/bjo-2023-324647",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38485214/"
+    },
+    {
+      "number": 44,
+      "citationKey": "5d93b7069e25",
+      "title": "A deep learning approach to predict visual field using optical coherence tomography",
+      "authors": [
+        "Keunheung Park",
+        "Jinmi Kim",
+        "Jiwoong Lee"
+      ],
+      "year": 2020,
+      "venue": "PloS one",
+      "doi": "10.1371/journal.pone.0234902",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32628672/"
+    },
+    {
+      "number": 45,
+      "citationKey": "7883c54e265c",
+      "title": "Utilizing Transformers on OCT Imagery and Metadata for Treatment Response Prediction in Macular Edema Patients",
+      "authors": [
+        "Sahar Vahdati",
+        "Deepankan Bharathi Nagaraj",
+        "Maximilian Bryan",
+        "Sobhan Moazemi",
+        "Sabine Gr\\\"under-Fahrer",
+        "Michael Martin"
+      ],
+      "year": 2023,
+      "venue": "Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics)",
+      "doi": "10.1007/978-3-031-31438-4_1",
+      "url": "https://www.scopus.com/pages/publications/85161389543?origin=resultslist"
+    },
+    {
+      "number": 46,
+      "citationKey": "d384c5486fec",
+      "title": "A Novel Multimodal Implementation of a Foundation Artificial Intelligence Model Using Optic Nerve Head Fundus Photographs and OCT Imaging for Glaucoma Detection",
+      "authors": [
+        "Benton Chuter",
+        "Vedant Joshi",
+        "Shahin Hallaj",
+        "Evan Walker",
+        "Christopher Bowd",
+        "Akram Belghith",
+        "Michael H Goldbaum",
+        "Andrzej Grzybowski",
+        "Massimo A Fazio",
+        "Christopher A Girkin",
+        "C Gustavo De Moraes",
+        "Jeffrey M Liebmann",
+        "Robert N Weinreb",
+        "Linda M Zangwill",
+        "Mark Christopher"
+      ],
+      "year": 2026,
+      "venue": "Ophthalmology science",
+      "doi": "10.1016/j.xops.2025.101012",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41631246/"
+    },
+    {
+      "number": 47,
+      "citationKey": "ed3fec0ec1cd",
+      "title": "A Deep Learning-Based Graphical User Interface for Predicting Corneal Ectasia Scores from Raw Optical Coherence Tomography Data",
+      "authors": [
+        "Maziar Mirsalehi",
+        "Achim Langenbucher"
+      ],
+      "year": 2026,
+      "venue": "Diagnostics (Basel, Switzerland)",
+      "doi": "10.3390/diagnostics16020310",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41594286/"
+    },
+    {
+      "number": 48,
+      "citationKey": "44ce6e703d06",
+      "title": "Integrating Human Expertise With Artificial Intelligence (AI) Models for Optical Coherence Tomography (OCT) Retinal Fluid and Pathology Quantification: A Systematic Review",
+      "authors": [
+        "Bakhtawar Awan",
+        "Mohamed Elsaigh",
+        "Mohamed Hesham Gamal",
+        "Sara E Elbahnasawy",
+        "Mohammed Badee"
+      ],
+      "year": 2025,
+      "venue": "Cureus",
+      "doi": "10.7759/cureus.100223",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41466814/"
+    },
+    {
+      "number": 49,
+      "citationKey": "8b31cb8429dc",
+      "title": "A Comprehensive Review of Deep Learning-Based Retinal Layer Integrity Assessment in Optical Coherence Tomography (OCT)",
+      "authors": [
+        "T.K. Shivaprasad",
+        "Preetham Kumar",
+        "Veena Mayya",
+        "Sulatha V. Bhandary",
+        "T. Shreekumar"
+      ],
+      "year": 2025,
+      "venue": "IEEE Access",
+      "doi": "10.1109/access.2025.3632550",
+      "url": "https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=11244904"
+    },
+    {
+      "number": 50,
+      "citationKey": "75bba223bc94",
+      "title": "A scoping review of the use of artificial intelligence models in automated OCT analysis and prediction of treatment outcomes in diabetic macular oedema",
+      "authors": [
+        "Mohaimen Al-Zubaidy",
+        "Agnieszka Stankiewicz",
+        "Matthew Anderson",
+        "Jordan Reed",
+        "Veronica Corona",
+        "Rebecca Pope",
+        "Boguslaw Obara",
+        "Maged S. Habib",
+        "David H. Steel"
+      ],
+      "year": 2025,
+      "venue": "Informatics in Medicine Unlocked",
+      "doi": "10.1016/j.imu.2025.101676",
+      "url": "https://www.scopus.com/pages/publications/105011972572?origin=resultslist"
+    },
+    {
+      "number": 51,
+      "citationKey": "a5c99b438a02",
+      "title": "Adaptive and Explainable Deep Learning for Automated Retinal Disease Diagnosis Using OCT Images",
+      "authors": [
+        "Finny V. Jacob",
+        "P. Gethsia"
+      ],
+      "year": 2025,
+      "venue": "2025 9th International Conference on Electronics, Communication and Aerospace Technology (ICECA)",
+      "doi": "10.1109/iceca66444.2025.11382772",
+      "url": "https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=11382772"
+    },
+    {
+      "number": 52,
+      "citationKey": "740599fb90ce",
+      "title": "A robust deep learning classifier for screening multiple retinal diseases on optical coherence tomography",
+      "authors": [
+        "Philippe Zhang",
+        "Gwenole Quellec",
+        "Sarah Matta",
+        "Laurent Borderie",
+        "Alexandre Le Guilcher",
+        "Tanguy Thiery",
+        "B\\'eatrice Cochener",
+        "Mathieu Lamard"
+      ],
+      "year": 2025,
+      "venue": "Scientific reports",
+      "doi": "10.1038/s41598-025-19286-y",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41068219/"
+    },
+    {
+      "number": 53,
+      "citationKey": "3610864516d6",
+      "title": "The role of artificial intelligence in monitoring glaucoma progression using optical coherence tomography",
+      "authors": [
+        "Sushmitha Gurumoorthy",
+        "N.V. Meena Lochana Nayaki",
+        "K. Ezhil Vendhan"
+      ],
+      "year": 2025,
+      "venue": "Indian Journal of Clinical and Experimental Ophthalmology",
+      "doi": "10.18231/j.ijceo.11108.1761806059",
+      "url": "https://www.scopus.com/pages/publications/105026345646?origin=resultslist"
+    },
+    {
+      "number": 54,
+      "citationKey": "1a2acf19df20",
+      "title": "A 3D Deep Learning System for Detecting Referable Glaucoma Using Full OCT Macular Cube Scans",
+      "authors": [
+        "Daniel B Russakoff",
+        "Suria S Mannil",
+        "Jonathan D Oakley",
+        "An Ran Ran",
+        "Carol Y Cheung",
+        "Srilakshmi Dasari",
+        "Mohammed Riyazzuddin",
+        "Sriharsha Nagaraj",
+        "Harsha L Rao",
+        "Dolly Chang",
+        "Robert T Chang"
+      ],
+      "year": 2020,
+      "venue": "Translational vision science & technology",
+      "doi": "10.1167/tvst.9.2.12",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32704418/"
+    },
+    {
+      "number": 55,
+      "citationKey": "124df92e6d47",
+      "title": "Prediction and Detection of Glaucomatous Visual Field Progression Using Deep Learning on Macular Optical Coherence Tomography",
+      "authors": [
+        "Jonathan Huang",
+        "Galal Galal",
+        "Vladislav Mukhin",
+        "Mozziyar Etemadi",
+        "Angelo P Tanna"
+      ],
+      "year": 2024,
+      "venue": "Journal of glaucoma",
+      "doi": "10.1097/ijg.0000000000002359",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38245813/"
+    },
+    {
+      "number": 56,
+      "citationKey": "15409c146949",
+      "title": "Diagnostic performance and generalizability of deep learning for multiple retinal diseases using bimodal imaging of fundus photography and optical coherence tomography",
+      "authors": [
+        "Xingwang Gu",
+        "Yang Zhou",
+        "Jianchun Zhao",
+        "Hongzhe Zhang",
+        "Xinlei Pan",
+        "Bing Li",
+        "Bilei Zhang",
+        "Yuelin Wang",
+        "Song Xia",
+        "Hailan Lin",
+        "Jie Wang",
+        "Dayong Ding",
+        "Xirong Li",
+        "Shan Wu",
+        "Jingyuan Yang",
+        "Youxin Chen"
+      ],
+      "year": 2025,
+      "venue": "Frontiers in cell and developmental biology",
+      "doi": "10.3389/fcell.2025.1665173",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41018263/"
+    },
+    {
+      "number": 57,
+      "citationKey": "2b6fbc4f0508",
+      "title": "Deep Learning-Based Diagnosis of Corneal Condition by Using Raw Optical Coherence Tomography Data",
+      "authors": [
+        "Maziar Mirsalehi",
+        "Michael Schwemm",
+        "Elias Flockerzi",
+        "N\\'ora Szentm\\'ary",
+        "Alaa Din Abdin",
+        "Berthold Seitz",
+        "Achim Langenbucher"
+      ],
+      "year": 2025,
+      "venue": "Diagnostics (Basel, Switzerland)",
+      "doi": "10.3390/diagnostics15243115",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41464119/"
+    },
+    {
+      "number": 58,
+      "citationKey": "4d67266653bd",
+      "title": "A column-based deep learning method for the detection and quantification of atrophy associated with AMD in OCT scans",
+      "authors": [
+        "Adi Szeskin",
+        "Roei Yehuda",
+        "Or Shmueli",
+        "Jaime Levy",
+        "Leo Joskowicz"
+      ],
+      "year": 2021,
+      "venue": "Medical image analysis",
+      "doi": "10.1016/j.media.2021.102130",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34198041/"
+    },
+    {
+      "number": 59,
+      "citationKey": "defa2b6538c8",
+      "title": "A Deep Learning Approach for Predicting the Response to Anti-VEGF Treatment in Diabetic Macular Edema Patients Using Optical Coherence Tomography Images",
+      "authors": [
+        "Karima Garraoui",
+        "Ines Rahmany",
+        "Salah Dhahri",
+        "Hedi Tabia",
+        "Desir\\'e Sidib\\'e",
+        "Hsouna Zgolli",
+        "Nawres Khlifa"
+      ],
+      "year": 2025,
+      "venue": "International Conference on Agents and Artificial Intelligence",
+      "doi": "10.5220/0013181700003890",
+      "url": "https://www.scopus.com/pages/publications/105001706165?origin=resultslist"
+    },
+    {
+      "number": 60,
+      "citationKey": "8ba2213f7ff2",
+      "title": "A Vision Transformer Based Deep Learning Architecture for Automatic Diagnosis of Diabetic Retinopathy in Optical Coherence Tomography Angiography",
+      "authors": [
+        "Sungjin Choi",
+        "Bosoung Jeoun",
+        "Jaeyoung Anh",
+        "Jaehyup Jeong",
+        "Yongjin Choi",
+        "Dowan Kwon",
+        "Unho Kim",
+        "Seoyoung Shin"
+      ],
+      "year": 2023,
+      "venue": "Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics)",
+      "doi": "10.1007/978-3-031-33658-4_13",
+      "url": "https://www.scopus.com/pages/publications/85173565088?origin=resultslist"
+    },
+    {
+      "number": 61,
+      "citationKey": "a619076b267e",
+      "title": "Validation of an Automated Artificial Intelligence Algorithm for the Quantification of Major OCT Parameters in Diabetic Macular Edema",
+      "authors": [
+        "Edoardo Midena",
+        "Lisa Toto",
+        "Luisa Frizziero",
+        "Giuseppe Covello",
+        "Tommaso Torresin",
+        "Giulia Midena",
+        "Luca Danieli",
+        "Elisabetta Pilotto",
+        "Michele Figus",
+        "Cesare Mariotti",
+        "Marco Lupidi"
+      ],
+      "year": 2023,
+      "venue": "Journal of clinical medicine",
+      "doi": "10.3390/jcm12062134",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36983137/"
+    },
+    {
+      "number": 62,
+      "citationKey": "f3443e988e2f",
+      "title": "A Novel Deep Learning Method for Nuclear Cataract Classification Based on Anterior Segment Optical Coherence Tomography Images",
+      "authors": [
+        "Xiaoqing Zhang",
+        "Zunjie Xiao",
+        "Risa Higashita",
+        "Wan Chen",
+        "Jin Yuan",
+        "Jiansheng Fang",
+        "Yan Hu",
+        "Jiang Liu"
+      ],
+      "year": 2020,
+      "venue": "Conference Proceedings - IEEE International Conference on Systems, Man and Cybernetics",
+      "doi": "10.1109/smc42975.2020.9283218",
+      "url": "https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9283218"
+    },
+    {
+      "number": 63,
+      "citationKey": "2d9526998521",
+      "title": "Comparison of Autonomous AS-OCT Deep Learning Algorithm and Clinical Dry Eye Tests in Diagnosis of Dry Eye Disease",
+      "authors": [
+        "Collin Chase",
+        "Amr Elsawy",
+        "Taher Eleiwa",
+        "Eyup Ozcan",
+        "Mohamed Tolba",
+        "Mohamed Abou Shousha"
+      ],
+      "year": 2021,
+      "venue": "Clinical ophthalmology (Auckland, N.Z.)",
+      "doi": "10.2147/opth.s321764",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34707347/"
+    },
+    {
+      "number": 64,
+      "citationKey": "ef74a70b4670",
+      "title": "Prediction of Causative Genes in Inherited Retinal Disorders from Spectral-Domain Optical Coherence Tomography Utilizing Deep Learning Techniques",
+      "authors": [
+        "Yu Fujinami-Yokokawa",
+        "Nikolas Pontikos",
+        "Lizhu Yang",
+        "Kazushige Tsunoda",
+        "Kazutoshi Yoshitake",
+        "Takeshi Iwata",
+        "Hiroaki Miyata",
+        "Kaoru Fujinami",
+        "On Behalf Of Japan Eye Genetics Consortium"
+      ],
+      "year": 2019,
+      "venue": "Journal of ophthalmology",
+      "doi": "10.1155/2019/1691064",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31093368/"
+    },
+    {
+      "number": 65,
+      "citationKey": "e842ed2e802d",
+      "title": "Retinal and choroidal microvasculature and structural analysis in OCTA for refractive amblyopia diagnosis using machine learning",
+      "authors": [
+        "Xinlong Liu",
+        "Caihong Xue",
+        "Mengdi Li",
+        "Yatu Guo",
+        "Wei Zhang"
+      ],
+      "year": 2025,
+      "venue": "Journal of optometry",
+      "doi": "10.1016/j.optom.2025.100555",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40334350/"
+    },
+    {
+      "number": 66,
+      "citationKey": "7a8d717e87c8",
+      "title": "Prediction of coronary artery disease using retinal optical coherence tomography angiography imaging and electronic health records: a multimodal machine learning approach",
+      "authors": [
+        "Ziyi Wu",
+        "Lili Ji",
+        "Wenbin Tang",
+        "Shijia Zhou",
+        "Qifeng Yan",
+        "Xiaomin Chen",
+        "Jinjin Zhu",
+        "Jianjun Ma",
+        "Yitian Zhao",
+        "Wenming He"
+      ],
+      "year": 2026,
+      "venue": "BMC cardiovascular disorders",
+      "doi": "10.1186/s12872-026-05660-9",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41857509/"
+    },
+    {
+      "number": 67,
+      "citationKey": "ac26cb0e9249",
+      "title": "A Deep Ensemble Learning-Based CNN Architecture for Multiclass Retinal Fluid Segmentation in OCT Images",
+      "authors": [
+        "Mohammad Rahil",
+        "B.N. Anoop",
+        "G.N. Girish",
+        "Abhishek R. Kothari",
+        "Shashidhar G. Koolagudi",
+        "Jeny Rajan"
+      ],
+      "year": 2023,
+      "venue": "IEEE Access",
+      "doi": "10.1109/access.2023.3244922",
+      "url": "https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10043848"
+    },
+    {
+      "number": 68,
+      "citationKey": "9128d022254b",
+      "title": "VALIDATION OF A DEEP LEARNING-BASED ALGORITHM FOR SEGMENTATION OF THE ELLIPSOID ZONE ON OPTICAL COHERENCE TOMOGRAPHY IMAGES OF AN USH2A-RELATED RETINAL DEGENERATION CLINICAL TRIAL",
+      "authors": [
+        "Jessica Loo",
+        "Glenn J Jaffe",
+        "Jacque L Duncan",
+        "David G Birch",
+        "Sina Farsiu"
+      ],
+      "year": 2022,
+      "venue": "Retina (Philadelphia, Pa.)",
+      "doi": "10.1097/iae.0000000000003448",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35174801/"
+    },
+    {
+      "number": 69,
+      "citationKey": "cf651cb4eb97",
+      "title": "Validation of Deep Learning-Based Automatic Retinal Layer Segmentation Algorithms for Age-Related Macular Degeneration with 2 Spectral-Domain OCT Devices",
+      "authors": [
+        "Souvick Mukherjee",
+        "Tharindu De Silva",
+        "Cameron Duic",
+        "Gopal Jayakar",
+        "Tiarnan D L Keenan",
+        "Alisa T Thavikulwat",
+        "Emily Chew",
+        "Catherine Cukras"
+      ],
+      "year": 2025,
+      "venue": "Ophthalmology science",
+      "doi": "10.1016/j.xops.2024.100670",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40091912/"
+    },
+    {
+      "number": 70,
+      "citationKey": "942a7c645311",
+      "title": "Anti-VEGF treatment outcome prediction based on optical coherence tomography images in neovascular age-related macular degeneration using a deep neural network",
+      "authors": [
+        "Jeong Mo Han",
+        "Jinyoung Han",
+        "Junseo Ko",
+        "Juho Jung",
+        "Ji In Park",
+        "Joon Seo Hwang",
+        "Jeewoo Yoon",
+        "Jae Ho Jung",
+        "Daniel Duck-Jin Hwang"
+      ],
+      "year": 2024,
+      "venue": "Scientific reports",
+      "doi": "10.1038/s41598-024-79034-6",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39548212/"
+    },
+    {
+      "number": 71,
+      "citationKey": "Schlosser2024_SciRep",
+      "title": "Visual Acuity Prediction on Real-Life Patient Data Using a Machine Learning Based Multistage System",
+      "authors": [
+        "Tobias Schlosser",
+        "Frederik Beuth",
+        "Trixy Meyer",
+        "Arunodhayan Sampath Kumar",
+        "Gabriel Stolze",
+        "Olga Furashova",
+        "Katrin Engelmann",
+        "Danny Kowerko"
+      ],
+      "year": 2024,
+      "venue": "Scientific Reports",
+      "doi": "10.1038/s41598-024-54482-2",
+      "url": "https://www.nature.com/articles/s41598-024-54482-2"
+    },
+    {
+      "number": 72,
+      "citationKey": "2edcd32ecfef",
+      "title": "A Hybrid Machine Learning Approach Using LBP Descriptor and PCA for Age-Related Macular Degeneration Classification in OCTA Images",
+      "authors": [
+        "Abdullah Alfahaid",
+        "Tim Morris",
+        "Tim Cootes",
+        "Pearse A. Keane",
+        "Hagar Khalid",
+        "Nikolas Pontikos",
+        "Panagiotis Sergouniotis",
+        "Konstantinos Balaskas"
+      ],
+      "year": 2020,
+      "venue": "Communications in Computer and Information Science",
+      "doi": "10.1007/978-3-030-39343-4_20",
+      "url": "https://www.scopus.com/pages/publications/85079092660?origin=resultslist"
+    },
+    {
+      "number": 73,
+      "citationKey": "c989782a8bba",
+      "title": "A GCN-assisted deep learning method for peripapillary retinal layer segmentation in OCT images",
+      "authors": [
+        "Jiaxuan Li",
+        "Yuye Ling",
+        "Jiangnan He",
+        "Peiyao Jin",
+        "Jianfeng Zhu",
+        "Haidong Zou",
+        "Xun Xu",
+        "Shuo Shao",
+        "Yu Gan",
+        "Yikai Su"
+      ],
+      "year": 2021,
+      "venue": "Progress in Biomedical Optics and Imaging - Proceedings of SPIE",
+      "doi": "10.1117/12.2582905",
+      "url": "https://www.scopus.com/pages/publications/85108697358?origin=resultslist"
+    },
+    {
+      "number": 74,
+      "citationKey": "26b86f0f7104",
+      "title": "A comparison of deep learning U-Net architectures for posterior segment OCT retinal layer segmentation",
+      "authors": [
+        "Jason Kugelman",
+        "Joseph Allman",
+        "Scott A Read",
+        "Stephen J Vincent",
+        "Janelle Tong",
+        "Michael Kalloniatis",
+        "Fred K Chen",
+        "Michael J Collins",
+        "David Alonso-Caneiro"
+      ],
+      "year": 2022,
+      "venue": "Scientific reports",
+      "doi": "10.1038/s41598-022-18646-2",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36050364/"
+    },
+    {
+      "number": 75,
+      "citationKey": "8a5b73028348",
+      "title": "Demystifying Deep Learning Models for Retinal OCT Disease Classification using Explainable AI",
+      "authors": [
+        "Tasnim Sakib Apon",
+        "Mohammad Mahmudul Hasan",
+        "Abrar Islam",
+        "Md. Golam Rabiul Alam"
+      ],
+      "year": 2021,
+      "venue": "2021 IEEE Asia-Pacific Conference on Computer Science and Data Engineering, CSDE 2021",
+      "doi": "10.1109/csde53843.2021.9718400",
+      "url": "https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9718400"
+    },
+    {
+      "number": 76,
+      "citationKey": "d2f5621f7596",
+      "title": "Robust and Interpretable Convolutional Neural Networks to Detect Glaucoma in Optical Coherence Tomography Images",
+      "authors": [
+        "Kaveri A Thakoor",
+        "Sharath C Koorathota",
+        "Donald C Hood",
+        "Paul Sajda"
+      ],
+      "year": 2021,
+      "venue": "IEEE Transactions on Biomedical Engineering",
+      "doi": "10.1109/tbme.2020.3043215",
+      "url": "https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9286420"
+    },
+    {
+      "number": 77,
+      "citationKey": "9e08b543a80f",
+      "title": "An artificial intelligence cloud platform for OCT-based retinal anomalies screening system in real clinical environments",
+      "authors": [
+        "Xinjian Chen",
+        "Jingtao Wang",
+        "Tianwei Qian",
+        "Jingcheng Wang",
+        "Yiming Ding",
+        "Su Zhang",
+        "Jingjing Liao",
+        "Qian Cheng",
+        "Ting Yang",
+        "Muhammad Mateen",
+        "Yu Fan",
+        "Zongming Song",
+        "Jili Chen",
+        "Suyan Li",
+        "Jianmin Hu",
+        "Wentao Yan",
+        "Haoyu Chen",
+        "Wencan Wu",
+        "Jing Huang",
+        "Tien Yin Wong",
+        "Xun Xu"
+      ],
+      "year": 2025,
+      "venue": "NPJ digital medicine",
+      "doi": "10.1038/s41746-025-01959-7",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40883412/"
+    }
+  ],
+  "evidenceMapRules": {
+    "general": [
+      {
+        "dimension": "Model performance",
+        "required": "Reported quantitative or qualitative performance, comparison, error, agreement, calibration, or robustness outcome.",
+        "notSufficient": "Architecture or method description without an evaluated outcome."
+      },
+      {
+        "dimension": "Technological limitations",
+        "required": "An explicit failure mode or generalisation or robustness constraint affecting an AI model or system, an image artefact, a technical restriction, or a method that explicitly overcomes such a constraint.",
+        "notSufficient": "A limitation inferred from study design, a sample-size or data limitation without a stated technical consequence, or generic future work."
+      },
+      {
+        "dimension": "Real-world impact",
+        "required": "A system deployed or used in practice, or a measured patient, clinician, workflow, referral, treatment, access, or service consequence.",
+        "notSufficient": "Retrospective benchmark performance, claimed clinical relevance, prospective utility, or an unmeasured promise of workload reduction."
+      },
+      {
+        "dimension": "Data availability, integration, quality, and standardisation",
+        "required": "An explicit AI-linked effect of data scarcity, missingness, quality, representativeness, annotation, access, harmonisation, integration, interoperability, or standardisation.",
+        "notSufficient": "Merely naming or using a dataset, an ordinary train/test split or preprocessing step, or a routine data-availability statement."
+      },
+      {
+        "dimension": "Infrastructural demands",
+        "required": "An explicit deployment or integration burden or enabling factor involving hardware, cloud or network capacity, connectivity, staffing, workflow, maintenance, or institutional resources.",
+        "notSufficient": "A list of devices, software, graphics processing units (GPUs), memory, or runtime in the methods section without a stated implementation consequence."
+      },
+      {
+        "dimension": "Financial costs",
+        "required": "An explicit consequence involving monetary cost, affordability, reimbursement, economic burden, staffing costs, or health-system resources.",
+        "notSufficient": "Parameter count, runtime, hardware specification, or \"computational cost\" without a monetary or affordability consequence."
+      },
+      {
+        "dimension": "Regulatory requirements",
+        "required": "An explicit AI-related approval, certification, liability, legal, compliance, governance, or post-market obligation or barrier.",
+        "notSufficient": "Routine research ethics approval, consent, Declaration of Helsinki compliance, or adherence to reporting guidelines."
+      },
+      {
+        "dimension": "Cybersecurity risks",
+        "required": "An explicit hostile attack, vulnerability, security safeguard, adversarial threat, or resilience claim involving an AI or data system.",
+        "notSufficient": "Generic privacy, ordinary model robustness, access details, or an inferred security risk."
+      },
+      {
+        "dimension": "Ethical concerns",
+        "required": "An explicit cross-cutting AI-related ethical harm, benefit, dilemma, or responsible AI implication.",
+        "notSufficient": "Routine ethics approval or consent, or an ethical issue supported only by procedural boilerplate."
+      }
+    ],
+    "ethics": [
+      {
+        "dimension": "Privacy",
+        "required": "An explicit AI-linked privacy risk or a concrete privacy-specific AI mechanism reported to mitigate that risk.",
+        "notSufficient": "Routine anonymisation, de-identification, consent, restricted data access, or a non-public dataset without an explicit AI-related privacy effect."
+      },
+      {
+        "dimension": "Transparency",
+        "required": "An explicit effect on explainability, interpretability, disclosure, traceability, or clinician understanding of an AI decision.",
+        "notSufficient": "Routine methods reporting, performance metrics, model diagrams, heatmaps, or visualisation without a stated interpretive function."
+      },
+      {
+        "dimension": "Integrity",
+        "required": "An explicit effect on truthfulness, authenticity, manipulation, corruption, or evidentiary integrity of AI or data outputs.",
+        "notSufficient": "Ordinary accuracy, ground-truth labelling, validation, reproducibility, data cleaning, or data-quality methods."
+      },
+      {
+        "dimension": "Security",
+        "required": "An explicit ethical threat or protection affecting the confidentiality, integrity, or availability of an AI or data system.",
+        "notSufficient": "Generic privacy, robustness, login/access details, or a security effect inferred by the reviewer."
+      },
+      {
+        "dimension": "Non-maleficence",
+        "required": "An explicit AI-related harm, safety risk, consequence of an incorrect output, or reported harm-prevention mechanism.",
+        "notSufficient": "A generic diagnostic purpose, accuracy improvement, or patient benefit inferred without a stated harm connection."
+      },
+      {
+        "dimension": "Trust",
+        "required": "Trust, confidence, acceptance, reliance, or credibility of the AI system is explicitly named, investigated, or measured.",
+        "notSufficient": "Trust inferred solely from accuracy, robustness, expert agreement, validation, or explainability."
+      },
+      {
+        "dimension": "Accountability",
+        "required": "Explicit responsibility, liability, oversight, contestability, or answerability for an AI-supported decision.",
+        "notSufficient": "Author contribution or accountability statements, ethics approval, or expert labelling alone."
+      },
+      {
+        "dimension": "Equity",
+        "required": "An explicit AI-related subgroup fairness, bias, disparity, representativeness, access, or distributional effect.",
+        "notSufficient": "Ordinary class balancing unless linked to affected patient groups, access, or outcome inequity."
+      },
+      {
+        "dimension": "Autonomy",
+        "required": "An explicit effect on patient or clinician agency, informed choice about AI use, or meaningful human control.",
+        "notSufficient": "The technical term \"autonomous\", generic personalisation, or clinician involvement without an agency effect."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "level": 2,
+      "heading": "Annual publication trends by category",
+      "slug": "annual-publication-trends-by-category",
+      "html": "<p>Source-specific document types were harmonised into five categories, comprising journal articles, conference papers or proceedings, reviews, books or chapters, and other or unclear records. Annual counts were then aggregated by publication year and harmonised category, as shown in <a href=\"__BASE__visualizations/publication-timeline/\">the publication-type timeline</a>. Because the corpus was assembled during 2026, the total for that year is incomplete and should be interpreted descriptively.</p>\n<p>The clinical-target, method-family, and task-family timelines preserve the annual totals but assign each record a single primary category. The clinical-target timeline uses labels consistent with the other visualisations. When a record had several targets, disease-specific targets took precedence over broader ones. For the shown figure labels, age-related macular degeneration (AMD), choroidal neovascularisation (CNV), diabetic retinopathy (DR), diabetic macular oedema (DME), and retinal nerve fibre layer (RNFL) are abbreviated.</p>\n<p>The method-family timeline groups records by primary method family using the convention in the clinical-target timeline. More specific families, including U-Net or encoder–decoder segmentation, convolutional neural networks (CNNs), vision transformers (ViTs), generative adversarial networks (GANs), foundation models, and large language models (LLMs), took precedence over broader machine-learning (ML) or deep-learning (DL) labels. The other deep-learning category was used only when no more specific method-family target was available. Finally, the task-family timeline groups records by primary task family.</p>"
+    },
+    {
+      "level": 2,
+      "heading": "Heatmaps of task, clinical-target, and method-family assignments",
+      "slug": "heatmaps-of-task-clinical-target-and-method-family-assignments",
+      "html": "<p>The <a href=\"__BASE__visualizations/heatmaps/\">task, clinical-target, and method-family heatmaps</a> extend the descriptive assessment of the evidence base. The clinical-target heatmap relates task families to clinical targets, while the method-family heatmap relates method families to task families. Cell values represent record-level assignments rather than mutually exclusive groups of studies, and a single publication may contribute to multiple cells. This structure highlights both concentrated areas of investigation and gaps in which particular clinical needs are rarely linked to specific methodological approaches. The distribution across the clinical-target heatmap shows that task coverage differs substantially among clinical targets, indicating that methodological development is concentrated around particular combinations of clinical question and analytical task rather than distributed uniformly across ophthalmology. The method-family heatmap similarly shows that method families are associated with distinct task profiles, reflecting methodological specialisation while also identifying opportunities to evaluate established and emerging approaches.</p>\n<p>The method-family heatmap also identifies studies that explicitly used LLMs or multimodal language-model systems. Fields used only for review screening did not count as evidence of study-level LLM use, avoiding conflation of review tools with methods examined in the included literature. This row therefore provides a conservative estimate of language-model use in ophthalmic AI research while maintaining the distinction between the evidence base and the review process. Their limited representation suggests that language-model applications remain an emerging area of ophthalmic AI, with opportunities for further evaluation across clinical tasks and workflows.</p>"
+    },
+    {
+      "level": 2,
+      "heading": "Identifiable public datasets and benchmark resources",
+      "slug": "identifiable-public-datasets-and-benchmark-resources",
+      "html": "<p><a href=\"__BASE__datasets/\">dataset registry</a> consolidates identifiable public datasets and benchmark resources represented in the included literature. It includes named datasets, challenge resources, and reusable benchmark collections while excluding generic labels such as &quot;private dataset&quot;, local hospital cohorts, and unidentifiable study-specific collections. Focusing on traceable resources supports comparison across studies and highlights datasets that can be independently identified and reused.</p>\n<p>OCT-based retinal disease classification relies substantially on a small group of public datasets. The Kermany retinal OCT dataset, published under several names including UCSD, Kaggle, Mendeley, OCT2017, and LOCT, is the most widely represented. Other classification resources include OCTDL, OCTID, OCTMNIST, RetinalOCT-C8 / OCT-C8, A2ASDOCT, and SERI-CUHK spectral-domain OCT (SD-OCT). Collectively, these datasets support supervised learning across AMD, CNV, DME, drusen, DR, macular hole, and healthy controls. Their reuse promotes comparison and reproducibility across studies, while evaluation across more diverse imaging distributions, disease labels, acquisition protocols, and preprocessing conventions could further strengthen generalisability.</p>\n<p>Segmentation benchmarks constitute a second major group of reusable OCT and OCTA resources. RETOUCH, OPTIMA, AI Challenger OCT, Duke / DUKE SD-OCT / Duke DME OCT, and AROI support segmentation of retinal fluid, layers, and lesions. OCTA-500 / OCTA-3M / OCTA-6M, OCTA-SS, ROSE-1, FAROS, and DRAC 2022 / OCTA-DR broaden this scope to vascular, foveal avascular zone (FAZ), capillary, lesion, image-quality, and DR-grading tasks. Selected fundus benchmarks, including ACRIMA, ORIGA, and EyePACS, further support multimodal OCT or OCTA studies. Together, the resources in <a href=\"__BASE__datasets/\">dataset registry</a> provide established benchmarks for comparison and reproducibility across imaging tasks. Greater diversity, multimodal coverage, comprehensive documentation, and external validation could further strengthen this shared foundation for ophthalmic AI research.</p>"
+    },
+    {
+      "level": 2,
+      "heading": "Publication-level mappings for the evidence gap analysis",
+      "slug": "publication-level-mappings-for-the-evidence-gap-analysis",
+      "html": "<p><a href=\"__BASE__supplementary/evidence-map/#general-assignments\">General evidence assignments</a> and <a href=\"__BASE__supplementary/evidence-map/#ethics-assignments\">ethics evidence assignments</a> provide the publication-level assignments underlying the evidence gap maps. By identifying the publications assigned to each dimension and stance, they complement the aggregate counts with a traceable account of the evidence within each category. The general reference table covers dimensions relevant to ophthalmic AI research, clinical translation, and implementation, including model performance, technological limitations, real-world impact, data availability, integration, quality and standardisation, infrastructural demands, financial costs, regulatory requirements, cybersecurity risks, and ethical concerns. For each dimension, evidence is classified as positive, negative, or balanced, with a balanced assignment requiring evidence in both directions.</p>\n<p>The ethical reference table applies the same decision framework to privacy, transparency, integrity, security, non-maleficence, trust, accountability, equity, and autonomy. It distinguishes issues reported as caused by AI, resolved through an AI-related approach, or both. Routine ethics approval, consent, anonymisation, restricted data availability, and author-accountability statements were not considered evidence that AI had resolved an ethical issue. Similarly, a technical method received no ethical stance unless the evaluated text explicitly linked it to the relevant ethical dimension. Under these criteria, publications could remain unassigned, and neutral or mixed categories were not used to represent insufficient evidence. Assignments reflected explicit publication-level framing, including described mechanisms and evaluated results, without implying that every benefit had been demonstrated in practice. Assignments could draw on original results or explicit evidence reported from cited studies. Category counts therefore represent publications addressing an effect rather than independent primary demonstrations. The <a href=\"__BASE__supplementary/evidence-map/#criteria\">general and ethics inclusion and exclusion criteria</a> govern every assignment.</p>"
+    },
+    {
+      "level": 2,
+      "heading": "Interpretive synthesis of the evidence base",
+      "slug": "interpretive-synthesis-of-the-evidence-base",
+      "html": "<p>Collectively, the publications in <a href=\"__BASE__publications/\">included-publication table</a> show that ophthalmic AI involving OCT and OCTA extends beyond image classification to a broader range of clinical and analytical tasks. These include segmentation, quantitative biomarker extraction, prognosis, treatment-response prediction, multimodal fusion, and workflow-oriented clinical support <sup class=\"citation\" aria-label=\"References 573280ef5d40, e8da82ecca34, 35cf76e0902a, 5d93b7069e25, 7883c54e265c, d384c5486fec, ed3fec0ec1cd, 44ce6e703d06, 8b31cb8429dc, 75bba223bc94\">[<a href=\"__BASE__publications/573280ef5d40/\">41</a>, <a href=\"__BASE__publications/e8da82ecca34/\">42</a>, <a href=\"__BASE__publications/35cf76e0902a/\">43</a>, <a href=\"__BASE__publications/5d93b7069e25/\">44</a>, <a href=\"__BASE__publications/7883c54e265c/\">45</a>, <a href=\"__BASE__publications/d384c5486fec/\">46</a>, <a href=\"__BASE__publications/ed3fec0ec1cd/\">47</a>, <a href=\"__BASE__publications/44ce6e703d06/\">48</a>, <a href=\"__BASE__publications/8b31cb8429dc/\">49</a>, <a href=\"__BASE__publications/75bba223bc94/\">50</a>]</sup>. The literature thus extends from disease detection to the generation of clinically meaningful, reproducible, and operationally useful information that could support ophthalmic care <sup class=\"citation\" aria-label=\"References a5c99b438a02, 740599fb90ce, 44ce6e703d06, 3610864516d6\">[<a href=\"__BASE__publications/a5c99b438a02/\">51</a>, <a href=\"__BASE__publications/740599fb90ce/\">52</a>, <a href=\"__BASE__publications/44ce6e703d06/\">48</a>, <a href=\"__BASE__publications/3610864516d6/\">53</a>]</sup>.</p>\n<p>The depth and maturity of evidence vary across this broad range of applications. Retinal disease and glaucoma have comparatively extensive evidence bases spanning diverse methods, clinical questions, and stages of validation, whereas other applications remain more exploratory or specialised <sup class=\"citation\" aria-label=\"References 35cf76e0902a, 1a2acf19df20, 124df92e6d47, 15409c146949, 2b6fbc4f0508\">[<a href=\"__BASE__publications/35cf76e0902a/\">43</a>, <a href=\"__BASE__publications/1a2acf19df20/\">54</a>, <a href=\"__BASE__publications/124df92e6d47/\">55</a>, <a href=\"__BASE__publications/15409c146949/\">56</a>, <a href=\"__BASE__publications/2b6fbc4f0508/\">57</a>]</sup>. <a href=\"__BASE__publications/\">included-publication table</a> therefore depicts a heterogeneous field, with substantial differences across clinical domains in the progression from technical development to validation and clinical translation.</p>"
+    },
+    {
+      "level": 3,
+      "heading": "Concentration of evidence across ophthalmic domains",
+      "slug": "concentration-of-evidence-across-ophthalmic-domains",
+      "html": "<p>This unevenness is most apparent in the distribution across clinical domains. Much of the evidence in <a href=\"__BASE__publications/\">included-publication table</a> concerns AMD, DME, DR, retinal fluid abnormalities, and glaucoma <sup class=\"citation\" aria-label=\"References 4d67266653bd, defa2b6538c8, 8ba2213f7ff2, 35cf76e0902a, 1a2acf19df20\">[<a href=\"__BASE__publications/4d67266653bd/\">58</a>, <a href=\"__BASE__publications/defa2b6538c8/\">59</a>, <a href=\"__BASE__publications/8ba2213f7ff2/\">60</a>, <a href=\"__BASE__publications/35cf76e0902a/\">43</a>, <a href=\"__BASE__publications/1a2acf19df20/\">54</a>]</sup>. These conditions already rely on OCT and OCTA for diagnosis, disease staging, treatment monitoring, and longitudinal surveillance. Although the mapping cannot establish why research has concentrated in these areas, automated analysis could plausibly improve efficiency, standardisation, or sensitivity to change within their established imaging workflows.</p>\n<p>The clinical role of imaging also helps explain the questions pursued within each domain. In retinal disease, OCT-based fluid detection, atrophy assessment, lesion characterisation, and monitoring of neovascular activity are integral to routine management, making them natural targets for AI-assisted automation and quantification <sup class=\"citation\" aria-label=\"References 4d67266653bd, 35cf76e0902a, a619076b267e\">[<a href=\"__BASE__publications/4d67266653bd/\">58</a>, <a href=\"__BASE__publications/35cf76e0902a/\">43</a>, <a href=\"__BASE__publications/a619076b267e/\">61</a>]</sup>. In glaucoma, the established role of structural imaging in detection and follow-up similarly motivates studies of classification, staging, progression, and structure–function mapping <sup class=\"citation\" aria-label=\"References 5d93b7069e25, 1a2acf19df20, 124df92e6d47\">[<a href=\"__BASE__publications/5d93b7069e25/\">44</a>, <a href=\"__BASE__publications/1a2acf19df20/\">54</a>, <a href=\"__BASE__publications/124df92e6d47/\">55</a>]</sup>.</p>\n<p>Research represented in <a href=\"__BASE__publications/\">included-publication table</a> extends beyond these dominant indications, although usually with less evidentiary depth. The included publications address cataract, keratoconus, corneal oedema, dry eye disease, inherited retinal disorders, optic neuropathies, amblyopia, and extra-ophthalmic prediction tasks derived from retinal imaging <sup class=\"citation\" aria-label=\"References f3443e988e2f, 2b6fbc4f0508, 2d9526998521, ef74a70b4670, e842ed2e802d, 7a8d717e87c8\">[<a href=\"__BASE__publications/f3443e988e2f/\">62</a>, <a href=\"__BASE__publications/2b6fbc4f0508/\">57</a>, <a href=\"__BASE__publications/2d9526998521/\">63</a>, <a href=\"__BASE__publications/ef74a70b4670/\">64</a>, <a href=\"__BASE__publications/e842ed2e802d/\">65</a>, <a href=\"__BASE__publications/7a8d717e87c8/\">66</a>]</sup>. This range suggests that OCT and OCTA are being explored as general-purpose phenotyping modalities rather than being confined to a small set of high-frequency classification problems. Even so, the evidence remains deepest where OCT is already embedded in established clinical workflows.</p>"
+    },
+    {
+      "level": 3,
+      "heading": "From diagnostic classification to quantitative imaging biomarkers",
+      "slug": "from-diagnostic-classification-to-quantitative-imaging-biomarkers",
+      "html": "<p>Across these clinical domains, technical approaches span diagnostic classification and quantitative characterisation. Classification remains a prominent and foundational task, distinguishing normal from pathological scans and differentiating CNV, DME, drusen, AMD stages, and glaucomatous change <sup class=\"citation\" aria-label=\"References 573280ef5d40, 8ba2213f7ff2, 15409c146949\">[<a href=\"__BASE__publications/573280ef5d40/\">41</a>, <a href=\"__BASE__publications/8ba2213f7ff2/\">60</a>, <a href=\"__BASE__publications/15409c146949/\">56</a>]</sup>. Beyond classification, <a href=\"__BASE__publications/\">included-publication table</a> documents extensive work on segmentation, structural delineation, and quantitative biomarker extraction <sup class=\"citation\" aria-label=\"References e8da82ecca34, ac26cb0e9249, 9128d022254b, 35cf76e0902a, a619076b267e, cf651cb4eb97\">[<a href=\"__BASE__publications/e8da82ecca34/\">42</a>, <a href=\"__BASE__publications/ac26cb0e9249/\">67</a>, <a href=\"__BASE__publications/9128d022254b/\">68</a>, <a href=\"__BASE__publications/35cf76e0902a/\">43</a>, <a href=\"__BASE__publications/a619076b267e/\">61</a>, <a href=\"__BASE__publications/cf651cb4eb97/\">69</a>]</sup>.</p>\n<p>Classification condenses image information into a diagnostic label. Segmentation and quantification instead produce structured measurements that reflect anatomy, pathology, and change over time. Reported outputs include retinal layer boundaries, fluid volumes, atrophic regions, ellipsoid-zone metrics, non-perfusion areas, vessel densities, smoothness indices, and other OCT-derived biomarkers <sup class=\"citation\" aria-label=\"References 4d67266653bd, a619076b267e, 9128d022254b, 35cf76e0902a, 8ba2213f7ff2\">[<a href=\"__BASE__publications/4d67266653bd/\">58</a>, <a href=\"__BASE__publications/a619076b267e/\">61</a>, <a href=\"__BASE__publications/9128d022254b/\">68</a>, <a href=\"__BASE__publications/35cf76e0902a/\">43</a>, <a href=\"__BASE__publications/8ba2213f7ff2/\">60</a>]</sup>. By moving from labels to measurements, these approaches align AI more closely with ophthalmic practice, in which quantification may be as important as categorical diagnosis.</p>\n<p>This alignment gives the segmentation and quantification studies potential translational relevance. Biomarker extraction and quantitative lesion assessment can support disease monitoring, treatment decisions, and longitudinal research through outputs that correspond more closely to clinical reasoning than isolated class labels <sup class=\"citation\" aria-label=\"References 35cf76e0902a, a619076b267e, 44ce6e703d06\">[<a href=\"__BASE__publications/35cf76e0902a/\">43</a>, <a href=\"__BASE__publications/a619076b267e/\">61</a>, <a href=\"__BASE__publications/44ce6e703d06/\">48</a>]</sup>. Their prominence therefore reflects diversification in both the methods and the clinical purposes for which AI is being developed, but does not by itself demonstrate robust measurement across devices and populations or improved clinical decisions and outcomes.</p>"
+    },
+    {
+      "level": 3,
+      "heading": "Prediction, prognosis, and potential clinical decision support",
+      "slug": "prediction-prognosis-and-potential-clinical-decision-support",
+      "html": "<p>The progression from labels to clinically relevant measurements is accompanied by growing interest in prognosis and prediction. Rather than focusing exclusively on recognition of the current disease state, a notable subset of studies in <a href=\"__BASE__publications/\">included-publication table</a> addresses treatment response, recurrence, retreatment burden, postoperative visual outcome, progression, or functional decline <sup class=\"citation\" aria-label=\"References defa2b6538c8, 942a7c645311, 7883c54e265c, 5d93b7069e25, 124df92e6d47\">[<a href=\"__BASE__publications/defa2b6538c8/\">59</a>, <a href=\"__BASE__publications/942a7c645311/\">70</a>, <a href=\"__BASE__publications/7883c54e265c/\">45</a>, <a href=\"__BASE__publications/5d93b7069e25/\">44</a>, <a href=\"__BASE__publications/124df92e6d47/\">55</a>]</sup>. These endpoints extend the scope of AI from automated diagnosis towards potentially actionable decision support.</p>\n<p>This predictive emphasis is particularly evident in glaucoma. Multiple studies use OCT-derived structural information to estimate visual field loss, mean deviation, or progression risk <sup class=\"citation\" aria-label=\"References 5d93b7069e25, 124df92e6d47, 3610864516d6\">[<a href=\"__BASE__publications/5d93b7069e25/\">44</a>, <a href=\"__BASE__publications/124df92e6d47/\">55</a>, <a href=\"__BASE__publications/3610864516d6/\">53</a>]</sup>. By linking structural change with functional impairment, these approaches could complement functional testing and provide clinically relevant information beyond image-based diagnostic classification.</p>\n<p>Retinal studies similarly use OCT to predict response to anti-vascular endothelial growth factor (anti-VEGF) treatment, disease recurrence, postoperative outcome, and individualised treatment requirements in AMD, DME, and macular hole settings <sup class=\"citation\" aria-label=\"References defa2b6538c8, 942a7c645311, 7883c54e265c, Schlosser2024_SciRep\">[<a href=\"__BASE__publications/defa2b6538c8/\">59</a>, <a href=\"__BASE__publications/942a7c645311/\">70</a>, <a href=\"__BASE__publications/7883c54e265c/\">45</a>, <a href=\"__BASE__publications/schlosser2024-scirep/\">71</a>]</sup>. In these applications, OCT-derived structure is used both to characterise disease and to anticipate its course or response to therapy. This focus on clinically consequential endpoints is more ambitious than image classification and could support more individualised ophthalmic care.</p>\n<p>Greater ambition brings a higher evidentiary standard. Prediction may support earlier or more individualised care, but high discrimination in static datasets is insufficient. Clinical use also requires valid relationships among imaging biomarkers, temporal dynamics, and patient outcomes that matter in practice, together with temporal and external validation. The presence of these studies demonstrates growing interest in anticipatory clinical reasoning and provides a foundation for establishing clinical utility and safety.</p>"
+    },
+    {
+      "level": 3,
+      "heading": "Methodological diversity, interpretability, and multimodal integration",
+      "slug": "methodological-diversity-interpretability-and-multimodal-integration",
+      "html": "<p>The clinical questions described above are addressed using a diverse range of methods. <a href=\"__BASE__publications/\">included-publication table</a> spans conventional machine-learning approaches based on handcrafted features, support vector machines, random forests, and transformed OCT-derived parameters <sup class=\"citation\" aria-label=\"References 2edcd32ecfef\">[<a href=\"__BASE__publications/2edcd32ecfef/\">72</a>]</sup>, as well as CNNs, three-dimensional models, ensembles, transformer architectures, hybrid CNN–transformer systems, self-supervised approaches, uncertainty-aware systems, and multimodal fusion pipelines <sup class=\"citation\" aria-label=\"References c989782a8bba, d384c5486fec, 15409c146949, 8ba2213f7ff2\">[<a href=\"__BASE__publications/c989782a8bba/\">73</a>, <a href=\"__BASE__publications/d384c5486fec/\">46</a>, <a href=\"__BASE__publications/15409c146949/\">56</a>, <a href=\"__BASE__publications/8ba2213f7ff2/\">60</a>]</sup>. This methodological diversity reflects the range of clinical questions, data structures, and technical requirements across ophthalmic AI.</p>\n<p>Greater methodological complexity or novelty does not necessarily confer greater clinical value. Comparative studies indicate that more complex architectures may provide only modest improvements over simpler baselines <sup class=\"citation\" aria-label=\"References 26b86f0f7104\">[<a href=\"__BASE__publications/26b86f0f7104/\">74</a>]</sup>. Their value is strengthened when performance gains are accompanied by greater generalisability, robustness, clinically useful quantification, and reliable performance across relevant populations and settings.</p>\n<p>Interpretability, uncertainty modelling, and clinician-facing explanatory tools provide complementary approaches to supporting the clinical use of AI outputs. Gradient-weighted class activation mapping (Grad-CAM), local interpretable model-agnostic explanations (LIME), Shapley additive explanations (SHAP), integrated gradients, uncertainty maps, occlusion testing, and related approaches appear across domains <sup class=\"citation\" aria-label=\"References a5c99b438a02, 8a5b73028348, d2f5621f7596\">[<a href=\"__BASE__publications/a5c99b438a02/\">51</a>, <a href=\"__BASE__publications/8a5b73028348/\">75</a>, <a href=\"__BASE__publications/d2f5621f7596/\">76</a>]</sup>. These tools can make model outputs more transparent and open to scrutiny, although their clinical value depends on whether explanations are faithful, stable, and useful to clinicians. Direct evaluation of how users interpret and act on explanations can help establish their contribution to clinical decision-making.</p>\n<p>Multimodal integration extends this methodological range by combining OCT with OCTA, fundus imaging, structured clinical variables, or electronic health record data <sup class=\"citation\" aria-label=\"References d384c5486fec, 15409c146949, 7883c54e265c, 7a8d717e87c8\">[<a href=\"__BASE__publications/d384c5486fec/\">46</a>, <a href=\"__BASE__publications/15409c146949/\">56</a>, <a href=\"__BASE__publications/7883c54e265c/\">45</a>, <a href=\"__BASE__publications/7a8d717e87c8/\">66</a>]</sup>. Integrating complementary phenotypic signals can provide a more comprehensive representation of disease than single-modality models. In glaucoma, structural, vascular, photographic, and functional inputs capture complementary features of disease <sup class=\"citation\" aria-label=\"References d384c5486fec, 1a2acf19df20, 124df92e6d47\">[<a href=\"__BASE__publications/d384c5486fec/\">46</a>, <a href=\"__BASE__publications/1a2acf19df20/\">54</a>, <a href=\"__BASE__publications/124df92e6d47/\">55</a>]</sup>. In retinal disease, structural OCT combined with angiographic or clinical information can support more nuanced assessment of disease activity and treatment response <sup class=\"citation\" aria-label=\"References 15409c146949, 7883c54e265c, Schlosser2024_SciRep\">[<a href=\"__BASE__publications/15409c146949/\">56</a>, <a href=\"__BASE__publications/7883c54e265c/\">45</a>, <a href=\"__BASE__publications/schlosser2024-scirep/\">71</a>]</sup>. Fusion can also reduce performance for specific diseases when additional modalities introduce redundant information <sup class=\"citation\" aria-label=\"References 15409c146949\">[<a href=\"__BASE__publications/15409c146949/\">56</a>]</sup>. These studies highlight the potential of multimodal systems to integrate clinically relevant information across data sources, with harmonisation, robust handling of missing data, transparent fusion, and validation of each input&#x27;s added value supporting reliable integration.</p>"
+    },
+    {
+      "level": 3,
+      "heading": "Validation, translational readiness, and clinical accountability",
+      "slug": "validation-translational-readiness-and-clinical-accountability",
+      "html": "<p>The clinical relevance of these methodological advances depends on validation across the conditions in which they are intended to operate. <a href=\"__BASE__publications/\">included-publication table</a> includes external testing, multicentre evaluation, cross-device robustness studies, and prospective comparative validation <sup class=\"citation\" aria-label=\"References 1a2acf19df20, 740599fb90ce, 15409c146949, cf651cb4eb97\">[<a href=\"__BASE__publications/1a2acf19df20/\">54</a>, <a href=\"__BASE__publications/740599fb90ce/\">52</a>, <a href=\"__BASE__publications/15409c146949/\">56</a>, <a href=\"__BASE__publications/cf651cb4eb97/\">69</a>]</sup>. These designs are particularly informative because OCT and OCTA performance can vary across imaging devices, patient populations, annotation practices, and image quality. Together with internal proof-of-concept evaluations, these studies reflect a growing emphasis on generalisability across the literature <sup class=\"citation\" aria-label=\"References 740599fb90ce, 15409c146949, cf651cb4eb97\">[<a href=\"__BASE__publications/740599fb90ce/\">52</a>, <a href=\"__BASE__publications/15409c146949/\">56</a>, <a href=\"__BASE__publications/cf651cb4eb97/\">69</a>]</sup>. Validation nevertheless varies considerably. Most evidence derives from retrospective datasets, internal splits, public benchmarks, or narrow cohorts <sup class=\"citation\" aria-label=\"References 573280ef5d40, 8ba2213f7ff2, 2edcd32ecfef\">[<a href=\"__BASE__publications/573280ef5d40/\">41</a>, <a href=\"__BASE__publications/8ba2213f7ff2/\">60</a>, <a href=\"__BASE__publications/2edcd32ecfef/\">72</a>]</sup>, while external and prospective validation remains uncommon. Together, these differences reflect varying levels of translational maturity across the field.</p>\n<p>A subset of studies shifts the focus from individual algorithms to their integration within clinical systems. These include graphical interfaces and human–AI segmentation workflows <sup class=\"citation\" aria-label=\"References ed3fec0ec1cd, 44ce6e703d06\">[<a href=\"__BASE__publications/ed3fec0ec1cd/\">47</a>, <a href=\"__BASE__publications/44ce6e703d06/\">48</a>]</sup>, alongside cloud-based screening deployed across medical institutions <sup class=\"citation\" aria-label=\"References 9e08b543a80f\">[<a href=\"__BASE__publications/9e08b543a80f/\">77</a>]</sup>. Interface development and retrospective workflow demonstrations do not by themselves establish improved clinical decisions or patient outcomes. Embedding AI within these workflows brings safeguards, quality checks, user interaction, and operational reliability into consideration. Evaluation therefore extends beyond algorithmic performance to how reliably and accountably AI functions within the clinical system.</p>\n<p>Systematic reviews, scoping reviews, and meta-analyses consolidate a substantial but heterogeneous evidence base spanning diverse tasks, datasets, endpoints, and validation approaches <sup class=\"citation\" aria-label=\"References 8b31cb8429dc, 75bba223bc94, 44ce6e703d06, 3610864516d6\">[<a href=\"__BASE__publications/8b31cb8429dc/\">49</a>, <a href=\"__BASE__publications/75bba223bc94/\">50</a>, <a href=\"__BASE__publications/44ce6e703d06/\">48</a>, <a href=\"__BASE__publications/3610864516d6/\">53</a>]</sup>. Collectively, the evidence extends from technical feasibility to clinical translation and accountability. Beyond automated disease recognition, research examines robustness across devices and populations, clinically interpretable quantification, outcome prediction, and safe integration into routine workflows <sup class=\"citation\" aria-label=\"References a5c99b438a02, 15409c146949, 44ce6e703d06, 3610864516d6\">[<a href=\"__BASE__publications/a5c99b438a02/\">51</a>, <a href=\"__BASE__publications/15409c146949/\">56</a>, <a href=\"__BASE__publications/44ce6e703d06/\">48</a>, <a href=\"__BASE__publications/3610864516d6/\">53</a>]</sup>.</p>\n<p>Overall, the evidence base is substantial and spans clinically important ophthalmic domains, although its depth, validation quality, and translational readiness vary. Evidence is most extensive for retinal disease and glaucoma, while other areas remain promising but less mature <sup class=\"citation\" aria-label=\"References 35cf76e0902a, 1a2acf19df20, 124df92e6d47, 2b6fbc4f0508, f3443e988e2f\">[<a href=\"__BASE__publications/35cf76e0902a/\">43</a>, <a href=\"__BASE__publications/1a2acf19df20/\">54</a>, <a href=\"__BASE__publications/124df92e6d47/\">55</a>, <a href=\"__BASE__publications/2b6fbc4f0508/\">57</a>, <a href=\"__BASE__publications/f3443e988e2f/\">62</a>]</sup>. The corpus therefore extends from exploratory research to studies approaching clinical translation. Realising the clinical potential of these advances will require robust validation, clinically meaningful endpoints, interpretable quantification, and effective integration into routine care and research.</p>"
+    }
+  ]
+}

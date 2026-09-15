@@ -1,0 +1,87 @@
+---
+interface Props {
+  eyebrow?: string;
+  title: string;
+  intro: string;
+}
+const { eyebrow, title, intro } = Astro.props;
+---
+
+<header class="page-header">
+  <div class="container">
+    <div class="page-header-copy">
+      {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+      <h1>{title}</h1>
+      <p>{intro}</p>
+      <div class="page-actions"><slot /></div>
+    </div>
+    <div class="page-orbit" aria-hidden="true"><span></span><i></i></div>
+  </div>
+</header>
+
+<style>
+  .page-header .container {
+    position: relative;
+    z-index: 1;
+  }
+  .page-header-copy {
+    position: relative;
+    z-index: 2;
+  }
+  .page-orbit {
+    position: absolute;
+    top: 50%;
+    right: 2.5rem;
+    width: 170px;
+    height: 106px;
+    transform: translateY(-50%) rotate(-8deg);
+    border: 1px solid color-mix(in srgb, var(--cyan) 28%, transparent);
+    border-radius: 50%;
+    opacity: 0.62;
+  }
+  .page-orbit::before,
+  .page-orbit span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    content: "";
+    transform: translate(-50%, -50%);
+  }
+  .page-orbit::before {
+    width: 82px;
+    height: 82px;
+    border: 1px solid color-mix(in srgb, var(--teal) 38%, transparent);
+  }
+  .page-orbit span {
+    width: 24px;
+    height: 24px;
+    background: color-mix(in srgb, var(--cyan) 75%, var(--blue));
+    box-shadow: 0 0 34px color-mix(in srgb, var(--cyan) 48%, transparent);
+  }
+  .page-orbit i {
+    position: absolute;
+    top: 14px;
+    right: 31px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 14px color-mix(in srgb, var(--gold) 72%, transparent);
+  }
+  .page-actions:empty {
+    display: none;
+  }
+  .page-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin-top: 1.4rem;
+  }
+  @media (max-width: 760px) {
+    .page-orbit {
+      right: -4rem;
+      opacity: 0.3;
+    }
+  }
+</style>

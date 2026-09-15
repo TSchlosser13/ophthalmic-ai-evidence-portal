@@ -1,0 +1,109 @@
+---
+interface Item { slug: string; heading: string; level?: number; }
+interface Props { title?: string; items: Item[]; }
+const { title = 'On this page', items } = Astro.props;
+---
+
+<nav class="section-nav" aria-label={title} data-section-nav data-pagefind-ignore>
+  <div class="section-nav-header">
+    <strong>{title}</strong>
+    <span><output data-reading-progress>0</output>% read</span>
+  </div>
+  <div class="section-progress" aria-hidden="true"><span data-reading-bar></span></div>
+  <div class="section-nav-links">
+    {items.map((item, index) => (
+      <a href={`#${item.slug}`} data-section-link data-target={item.slug} class:list={{ nested: (item.level ?? 2) > 2 }}>
+        <span aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>{item.heading}
+      </a>
+    ))}
+  </div>
+</nav>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-section-nav]').forEach((nav) => {
+    const links = [...nav.querySelectorAll<HTMLAnchorElement>('[data-section-link]')];
+    const progress = nav.querySelector<HTMLOutputElement>('[data-reading-progress]');
+    const bar = nav.querySelector<HTMLElement>('[data-reading-bar]');
+    const targets = links.map((link) => document.getElementById(link.dataset.target ?? '')).filter((target): target is HTMLElement => Boolean(target));
+    const firstTarget = targets[0];
+    const lastTarget = targets.at(-1);
+    if (!firstTarget || !lastTarget || !progress || !bar) return;
+
+    const activate = (id: string) => {
+      links.forEach((link) => {
+        const active = link.dataset.target === id;
+        link.classList.toggle('active', active);
+        active ? link.setAttribute('aria-current', 'location') : link.removeAttribute('aria-current');
+      });
+    };
+
+    let ticking = false;
+    const update = () => {
+      const scrollRoot = document.scrollingElement ?? document.documentElement;
+      const viewportHeight = window.visualViewport?.height ?? window.innerHeight;
+      const first = firstTarget.getBoundingClientRect().top + scrollRoot.scrollTop;
+      const end = lastTarget.getBoundingClientRect().bottom + scrollRoot.scrollTop;
+      const current = scrollRoot.scrollTop + viewportHeight * 0.28;
+      const calculated = Math.max(0, Math.min(100, Math.round(((current - first) / Math.max(1, end - first)) * 100)));
+      const maximumScroll = Math.max(0, scrollRoot.scrollHeight - scrollRoot.clientHeight);
+      const atPageEnd = maximumScroll <= 0 || scrollRoot.scrollTop >= maximumScroll - 2;
+      const value = atPageEnd ? 100 : calculated;
+      progress.value = String(value);
+      bar.style.width = `${value}%`;
+      let active = firstTarget.id;
+      for (const target of targets) {
+        if (target.getBoundingClientRect().top <= window.innerHeight * 0.34) active = target.id;
+      }
+      activate(active);
+      ticking = false;
+    };
+
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(update);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    links.forEach((link) => link.addEventListener('click', () => activate(link.dataset.target ?? '')));
+    update();
+  });
+</script>
+
+<style>
+  .section-nav {
+    position: sticky;
+    z-index: 8;
+    top: calc(var(--header-height) + 1.25rem);
+    align-self: start;
+    max-height: calc(100vh - var(--header-height) - 2.5rem);
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 0.9rem;
+    background: color-mix(in srgb, var(--surface) 94%, transparent);
+    padding: 0;
+    box-shadow: 0 14px 40px color-mix(in srgb, var(--ink) 7%, transparent);
+    backdrop-filter: blur(14px);
+  }
+  .section-nav-header { display: flex; justify-content: space-between; gap: 0.6rem; align-items: baseline; padding: 0.9rem 0.95rem 0.65rem; }
+  .section-nav-header strong { margin: 0; font-size: 0.74rem; letter-spacing: 0.04em; text-transform: uppercase; }
+  .section-nav-header > span { color: var(--faint); font-size: 0.66rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .section-progress { height: 2px; background: var(--line); }
+  .section-progress span { display: block; width: 0; height: 100%; background: linear-gradient(90deg, var(--blue), var(--teal)); transition: width 150ms ease; }
+  .section-nav-links { max-height: calc(100vh - var(--header-height) - 7.4rem); overflow-y: auto; padding: 0.55rem; scrollbar-width: thin; }
+  .section-nav a { position: relative; display: grid; grid-template-columns: 1.6rem minmax(0, 1fr); gap: 0.35rem; align-items: start; border-radius: 0.45rem; margin: 0; padding: 0.48rem 0.55rem; color: var(--muted); font-size: 0.72rem; line-height: 1.35; text-decoration: none; transition: background-color 140ms ease, color 140ms ease; }
+  .section-nav a > span { color: var(--faint); font-size: 0.6rem; font-variant-numeric: tabular-nums; line-height: 1.65; }
+  .section-nav a:hover { background: var(--surface-2); color: var(--ink); }
+  .section-nav a.active { background: color-mix(in srgb, var(--teal) 10%, var(--surface)); color: var(--ink); font-weight: 700; }
+  .section-nav a.active::before { content: ''; position: absolute; top: 0.52rem; bottom: 0.52rem; left: 0; width: 2px; border-radius: 2px; background: var(--teal); }
+  .section-nav a.nested { padding-left: 1rem; }
+  @media (max-width: 980px) {
+    .section-nav { top: calc(var(--header-height) + 0.45rem); max-height: none; border-radius: 0.75rem; }
+    .section-nav-header { padding-block: 0.65rem 0.5rem; }
+    .section-nav-links { display: flex; max-height: none; overflow-x: auto; overflow-y: hidden; padding: 0.4rem; scroll-snap-type: x proximity; }
+    .section-nav a, .section-nav a.nested { display: block; flex: 0 0 auto; max-width: 15rem; padding: 0.5rem 0.65rem; scroll-snap-align: start; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .section-nav a > span { margin-right: 0.35rem; }
+    .section-nav a.active::before { inset: auto 0 0; width: auto; height: 2px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .section-progress span { transition: none; } }
+</style>

@@ -1,0 +1,50 @@
+---
+import { Braces, Database, ExternalLink, Images, Scale } from '@lucide/astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHeader from '@/components/PageHeader.astro';
+
+const sections = [
+  { icon: Braces, title: 'Website code', text: 'A project owner may apply an open-source licence to the website code. Until such a licence is explicitly added by the repository owner, no additional code-reuse licence is implied.' },
+  { icon: Database, title: 'Public metadata and classifications', text: 'Bibliographic metadata, dataset records, and evidence assignments remain subject to the licence selected by the review authors and any applicable database rights.' },
+  { icon: Images, title: 'Authored figures and commentary', text: 'Authored figures and interpretive commentary remain the work of the listed authors and may also be subject to journal submission or publication terms.' },
+  { icon: ExternalLink, title: 'External publications', text: 'External publication links and bibliographic metadata remain subject to their respective terms. No third-party publication content is redistributed by the portal.' }
+];
+---
+
+<BaseLayout title="Licence and content note" description="Rights and reuse boundaries for website code, public metadata, derived classifications, figures, and external links.">
+  <PageHeader eyebrow="Rights and responsible reuse" title="Licence and content note" intro="The portal brings together public metadata, derived classifications, authored figures, and external links whose reuse conditions may differ." />
+  <article class="container licence-content">
+    <div class="licence-intro">
+      <span><Scale size={24} aria-hidden="true" /></span>
+      <div><h2>Read each layer on its own terms</h2><p>Availability through this portal does not, by itself, create a universal reuse licence. Check the relevant rights statement before redistributing code, data products, figures, or commentary.</p></div>
+    </div>
+    <div class="licence-grid">
+      {sections.map(({ icon: Icon, title, text }, index) => (
+        <section>
+          <span class="section-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+          <span class="section-icon"><Icon size={21} aria-hidden="true" /></span>
+          <h2>{title}</h2>
+          <p>{text}</p>
+        </section>
+      ))}
+    </div>
+    <p class="legal-note">This page is a content-boundary summary rather than legal advice. Where specific licence text is supplied with an individual artefact, that text governs the artefact.</p>
+  </article>
+</BaseLayout>
+
+<style>
+  .licence-content { max-width: 1040px; padding-block: clamp(2.5rem, 6vw, 5rem) 6rem; }
+  .licence-intro { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 1rem; align-items: start; border: 1px solid var(--line); border-radius: 1rem; background: linear-gradient(135deg, color-mix(in srgb, var(--amber) 7%, var(--surface)), color-mix(in srgb, var(--teal) 5%, var(--surface))); padding: 1.3rem; box-shadow: 0 15px 42px color-mix(in srgb, var(--ink) 6%, transparent); }
+  .licence-intro > span { display: grid; width: 3rem; height: 3rem; place-items: center; border: 1px solid color-mix(in srgb, var(--amber) 38%, var(--line)); border-radius: 0.75rem; color: var(--amber); }
+  .licence-intro h2 { margin-bottom: 0.4rem; font-size: 1.4rem; }
+  .licence-intro p { margin: 0; color: var(--muted); font-size: 0.84rem; line-height: 1.65; }
+  .licence-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.9rem; margin-top: 2.5rem; }
+  .licence-grid section { position: relative; overflow: hidden; border: 1px solid var(--line); border-radius: 0.9rem; background: var(--surface); padding: 1.25rem; box-shadow: 0 8px 26px color-mix(in srgb, var(--ink) 4%, transparent); }
+  .licence-grid section::after { content: ''; position: absolute; right: -2.5rem; bottom: -2.5rem; width: 7rem; height: 7rem; border: 1px solid color-mix(in srgb, var(--teal) 14%, transparent); border-radius: 50%; }
+  .section-number { position: absolute; top: 1rem; right: 1rem; color: var(--faint); font-size: 0.62rem; font-weight: 760; }
+  .section-icon { display: grid; width: 2.65rem; height: 2.65rem; place-items: center; border-radius: 0.65rem; background: color-mix(in srgb, var(--teal) 8%, var(--surface)); color: var(--teal); }
+  .licence-grid h2 { margin: 1.35rem 0 0.6rem; font-size: 1.32rem; }
+  .licence-grid p { position: relative; z-index: 1; margin: 0; color: var(--muted); font-size: 0.84rem; line-height: 1.7; }
+  .legal-note { max-width: 760px; border-top: 1px solid var(--line); margin: 2.5rem 0 0; padding-top: 1.2rem; color: var(--faint); font-size: 0.75rem; }
+  @media (max-width: 700px) { .licence-grid { grid-template-columns: 1fr; } .licence-intro { grid-template-columns: 1fr; } }
+</style>

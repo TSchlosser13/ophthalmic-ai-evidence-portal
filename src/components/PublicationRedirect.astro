@@ -1,0 +1,25 @@
+---
+import { withBase } from '@/lib/base';
+interface Props { path: string; }
+const { path } = Astro.props;
+const target = withBase(path);
+const canonical = Astro.site ? new URL(target, Astro.site).href : target;
+---
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, follow" />
+    <link rel="canonical" href={canonical} />
+    <title>Publications | Ophthalmic AI Evidence Portal</title>
+    <noscript><meta http-equiv="refresh" content={`0;url=${target}`} /></noscript>
+  </head>
+  <body data-pagefind-ignore>
+    <a id="publication-destination" href={target}>Continue to publications</a>
+    <script is:inline>
+      const destination = document.getElementById('publication-destination').getAttribute('href');
+      window.location.replace(destination + window.location.search + window.location.hash);
+    </script>
+  </body>
+</html>

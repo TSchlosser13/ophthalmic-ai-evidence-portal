@@ -1,0 +1,320 @@
+[
+  {
+    "id": "ARE",
+    "name": "United Arab Emirates",
+    "longitude": 54.547256,
+    "latitude": 23.466285
+  },
+  {
+    "id": "ARG",
+    "name": "Argentina",
+    "longitude": -64.173331,
+    "latitude": -33.501159
+  },
+  {
+    "id": "AUS",
+    "name": "Australia",
+    "longitude": 134.04972,
+    "latitude": -24.129522
+  },
+  {
+    "id": "AUT",
+    "name": "Austria",
+    "longitude": 14.130515,
+    "latitude": 47.518859
+  },
+  {
+    "id": "BEL",
+    "name": "Belgium",
+    "longitude": 4.800448,
+    "latitude": 50.785392
+  },
+  {
+    "id": "BGD",
+    "name": "Bangladesh",
+    "longitude": 89.684963,
+    "latitude": 24.214956
+  },
+  {
+    "id": "BRA",
+    "name": "Brazil",
+    "longitude": -49.55945,
+    "latitude": -12.098687
+  },
+  {
+    "id": "CAN",
+    "name": "Canada",
+    "longitude": -101.9107,
+    "latitude": 60.324287
+  },
+  {
+    "id": "CHE",
+    "name": "Switzerland",
+    "longitude": 7.463965,
+    "latitude": 46.719114
+  },
+  {
+    "id": "CHN",
+    "name": "China",
+    "longitude": 106.337289,
+    "latitude": 32.498178
+  },
+  {
+    "id": "COL",
+    "name": "Colombia",
+    "longitude": -73.174347,
+    "latitude": 3.373111
+  },
+  {
+    "id": "CYP",
+    "name": "Cyprus",
+    "longitude": 33.084182,
+    "latitude": 34.913329
+  },
+  {
+    "id": "CZE",
+    "name": "Czech Republic",
+    "longitude": 15.377555,
+    "latitude": 49.882364
+  },
+  {
+    "id": "DEU",
+    "name": "Germany",
+    "longitude": 9.678348,
+    "latitude": 50.961733
+  },
+  {
+    "id": "DNK",
+    "name": "Denmark",
+    "longitude": 9.018163,
+    "latitude": 55.966965
+  },
+  {
+    "id": "DZA",
+    "name": "Algeria",
+    "longitude": 2.808241,
+    "latitude": 27.397406
+  },
+  {
+    "id": "EGY",
+    "name": "Egypt",
+    "longitude": 29.445837,
+    "latitude": 26.186173
+  },
+  {
+    "id": "ESP",
+    "name": "Spain",
+    "longitude": -3.464718,
+    "latitude": 40.090953
+  },
+  {
+    "id": "ETH",
+    "name": "Ethiopia",
+    "longitude": 39.0886,
+    "latitude": 8.032795
+  },
+  {
+    "id": "FIN",
+    "name": "Finland",
+    "longitude": 27.276449,
+    "latitude": 63.252361
+  },
+  {
+    "id": "FRA",
+    "name": "France",
+    "longitude": 2.552275,
+    "latitude": 46.696113
+  },
+  {
+    "id": "GBR",
+    "name": "United Kingdom",
+    "longitude": -2.116346,
+    "latitude": 54.402739
+  },
+  {
+    "id": "HKG",
+    "name": "Hong Kong",
+    "longitude": 114.097769,
+    "latitude": 22.448829
+  },
+  {
+    "id": "IDN",
+    "name": "Indonesia",
+    "longitude": 101.892949,
+    "latitude": -0.954404
+  },
+  {
+    "id": "IND",
+    "name": "India",
+    "longitude": 79.358105,
+    "latitude": 22.686852
+  },
+  {
+    "id": "IRN",
+    "name": "Iran",
+    "longitude": 54.931495,
+    "latitude": 32.166225
+  },
+  {
+    "id": "IRQ",
+    "name": "Iraq",
+    "longitude": 43.26181,
+    "latitude": 33.09403
+  },
+  {
+    "id": "ISR",
+    "name": "Israel",
+    "longitude": 34.847915,
+    "latitude": 30.911148
+  },
+  {
+    "id": "ITA",
+    "name": "Italy",
+    "longitude": 11.076907,
+    "latitude": 44.732482
+  },
+  {
+    "id": "JOR",
+    "name": "Jordan",
+    "longitude": 36.375991,
+    "latitude": 30.805025
+  },
+  {
+    "id": "JPN",
+    "name": "Japan",
+    "longitude": 138.44217,
+    "latitude": 36.142538
+  },
+  {
+    "id": "KOR",
+    "name": "South Korea",
+    "longitude": 128.129504,
+    "latitude": 36.384924
+  },
+  {
+    "id": "LKA",
+    "name": "Sri Lanka",
+    "longitude": 80.704823,
+    "latitude": 7.581097
+  },
+  {
+    "id": "MEX",
+    "name": "Mexico",
+    "longitude": -102.289448,
+    "latitude": 23.919988
+  },
+  {
+    "id": "MYS",
+    "name": "Malaysia",
+    "longitude": 113.83708,
+    "latitude": 2.528667
+  },
+  {
+    "id": "NLD",
+    "name": "Netherlands",
+    "longitude": 5.61144,
+    "latitude": 52.422211
+  },
+  {
+    "id": "PAK",
+    "name": "Pakistan",
+    "longitude": 68.545632,
+    "latitude": 29.328389
+  },
+  {
+    "id": "PHL",
+    "name": "Philippines",
+    "longitude": 122.465,
+    "latitude": 11.198
+  },
+  {
+    "id": "POL",
+    "name": "Poland",
+    "longitude": 19.490468,
+    "latitude": 51.990316
+  },
+  {
+    "id": "PRT",
+    "name": "Portugal",
+    "longitude": -8.271754,
+    "latitude": 39.606675
+  },
+  {
+    "id": "PYF",
+    "name": "French Polynesia",
+    "longitude": -149.46157,
+    "latitude": -17.628081
+  },
+  {
+    "id": "ROU",
+    "name": "Romania",
+    "longitude": 24.972624,
+    "latitude": 45.733237
+  },
+  {
+    "id": "RUS",
+    "name": "Russia",
+    "longitude": 44.686469,
+    "latitude": 58.249357
+  },
+  {
+    "id": "SAU",
+    "name": "Saudi Arabia",
+    "longitude": 44.6996,
+    "latitude": 23.806908
+  },
+  {
+    "id": "SGP",
+    "name": "Singapore",
+    "longitude": 103.816925,
+    "latitude": 1.366587
+  },
+  {
+    "id": "SRB",
+    "name": "Serbia",
+    "longitude": 20.787989,
+    "latitude": 44.189919
+  },
+  {
+    "id": "SWE",
+    "name": "Sweden",
+    "longitude": 19.01705,
+    "latitude": 65.85918
+  },
+  {
+    "id": "THA",
+    "name": "Thailand",
+    "longitude": 101.073198,
+    "latitude": 15.45974
+  },
+  {
+    "id": "TUN",
+    "name": "Tunisia",
+    "longitude": 9.007881,
+    "latitude": 33.687263
+  },
+  {
+    "id": "TUR",
+    "name": "Turkey",
+    "longitude": 34.508268,
+    "latitude": 39.345388
+  },
+  {
+    "id": "TWN",
+    "name": "Taiwan",
+    "longitude": 120.868204,
+    "latitude": 23.652408
+  },
+  {
+    "id": "USA",
+    "name": "United States",
+    "longitude": -97.482602,
+    "latitude": 39.538479
+  },
+  {
+    "id": "VNM",
+    "name": "Vietnam",
+    "longitude": 105.387292,
+    "latitude": 21.715416
+  }
+]

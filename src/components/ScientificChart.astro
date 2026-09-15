@@ -1,0 +1,256 @@
+---
+import { ChartNoAxesColumn, Download, Info, Table2 } from '@lucide/astro';
+
+interface Column { key: string; label: string; }
+interface Props {
+  id: string;
+  title: string;
+  description: string;
+  note: string;
+  spec: Record<string, unknown>;
+  columns: Column[];
+  rows: Array<Record<string, unknown>>;
+  downloadHref: string;
+  howToRead?: string;
+}
+
+const { id, title, description, note, spec, columns, rows, downloadHref, howToRead } = Astro.props;
+---
+
+<figure class="chart-shell" id={id} data-scientific-chart>
+  <header class="chart-toolbar">
+    <div class="chart-heading">
+      <p class="chart-kicker"><span aria-hidden="true"></span> Interactive figure · {rows.length.toLocaleString('en-GB')} data rows</p>
+      <h2 id={`${id}-title`}>{title}</h2>
+      <p>{description}</p>
+    </div>
+    <a class="button chart-download" href={downloadHref} download aria-label={`Download data for ${title} as CSV`}><Download size={17} /> Download CSV</a>
+  </header>
+
+  {howToRead && (
+    <div class="chart-guide">
+      <Info size={18} aria-hidden="true" />
+      <div><strong>How to read this view</strong><p>{howToRead}</p></div>
+    </div>
+  )}
+
+  <div class="view-switcher segmented" role="group" aria-label={`Display mode for ${title}`} data-chart-switcher>
+    <button type="button" aria-pressed="true" aria-controls={`${id}-chart-panel`} data-chart-view><ChartNoAxesColumn size={17} /> Chart</button>
+    <button type="button" aria-pressed="false" aria-controls={`${id}-table-panel`} data-table-view><Table2 size={17} /> Data table</button>
+  </div>
+
+  <div class="chart-panel" id={`${id}-chart-panel`} role="region" aria-labelledby={`${id}-title`} data-chart-panel>
+    <div class="vega-container" role="img" aria-label={description} data-vega-container>
+      <div class="loading-state"><span class="loading-orbit" aria-hidden="true"></span><span>Rendering interactive chart…</span></div>
+    </div>
+  </div>
+
+  <div class="table-panel" id={`${id}-table-panel`} role="region" aria-labelledby={`${id}-title`} data-table-panel>
+    <div class="table-wrap">
+      <table>
+        <caption class="visually-hidden">Data underlying {title}</caption>
+        <thead><tr>{columns.map((column) => <th scope="col">{column.label}</th>)}</tr></thead>
+        <tbody>
+          {rows.map((row) => <tr>{columns.map((column) => <td>{Array.isArray(row[column.key]) ? (row[column.key] as unknown[]).join(', ') : String(row[column.key] ?? '')}</td>)}</tr>)}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script is:inline type="application/json" data-vega-spec set:html={JSON.stringify(spec)} />
+  <figcaption class="figure-caption"><span>Interpretation</span>{note}</figcaption>
+</figure>
+
+<script>
+  let embedPromise: Promise<typeof import('vega-embed')> | undefined;
+
+  const loadVegaEmbed = () => {
+    embedPromise ??= import('vega-embed');
+    return embedPromise;
+  };
+
+  const renderChart = async (root: HTMLElement) => {
+    const container = root.querySelector<HTMLElement>('[data-vega-container]');
+    const source = root.querySelector<HTMLScriptElement>('[data-vega-spec]');
+    if (!container || !source) return;
+    const spec = JSON.parse(source.textContent || '{}');
+    const dark = document.documentElement.dataset.theme === 'dark';
+    spec.background = null;
+    spec.config = {
+      ...(spec.config || {}),
+      font: 'Inter, ui-sans-serif, system-ui, sans-serif',
+      axis: {
+        ...(spec.config?.axis || {}),
+        labelColor: dark ? '#c1cec9' : '#53646a',
+        titleColor: dark ? '#f3f7f5' : '#15252b',
+        domainColor: dark ? '#4c6159' : '#b7c6c1',
+        tickColor: dark ? '#4c6159' : '#b7c6c1',
+        gridColor: dark ? '#2c3b36' : '#e5ece9',
+        labelFontSize: 12,
+        titleFontSize: 13,
+        titleFontWeight: 650,
+        titlePadding: 14,
+        labelPadding: 7
+      },
+      legend: {
+        ...(spec.config?.legend || {}),
+        labelColor: dark ? '#c1cec9' : '#53646a',
+        titleColor: dark ? '#f3f7f5' : '#15252b',
+        labelFontSize: 12,
+        titleFontSize: 12,
+        symbolStrokeWidth: 0
+      },
+      title: { color: dark ? '#f3f7f5' : '#15252b' },
+      view: { stroke: null },
+      bar: { cornerRadiusEnd: 3 }
+    };
+    container.replaceChildren();
+    try {
+      const { default: vegaEmbed } = await loadVegaEmbed();
+      await vegaEmbed(container, spec, { actions: false, renderer: 'svg', mode: 'vega-lite' });
+    } catch (error) {
+      const message = document.createElement('div');
+      message.className = 'empty-state';
+      message.innerHTML = '<div><strong>Chart unavailable</strong><p>The complete data table remains available in this figure.</p></div>';
+      container.append(message);
+      console.error(error);
+    }
+  };
+
+  const renderedCharts = new Set<HTMLElement>();
+  const renderVisibleChart = (root: HTMLElement) => {
+    renderedCharts.add(root);
+    void renderChart(root);
+  };
+
+  document.querySelectorAll<HTMLElement>('[data-scientific-chart]').forEach((root) => {
+    const chartPanel = root.querySelector<HTMLElement>('[data-chart-panel]');
+    const tablePanel = root.querySelector<HTMLElement>('[data-table-panel]');
+    const chartButton = root.querySelector<HTMLButtonElement>('[data-chart-view]');
+    const tableButton = root.querySelector<HTMLButtonElement>('[data-table-view]');
+    if (chartPanel && tablePanel && chartButton && tableButton) {
+      root.dataset.enhanced = 'true';
+      tablePanel.hidden = true;
+      const setView = (view: 'chart' | 'table') => {
+        const showChart = view === 'chart';
+        chartPanel.hidden = !showChart;
+        tablePanel.hidden = showChart;
+        chartButton.setAttribute('aria-pressed', String(showChart));
+        tableButton.setAttribute('aria-pressed', String(!showChart));
+      };
+      chartButton.addEventListener('click', () => setView('chart'));
+      tableButton.addEventListener('click', () => setView('table'));
+    }
+  });
+
+  const charts = document.querySelectorAll<HTMLElement>('[data-scientific-chart]');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const root = entry.target as HTMLElement;
+        observer.unobserve(root);
+        renderVisibleChart(root);
+      });
+    }, { rootMargin: '280px 0px' });
+    charts.forEach((chart) => observer.observe(chart));
+  } else {
+    charts.forEach(renderVisibleChart);
+  }
+
+  window.addEventListener('themechange', () => renderedCharts.forEach(renderVisibleChart));
+</script>
+
+<style>
+  .chart-shell {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 1.15rem;
+    background:
+      radial-gradient(circle at 96% 0%, color-mix(in srgb, var(--teal) 11%, transparent), transparent 30rem),
+      linear-gradient(145deg, color-mix(in srgb, var(--surface) 96%, var(--blue) 4%), var(--surface));
+    padding: clamp(1rem, 2.4vw, 1.75rem);
+    box-shadow: 0 16px 48px color-mix(in srgb, var(--ink) 7%, transparent);
+  }
+  .chart-shell::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    opacity: 0.42;
+    pointer-events: none;
+    background-image: linear-gradient(color-mix(in srgb, var(--line) 32%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in srgb, var(--line) 32%, transparent) 1px, transparent 1px);
+    background-size: 34px 34px;
+    mask-image: linear-gradient(to bottom, black, transparent 48%);
+  }
+  .chart-toolbar { margin-bottom: 1.25rem; }
+  .chart-heading { max-width: 820px; }
+  .chart-kicker {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-bottom: 0.65rem !important;
+    color: var(--teal) !important;
+    font-size: 0.7rem !important;
+    font-weight: 760;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+  }
+  .chart-kicker span { width: 1.65rem; height: 1px; background: currentColor; }
+  .chart-toolbar h2 { margin-bottom: 0.45rem; font-size: clamp(1.45rem, 2.6vw, 2rem); }
+  .chart-toolbar p:not(.chart-kicker) { font-size: 0.94rem; line-height: 1.6; }
+  .chart-download { flex: 0 0 auto; background: color-mix(in srgb, var(--surface) 88%, transparent); backdrop-filter: blur(12px); }
+  .chart-guide {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 0.75rem;
+    align-items: start;
+    max-width: 860px;
+    border-left: 2px solid var(--teal);
+    margin: 0 0 1.25rem;
+    background: color-mix(in srgb, var(--teal) 7%, transparent);
+    padding: 0.85rem 1rem;
+  }
+  .chart-guide svg { margin-top: 0.12rem; color: var(--teal); }
+  .chart-guide strong { display: block; margin-bottom: 0.12rem; font-size: 0.78rem; }
+  .chart-guide p { margin: 0; color: var(--muted); font-size: 0.82rem; line-height: 1.55; }
+  .view-switcher { display: none; width: fit-content; margin: 0 0 0.9rem auto; }
+  [data-enhanced='true'] .view-switcher { display: inline-grid; }
+  .view-switcher button { width: auto; min-width: 100px; gap: 0.42rem; padding-inline: 0.75rem; font-size: 0.78rem; }
+  .chart-panel, .table-panel { min-width: 0; }
+  .vega-container {
+    min-height: 390px;
+    border: 1px solid color-mix(in srgb, var(--line) 78%, transparent);
+    border-radius: 0.75rem;
+    background: color-mix(in srgb, var(--surface) 90%, transparent);
+    padding: clamp(0.35rem, 1vw, 0.85rem);
+  }
+  .table-panel .table-wrap { max-height: 620px; border-radius: 0.75rem; }
+  .table-panel tbody tr:nth-child(even) { background: color-mix(in srgb, var(--surface-2) 55%, transparent); }
+  .figure-caption {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 0.75rem;
+    border-top: 1px solid var(--line);
+    margin-top: 1rem;
+    padding-top: 0.9rem;
+    line-height: 1.6;
+  }
+  .figure-caption span { color: var(--ink); font-size: 0.68rem; font-weight: 760; letter-spacing: 0.08em; text-transform: uppercase; }
+  .loading-state { border: 0; background: transparent; }
+  .loading-state > span:last-child { color: var(--muted); font-size: 0.82rem; }
+  .loading-orbit { width: 2rem; height: 2rem; border: 2px solid var(--line); border-top-color: var(--teal); border-radius: 50%; animation: orbit 900ms linear infinite; }
+  @keyframes orbit { to { transform: rotate(360deg); } }
+  @media (max-width: 700px) {
+    .chart-shell { border-radius: 0.85rem; }
+    .chart-toolbar { gap: 0.9rem; }
+    .chart-download { width: 100%; }
+    .view-switcher { width: 100%; margin-left: 0; }
+    .view-switcher button { width: auto; }
+    .vega-container { min-height: 340px; overflow-x: auto; }
+    .figure-caption { grid-template-columns: 1fr; gap: 0.2rem; }
+  }
+  @media (prefers-reduced-motion: reduce) { .loading-orbit { animation: none; border-color: var(--teal); } }
+</style>

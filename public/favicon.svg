@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Ophthalmic AI Evidence Portal">
+  <rect width="64" height="64" rx="15" fill="#071722"/>
+  <ellipse cx="32" cy="32" rx="22" ry="15" fill="none" stroke="#58d4d8" stroke-width="3"/>
+  <circle cx="32" cy="32" r="10" fill="#0e607a" stroke="#8be8e7" stroke-width="2"/>
+  <circle cx="32" cy="32" r="4" fill="#f0c872"/>
+  <path d="M13 22c11-8 27-9 38 0M13 42c11 8 27 9 38 0" fill="none" stroke="#2398ad" stroke-width="2" stroke-linecap="round" opacity=".8"/>
+</svg>

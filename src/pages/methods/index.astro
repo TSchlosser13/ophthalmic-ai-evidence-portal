@@ -1,0 +1,122 @@
+---
+import { Braces, Compass, LibraryBig, Scale } from '@lucide/astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHeader from '@/components/PageHeader.astro';
+import SectionNav from '@/components/SectionNav.astro';
+
+const navItems = [
+  { slug: 'scope', heading: 'Analytical scope' },
+  { slug: 'coding-definitions', heading: 'Coding definitions' },
+  { slug: 'interpretation', heading: 'Interpretation' },
+  { slug: 'limitations', heading: 'Limitations' }
+];
+
+const principles = [
+  { icon: Compass, label: 'Scope', value: 'Imaging-dependent ophthalmic AI' },
+  { icon: LibraryBig, label: 'Evidence base', value: '427 included publications' },
+  { icon: Braces, label: 'Classification', value: '18 evidence dimensions' },
+  { icon: Scale, label: 'Purpose', value: 'Descriptive synthesis' }
+];
+---
+
+<BaseLayout title="Methods and interpretation" description="Analytical scope, evidence-gap coding definitions, interpretation guidance, and limitations.">
+  <PageHeader
+    eyebrow="Read the dashboard responsibly"
+    title="Methods and interpretation"
+    intro="A concise guide to the analytical scope, evidence-map definitions, and interpretive boundaries behind the portal's public publication-level classifications."
+  />
+
+  <div class="container principle-grid" aria-label="Method overview">
+    {principles.map(({ icon: Icon, label, value }) => <div><Icon size={20} aria-hidden="true" /><span>{label}</span><strong>{value}</strong></div>)}
+  </div>
+
+  <div class="container methods-layout">
+    <aside><SectionNav title="Methods sections" items={navItems} /></aside>
+    <article class="methods-body">
+      <section id="scope">
+        <p class="section-kicker">01 — Foundation</p>
+        <h2>Analytical scope</h2>
+        <p class="lead">The portal organises 427 included publications on artificial intelligence in ophthalmology. Its public data layer contains bibliographic metadata, publication-level classifications, dataset links, evidence-map assignments, and aggregate visualisations.</p>
+        <p>The review has an imaging-dependent scope centred on OCT, OCTA, and related ophthalmic imaging. Categories describe the clinical, technical, translational, ethical, and governance themes represented across the included literature.</p>
+        <p>Three reviewers (T.S., M.F., and R.V.) applied the eligibility criteria, with at least two authors involved in each decision and disagreements or borderline cases resolved by consensus. Searches covered PubMed, ACM Digital Library, IEEE Xplore, and Scopus through 30 April 2026, without a lower publication-date limit.</p>
+        <p>Assignments required explicit, unambiguous evidence linking AI to both the dimension and the assigned framing. Absent or ambiguous evidence remained unassigned.</p>
+      </section>
+
+      <section id="coding-definitions">
+        <p class="section-kicker">02 — Operational language</p>
+        <h2>Coding definitions</h2>
+        <div class="interpretation-callout"><span aria-hidden="true">!</span><div><strong>Interpretation boundary</strong><p>Evidence-map categories describe publication-level framing. They are not pooled effect estimates, risk-of-bias judgements, or certainty ratings, and multiple assignments may apply to one publication.</p></div></div>
+        <div class="table-wrap definitions">
+          <table>
+            <caption>Operational meanings used by the general and ethics evidence maps</caption>
+            <thead><tr><th scope="col">Map</th><th scope="col">Category</th><th scope="col">Operational meaning</th></tr></thead>
+            <tbody>
+              <tr><td>General</td><td><span class="badge green">Positive</span></td><td>The publication frames AI as enabling or improving the named dimension.</td></tr>
+              <tr><td>General</td><td><span class="badge red">Negative</span></td><td>The publication frames AI as creating or exposing a barrier, risk, failure, or constraint.</td></tr>
+              <tr><td>General</td><td><span class="badge amber">Balanced</span></td><td>The publication provides explicit qualifying evidence in both directions within the same dimension.</td></tr>
+              <tr><td>Ethics</td><td><span class="badge red">Caused</span></td><td>AI is described as introducing or amplifying the issue.</td></tr>
+              <tr><td>Ethics</td><td><span class="badge green">Resolved</span></td><td>A reported AI-related mechanism mitigates the issue.</td></tr>
+              <tr><td>Ethics</td><td><span class="badge amber">Both</span></td><td>The publication provides explicit evidence that AI both creates and mitigates the issue.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Multiple assignments per publication are permitted. Assignment totals therefore describe the distribution of analytical categories and can exceed the number of included publications.</p>
+      </section>
+
+      <section id="interpretation">
+        <p class="section-kicker">03 — Reading the evidence</p>
+        <h2>Interpretation</h2>
+        <div class="interpretation-grid">
+          <div><span>General map</span><h3>Direction of framing</h3><p>Positive, negative, and balanced categories describe whether a dimension is presented as enabling, limiting, or explicitly qualified in both directions.</p></div>
+          <div><span>Ethics map</span><h3>Role attributed to AI</h3><p>Caused, resolved, and both categories distinguish whether AI is framed as introducing an issue, mitigating it through an AI-related mechanism, or doing both.</p></div>
+        </div>
+        <p>These assignments support structured comparison across the literature. They do not represent effect estimates, study-quality ratings, or certainty assessments.</p>
+      </section>
+
+      <section id="limitations">
+        <p class="section-kicker">04 — Boundaries</p>
+        <h2>Limitations</h2>
+        <p class="lead">The evidence base is heterogeneous in publication type, clinical indication, AI task, imaging modality, dataset, validation strategy, and outcome reporting. The dashboard supports descriptive exploration rather than meta-analysis.</p>
+        <p>The imaging-dependent and English-language scope limits generalisation beyond the represented literature. Publication-level assignments remain interpretive even when operational definitions are explicit.</p>
+        <p>The review did not assess study-level risk of bias. The coding audit strengthens traceability, but the counts do not establish efficacy. Limited reporting of demographic and socioeconomic characteristics constrained assessment of population coverage and equity.</p>
+      </section>
+    </article>
+  </div>
+</BaseLayout>
+
+<style>
+  .principle-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); overflow: hidden; border: 1px solid var(--line); border-radius: 1rem; margin-top: 2.5rem; background: var(--surface); box-shadow: 0 14px 40px color-mix(in srgb, var(--ink) 6%, transparent); }
+  .principle-grid > div { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 0.35rem 0.65rem; border-right: 1px solid var(--line); padding: 1rem; }
+  .principle-grid > div:last-child { border-right: 0; }
+  .principle-grid svg { grid-row: span 2; color: var(--teal); }
+  .principle-grid span { color: var(--faint); font-size: 0.65rem; font-weight: 760; letter-spacing: 0.07em; text-transform: uppercase; }
+  .principle-grid strong { font-size: 0.8rem; line-height: 1.35; }
+  .methods-layout { display: grid; grid-template-columns: 250px minmax(0, 820px); gap: clamp(2.5rem, 6vw, 5rem); justify-content: center; padding-block: clamp(3rem, 6vw, 5rem) 6rem; }
+  .methods-body { min-width: 0; }
+  .methods-body > section { scroll-margin-top: calc(var(--header-height) + 5rem); border-top: 1px solid var(--line); padding-top: clamp(2.8rem, 6vw, 4.6rem); margin-top: clamp(2.8rem, 6vw, 4.6rem); }
+  .methods-body > section:first-child { border-top: 0; padding-top: 0; margin-top: 0; }
+  .methods-body h2 { margin-bottom: 1rem; font-size: clamp(1.8rem, 3vw, 2.35rem); }
+  .methods-body p { color: var(--muted); line-height: 1.75; }
+  .methods-body .lead { color: var(--ink); font-family: var(--font-serif); font-size: 1.1rem; }
+  .section-kicker { margin-bottom: 0.55rem; color: var(--teal) !important; font-size: 0.68rem; font-weight: 760; letter-spacing: 0.08em; text-transform: uppercase; }
+  .interpretation-callout { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 0.8rem; align-items: start; border: 1px solid color-mix(in srgb, var(--amber) 35%, var(--line)); border-radius: 0.8rem; margin-bottom: 1.3rem; background: color-mix(in srgb, var(--amber) 7%, var(--surface)); padding: 1rem; }
+  .interpretation-callout > span { display: grid; width: 1.7rem; height: 1.7rem; place-items: center; border: 1px solid var(--amber); border-radius: 50%; color: var(--amber); font-weight: 800; }
+  .interpretation-callout strong { display: block; margin-bottom: 0.2rem; }
+  .interpretation-callout p { margin: 0; font-size: 0.84rem; line-height: 1.55; }
+  .definitions { margin-bottom: 1.2rem; border-radius: 0.8rem; }
+  .definitions caption { padding: 0.75rem 0.85rem; color: var(--muted); font-size: 0.75rem; text-align: left; }
+  .definitions table { table-layout: fixed; }
+  .definitions th:nth-child(1),
+  .definitions td:nth-child(1) { width: 72px; }
+  .definitions th:nth-child(2),
+  .definitions td:nth-child(2) { width: 112px; }
+  .definitions .badge { min-width: 0; justify-content: center; white-space: nowrap; }
+  .interpretation-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.8rem; margin-bottom: 1.2rem; }
+  .interpretation-grid > div { border: 1px solid var(--line); border-radius: 0.8rem; background: linear-gradient(145deg, color-mix(in srgb, var(--surface) 94%, var(--teal) 6%), var(--surface)); padding: 1.1rem; }
+  .interpretation-grid span { color: var(--teal); font-size: 0.66rem; font-weight: 760; letter-spacing: 0.08em; text-transform: uppercase; }
+  .interpretation-grid h3 { margin: 0.55rem 0 0.45rem; font-family: var(--font-serif); font-size: 1.22rem; }
+  .interpretation-grid p { margin: 0; font-size: 0.82rem; line-height: 1.6; }
+  @media (max-width: 980px) { .principle-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .principle-grid > div:nth-child(2) { border-right: 0; } .principle-grid > div:nth-child(-n + 2) { border-bottom: 1px solid var(--line); } .methods-layout { grid-template-columns: 1fr; } .methods-layout > aside { position: relative; z-index: 9; } }
+  @media (max-width: 650px) { .principle-grid { grid-template-columns: 1fr; } .principle-grid > div { border-right: 0; border-bottom: 1px solid var(--line); } .principle-grid > div:nth-child(2) { border-right: 0; } .principle-grid > div:last-child { border-bottom: 0; } .interpretation-grid { grid-template-columns: 1fr; } .methods-body > section { scroll-margin-top: calc(var(--header-height) + 8rem); } }
+</style>
+

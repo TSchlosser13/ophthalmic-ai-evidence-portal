@@ -1,0 +1,287 @@
+---
+import { ArrowRight, BookOpen, ChartColumn, Database, FileSearchCorner, Search, X } from '@lucide/astro';
+import { withBase } from '@/lib/base';
+
+const destinations = [
+  { href: '/publications/', label: 'Publication explorer', detail: 'Browse 427 included publications', icon: FileSearchCorner },
+  { href: '/visualizations/', label: 'Visual evidence', detail: 'Explore evidence maps and distributions', icon: ChartColumn },
+  { href: '/datasets/', label: 'Dataset registry', detail: 'Find named resources and linked publications', icon: Database },
+  { href: '/manuscript/', label: 'Manuscript', detail: 'Read the scientific synthesis', icon: BookOpen }
+];
+---
+
+<dialog class="command-dialog" data-command-dialog data-base={import.meta.env.BASE_URL} data-search-url={withBase('/search/')} aria-label="Search the evidence portal" data-pagefind-ignore>
+  <div class="command-panel">
+    <form class="command-search" action={withBase('/search/')} method="get" data-command-form>
+      <Search size={20} aria-hidden="true" />
+      <label class="visually-hidden" for="command-query">Search the evidence portal</label>
+      <input id="command-query" name="q" type="search" autocomplete="off" placeholder="Search publications, datasets, methods…" data-command-query aria-controls="command-results" />
+      <button type="button" class="command-close" data-command-close aria-label="Close search"><X size={19} /></button>
+    </form>
+    <div class="command-content">
+      <div data-command-quick>
+        <p class="command-label" id="command-title">Explore the portal</p>
+        <nav class="command-destinations" aria-label="Portal destinations">
+          {destinations.map(({ href, label, detail, icon: Icon }) => (
+            <a href={withBase(href)}><span class="destination-icon"><Icon size={18} /></span><span><strong>{label}</strong><small>{detail}</small></span><ArrowRight size={16} /></a>
+          ))}
+        </nav>
+      </div>
+      <div class="command-results" id="command-results" data-command-results hidden></div>
+      <p class="command-status" data-command-status aria-live="polite">Type to search across the public evidence portal.</p>
+    </div>
+    <footer class="command-footer">
+      <span><kbd>↑</kbd><kbd>↓</kbd> navigate</span><span><kbd>Enter</kbd> open</span><span><kbd>Esc</kbd> close</span>
+      <a href={withBase('/search/')}>Full search <ArrowRight size={14} /></a>
+    </footer>
+  </div>
+</dialog>
+
+<script is:inline type="module">
+  const dialog = document.querySelector('[data-command-dialog]');
+  if (dialog instanceof HTMLDialogElement) {
+    const input = dialog.querySelector('[data-command-query]');
+    const quick = dialog.querySelector('[data-command-quick]');
+    const results = dialog.querySelector('[data-command-results]');
+    const status = dialog.querySelector('[data-command-status]');
+    const base = dialog.dataset.base || '/';
+    let pagefind;
+    let loadPromise;
+    let timer = 0;
+    let activeIndex = -1;
+
+    const resultLinks = () => Array.from(results?.querySelectorAll('a') || []);
+    const focusResult = (index) => {
+      const links = resultLinks();
+      if (!links.length) return;
+      activeIndex = (index + links.length) % links.length;
+      links[activeIndex].focus();
+    };
+    const open = () => {
+      if (!dialog.open) dialog.showModal();
+      window.setTimeout(() => input?.focus(), 30);
+    };
+    const close = () => {
+      dialog.close();
+      if (input) input.value = '';
+      if (results) { results.hidden = true; results.replaceChildren(); }
+      if (quick) quick.hidden = false;
+      if (status) status.textContent = 'Type to search across the public evidence portal.';
+      activeIndex = -1;
+    };
+    const ensurePagefind = () => {
+      if (!loadPromise) {
+        const root = `${base}${base.endsWith('/') ? '' : '/'}pagefind/pagefind.js`;
+        loadPromise = import(/* @vite-ignore */ root).then(async (module) => {
+          pagefind = module;
+          if (pagefind.init) await pagefind.init();
+          return pagefind;
+        });
+      }
+      return loadPromise;
+    };
+    const contentLabel = (url) => {
+      if (url.includes('/publications/')) return 'Publication';
+      if (url.includes('/datasets/')) return 'Dataset';
+      if (url.includes('/manuscript/')) return 'Manuscript';
+      if (url.includes('/supplementary/')) return 'Supplement';
+      return 'Portal';
+    };
+    const renderResults = (items, query) => {
+      if (!results || !quick || !status) return;
+      results.replaceChildren();
+      quick.hidden = true;
+      results.hidden = false;
+      activeIndex = -1;
+      if (!items.length) {
+        const empty = document.createElement('p');
+        empty.className = 'command-empty';
+        empty.textContent = `No matches for “${query}”. Press Enter for the full search.`;
+        results.append(empty);
+        status.textContent = 'No matching pages.';
+        return;
+      }
+      const list = document.createElement('div');
+      list.className = 'command-result-list';
+      for (const item of items) {
+        const link = document.createElement('a');
+        link.href = item.url;
+        const copy = document.createElement('span');
+        const title = document.createElement('strong');
+        title.textContent = item.meta.title || 'Untitled page';
+        const detail = document.createElement('small');
+        detail.textContent = contentLabel(item.url);
+        const arrow = document.createElement('span');
+        arrow.className = 'result-arrow';
+        arrow.setAttribute('aria-hidden', 'true');
+        arrow.textContent = '→';
+        copy.append(title, detail);
+        link.append(copy, arrow);
+        list.append(link);
+      }
+      results.append(list);
+      status.textContent = `${items.length} suggested result${items.length === 1 ? '' : 's'}.`;
+    };
+    const runSearch = async () => {
+      const query = input?.value.trim() || '';
+      if (query.length < 2) {
+        if (quick) quick.hidden = false;
+        if (results) { results.hidden = true; results.replaceChildren(); }
+        if (status) status.textContent = 'Type at least two characters to search.';
+        return;
+      }
+      if (status) status.textContent = 'Searching…';
+      try {
+        const engine = await ensurePagefind();
+        const response = await engine.search(query);
+        const items = await Promise.all(response.results.slice(0, 7).map((result) => result.data()));
+        if (input?.value.trim() === query) renderResults(items, query);
+      } catch (error) {
+        if (status) status.textContent = 'Quick search is unavailable here. Press Enter to open the full search.';
+      }
+    };
+
+    document.querySelectorAll('[data-command-open]').forEach((button) => button.addEventListener('click', open));
+    dialog.querySelector('[data-command-close]')?.addEventListener('click', close);
+    dialog.addEventListener('cancel', (event) => { event.preventDefault(); close(); });
+    dialog.addEventListener('click', (event) => { if (event.target === dialog) close(); });
+    input?.addEventListener('input', () => {
+      window.clearTimeout(timer);
+      timer = window.setTimeout(runSearch, 140);
+    });
+    input?.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowDown' && resultLinks().length) { event.preventDefault(); focusResult(0); }
+    });
+    results?.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowDown') { event.preventDefault(); focusResult(activeIndex + 1); }
+      if (event.key === 'ArrowUp') { event.preventDefault(); activeIndex <= 0 ? input?.focus() : focusResult(activeIndex - 1); }
+    });
+    document.addEventListener('keydown', (event) => {
+      if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') {
+        event.preventDefault();
+        dialog.open ? close() : open();
+      }
+    });
+  }
+</script>
+
+<style>
+  .command-dialog {
+    width: min(680px, calc(100% - 1.5rem));
+    max-height: min(720px, calc(100dvh - 2rem));
+    overflow: visible;
+    border: 1px solid color-mix(in srgb, var(--cyan) 28%, var(--line));
+    border-radius: 16px;
+    background: transparent;
+    color: var(--ink);
+    padding: 0;
+    box-shadow: 0 30px 110px rgba(0, 19, 30, 0.38);
+  }
+  .command-dialog::backdrop {
+    background: rgba(2, 13, 21, 0.66);
+    backdrop-filter: blur(8px);
+  }
+  .command-panel {
+    overflow: hidden;
+    border-radius: inherit;
+    background: var(--surface);
+  }
+  .command-search {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 0.75rem;
+    align-items: center;
+    border-bottom: 1px solid var(--line);
+    padding: 0.78rem 0.9rem 0.78rem 1.1rem;
+    color: var(--cyan);
+  }
+  .command-search input {
+    min-width: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: var(--ink);
+    font-size: 1rem;
+  }
+  .command-search input::placeholder { color: var(--faint); }
+  .command-close {
+    display: grid;
+    width: 38px;
+    height: 38px;
+    place-items: center;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--surface-2);
+    color: var(--muted);
+  }
+  .command-close:hover { border-color: var(--cyan); color: var(--ink); }
+  .command-content {
+    max-height: min(510px, calc(100dvh - 11rem));
+    overflow-y: auto;
+    padding: 1rem;
+  }
+  .command-label {
+    margin: 0 0 0.65rem 0.2rem;
+    color: var(--faint);
+    font-size: 0.7rem;
+    font-weight: 760;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .command-destinations,
+  .command-result-list { display: grid; gap: 0.32rem; }
+  .command-destinations a,
+  :global(.command-result-list a) {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 0.8rem;
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    color: var(--ink);
+    padding: 0.7rem 0.75rem;
+    text-decoration: none;
+  }
+  .command-destinations a:hover,
+  .command-destinations a:focus-visible,
+  :global(.command-result-list a:hover),
+  :global(.command-result-list a:focus-visible) {
+    border-color: color-mix(in srgb, var(--cyan) 24%, var(--line));
+    background: color-mix(in srgb, var(--cyan) 6%, var(--surface));
+  }
+  .destination-icon {
+    display: grid;
+    width: 36px;
+    height: 36px;
+    place-items: center;
+    border-radius: 9px;
+    background: color-mix(in srgb, var(--teal) 10%, var(--surface-2));
+    color: var(--teal);
+  }
+  .command-destinations strong,
+  :global(.command-result-list strong) { display: block; font-size: 0.84rem; }
+  .command-destinations small,
+  :global(.command-result-list small) { display: block; margin-top: 0.12rem; color: var(--faint); font-size: 0.72rem; }
+  :global(.result-arrow) { color: var(--faint); }
+  :global(.command-empty) { margin: 0; padding: 2rem 1rem; color: var(--muted); text-align: center; }
+  .command-status { min-height: 1.2em; margin: 0.8rem 0.25rem 0; color: var(--faint); font-size: 0.7rem; }
+  .command-footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem 1rem;
+    align-items: center;
+    border-top: 1px solid var(--line);
+    background: var(--surface-2);
+    padding: 0.65rem 1rem;
+    color: var(--faint);
+    font-size: 0.68rem;
+  }
+  .command-footer span { display: inline-flex; gap: 0.25rem; align-items: center; }
+  .command-footer kbd { padding: 0.02rem 0.25rem; font-size: 0.62rem; }
+  .command-footer a { display: inline-flex; gap: 0.3rem; align-items: center; margin-left: auto; font-weight: 700; text-decoration: none; }
+  @media (max-width: 520px) {
+    .command-footer span { display: none; }
+    .command-footer a { margin-left: 0; }
+    .command-content { padding: 0.7rem; }
+  }
+</style>

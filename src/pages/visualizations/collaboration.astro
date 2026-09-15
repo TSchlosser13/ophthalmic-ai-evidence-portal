@@ -1,0 +1,90 @@
+---
+import { ArrowUpRight, Download, Globe, Minus, Plus, RotateCcw, Search } from '@lucide/astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { withBase } from '@/lib/base';
+import { createMapGeometry, MAP_WIDTH, MAP_HEIGHT } from '@/lib/collaborationMap';
+import type { CollaborationData } from '@/lib/collaboration';
+import geography from '@/data/generated/collaboration.json';
+import '@/styles/collaboration.css';
+const data: CollaborationData = geography;
+const map = createMapGeometry(data);
+const ranked = [...data.countries].sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
+const alphabetical = [...data.countries].sort((a, b) => a.name.localeCompare(b.name));
+const topIds = new Set(ranked.slice(0, 3).map((item) => item.id));
+---
+
+<BaseLayout title="International collaboration" description="Explore the geography of ophthalmic AI research. Select countries and international co-authorship links to find the publications behind them.">
+  <div class="container geography-page" data-collaboration-explorer data-base={withBase('/')}>
+    <div class="geo-first-screen">
+    <header class="geography-heading">
+      <div><p class="eyebrow"><Globe size={15} aria-hidden="true" /> Research geography</p><h1>International collaboration</h1></div>
+      <dl class="geography-totals" aria-label="Geographical coverage">
+        <div><dt>Countries & territories</dt><dd>{data.totals.countries}</dd></div>
+        <div><dt>Collaboration pairs</dt><dd>{data.totals.collaborations}</dd></div>
+        <div><dt>Publications mapped</dt><dd>{data.totals.mapped}<small> / {data.totals.included}</small></dd></div>
+      </dl>
+      <p class="geography-intro">Explore where ophthalmic AI research connects. Select a country or a collaboration to discover the publications behind it.</p>
+    </header>
+    <section class="geo-workspace" aria-label="Interactive world map and publication explorer">
+      <div class="geo-map-side">
+        <div class="geo-toolbar">
+          <label class="geo-country-search"><Search size={16} aria-hidden="true" /><span class="visually-hidden">Find a country or territory</span><select data-country-select aria-label="Find a country or territory"><option value="">Find a country or territory</option>{alphabetical.map((country) => <option value={country.id}>{country.name} · {country.count}</option>)}</select></label>
+          <label class="geo-link-toggle"><input type="checkbox" checked data-show-links /> Collaboration links</label>
+          <button class="geo-reset" type="button" data-reset-map title="Clear selection and reset map"><RotateCcw size={16} /> Reset</button>
+        </div>
+        <div class="geo-map-canvas" data-map-canvas>
+          <div class="geo-map-hint" aria-hidden="true"><span></span> Click a country or connection</div>
+          <svg class="geo-map" viewBox={`0 0 ${MAP_WIDTH} ${MAP_HEIGHT}`} role="group" aria-labelledby="geo-map-title geo-map-desc" data-world-map>
+            <title id="geo-map-title">World map of publications and international co-authorship</title>
+            <desc id="geo-map-desc">Country colour shows publication volume. Connections show shared publications. Select a country with the selector or map, or use the collaboration list. Drag to move the map and use the zoom controls to inspect detail.</desc>
+            <defs><linearGradient id="geo-ocean" x1="0" y1="0" x2="1" y2="1"><stop stop-color="var(--geo-ocean-a)" /><stop offset="1" stop-color="var(--geo-ocean-b)" /></linearGradient><filter id="geo-selected-glow" x="-60%" y="-60%" width="220%" height="220%"><feDropShadow dx="0" dy="0" stdDeviation="2.1" flood-color="#0e9fba" flood-opacity="0.65" /></filter></defs>
+            <g data-map-transform>
+              <path d={map.sphere} fill="url(#geo-ocean)" class="geo-sphere" />
+              <path d={map.graticule} class="geo-graticule" />
+              <g class="geo-land-layer">{map.land.map((country) => <path d={country.path} style={country.fill ? `fill:${country.fill}` : undefined} class:list={['geo-land', { 'has-publications': country.count > 0 }]} data-country={country.count ? country.id : undefined} data-country-shape={country.id} aria-label={`${country.name}: ${country.count} mapped publications`}><title>{country.name} · {country.count} mapped publications</title></path>)}</g>
+              <g class="geo-links-layer">{map.arcs.map((link) => <g class="geo-connection" data-link={link.id} role="button" tabindex="-1" aria-label={`${link.name}: ${link.count} shared publications`}><path d={link.path} class="geo-link" stroke={link.colour} stroke-width={link.width} /><path d={link.path} class="geo-link-target" /><title>{link.name} · {link.count} shared publications</title></g>)}</g>
+              <g class="geo-nodes-layer">{map.nodes.map((country) => <g class="geo-node" data-country={country.id} data-map-node={country.id} role="button" tabindex="0" aria-label={`${country.name}: ${country.count} publications. Select to explore.`} aria-pressed="false"><circle cx={country.x} cy={country.y} r="16" class="geo-node-target" /><circle cx={country.x} cy={country.y} r={country.radius + 4} class="geo-node-ring" /><circle cx={country.x} cy={country.y} r={country.radius} fill={country.fill} class="geo-node-dot" /><text x={country.x} y={country.y - country.radius - 9} text-anchor="middle" class:list={['geo-country-label', { 'is-leading': topIds.has(country.id) }]}>{country.name}</text><title>{country.name} · {country.count} publications</title></g>)}</g>
+            </g>
+          </svg>
+          <div class="geo-tooltip" role="tooltip" data-map-tooltip hidden></div>
+          <div class="geo-zoom" role="group" aria-label="Map zoom controls"><button type="button" data-zoom-in aria-label="Zoom in"><Plus size={17} /></button><output data-map-zoom aria-live="polite">100%</output><button type="button" data-zoom-out aria-label="Zoom out" disabled><Minus size={17} /></button><button type="button" data-zoom-reset aria-label="Reset zoom"><RotateCcw size={15} /></button></div>
+          <a class="geo-map-export" href={withBase('/downloads/collaboration-map.svg')} download aria-label="Download the world map as SVG"><Download size={15} /> SVG</a>
+        </div>
+        <div class="geo-map-legend">
+          <div class="geo-colour-legend"><strong>Publications</strong><div><span class="geo-gradient"></span><span class="geo-legend-values"><span>1</span><span>{Math.round(map.maxCount / 2)}</span><span>{map.maxCount}</span></span></div></div>
+          <div class="geo-colour-legend"><strong>Shared publications</strong><div><span class="geo-gradient"></span><span class="geo-legend-values"><span>1</span><span>{map.maxLinks}</span></span></div></div>
+          <div class="geo-empty-key"><i></i><span>No mapped affiliation</span></div>
+          <label class="geo-strength"><span>Minimum shared publications <output data-link-minimum-value>1</output></span><input type="range" min="1" max={map.maxLinks} value="1" step="1" data-link-minimum aria-label="Minimum shared publications per collaboration" /></label>
+        </div>
+        <div class="geo-map-footer"><span data-visible-links>{data.totals.collaborations} collaborations shown</span><span>Drag to pan · Scroll to zoom</span></div>
+      </div>
+      <aside class="geo-detail" aria-label="Selected geography and publications" data-selection-panel>
+        <div class="geo-detail-heading"><p class="eyebrow" data-selection-kind>Explore the network</p><h2 data-selection-title>A world of connections</h2><p data-selection-description>Select a country to see its publications and partners, or follow a link to explore a collaboration.</p><button type="button" class="geo-clear-selection" data-clear-selection hidden>Clear selection <span aria-hidden="true">×</span></button></div>
+        <div class="geo-overview" data-overview-panel>
+          <div class="geo-list-tabs" role="group" aria-label="Browse the geographical network"><button type="button" aria-pressed="true" data-network-list="countries">Countries</button><button type="button" aria-pressed="false" data-network-list="collaborations">Collaborations</button></div>
+          <div class="geo-rank-list" data-ranking-list>{ranked.map((country, index) => <button type="button" class="geo-rank-row" data-country={country.id}><span class="geo-rank">{String(index + 1).padStart(2, '0')}</span><span class="geo-rank-name">{country.name}<i style={`--share:${country.count / map.maxCount * 100}%`}></i></span><strong>{country.count}</strong><ArrowUpRight size={14} aria-hidden="true" /></button>)}</div>
+          <p class="geo-list-caption" data-ranking-caption>Publications per country or territory</p>
+        </div>
+        <div data-detail-panel hidden>
+          <div class="geo-selected-metrics" data-selected-metrics></div>
+          <div class="geo-partners" data-partners-panel><h3>Explore collaborations</h3><div data-partners-list></div></div>
+          <div class="geo-publications-heading"><h3>Related publications</h3><span data-publication-count></span></div>
+          <label class="geo-publication-search"><Search size={15} /><span class="visually-hidden">Search selected publications</span><input type="search" placeholder="Search these publications" data-publication-search /></label>
+          <ol class="geo-publication-list" data-publication-list></ol>
+        </div>
+        <p class="visually-hidden" role="status" data-selection-announcement></p>
+      </aside>
+    </section>
+    </div>
+    <section class="geo-reading-note" aria-labelledby="geo-reading-title">
+      <div><p class="eyebrow">Reading the map</p><h2 id="geo-reading-title">From geography to publications</h2></div>
+      <div><p>Each publication counts once for every country or territory identified in its author affiliations. A connection counts publications with affiliations in both places; a paper spanning several countries can contribute to several connections.</p><p>{data.totals.mapped} of the {data.totals.included} included publications have mapped affiliations. Colour shows publication volume; thicker connections indicate more shared publications. Affiliation geography does not establish where study participants or imaging data originated.</p><div class="geo-data-links"><a href={withBase('/downloads/collaboration-countries.csv')} download>Country data <Download size={14} /></a><a href={withBase('/downloads/collaboration-links.csv')} download>Collaboration data <Download size={14} /></a><a href="https://www.naturalearthdata.com/about/terms-of-use/" target="_blank" rel="noreferrer">Map: Natural Earth <ArrowUpRight size={14} /></a></div></div>
+    </section>
+    <noscript><p class="notice">Use the publication explorer’s country filter to browse the mapped publications, or download the complete country and collaboration tables above. Enable JavaScript to select countries and links directly on this map.</p></noscript>
+    <script is:inline type="application/json" data-collaboration-data set:html={JSON.stringify(data).replace(/</g, '\u003c')} />
+  </div>
+</BaseLayout>
+<script>
+  import { initialiseCollaborationMap } from '@/lib/collaborationClient';
+  document.querySelectorAll<HTMLElement>('[data-collaboration-explorer]').forEach(initialiseCollaborationMap);
+</script>

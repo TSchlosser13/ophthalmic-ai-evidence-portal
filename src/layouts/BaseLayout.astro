@@ -1,0 +1,99 @@
+---
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import CommandPalette from '@/components/CommandPalette.astro';
+import '@/styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  type?: 'website' | 'article';
+  structuredData?: Record<string, unknown> | Array<Record<string, unknown>>;
+  citation?: {
+    title: string;
+    authors: string[];
+    year?: number | null;
+    journal?: string | null;
+    doi?: string | null;
+  };
+}
+
+const {
+  title,
+  description,
+  image,
+  type = 'website',
+  structuredData,
+  citation
+} = Astro.props;
+const siteName = 'Ophthalmic AI Evidence Portal';
+const pageTitle = title === siteName ? title : `${title} | ${siteName}`;
+const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site) : Astro.url;
+const socialImage = image ? (Astro.site ? new URL(image, Astro.site) : image) : undefined;
+---
+
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#071827" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href={`${import.meta.env.BASE_URL}favicon.svg`} type="image/svg+xml" />
+    <link rel="manifest" href={`${import.meta.env.BASE_URL}site.webmanifest`} />
+    <meta property="og:type" content={type} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    {socialImage && <meta property="og:image" content={socialImage} />}
+    <meta name="twitter:card" content={socialImage ? 'summary_large_image' : 'summary'} />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    {citation && <meta name="citation_title" content={citation.title} />}
+    {citation?.authors.map((author) => <meta name="citation_author" content={author} />)}
+    {citation?.year && <meta name="citation_publication_date" content={String(citation.year)} />}
+    {citation?.journal && <meta name="citation_journal_title" content={citation.journal} />}
+    {citation?.doi && <meta name="citation_doi" content={citation.doi} />}
+    <title>{pageTitle}</title>
+    <script is:inline>
+      (() => {
+        const stored = localStorage.getItem('theme');
+        const dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.dataset.theme = stored || (dark ? 'dark' : 'light');
+      })();
+    </script>
+    {structuredData && <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />}
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <Header />
+    <div class="site-progress" aria-hidden="true" data-scroll-progress><span></span></div>
+    <main id="main-content" class="page-main">
+      <slot />
+    </main>
+    <Footer />
+    <CommandPalette />
+    <script>
+      const progressBar = document.querySelector<HTMLElement>('[data-scroll-progress] span');
+      let progressFrame = 0;
+      const updateProgress = () => {
+        progressFrame = 0;
+        if (!progressBar) return;
+        const scrollRoot = document.scrollingElement ?? document.documentElement;
+        const range = Math.max(0, scrollRoot.scrollHeight - scrollRoot.clientHeight);
+        const atEnd = range <= 0 || scrollRoot.scrollTop >= range - 2;
+        const progress = atEnd ? 1 : Math.min(1, Math.max(0, scrollRoot.scrollTop / Math.max(1, range)));
+        progressBar.style.transform = `scaleX(${progress})`;
+      };
+      window.addEventListener('scroll', () => {
+        if (!progressFrame) progressFrame = window.requestAnimationFrame(updateProgress);
+      }, { passive: true });
+      window.addEventListener('resize', updateProgress);
+      window.addEventListener('load', updateProgress, { once: true });
+      updateProgress();
+    </script>
+  </body>
+</html>

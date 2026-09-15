@@ -1,0 +1,118 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHeader from '@/components/PageHeader.astro';
+import ZoomableFigure from '@/components/ZoomableFigure.astro';
+import { withBase } from '@/lib/base';
+import { scheme } from 'vega';
+const networkImage = withBase('/assets/generated/network_cropped.png');
+const overlayImage = withBase('/assets/generated/overlay_cropped.png');
+const topics = [
+  { label: 'AI and ChatGPT, including anterior-segment and refractive applications', colours: ['#e080c0', '#f08080'], colourNames: 'pink and salmon' },
+  { label: 'OCT-based retinal imaging and retinal disease monitoring', colours: ['#50b050', '#a0e090'], colourNames: 'green and light green' },
+  { label: 'Machine learning for imaging, prediction, and modelling of clinical outcomes', colours: ['#f09040', '#e06060', '#50a0d0'], colourNames: 'orange, red and blue' },
+  { label: 'Screening, public health, and translational applications', colours: ['#a0e090', '#d0d050', '#60c8d8'], colourNames: 'light green, yellow and cyan' }
+];
+const viridis = scheme('viridis') as (value: number) => string;
+const yearGradient = `linear-gradient(90deg, ${Array.from({ length: 25 }, (_, index) => `${viridis(index / 24)} ${index / 24 * 100}%`).join(', ')})`;
+---
+
+<BaseLayout title="Keyword co-occurrence network" description="Authored keyword co-occurrence and temporal-overlay figures for the included ophthalmic AI literature.">
+  <PageHeader
+    eyebrow="Thematic structure"
+    title="Keyword co-occurrence network"
+    intro="The authored network figures show prominent keyword relationships, cluster structure, relative recency, and possible shifts in research emphasis across the included literature."
+  />
+  <div class="container network-page">
+    <ZoomableFigure
+      id="keyword-network"
+      title="Keyword co-occurrence network"
+      description="Node size represents keyword frequency, edge thickness represents co-occurrence strength, and colour indicates data-driven clusters."
+      src={networkImage}
+      alt="Keyword co-occurrence network for the included ophthalmic artificial intelligence literature, with larger nodes for more frequent terms, thicker links for stronger co-occurrence, and colours for thematic clusters."
+      caption="Labels are shown for prominent terms. Smaller connected nodes remain unlabelled."
+      fit
+    >
+      <section slot="legend" class="cluster-legend" aria-labelledby="cluster-legend-title">
+        <h3 id="cluster-legend-title">Thematic groups</h3>
+        <ol class="cluster-key">
+          {topics.map((topic, index) => (
+            <li>
+              <strong>Topic {index + 1}</strong>
+              <span class="cluster-swatches" role="img" aria-label={topic.colourNames}>
+                {topic.colours.map((colour) => <i style={`background-color:${colour}`} aria-hidden="true"></i>)}
+              </span>
+              <span class="cluster-label">{topic.label}</span>
+            </li>
+          ))}
+        </ol>
+      </section>
+    </ZoomableFigure>
+    <ZoomableFigure
+      id="keyword-overlay"
+      title="Mean publication year overlay"
+      description="Mean publication year is overlaid on the same keyword structure."
+      src={overlayImage}
+      alt="Temporal overlay of the ophthalmic artificial intelligence keyword network, encoding mean publication year across network terms."
+      caption="The overlay visualisation colours each keyword by mean publication year and indicates temporal shifts in research emphasis."
+      fit
+    >
+      <div slot="legend" class="year-legend" role="img" aria-label="Mean publication year: Viridis colour scale from purple for 2020 through blue, green and yellow for 2026">
+        <div class="year-scale" aria-hidden="true">
+          <div class="year-gradient" style={`background:${yearGradient}`}></div>
+          <ol class="year-ticks">
+            {Array.from({ length: 7 }, (_, index) => <li style={`left:${index / 6 * 100}%`}>{2020 + index}</li>)}
+          </ol>
+        </div>
+        <span class="year-label" aria-hidden="true">Year</span>
+      </div>
+    </ZoomableFigure>
+    <section class="network-alternative">
+      <h2>Nonvisual interpretation</h2>
+      <div class="table-wrap">
+        <table>
+          <caption>Visual encodings and thematic interpretation reported in the manuscript caption</caption>
+          <thead><tr><th scope="col">Element</th><th scope="col">Meaning</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Node size</th><td>Keyword frequency</td></tr>
+            <tr><th scope="row">Line thickness</th><td>Co-occurrence strength</td></tr>
+            <tr><th scope="row">Cluster colour</th><td>Data-driven keyword clusters interpreted into thematic areas</td></tr>
+            <tr><th scope="row">Overlay colour</th><td>Mean publication year</td></tr>
+            {topics.map((topic, index) => <tr><th scope="row">Topic {index + 1}</th><td>{topic.label}</td></tr>)}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .network-page { padding-block: 2rem 5rem; }
+  .network-page > :global(.zoom-figure) { margin-top: 3rem; }
+  .network-alternative { border-top: 1px solid var(--line); padding-top: 2.5rem; margin-top: 3rem; }
+  .cluster-legend { margin-top: 1.25rem; }
+  .cluster-legend h3 { margin: 0 0 .75rem; font-family: var(--font-sans); font-size: .9rem; }
+  .cluster-key { display: grid; gap: .6rem; list-style: none; margin: 0; padding: 0; }
+  .cluster-key li { display: grid; grid-template-columns: 4rem 4rem minmax(0, 1fr); gap: .75rem; align-items: start; font-size: .88rem; line-height: 1.55; }
+  .cluster-key strong { font-size: .82rem; font-weight: 650; }
+  .cluster-swatches { display: flex; align-items: center; gap: .35rem; min-height: 1.35rem; }
+  .cluster-swatches i { width: .8rem; height: .8rem; border-radius: 50%; box-shadow: inset 0 0 0 1px #00000020; flex: none; }
+  .cluster-label { color: var(--muted); }
+  .year-legend { display: flex; justify-content: center; align-items: flex-start; gap: .75rem; width: min(100%, 21rem); margin: 1.25rem auto .25rem; }
+  .year-scale { flex: 0 1 18rem; min-width: 0; }
+  .year-gradient { height: .9rem; border: 1px solid var(--line-strong); border-radius: .15rem; }
+  .year-label { flex: none; font-size: .85rem; line-height: .9rem; }
+  .year-ticks { position: relative; height: 1.1rem; margin: .4rem 0 0; padding: 0; list-style: none; color: var(--muted); font-size: .76rem; font-variant-numeric: tabular-nums; }
+  .year-ticks li { position: absolute; top: 0; transform: translateX(-50%); white-space: nowrap; }
+  .year-ticks li:first-child { transform: none; }
+  .year-ticks li:last-child { transform: translateX(-100%); }
+  .year-ticks li::before { content: ''; position: absolute; top: -.5rem; left: 50%; width: 1px; height: .3rem; background: var(--line-strong); }
+  .year-ticks li:first-child::before { left: 0; }
+  .year-ticks li:last-child::before { left: auto; right: 0; }
+  .network-alternative table { min-width: 680px; }
+  .network-alternative th:first-child { width: 190px; }
+  @media (max-width: 720px) {
+    .cluster-key li { grid-template-columns: 4rem 1fr; gap: .2rem .75rem; }
+    .cluster-label { grid-column: 1 / -1; }
+    .year-ticks { font-size: 0.68rem; }
+  }
+</style>

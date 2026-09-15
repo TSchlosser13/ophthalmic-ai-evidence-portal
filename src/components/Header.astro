@@ -1,0 +1,298 @@
+---
+import { BookOpen, ChartColumn, Database, Download, Menu, Moon, Search, Sun } from '@lucide/astro';
+import { withBase } from '@/lib/base';
+
+const path = Astro.url.pathname;
+const links = [
+  { href: '/publications/', label: 'Publications' },
+  { href: '/visualizations/', label: 'Visualisations' },
+  { href: '/datasets/', label: 'Datasets' },
+  { href: '/manuscript/', label: 'Manuscript' },
+  { href: '/methods/', label: 'Methods' }
+];
+const isActive = (href: string) => href !== '/' && path.includes(href.replace(/^\//, '').replace(/\/$/, ''));
+---
+
+<header class="site-header" data-pagefind-ignore>
+  <div class="container header-inner">
+    <a class="brand" href={withBase('/')} aria-label="Ophthalmic AI Evidence Portal home">
+      <span class="brand-mark" aria-hidden="true"><span></span></span>
+      <span class="brand-copy"><strong>Ophthalmic AI</strong><small>Evidence Portal</small></span>
+    </a>
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      {links.map((link) => <a href={withBase(link.href)} aria-current={isActive(link.href) ? 'page' : undefined}>{link.label}</a>)}
+    </nav>
+    <div class="header-tools">
+      <button class="search-trigger" type="button" title="Search evidence (Ctrl/Command K)" aria-label="Open evidence search" aria-haspopup="dialog" data-command-open>
+        <Search size={17} /><span>Search evidence</span><kbd aria-hidden="true">Ctrl K</kbd>
+      </button>
+      <a class="visually-hidden" href={withBase('/search/')} tabindex="-1" data-search-link={withBase('/search/')}>Search portal</a>
+      <a class="icon-button desktop-download" href={withBase('/downloads/')} title="Downloads" aria-label="Downloads">
+        <Download size={18} />
+      </a>
+      <button class="icon-button theme-toggle" type="button" title="Switch colour theme" aria-label="Switch colour theme" aria-pressed="false" data-theme-toggle>
+        <Moon class="theme-moon" size={18} />
+        <Sun class="theme-sun" size={18} />
+      </button>
+      <details class="mobile-nav">
+        <summary class="icon-button" aria-label="Open navigation" title="Menu"><Menu size={19} /></summary>
+        <nav aria-label="Mobile navigation">
+          <a href={withBase('/publications/')} aria-current={isActive('/publications/') ? 'page' : undefined}><BookOpen size={17} /> Publications</a>
+          <a href={withBase('/visualizations/')} aria-current={isActive('/visualizations/') ? 'page' : undefined}><ChartColumn size={17} /> Visualisations</a>
+          <a href={withBase('/datasets/')} aria-current={isActive('/datasets/') ? 'page' : undefined}><Database size={17} /> Datasets</a>
+          <a href={withBase('/manuscript/')} aria-current={isActive('/manuscript/') ? 'page' : undefined}><BookOpen size={17} /> Manuscript</a>
+          <a href={withBase('/methods/')} aria-current={isActive('/methods/') ? 'page' : undefined}>Methods</a>
+          <a href={withBase('/downloads/')}><Download size={17} /> Downloads</a>
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>
+
+<script>
+  const syncThemeControls = (theme: 'light' | 'dark') => {
+    document.querySelectorAll<HTMLButtonElement>('[data-theme-toggle]').forEach((button) => {
+      const nextTheme = theme === 'dark' ? 'light' : 'dark';
+      button.setAttribute('aria-label', `Switch to ${nextTheme} theme`);
+      button.setAttribute('title', `Switch to ${nextTheme} theme`);
+      button.setAttribute('aria-pressed', String(theme === 'dark'));
+    });
+  };
+  const applyTheme = (theme: 'light' | 'dark') => {
+    document.documentElement.dataset.theme = theme;
+    localStorage.setItem('theme', theme);
+    syncThemeControls(theme);
+    window.dispatchEvent(new CustomEvent('themechange', { detail: theme }));
+  };
+  document.querySelectorAll<HTMLButtonElement>('[data-theme-toggle]').forEach((button) => {
+    button.addEventListener('click', () => applyTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'));
+  });
+  document.addEventListener('keydown', (event) => {
+    const target = event.target as HTMLElement | null;
+    const typing = target?.matches('input, textarea, select, [contenteditable="true"]');
+    const onSearchPage = window.location.pathname.includes('/search/');
+    if (!typing && !onSearchPage && event.key === '/') {
+      event.preventDefault();
+      const link = document.querySelector<HTMLAnchorElement>('[data-search-link]');
+      if (link) window.location.href = link.href;
+    }
+  });
+  syncThemeControls(document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light');
+</script>
+
+<style>
+  .site-header {
+    position: sticky;
+    z-index: 50;
+    top: 0;
+    height: var(--header-height);
+    border-bottom: 1px solid color-mix(in srgb, var(--cyan) 18%, var(--line));
+    background: var(--surface-glass);
+    box-shadow: 0 8px 32px color-mix(in srgb, var(--ink) 5%, transparent);
+    backdrop-filter: blur(18px) saturate(130%);
+  }
+  .header-inner {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    gap: 1.15rem;
+  }
+  .brand {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 0.7rem;
+    color: var(--ink);
+    font-weight: 760;
+    text-decoration: none;
+  }
+  .brand:hover {
+    color: var(--blue);
+  }
+  .brand-mark {
+    position: relative;
+    display: grid;
+    width: 38px;
+    height: 38px;
+    place-items: center;
+    overflow: hidden;
+    border: 1px solid color-mix(in srgb, var(--cyan) 46%, var(--line));
+    border-radius: 11px;
+    background: linear-gradient(145deg, #174ea6, #087a78 68%, #5b3cc4);
+    box-shadow: inset 0 0 16px rgba(119, 167, 255, 0.18), 0 7px 20px rgba(23, 78, 166, 0.22);
+  }
+  .brand-mark::before,
+  .brand-mark::after,
+  .brand-mark span {
+    position: absolute;
+    border-radius: 50%;
+    content: "";
+  }
+  .brand-mark::before {
+    width: 27px;
+    height: 17px;
+    border: 1px solid rgba(230, 249, 255, 0.9);
+    transform: rotate(-8deg);
+  }
+  .brand-mark::after {
+    width: 11px;
+    height: 11px;
+    background: #4dd6d2;
+    box-shadow: 0 0 12px rgba(77, 214, 210, 0.76);
+  }
+  .brand-mark span {
+    z-index: 1;
+    width: 4px;
+    height: 4px;
+    background: #ffd166;
+  }
+  .brand-copy {
+    display: grid;
+    line-height: 1;
+  }
+  .brand-copy strong {
+    font-size: 0.9rem;
+    letter-spacing: -0.01em;
+  }
+  .brand-copy small {
+    margin-top: 0.24rem;
+    color: var(--faint);
+    font-size: 0.61rem;
+    font-weight: 720;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+  }
+  .desktop-nav {
+    display: flex;
+    align-items: stretch;
+    align-self: stretch;
+    gap: 0.1rem;
+  }
+  .desktop-nav a {
+    display: inline-flex;
+    align-items: center;
+    border-bottom: 2px solid transparent;
+    color: var(--muted);
+    padding-inline: 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 650;
+    text-decoration: none;
+  }
+  .desktop-nav a:hover,
+  .desktop-nav a[aria-current="page"] {
+    border-bottom-color: var(--blue);
+    color: var(--ink);
+  }
+  .desktop-nav a[aria-current="page"] {
+    background: linear-gradient(0deg, color-mix(in srgb, var(--blue) 9%, transparent), transparent 72%);
+  }
+  .header-tools {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin-left: auto;
+  }
+  .search-trigger {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    gap: 0.55rem;
+    border: 1px solid var(--line);
+    border-radius: 9px;
+    background: color-mix(in srgb, var(--surface) 78%, transparent);
+    color: var(--muted);
+    padding: 0.3rem 0.42rem 0.3rem 0.72rem;
+    font-size: 0.76rem;
+    font-weight: 650;
+    transition: border-color 150ms ease, color 150ms ease, background 150ms ease, box-shadow 150ms ease;
+  }
+  .search-trigger:hover {
+    border-color: color-mix(in srgb, var(--cyan) 52%, var(--line));
+    background: var(--surface);
+    color: var(--ink);
+    box-shadow: 0 7px 22px color-mix(in srgb, var(--ink) 7%, transparent);
+  }
+  .search-trigger kbd {
+    min-width: 43px;
+    border-color: color-mix(in srgb, var(--line-strong) 72%, transparent);
+    background: var(--surface-2);
+    color: var(--faint);
+    text-align: center;
+  }
+  .theme-sun,
+  :global(:root[data-theme="dark"]) .theme-moon {
+    display: none;
+  }
+  :global(:root[data-theme="dark"]) .theme-sun {
+    display: block;
+  }
+  .mobile-nav {
+    display: none;
+    position: relative;
+  }
+  .mobile-nav summary {
+    list-style: none;
+  }
+  .mobile-nav summary::-webkit-details-marker {
+    display: none;
+  }
+  .mobile-nav nav {
+    position: absolute;
+    top: calc(100% + 0.7rem);
+    right: 0;
+    width: min(290px, calc(100vw - 1.4rem));
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: var(--surface);
+    padding: 0.45rem;
+    box-shadow: var(--shadow);
+  }
+  .mobile-nav nav a {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    border-radius: 4px;
+    color: var(--ink);
+    padding: 0.72rem;
+    font-size: 0.9rem;
+    text-decoration: none;
+  }
+  .mobile-nav nav a:hover {
+    background: var(--surface-2);
+  }
+  .mobile-nav nav a[aria-current="page"] {
+    background: linear-gradient(100deg, color-mix(in srgb, var(--blue) 14%, var(--surface)), color-mix(in srgb, var(--teal) 8%, var(--surface)));
+    color: var(--ink);
+    font-weight: 720;
+  }
+  @media (max-width: 900px) {
+    .desktop-nav {
+      display: none;
+    }
+    .mobile-nav {
+      display: block;
+    }
+  }
+  @media (max-width: 1120px) {
+    .brand-copy small,
+    .search-trigger span {
+      display: none;
+    }
+  }
+  @media (max-width: 520px) {
+    .desktop-download {
+      display: none;
+    }
+    .search-trigger kbd {
+      display: none;
+    }
+    .search-trigger {
+      width: 42px;
+      justify-content: center;
+      padding: 0;
+    }
+    .brand-copy strong {
+      font-size: 0.82rem;
+    }
+  }
+</style>

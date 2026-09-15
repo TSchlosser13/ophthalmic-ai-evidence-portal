@@ -1,0 +1,1786 @@
+---
+import {
+  Columns3,
+  Download,
+  Grid2x2,
+  List,
+  RotateCcw,
+  Rows3,
+  Scale,
+  Search,
+  SlidersHorizontal,
+  X
+} from '@lucide/astro';
+import { withBase } from '@/lib/base';
+
+interface Props { total: number; }
+const { total } = Astro.props;
+---
+
+<section
+  id="explorer"
+  class="explorer container"
+  data-article-explorer
+  data-data-url={withBase('/data/articles-index.json')}
+  data-base={import.meta.env.BASE_URL}
+  data-density="comfortable"
+>
+  <div class="explorer-workspace" data-pagefind-ignore>
+    <div class="workspace-primary">
+      <label class="search-field">
+        <span class="field-label">Search included publications</span>
+        <span class="input-with-icon">
+          <Search size={18} aria-hidden="true" />
+          <input
+            class="input"
+            type="search"
+            placeholder="Title, author, citation key, method, or task"
+            autocomplete="off"
+            data-query
+          />
+        </span>
+      </label>
+
+      <button
+        class="button filter-toggle"
+        type="button"
+        aria-controls="article-filter-panel"
+        aria-expanded="true"
+        data-filter-toggle
+      >
+        <SlidersHorizontal size={17} />
+        Filters
+        <span class="control-count" data-filter-total hidden>0</span>
+      </button>
+
+      <label class="sort-control">
+        <span class="field-label">Sort results</span>
+        <select class="select" data-sort>
+          <option value="year-desc">Newest first</option>
+          <option value="year-asc">Oldest first</option>
+          <option value="title">Title A-Z</option>
+          <option value="citation">Citation key</option>
+          <option value="type">Publication type</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="workspace-secondary">
+      <p class="result-summary" role="status" aria-live="polite" aria-atomic="true">
+        <span class="result-number" data-result-count>{total}</span>
+        <span>of {total} included publications</span>
+      </p>
+
+      <div class="workspace-actions">
+        <div class="control-group">
+          <span class="field-label">View</span>
+          <div class="segmented" role="group" aria-label="Result view">
+            <button type="button" title="Card view" aria-label="Card view" aria-pressed="true" data-view="cards"><Grid2x2 size={18} /></button>
+            <button type="button" title="Table view" aria-label="Table view" aria-pressed="false" data-view="table"><List size={18} /></button>
+          </div>
+        </div>
+
+        <div class="control-group density-control">
+          <span class="field-label">Density</span>
+          <div class="segmented" role="group" aria-label="Result density">
+            <button type="button" title="Comfortable density" aria-label="Comfortable density" aria-pressed="true" data-density-control="comfortable"><Rows3 size={18} /></button>
+            <button type="button" title="Compact density" aria-label="Compact density" aria-pressed="false" data-density-control="compact"><Columns3 size={18} /></button>
+          </div>
+        </div>
+
+        <div class="export-menu">
+          <span class="field-label">Filtered data</span>
+          <div class="cluster">
+            <button class="button" type="button" data-export="csv"><Download size={16} /> CSV</button>
+            <button class="button" type="button" data-export="json">JSON</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="active-row">
+      <div class="active-filters" aria-label="Active filters" data-active-filters>
+        <span class="filter-hint">No filters active</span>
+      </div>
+      <button class="button clear-button" type="button" data-clear hidden><RotateCcw size={16} /> Reset filters</button>
+    </div>
+    <p class="export-status" aria-live="polite" data-export-status></p>
+  </div>
+
+  <div class="explorer-layout">
+    <aside class="filter-column" data-pagefind-ignore>
+      <details id="article-filter-panel" open>
+        <summary>
+          <span><SlidersHorizontal size={16} /> Refine results</span>
+          <small data-filter-summary>Choose any combination</small>
+        </summary>
+        <div class="filter-groups" data-filter-groups></div>
+      </details>
+    </aside>
+
+    <div class="results-column">
+      <div class="result-region" aria-busy="true" data-results>
+        <div class="loading-state explorer-loading">
+          <div>
+            <span class="loading-orbit" aria-hidden="true"></span>
+            <strong>Preparing the evidence explorer</strong>
+            <span>Organising {total} publication records for interactive filtering.</span>
+          </div>
+        </div>
+      </div>
+      <nav class="pagination" aria-label="Article result pages" data-pagination data-pagefind-ignore></nav>
+    </div>
+  </div>
+
+  <aside class="compare-drawer" aria-label="Publication comparison" hidden data-compare-drawer data-pagefind-ignore>
+    <div class="compare-bar">
+      <div>
+        <span class="compare-icon"><Scale size={18} /></span>
+        <p><strong><span data-compare-count>0</span> selected</strong><span>Compare up to three publications</span></p>
+      </div>
+      <div class="cluster">
+        <button class="button primary" type="button" aria-expanded="false" aria-controls="compare-panel" data-compare-open>Compare selected</button>
+        <button class="icon-button" type="button" aria-label="Clear comparison" title="Clear comparison" data-compare-clear><X size={17} /></button>
+      </div>
+    </div>
+    <section id="compare-panel" class="compare-panel" hidden data-compare-panel>
+      <div class="compare-heading">
+        <div><p class="eyebrow">Side-by-side view</p><h2 tabindex="-1">Publication comparison</h2></div>
+        <button class="icon-button" type="button" aria-label="Close comparison" title="Close comparison" data-compare-close><X size={18} /></button>
+      </div>
+      <p class="compare-guidance">Compare public classifications and evidence-map assignments. Open any publication for its complete structured record.</p>
+      <div class="table-wrap compare-table" data-compare-content></div>
+      <p class="compare-status" aria-live="polite" data-compare-status></p>
+    </section>
+  </aside>
+</section>
+
+<script>
+  import { britishText } from '@/lib/britishEnglish';
+  import { emptyFilters, filterArticles, getDisjunctiveFacetCounts, parseFilterState, serializeFilterState } from '@/lib/filters';
+  import type { ArticleIndexRecord, FilterState } from '@/lib/types';
+
+  type FilterKey = Exclude<keyof FilterState, 'query'>;
+  type View = 'cards' | 'table';
+  type Density = 'comfortable' | 'compact';
+  interface FacetConfig { key: FilterKey; label: string; values: (article: ArticleIndexRecord) => string[]; }
+
+  const root = document.querySelector<HTMLElement>('[data-article-explorer]');
+  if (root) {
+    const dataUrl = root.dataset.dataUrl ?? '';
+    const base = root.dataset.base ?? '/';
+    const resultsNode = root.querySelector<HTMLElement>('[data-results]')!;
+    const countNode = root.querySelector<HTMLElement>('[data-result-count]')!;
+    const groupsNode = root.querySelector<HTMLElement>('[data-filter-groups]')!;
+    const activeNode = root.querySelector<HTMLElement>('[data-active-filters]')!;
+    const paginationNode = root.querySelector<HTMLElement>('[data-pagination]')!;
+    const queryInput = root.querySelector<HTMLInputElement>('[data-query]')!;
+    const sortInput = root.querySelector<HTMLSelectElement>('[data-sort]')!;
+    const clearButton = root.querySelector<HTMLButtonElement>('[data-clear]')!;
+    const filterDetails = root.querySelector<HTMLDetailsElement>('.filter-column > details')!;
+    const filterToggle = root.querySelector<HTMLButtonElement>('[data-filter-toggle]')!;
+    const filterTotal = root.querySelector<HTMLElement>('[data-filter-total]')!;
+    const filterSummary = root.querySelector<HTMLElement>('[data-filter-summary]')!;
+    const exportStatus = root.querySelector<HTMLElement>('[data-export-status]')!;
+    const compareDrawer = root.querySelector<HTMLElement>('[data-compare-drawer]')!;
+    const comparePanel = root.querySelector<HTMLElement>('[data-compare-panel]')!;
+    const compareContent = root.querySelector<HTMLElement>('[data-compare-content]')!;
+    const compareCount = root.querySelector<HTMLElement>('[data-compare-count]')!;
+    const compareOpen = root.querySelector<HTMLButtonElement>('[data-compare-open]')!;
+    const compareStatus = root.querySelector<HTMLElement>('[data-compare-status]')!;
+
+    const urlState = new URLSearchParams(window.location.search);
+    const readPreference = (key: string) => {
+      try { return window.localStorage.getItem(key); }
+      catch { return null; }
+    };
+    const writePreference = (key: string, value: string) => {
+      try { window.localStorage.setItem(key, value); }
+      catch { /* Preferences remain optional when storage is unavailable. */ }
+    };
+    let articles: ArticleIndexRecord[] = [];
+    let filtered: ArticleIndexRecord[] = [];
+    let filters = parseFilterState(urlState);
+    let page = Math.max(1, Number(urlState.get('page') || '1') || 1);
+    const requestedView = urlState.get('view') ?? readPreference('portal-result-view');
+    const requestedDensity = urlState.get('density') ?? readPreference('portal-result-density');
+    let view: View = requestedView === 'table' ? 'table' : 'cards';
+    let density: Density = requestedDensity === 'compact' ? 'compact' : 'comfortable';
+    const initialSort = urlState.get('sort');
+    if (initialSort && [...sortInput.options].some((option) => option.value === initialSort)) sortInput.value = initialSort;
+    const compared = new Set<string>();
+
+    const facets: FacetConfig[] = [
+      { key: 'year', label: 'Publication year', values: (article) => [String(article.year)] },
+      { key: 'articleType', label: 'Publication type', values: (article) => [article.articleType] },
+      { key: 'condition', label: 'Clinical context', values: (article) => article.ophthalmicConditions },
+      { key: 'modality', label: 'Imaging modality', values: (article) => article.modalities },
+      { key: 'method', label: 'AI method', values: (article) => article.aiMethods },
+      { key: 'task', label: 'AI role or task', values: (article) => article.clinicalTasks },
+      { key: 'dataset', label: 'Named dataset', values: (article) => article.datasets },
+      { key: 'validation', label: 'Validation indicator', values: (article) => article.validationTypes },
+      { key: 'country', label: 'Explicit affiliation geography', values: (article) => article.countries },
+      { key: 'generalEvidence', label: 'General evidence dimension', values: (article) => article.generalEvidenceAssignments.map((item) => `${item.dimension}::${item.stance}`) },
+      { key: 'ethicsEvidence', label: 'Ethics or governance dimension', values: (article) => article.ethicsEvidenceAssignments.map((item) => `${item.dimension}::${item.stance}`) }
+    ];
+
+    const element = <K extends keyof HTMLElementTagNameMap>(tag: K, className?: string, value?: string): HTMLElementTagNameMap[K] => {
+      const node = document.createElement(tag);
+      if (className) node.className = className;
+      if (value !== undefined) node.textContent = value;
+      return node;
+    };
+
+    const articleUrl = (slug: string) => `${base}${base.endsWith('/') ? '' : '/'}publications/${slug}/`.replace(/\/+/g, '/');
+    const displayEvidence = (value: string) => britishText(value.replace('::', ' — '));
+    const facetUrl = (key: FilterKey, value: string) => {
+      const params = new URLSearchParams();
+      params.append(key, value);
+      return `${base}${base.endsWith('/') ? '' : '/'}publications/?${params.toString()}`.replace(/\/+/g, '/');
+    };
+    const joined = (values: string[], fallback = 'Not assigned') => values.length ? values.join(', ') : fallback;
+
+    const appendHighlightedText = (node: HTMLElement, value: string) => {
+      const query = filters.query.trim();
+      if (!query) {
+        node.textContent = value;
+        return;
+      }
+      const lower = value.toLocaleLowerCase('en');
+      const needle = query.toLocaleLowerCase('en');
+      let start = 0;
+      let match = lower.indexOf(needle);
+      if (match < 0) {
+        node.textContent = value;
+        return;
+      }
+      while (match >= 0) {
+        if (match > start) node.append(document.createTextNode(value.slice(start, match)));
+        node.append(element('mark', undefined, value.slice(match, match + query.length)));
+        start = match + query.length;
+        match = lower.indexOf(needle, start);
+      }
+      if (start < value.length) node.append(document.createTextNode(value.slice(start)));
+    };
+
+    const selectedFilterCount = () => facets.reduce((sum, facet) => sum + filters[facet.key].length, filters.query ? 1 : 0);
+
+    const setUrl = () => {
+      const params = serializeFilterState(filters);
+      if (page > 1) params.set('page', String(page));
+      if (view === 'table') params.set('view', view);
+      if (density === 'compact') params.set('density', density);
+      if (sortInput.value !== 'year-desc') params.set('sort', sortInput.value);
+      const query = params.toString();
+      history.replaceState(null, '', `${window.location.pathname}${query ? `?${query}` : ''}${window.location.hash}`);
+    };
+
+    const buildFacetControls = () => {
+      groupsNode.replaceChildren();
+      for (const facet of facets) {
+        const counts = new Map<string, number>();
+        for (const article of articles) {
+          for (const value of new Set(facet.values(article).filter(Boolean))) counts.set(value, (counts.get(value) ?? 0) + 1);
+        }
+        if (counts.size === 0) continue;
+        const details = element('details', 'filter-group');
+        if (['year', 'articleType', 'condition', 'modality', 'method', 'task'].includes(facet.key)) details.open = true;
+        const summary = element('summary');
+        const summaryLabel = element('span', undefined, facet.label);
+        summaryLabel.id = `facet-${facet.key}-label`;
+        const activeCount = element('small', 'facet-active-count');
+        activeCount.dataset.facetActive = facet.key;
+        summary.append(summaryLabel, activeCount);
+        details.append(summary);
+        const options = element('div', 'filter-options');
+        options.setAttribute('role', 'group');
+        options.setAttribute('aria-labelledby', summaryLabel.id);
+        const sorted = [...counts.entries()].sort((a, b) => facet.key === 'year' ? Number(b[0]) - Number(a[0]) : a[0].localeCompare(b[0], 'en'));
+        for (const [value, count] of sorted) {
+          const label = element('label');
+          const checkbox = element('input') as HTMLInputElement;
+          checkbox.type = 'checkbox';
+          checkbox.value = value;
+          checkbox.checked = filters[facet.key].includes(value);
+          checkbox.dataset.filterKey = facet.key;
+          checkbox.addEventListener('change', () => {
+            const current = new Set(filters[facet.key]);
+            checkbox.checked ? current.add(value) : current.delete(value);
+            filters[facet.key] = [...current];
+            page = 1;
+            update();
+          });
+          const text = element('span', undefined, facet.key.includes('Evidence') ? displayEvidence(value) : ['dataset', 'country'].includes(facet.key) ? value : britishText(value));
+          const number = element('small', undefined, String(count));
+          number.dataset.facetCount = '';
+          label.append(checkbox, text, number);
+          options.append(label);
+        }
+        details.append(options);
+        groupsNode.append(details);
+      }
+    };
+
+    const updateFacetCounts = () => {
+      for (const facet of facets) {
+        const counts = getDisjunctiveFacetCounts(articles, filters, facet.key, facet.values);
+        groupsNode.querySelectorAll<HTMLInputElement>(`input[data-filter-key="${facet.key}"]`).forEach((input) => {
+          const checked = filters[facet.key].includes(input.value);
+          const count = counts.get(input.value) ?? 0;
+          const label = input.closest('label');
+          const countLabel = label?.querySelector<HTMLElement>('[data-facet-count]');
+          input.checked = checked;
+          input.disabled = count === 0 && !checked;
+          input.setAttribute('aria-label', `${facet.label}: ${facet.key.includes('Evidence') ? displayEvidence(input.value) : ['dataset', 'country'].includes(facet.key) ? input.value : britishText(input.value)} (${count} ${count === 1 ? 'publication' : 'publications'})`);
+          if (countLabel) countLabel.textContent = String(count);
+          label?.classList.toggle('is-unavailable', input.disabled);
+          label?.classList.toggle('is-selected', checked);
+        });
+        const active = groupsNode.querySelector<HTMLElement>(`[data-facet-active="${facet.key}"]`);
+        if (active) {
+          const count = filters[facet.key].length;
+          active.textContent = count ? String(count) : '';
+          active.hidden = count === 0;
+        }
+      }
+    };
+
+    const renderActiveFilters = () => {
+      activeNode.replaceChildren();
+      const chips: Array<{ key: FilterKey | 'query'; value: string; label: string }> = [];
+      if (filters.query) chips.push({ key: 'query', value: filters.query, label: `Search: ${filters.query}` });
+      for (const facet of facets) {
+        for (const value of filters[facet.key]) chips.push({ key: facet.key, value, label: `${facet.label}: ${facet.key.includes('Evidence') ? displayEvidence(value) : ['dataset', 'country'].includes(facet.key) ? value : britishText(value)}` });
+      }
+      if (!chips.length) activeNode.append(element('span', 'filter-hint', 'No filters active—all included publications are shown.'));
+      for (const chip of chips) {
+        const button = element('button', 'chip');
+        button.type = 'button';
+        button.setAttribute('aria-label', `Remove ${chip.label}`);
+        button.append(document.createTextNode(chip.label), element('span', 'chip-remove', 'x'));
+        button.addEventListener('click', () => {
+          if (chip.key === 'query') {
+            filters.query = '';
+            queryInput.value = '';
+          } else {
+            filters[chip.key] = filters[chip.key].filter((item) => item !== chip.value);
+          }
+          page = 1;
+          update();
+        });
+        activeNode.append(button);
+      }
+      const totalActive = selectedFilterCount();
+      clearButton.hidden = totalActive === 0;
+      filterTotal.hidden = totalActive === 0;
+      filterTotal.textContent = String(totalActive);
+      filterSummary.textContent = totalActive ? `${totalActive} active ${totalActive === 1 ? 'filter' : 'filters'}` : 'Choose any combination';
+    };
+
+    const createBadge = (value: string, className = '') => {
+      const badge = element('span', `badge ${className}`.trim(), britishText(value));
+      return badge;
+    };
+
+    const isRetracted = (article: ArticleIndexRecord) =>
+      article.title.trim().toUpperCase().startsWith('RETRACTION:') ||
+      /\bnow-retracted (?:report|article|publication)\b/i.test(`${article.overallReasoning} ${article.contributionSummary}`) ||
+      /\bpublisher later retracted\b/i.test(article.contributionSummary);
+
+    const createCompareButton = (article: ArticleIndexRecord, compact = false) => {
+      const selected = compared.has(article.slug);
+      const button = element('button', compact ? 'compare-button compact' : 'compare-button');
+      button.type = 'button';
+      button.dataset.compareSlug = article.slug;
+      button.setAttribute('aria-pressed', String(selected));
+      button.setAttribute('aria-label', `${selected ? 'Remove' : 'Add'} ${article.title} ${selected ? 'from' : 'to'} comparison`);
+      button.append(element('span', 'compare-check', selected ? 'OK' : '+'), document.createTextNode(selected ? 'Selected' : 'Compare'));
+      button.addEventListener('click', () => toggleCompare(article));
+      return button;
+    };
+
+    const createBadges = (article: ArticleIndexRecord) => {
+      const badges = element('div', 'article-badges');
+      badges.append(createBadge(String(article.year), 'blue'), createBadge(article.articleType));
+      if (isRetracted(article)) badges.append(createBadge('Retracted', 'red'));
+      for (const value of article.clinicalTasks.slice(0, 2)) badges.append(createBadge(value));
+      if (article.clinicalTasks.length > 2) badges.append(createBadge(`+${article.clinicalTasks.length - 2} tasks`, 'quiet'));
+      return badges;
+    };
+
+    const createEvidenceCue = (article: ArticleIndexRecord) => {
+      const assignment = article.generalEvidenceAssignments[0];
+      const ethics = article.ethicsEvidenceAssignments[0];
+      const cue = element('div', 'evidence-cues');
+      if (assignment) {
+        const link = element('a', 'evidence-cue');
+        link.href = facetUrl('generalEvidence', `${assignment.dimension}::${assignment.stance}`);
+        link.append(element('span', 'cue-label', 'General'), element('span', undefined, britishText(assignment.dimension)), createBadge(assignment.stance, assignment.stance));
+        cue.append(link);
+      }
+      if (ethics) {
+        const link = element('a', 'evidence-cue');
+        link.href = facetUrl('ethicsEvidence', `${ethics.dimension}::${ethics.stance}`);
+        link.append(element('span', 'cue-label', 'Ethics'), element('span', undefined, britishText(ethics.dimension)), createBadge(ethics.stance, ethics.stance));
+        cue.append(link);
+      }
+      return cue;
+    };
+
+    const createCard = (article: ArticleIndexRecord) => {
+      const card = element('article', 'article-card card');
+      const top = element('div', 'card-topline');
+      top.append(element('p', 'article-key', article.citationKey), createCompareButton(article, true));
+      const heading = element('h2');
+      const link = element('a');
+      link.href = articleUrl(article.slug);
+      appendHighlightedText(link, article.title);
+      heading.append(link);
+      const authorText = article.authors.slice(0, 7).join(', ') + (article.authors.length > 7 ? ' et al.' : '');
+      const authors = element('p', 'article-authors');
+      appendHighlightedText(authors, authorText || 'Authors not listed');
+      const summary = element('p', 'article-summary', britishText(article.contributionSummary));
+      const footer = element('div', 'card-footer');
+      const open = element('a', 'study-link', 'Open structured record');
+      open.href = articleUrl(article.slug);
+      open.append(element('span', undefined, '->'));
+      footer.append(open);
+      card.append(top, heading, authors, createBadges(article), summary);
+      const cues = createEvidenceCue(article);
+      if (cues.childElementCount) card.append(cues);
+      card.append(footer);
+      return card;
+    };
+
+    const tableSortButton = (label: string, value: string, toggleValue?: string) => {
+      const button = element('button', 'table-sort-button');
+      button.type = 'button';
+      button.append(document.createTextNode(label), element('span', 'sort-indicator', '<>'));
+      const active = sortInput.value === value || sortInput.value === toggleValue;
+      if (active) {
+        const direction = sortInput.value === 'year-desc' ? 'descending' : 'ascending';
+        button.closest('th')?.setAttribute('aria-sort', direction);
+        button.querySelector<HTMLElement>('.sort-indicator')!.textContent = direction === 'descending' ? 'v' : '^';
+      }
+      button.addEventListener('click', () => {
+        sortInput.value = toggleValue && sortInput.value === value ? toggleValue : value;
+        page = 1;
+        update();
+      });
+      return button;
+    };
+
+    const createTable = (records: ArticleIndexRecord[]) => {
+      const wrap = element('div', 'table-wrap result-table');
+      const table = element('table');
+      const caption = element('caption', 'visually-hidden', 'Filtered included publications');
+      const thead = element('thead');
+      const header = element('tr');
+      const compareHead = element('th', 'compare-column', 'Compare');
+      compareHead.scope = 'col';
+      const yearHead = element('th');
+      yearHead.scope = 'col';
+      yearHead.append(tableSortButton('Year', 'year-desc', 'year-asc'));
+      yearHead.setAttribute('aria-sort', sortInput.value === 'year-desc' ? 'descending' : sortInput.value === 'year-asc' ? 'ascending' : 'none');
+      const publicationHead = element('th');
+      publicationHead.scope = 'col';
+      publicationHead.append(tableSortButton('Publication', 'title'));
+      publicationHead.setAttribute('aria-sort', sortInput.value === 'title' ? 'ascending' : 'none');
+      const typeHead = element('th');
+      typeHead.scope = 'col';
+      typeHead.append(tableSortButton('Type', 'type'));
+      typeHead.setAttribute('aria-sort', sortInput.value === 'type' ? 'ascending' : 'none');
+      const taskHead = element('th', undefined, 'Tasks and context');
+      taskHead.scope = 'col';
+      header.append(compareHead, yearHead, publicationHead, typeHead, taskHead);
+      thead.append(header);
+      const tbody = element('tbody');
+      for (const article of records) {
+        const row = element('tr');
+        const compareCell = element('td', 'compare-column');
+        compareCell.append(createCompareButton(article, true));
+        row.append(compareCell, element('td', 'year-cell', String(article.year)));
+        const publication = element('td', 'publication-cell');
+        const link = element('a');
+        link.href = articleUrl(article.slug);
+        appendHighlightedText(link, article.title);
+        const authors = element('span', 'table-authors', joined(article.authors.slice(0, 3), 'Authors not listed') + (article.authors.length > 3 ? ' et al.' : ''));
+        const key = element('small', 'table-key', article.citationKey);
+        publication.append(link, authors, key);
+        const contexts = element('td', 'context-cell');
+        contexts.append(element('strong', undefined, britishText(joined(article.clinicalTasks))), element('span', undefined, britishText(joined(article.ophthalmicConditions, 'No clinical context assigned'))));
+        row.append(publication, element('td', undefined, article.articleType), contexts);
+        tbody.append(row);
+      }
+      table.append(caption, thead, tbody);
+      wrap.append(table);
+      return wrap;
+    };
+
+    const sortResults = (records: ArticleIndexRecord[]) => {
+      const result = [...records];
+      if (sortInput.value === 'year-asc') result.sort((a, b) => a.year - b.year || a.title.localeCompare(b.title));
+      else if (sortInput.value === 'title') result.sort((a, b) => a.title.localeCompare(b.title));
+      else if (sortInput.value === 'citation') result.sort((a, b) => a.citationKey.localeCompare(b.citationKey));
+      else if (sortInput.value === 'type') result.sort((a, b) => a.articleType.localeCompare(b.articleType) || b.year - a.year);
+      else result.sort((a, b) => b.year - a.year || a.title.localeCompare(b.title));
+      return result;
+    };
+
+    const renderPagination = (pageCount: number) => {
+      paginationNode.replaceChildren();
+      if (pageCount <= 1) return;
+      const addButton = (label: string, target: number, current = false, ariaLabel?: string) => {
+        const button = element('button', 'icon-button', label);
+        button.type = 'button';
+        button.ariaLabel = current ? `Page ${target}, current page` : ariaLabel ?? `Go to page ${target}`;
+        if (current) button.setAttribute('aria-current', 'page');
+        button.addEventListener('click', () => {
+          page = target;
+          update();
+          root.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+        paginationNode.append(button);
+      };
+      if (page > 1) addButton('<', page - 1, false, 'Go to previous page');
+      const start = Math.max(1, page - 2);
+      const end = Math.min(pageCount, page + 2);
+      if (start > 1) addButton('1', 1);
+      if (start > 2) paginationNode.append(element('span', 'pagination-gap', '...'));
+      for (let number = start; number <= end; number += 1) addButton(String(number), number, number === page);
+      if (end < pageCount - 1) paginationNode.append(element('span', 'pagination-gap', '...'));
+      if (end < pageCount) addButton(String(pageCount), pageCount);
+      if (page < pageCount) addButton('>', page + 1, false, 'Go to next page');
+    };
+
+    const renderResults = () => {
+      const sorted = sortResults(filtered);
+      const perPage = density === 'compact' ? 30 : 24;
+      const pageCount = Math.max(1, Math.ceil(sorted.length / perPage));
+      page = Math.min(Math.max(1, page), pageCount);
+      const records = sorted.slice((page - 1) * perPage, page * perPage);
+      countNode.textContent = String(sorted.length);
+      resultsNode.replaceChildren();
+      resultsNode.setAttribute('aria-busy', 'false');
+      if (records.length === 0) {
+        const empty = element('div', 'empty-state explorer-empty');
+        const content = element('div');
+        content.append(element('span', 'empty-symbol', 'No'), element('h2', undefined, 'No publications match this view'), element('p', undefined, 'Broaden the search or remove one or more active filters.'));
+        const reset = element('button', 'button primary', 'Reset filters');
+        reset.type = 'button';
+        reset.addEventListener('click', clearAllFilters);
+        content.append(reset);
+        empty.append(content);
+        resultsNode.append(empty);
+      } else if (view === 'table') {
+        resultsNode.append(createTable(records));
+      } else {
+        const grid = element('div', 'article-results');
+        records.forEach((article) => grid.append(createCard(article)));
+        resultsNode.append(grid);
+      }
+      renderPagination(pageCount);
+      syncCompareButtons();
+    };
+
+    const compareRows = [
+      ['Year', (article: ArticleIndexRecord) => String(article.year)],
+      ['Publication type', (article: ArticleIndexRecord) => article.articleType],
+      ['Clinical context', (article: ArticleIndexRecord) => britishText(joined(article.ophthalmicConditions))],
+      ['Modalities', (article: ArticleIndexRecord) => britishText(joined(article.modalities))],
+      ['AI methods', (article: ArticleIndexRecord) => britishText(joined(article.aiMethods))],
+      ['Tasks and roles', (article: ArticleIndexRecord) => britishText(joined(article.clinicalTasks))],
+      ['Named datasets', (article: ArticleIndexRecord) => joined(article.datasets)],
+      ['Validation indicators', (article: ArticleIndexRecord) => britishText(joined(article.validationTypes))],
+      ['General evidence', (article: ArticleIndexRecord) => joined(article.generalEvidenceAssignments.map((item) => `${britishText(item.dimension)} — ${item.stance}`))],
+      ['Ethics and governance', (article: ArticleIndexRecord) => joined(article.ethicsEvidenceAssignments.map((item) => `${britishText(item.dimension)} — ${item.stance}`))]
+    ] as const;
+
+    const syncCompareButtons = () => {
+      root.querySelectorAll<HTMLButtonElement>('[data-compare-slug]').forEach((button) => {
+        const selected = compared.has(button.dataset.compareSlug ?? '');
+        button.setAttribute('aria-pressed', String(selected));
+        button.classList.toggle('is-selected', selected);
+        const mark = button.querySelector<HTMLElement>('.compare-check');
+        if (mark) mark.textContent = selected ? 'OK' : '+';
+        for (const node of [...button.childNodes]) {
+          if (node.nodeType === Node.TEXT_NODE) node.textContent = selected ? 'Selected' : 'Compare';
+        }
+      });
+    };
+
+    const renderCompare = () => {
+      const selected = [...compared]
+        .map((slug) => articles.find((article) => article.slug === slug))
+        .filter((article): article is ArticleIndexRecord => Boolean(article));
+      compareDrawer.hidden = selected.length === 0;
+      compareCount.textContent = String(selected.length);
+      compareContent.replaceChildren();
+      if (!selected.length) {
+        comparePanel.hidden = true;
+        compareOpen.setAttribute('aria-expanded', 'false');
+        return;
+      }
+      const table = element('table');
+      const caption = element('caption', 'visually-hidden', 'Comparison of selected publications');
+      const thead = element('thead');
+      const heading = element('tr');
+      const fieldHead = element('th', undefined, 'Classification');
+      fieldHead.scope = 'col';
+      heading.append(fieldHead);
+      for (const article of selected) {
+        const th = element('th');
+        th.scope = 'col';
+        const link = element('a', undefined, article.title);
+        link.href = articleUrl(article.slug);
+        const remove = element('button', 'compare-remove', 'Remove');
+        remove.type = 'button';
+        remove.setAttribute('aria-label', `Remove ${article.title} from comparison`);
+        remove.addEventListener('click', () => toggleCompare(article));
+        th.append(link, remove);
+        heading.append(th);
+      }
+      thead.append(heading);
+      const tbody = element('tbody');
+      for (const [label, getValue] of compareRows) {
+        const row = element('tr');
+        const th = element('th', undefined, label);
+        th.scope = 'row';
+        row.append(th);
+        selected.forEach((article) => row.append(element('td', undefined, getValue(article))));
+        tbody.append(row);
+      }
+      table.append(caption, thead, tbody);
+      compareContent.append(table);
+      syncCompareButtons();
+    };
+
+    const toggleCompare = (article: ArticleIndexRecord) => {
+      compareStatus.textContent = '';
+      if (compared.has(article.slug)) compared.delete(article.slug);
+      else if (compared.size < 3) compared.add(article.slug);
+      else {
+        compareStatus.textContent = 'Three publications are already selected. Remove one before adding another.';
+        comparePanel.hidden = false;
+        compareOpen.setAttribute('aria-expanded', 'true');
+        return;
+      }
+      renderCompare();
+    };
+
+    const syncPreferences = () => {
+      root.dataset.density = density;
+      root.querySelectorAll<HTMLButtonElement>('[data-view]').forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.view === view)));
+      root.querySelectorAll<HTMLButtonElement>('[data-density-control]').forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.densityControl === density)));
+      writePreference('portal-result-view', view);
+      writePreference('portal-result-density', density);
+    };
+
+    const update = () => {
+      filtered = filterArticles(articles, filters);
+      updateFacetCounts();
+      renderActiveFilters();
+      syncPreferences();
+      renderResults();
+      setUrl();
+      root.querySelectorAll<HTMLButtonElement>('[data-export]').forEach((button) => button.disabled = filtered.length === 0);
+    };
+
+    const clearAllFilters = () => {
+      filters = emptyFilters();
+      queryInput.value = '';
+      page = 1;
+      update();
+      queryInput.focus();
+    };
+
+    queryInput.value = filters.query;
+    let queryTimer = 0;
+    queryInput.addEventListener('input', () => {
+      window.clearTimeout(queryTimer);
+      queryTimer = window.setTimeout(() => {
+        filters.query = queryInput.value.trim();
+        page = 1;
+        update();
+      }, 180);
+    });
+    sortInput.addEventListener('change', () => { page = 1; update(); });
+    root.querySelectorAll<HTMLButtonElement>('[data-view]').forEach((button) => {
+      button.addEventListener('click', () => {
+        view = button.dataset.view === 'table' ? 'table' : 'cards';
+        page = 1;
+        update();
+      });
+    });
+    root.querySelectorAll<HTMLButtonElement>('[data-density-control]').forEach((button) => {
+      button.addEventListener('click', () => {
+        density = button.dataset.densityControl === 'compact' ? 'compact' : 'comfortable';
+        page = 1;
+        update();
+      });
+    });
+    clearButton.addEventListener('click', clearAllFilters);
+
+    filterToggle.addEventListener('click', () => {
+      filterDetails.open = !filterDetails.open;
+      if (filterDetails.open) filterDetails.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+    filterDetails.addEventListener('toggle', () => filterToggle.setAttribute('aria-expanded', String(filterDetails.open)));
+    const mobileFilters = window.matchMedia('(max-width: 980px)');
+    const syncFilterPanel = () => {
+      if (!mobileFilters.matches) filterDetails.open = true;
+      else if (!selectedFilterCount()) filterDetails.open = false;
+      filterToggle.setAttribute('aria-expanded', String(filterDetails.open));
+    };
+    syncFilterPanel();
+    mobileFilters.addEventListener('change', syncFilterPanel);
+
+    compareOpen.addEventListener('click', () => {
+      comparePanel.hidden = !comparePanel.hidden;
+      compareOpen.setAttribute('aria-expanded', String(!comparePanel.hidden));
+      if (!comparePanel.hidden) comparePanel.querySelector<HTMLElement>('h2')?.focus({ preventScroll: true });
+    });
+    root.querySelector<HTMLButtonElement>('[data-compare-close]')!.addEventListener('click', () => {
+      comparePanel.hidden = true;
+      compareOpen.setAttribute('aria-expanded', 'false');
+      compareOpen.focus();
+    });
+    root.querySelector<HTMLButtonElement>('[data-compare-clear]')!.addEventListener('click', () => {
+      compared.clear();
+      compareStatus.textContent = '';
+      renderCompare();
+      queryInput.focus({ preventScroll: true });
+    });
+
+    const exportFields: Array<keyof ArticleIndexRecord> = [
+      'citationKey', 'slug', 'title', 'authors', 'year', 'venue', 'doi', 'articleType',
+      'overallReasoning', 'contributionSummary', 'ophthalmicConditions', 'modalities',
+      'aiMethods', 'clinicalTasks', 'datasets', 'countries', 'validationTypes',
+      'generalEvidenceAssignments', 'ethicsEvidenceAssignments'
+    ];
+    const publicRecord = (article: ArticleIndexRecord) => Object.fromEntries(exportFields.map((field) => [field, article[field]]));
+
+    const download = (format: 'csv' | 'json') => {
+      if (!filtered.length) return;
+      let content: string;
+      let type: string;
+      if (format === 'json') {
+        content = JSON.stringify(filtered.map(publicRecord), null, 2);
+        type = 'application/json';
+      } else {
+        const fields: Array<keyof ArticleIndexRecord> = ['citationKey', 'title', 'authors', 'year', 'venue', 'doi', 'articleType', 'ophthalmicConditions', 'modalities', 'aiMethods', 'clinicalTasks', 'datasets', 'validationTypes'];
+        const quote = (value: unknown) => `"${String(Array.isArray(value) ? value.join(' | ') : value ?? '').replaceAll('"', '""')}"`;
+        content = [fields.join(','), ...filtered.map((article) => fields.map((field) => quote(article[field])).join(','))].join('\n');
+        type = 'text/csv';
+      }
+      const url = URL.createObjectURL(new Blob([content], { type: `${type};charset=utf-8` }));
+      const link = element('a');
+      link.href = url;
+      link.download = `ophthalmic-ai-filtered-publications.${format}`;
+      link.click();
+      window.setTimeout(() => URL.revokeObjectURL(url), 0);
+      exportStatus.textContent = `${filtered.length} ${filtered.length === 1 ? 'publication' : 'publications'} exported as ${format.toUpperCase()}.`;
+    };
+    root.querySelectorAll<HTMLButtonElement>('[data-export]').forEach((button) => button.addEventListener('click', () => download(button.dataset.export === 'json' ? 'json' : 'csv')));
+
+    fetch(dataUrl)
+      .then((response) => {
+        if (!response.ok) throw new Error(`Article data request failed with ${response.status}`);
+        return response.json() as Promise<ArticleIndexRecord[]>;
+      })
+      .then((records) => {
+        articles = records;
+        buildFacetControls();
+        update();
+      })
+      .catch((error) => {
+        resultsNode.replaceChildren();
+        resultsNode.setAttribute('aria-busy', 'false');
+        const state = element('div', 'empty-state explorer-empty');
+        const content = element('div');
+        content.append(element('h2', undefined, 'The explorer could not be prepared'), element('p', undefined, 'Please reload the page or use the downloads area for the public metadata files.'));
+        const actions = element('div', 'cluster recovery-actions');
+        const retry = element('button', 'button primary', 'Retry');
+        retry.type = 'button';
+        retry.addEventListener('click', () => window.location.reload());
+        const downloads = element('a', 'button', 'Open downloads') as HTMLAnchorElement;
+        downloads.href = `${base}${base.endsWith('/') ? '' : '/'}downloads/`.replace(/\/+/g, '/');
+        actions.append(retry, downloads);
+        content.append(actions);
+        state.append(content);
+        resultsNode.append(state);
+        console.error(error);
+      });
+  }
+</script>
+
+<style>
+  .explorer {
+    position: relative;
+    padding-block: 1.5rem 7rem;
+  }
+
+  .explorer-workspace {
+    position: sticky;
+    z-index: 18;
+    top: calc(var(--header-height) + 0.45rem);
+    overflow: hidden;
+    border: 1px solid color-mix(in srgb, var(--teal) 22%, var(--line));
+    border-radius: 16px;
+    background: color-mix(in srgb, var(--surface) 93%, transparent);
+    box-shadow: 0 16px 42px color-mix(in srgb, var(--ink) 10%, transparent);
+    backdrop-filter: blur(18px);
+  }
+
+  .workspace-primary,
+  .workspace-secondary,
+  .active-row {
+    display: flex;
+    gap: 0.65rem;
+    align-items: end;
+    padding: 0.55rem 0.75rem;
+  }
+
+  .workspace-primary {
+    background:
+      linear-gradient(115deg, color-mix(in srgb, var(--blue) 8%, transparent), transparent 46%),
+      var(--surface);
+  }
+
+  .search-field {
+    min-width: 260px;
+    flex: 1;
+  }
+
+  .input-with-icon {
+    position: relative;
+    display: block;
+  }
+
+  .input-with-icon svg {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 0.85rem;
+    color: var(--teal);
+    transform: translateY(-50%);
+  }
+
+  .input-with-icon .input {
+    width: 100%;
+    min-height: 40px;
+    border-radius: 10px;
+    padding-left: 2.65rem;
+    background: color-mix(in srgb, var(--surface) 94%, var(--teal) 6%);
+  }
+
+  .sort-control {
+    width: 190px;
+  }
+
+  .sort-control .select {
+    width: 100%;
+    min-height: 40px;
+    border-radius: 10px;
+  }
+
+  .filter-toggle {
+    display: none;
+    min-height: 40px;
+    border-radius: 10px;
+  }
+
+  .control-count {
+    min-width: 22px;
+    border-radius: 99px;
+    background: var(--blue-strong);
+    color: #fff;
+    padding: 0.18rem 0.38rem;
+    font-size: 0.68rem;
+  }
+
+  .workspace-secondary {
+    justify-content: space-between;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background: color-mix(in srgb, var(--surface-2) 68%, var(--surface));
+  }
+
+  .result-summary {
+    display: flex;
+    gap: 0.55rem;
+    align-items: baseline;
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.84rem;
+  }
+
+  .result-number {
+    color: var(--ink);
+    font-family: var(--font-serif);
+    font-size: 1.32rem;
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .workspace-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: end;
+  }
+
+  .control-group .field-label,
+  .export-menu .field-label {
+    margin-bottom: 0.16rem;
+    font-size: 0.68rem;
+  }
+
+  .active-row {
+    align-items: center;
+    padding-block: 0.45rem;
+  }
+
+  .active-filters {
+    display: flex;
+    min-width: 0;
+    flex: 1;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .active-filters :global(.chip) {
+    gap: 0.35rem;
+    border-color: color-mix(in srgb, var(--blue) 35%, var(--line));
+    background: color-mix(in srgb, var(--blue) 8%, var(--surface));
+    color: var(--blue-strong);
+    cursor: pointer;
+  }
+
+  .active-filters :global(.chip:hover) {
+    border-color: var(--blue);
+    background: color-mix(in srgb, var(--blue) 14%, var(--surface));
+  }
+
+  .active-filters :global(.chip-remove) {
+    font-size: 1rem;
+    line-height: 0.8;
+  }
+
+  .filter-hint {
+    color: var(--faint);
+    font-size: 0.79rem;
+  }
+
+  .clear-button {
+    min-height: 32px;
+    flex: 0 0 auto;
+    border: 0;
+    background: transparent;
+    color: var(--blue-strong);
+  }
+
+  .export-status {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  .explorer-layout {
+    display: grid;
+    grid-template-columns: 270px minmax(0, 1fr);
+    gap: 1.25rem;
+    padding-top: 1.25rem;
+  }
+
+  .filter-column > details {
+    overflow: visible;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: var(--surface);
+    box-shadow: 0 8px 24px color-mix(in srgb, var(--ink) 5%, transparent);
+  }
+
+  .filter-column > details > summary {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.7rem;
+    align-items: center;
+    border-radius: 14px 14px 0 0;
+    background:
+      linear-gradient(135deg, color-mix(in srgb, var(--teal) 12%, transparent), transparent 60%),
+      var(--surface-2);
+    padding: 0.9rem 0.95rem;
+    font-size: 0.84rem;
+    font-weight: 760;
+    list-style: none;
+  }
+
+  .filter-column > details > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .filter-column > details > summary span {
+    display: inline-flex;
+    gap: 0.45rem;
+    align-items: center;
+  }
+
+  .filter-column > details > summary small {
+    color: var(--faint);
+    font-size: 0.66rem;
+    font-weight: 650;
+    text-align: right;
+  }
+
+  .filter-groups :global(.filter-group) {
+    border-top: 1px solid var(--line);
+  }
+
+  .filter-groups :global(.filter-group:first-child) {
+    border-top: 0;
+  }
+
+  .filter-groups :global(.filter-group > summary) {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 0.72rem 0.82rem;
+    color: var(--ink);
+    font-size: 0.76rem;
+    font-weight: 710;
+  }
+
+  .filter-groups :global(.facet-active-count) {
+    min-width: 20px;
+    border-radius: 99px;
+    background: color-mix(in srgb, var(--teal) 16%, var(--surface));
+    color: var(--teal);
+    padding: 0.12rem 0.35rem;
+    font-variant-numeric: tabular-nums;
+    text-align: center;
+  }
+
+  .filter-groups :global(.filter-options) {
+    display: grid;
+    overflow: visible;
+    padding: 0 0.65rem 0.65rem;
+  }
+
+  .filter-groups :global(label) {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 0.55rem;
+    align-items: start;
+    border-radius: 7px;
+    padding: 0.4rem 0.35rem;
+    color: var(--muted);
+    font-size: 0.73rem;
+    line-height: 1.35;
+    transition: background 140ms ease, color 140ms ease;
+  }
+
+  .filter-groups :global(label:hover),
+  .filter-groups :global(label.is-selected) {
+    background: color-mix(in srgb, var(--teal) 8%, var(--surface));
+    color: var(--ink);
+  }
+
+  .filter-groups :global(label.is-unavailable) {
+    opacity: 0.45;
+  }
+
+  .filter-groups :global(input) {
+    width: 17px;
+    height: 17px;
+    margin: 0.06rem 0 0;
+    accent-color: var(--teal);
+  }
+
+  .filter-groups :global(small) {
+    color: var(--faint);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .results-column,
+  .result-region {
+    min-width: 0;
+  }
+
+  .result-region {
+    min-height: 620px;
+  }
+
+  .result-region :global(.article-results) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.9rem;
+  }
+
+  .result-region :global(.article-card) {
+    position: relative;
+    display: flex;
+    min-height: 390px;
+    overflow: hidden;
+    flex-direction: column;
+    border-radius: 14px;
+    padding: 1.15rem;
+    box-shadow: 0 8px 24px color-mix(in srgb, var(--ink) 5%, transparent);
+    transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+  }
+
+  .result-region :global(.article-card::before) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--teal), var(--blue), color-mix(in srgb, var(--amber) 75%, var(--blue)));
+    content: '';
+    opacity: 0.7;
+  }
+
+  .result-region :global(.article-card:hover) {
+    border-color: color-mix(in srgb, var(--blue) 42%, var(--line));
+    box-shadow: 0 16px 38px color-mix(in srgb, var(--ink) 10%, transparent);
+    transform: translateY(-3px);
+  }
+
+  .result-region :global(.card-topline) {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.7rem;
+    align-items: center;
+    margin-bottom: 0.7rem;
+  }
+
+  .result-region :global(.article-key) {
+    min-width: 0;
+    overflow: hidden;
+    margin: 0;
+    color: var(--teal);
+    font-family: "Cascadia Code", Consolas, monospace;
+    font-size: 0.66rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .result-region :global(h2) {
+    margin-bottom: 0.55rem;
+    font-family: var(--font-serif);
+    font-size: 1.17rem;
+    line-height: 1.3;
+  }
+
+  .result-region :global(h2 a) {
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .result-region :global(h2 a:hover) {
+    color: var(--blue-strong);
+  }
+
+  .result-region :global(mark) {
+    border-radius: 3px;
+    background: color-mix(in srgb, var(--amber) 28%, transparent);
+    color: inherit;
+    padding-inline: 0.08em;
+  }
+
+  .result-region :global(.article-authors) {
+    margin-bottom: 0.72rem;
+    color: var(--muted);
+    font-size: 0.75rem;
+    line-height: 1.5;
+  }
+
+  .result-region :global(.article-badges) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .result-region :global(.badge.quiet) {
+    border-style: dashed;
+    background: transparent;
+  }
+
+  .result-region :global(.article-summary) {
+    display: -webkit-box;
+    overflow: hidden;
+    margin-bottom: 0.9rem;
+    color: var(--muted);
+    font-size: 0.79rem;
+    line-height: 1.55;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+  }
+
+  .result-region :global(.evidence-cues) {
+    display: grid;
+    gap: 0.35rem;
+    margin-top: auto;
+    padding-top: 0.65rem;
+  }
+
+  .result-region :global(.evidence-cue) {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 0.45rem;
+    align-items: center;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    padding-top: 0.42rem;
+    font-size: 0.68rem;
+    text-decoration: none;
+  }
+
+  .result-region :global(.evidence-cue:hover) {
+    color: var(--blue-strong);
+  }
+
+  .result-region :global(.cue-label) {
+    color: var(--faint);
+    font-size: 0.58rem;
+    font-weight: 760;
+    text-transform: uppercase;
+  }
+
+  .result-region :global(.evidence-cue .badge) {
+    min-height: 21px;
+    padding: 0.14rem 0.38rem;
+    font-size: 0.6rem;
+  }
+
+  .result-region :global(.evidence-cue .badge.positive),
+  .result-region :global(.evidence-cue .badge.resolved) {
+    color: var(--green);
+  }
+
+  .result-region :global(.evidence-cue .badge.negative),
+  .result-region :global(.evidence-cue .badge.caused) {
+    color: var(--red);
+  }
+
+  .result-region :global(.card-footer) {
+    margin-top: 0.85rem;
+  }
+
+  .result-region :global(.study-link) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--blue-strong);
+    font-size: 0.75rem;
+    font-weight: 740;
+    text-decoration: none;
+  }
+
+  .result-region :global(.study-link span) {
+    font-size: 1rem;
+    transition: transform 140ms ease;
+  }
+
+  .result-region :global(.study-link:hover span) {
+    transform: translateX(3px);
+  }
+
+  .result-region :global(.compare-button) {
+    display: inline-flex;
+    gap: 0.35rem;
+    align-items: center;
+    min-height: 32px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--muted);
+    padding: 0.4rem 0.65rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+  }
+
+  .result-region :global(.compare-button.compact) {
+    min-height: 30px;
+    padding: 0.3rem 0.5rem;
+    font-size: 0.65rem;
+  }
+
+  .result-region :global(.compare-button:hover),
+  .result-region :global(.compare-button.is-selected),
+  .result-region :global(.compare-button[aria-pressed="true"]) {
+    border-color: var(--teal);
+    background: color-mix(in srgb, var(--teal) 10%, var(--surface));
+    color: var(--teal);
+  }
+
+  .result-region :global(.compare-check) {
+    display: grid;
+    width: 17px;
+    height: 17px;
+    place-items: center;
+    border-radius: 50%;
+    background: color-mix(in srgb, currentColor 10%, transparent);
+    font-size: 0.7rem;
+  }
+
+  .result-region :global(.result-table) {
+    border-radius: 14px;
+    box-shadow: 0 8px 26px color-mix(in srgb, var(--ink) 5%, transparent);
+  }
+
+  .result-region :global(.result-table table) {
+    min-width: 1040px;
+  }
+
+  .result-region :global(.result-table th) {
+    background: color-mix(in srgb, var(--surface-2) 80%, var(--surface));
+  }
+
+  .result-region :global(.table-sort-button) {
+    display: inline-flex;
+    gap: 0.35rem;
+    align-items: center;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    padding: 0;
+    font-weight: inherit;
+  }
+
+  .result-region :global(.sort-indicator) {
+    color: var(--teal);
+    font-size: 0.9rem;
+  }
+
+  .result-region :global(.compare-column) {
+    width: 100px;
+  }
+
+  .result-region :global(.year-cell) {
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+  }
+
+  .result-region :global(.publication-cell > a) {
+    display: block;
+    color: var(--ink);
+    font-family: var(--font-serif);
+    font-size: 0.97rem;
+    font-weight: 700;
+    line-height: 1.38;
+    text-decoration: none;
+  }
+
+  .result-region :global(.publication-cell > a:hover) {
+    color: var(--blue-strong);
+  }
+
+  .result-region :global(.table-authors),
+  .result-region :global(.table-key),
+  .result-region :global(.context-cell span) {
+    display: block;
+    margin-top: 0.26rem;
+    color: var(--faint);
+    font-size: 0.69rem;
+  }
+
+  .result-region :global(.table-key) {
+    font-family: "Cascadia Code", Consolas, monospace;
+  }
+
+  .result-region :global(.context-cell strong) {
+    display: block;
+    color: var(--muted);
+    font-size: 0.76rem;
+    font-weight: 650;
+  }
+
+  .explorer[data-density="compact"] .result-region :global(.article-results) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.65rem;
+  }
+
+  .explorer[data-density="compact"] .result-region :global(.article-card) {
+    min-height: 270px;
+    padding: 0.9rem;
+  }
+
+  .explorer[data-density="compact"] .result-region :global(h2) {
+    font-size: 1rem;
+  }
+
+  .explorer[data-density="compact"] .result-region :global(.article-summary) {
+    -webkit-line-clamp: 2;
+  }
+
+  .explorer[data-density="compact"] .result-region :global(.evidence-cues) {
+    display: none;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.38rem;
+    align-items: center;
+    min-height: 64px;
+    padding-top: 1.25rem;
+  }
+
+  .pagination :global(button) {
+    border-radius: 9px;
+  }
+
+  .pagination :global(button[aria-current="page"]) {
+    border-color: var(--blue);
+    background: var(--blue-strong);
+    color: #fff;
+  }
+
+  .pagination :global(.pagination-gap) {
+    color: var(--faint);
+    padding-inline: 0.2rem;
+  }
+
+  .explorer-loading > div,
+  .explorer-empty > div {
+    display: grid;
+    max-width: 430px;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .explorer-loading strong,
+  .explorer-empty h2 {
+    margin: 0.85rem 0 0.35rem;
+    color: var(--ink);
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+  }
+
+  .explorer-loading span:last-child,
+  .explorer-empty p {
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+  .recovery-actions { justify-content: center; margin-top: 1rem; }
+
+  .loading-orbit {
+    display: block;
+    width: 42px;
+    height: 42px;
+    border: 2px solid color-mix(in srgb, var(--teal) 24%, transparent);
+    border-top-color: var(--teal);
+    border-radius: 50%;
+    animation: orbit 900ms linear infinite;
+  }
+
+  .empty-symbol {
+    display: grid;
+    width: 50px;
+    height: 50px;
+    place-items: center;
+    border: 1px solid color-mix(in srgb, var(--teal) 35%, var(--line));
+    border-radius: 50%;
+    color: var(--teal);
+    font-size: 1.7rem;
+  }
+
+  @keyframes orbit {
+    to { transform: rotate(360deg); }
+  }
+
+  .compare-drawer {
+    position: fixed;
+    z-index: 70;
+    right: max(1rem, calc((100vw - var(--content)) / 2));
+    bottom: 1rem;
+    left: max(1rem, calc((100vw - var(--content)) / 2));
+    border: 1px solid color-mix(in srgb, var(--teal) 40%, var(--line));
+    border-radius: 16px;
+    background: color-mix(in srgb, var(--surface) 96%, transparent);
+    box-shadow: 0 24px 70px color-mix(in srgb, var(--ink) 23%, transparent);
+    backdrop-filter: blur(20px);
+  }
+
+  .compare-bar {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+    padding: 0.72rem 0.85rem;
+  }
+
+  .compare-bar > div:first-child {
+    display: flex;
+    gap: 0.7rem;
+    align-items: center;
+  }
+
+  .compare-icon {
+    display: grid;
+    width: 38px;
+    height: 38px;
+    place-items: center;
+    border-radius: 10px;
+    background: color-mix(in srgb, var(--teal) 14%, var(--surface));
+    color: var(--teal);
+  }
+
+  .compare-bar p {
+    margin: 0;
+    line-height: 1.25;
+  }
+
+  .compare-bar p strong,
+  .compare-bar p span {
+    display: block;
+  }
+
+  .compare-bar p strong {
+    color: var(--ink);
+    font-size: 0.86rem;
+  }
+
+  .compare-bar p span {
+    color: var(--muted);
+    font-size: 0.68rem;
+  }
+
+  .compare-panel {
+    max-height: min(72vh, 680px);
+    overflow-y: auto;
+    border-top: 1px solid var(--line);
+    padding: 1.1rem;
+  }
+
+  .compare-heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: start;
+  }
+
+  .compare-heading h2 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+
+  .compare-guidance,
+  .compare-status {
+    color: var(--muted);
+    font-size: 0.8rem;
+  }
+
+  .compare-table {
+    border-radius: 10px;
+  }
+
+  .compare-table :global(table) {
+    min-width: 760px;
+  }
+
+  .compare-table :global(th:first-child) {
+    width: 165px;
+  }
+
+  .compare-table :global(thead a) {
+    display: block;
+    min-width: 210px;
+    color: var(--ink);
+    font-family: var(--font-serif);
+    font-size: 0.85rem;
+    line-height: 1.35;
+    text-decoration: none;
+  }
+
+  .compare-table :global(.compare-remove) {
+    border: 0;
+    background: transparent;
+    color: var(--blue);
+    padding: 0.25rem 0;
+    font-size: 0.67rem;
+  }
+
+  .compare-status {
+    min-height: 1.3rem;
+    margin: 0.6rem 0 0;
+    color: var(--amber);
+  }
+
+  @media (max-width: 1120px) {
+    .explorer-workspace {
+      position: relative;
+      top: auto;
+    }
+
+    .explorer[data-density="compact"] .result-region :global(.article-results) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 980px) {
+    .filter-toggle {
+      display: inline-flex;
+    }
+
+    .explorer-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .filter-column > details {
+      position: static;
+      max-height: none;
+    }
+
+    .filter-column > details:not([open]) {
+      border-color: transparent;
+      box-shadow: none;
+    }
+
+    .filter-column > details:not([open]) > summary {
+      display: none;
+    }
+
+    .filter-groups {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: start;
+    }
+
+    .filter-groups :global(.filter-group) {
+      border-top: 0;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+  }
+
+  @media (max-width: 760px) {
+    .explorer {
+      padding-top: 0.9rem;
+    }
+
+    .workspace-primary {
+      display: grid;
+      grid-template-columns: 1fr auto;
+    }
+
+    .search-field {
+      grid-column: 1 / -1;
+    }
+
+    .sort-control {
+      width: auto;
+    }
+
+    .workspace-secondary {
+      align-items: start;
+      flex-direction: column;
+    }
+
+    .workspace-actions {
+      width: 100%;
+      justify-content: space-between;
+      gap: 0.7rem;
+    }
+
+    .export-menu {
+      width: 100%;
+    }
+
+    .active-row {
+      align-items: flex-start;
+    }
+
+    .active-filters {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      padding-block: 0.2rem;
+    }
+
+    .active-filters :global(.chip),
+    .filter-hint {
+      flex: 0 0 auto;
+    }
+
+    .filter-groups {
+      grid-template-columns: 1fr;
+    }
+
+    .filter-groups :global(.filter-group) {
+      border-right: 0;
+    }
+
+    .result-region :global(.article-results),
+    .explorer[data-density="compact"] .result-region :global(.article-results) {
+      grid-template-columns: 1fr;
+    }
+
+    .result-region :global(.article-card),
+    .explorer[data-density="compact"] .result-region :global(.article-card) {
+      min-height: 0;
+    }
+
+    .compare-drawer {
+      right: 0.65rem;
+      bottom: 0.65rem;
+      left: 0.65rem;
+    }
+
+    .compare-bar {
+      align-items: flex-start;
+    }
+
+    .compare-bar > .cluster {
+      justify-content: flex-end;
+    }
+
+    .compare-bar .button.primary {
+      min-height: 38px;
+      padding-inline: 0.7rem;
+      font-size: 0.74rem;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .workspace-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .export-menu {
+      grid-column: 1 / -1;
+    }
+
+    .density-control {
+      justify-self: end;
+    }
+
+    .compare-bar p span {
+      display: none;
+    }
+
+    .compare-bar .button.primary {
+      font-size: 0;
+    }
+
+    .compare-bar .button.primary::after {
+      font-size: 0.74rem;
+      content: 'Compare';
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .loading-orbit {
+      animation: none;
+    }
+  }
+</style>
+
+

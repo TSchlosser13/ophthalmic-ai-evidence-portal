@@ -1,0 +1,52 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHeader from '@/components/PageHeader.astro';
+import ScientificChart from '@/components/ScientificChart.astro';
+import { withBase } from '@/lib/base';
+import metadata from '@/data/generated/review-metadata.json';
+import visualizations from '@/data/generated/visualizations.json';
+
+const dimensionOrder = visualizations.ethicsEvidence.map((row) => row.dimension);
+const rows = visualizations.ethicsEvidence.flatMap((row) => row.segments.map((segment) => ({
+  dimension: row.dimension,
+  articleCount: row.articleCount,
+  stance: segment.stance,
+  count: segment.count,
+  url: withBase(`/publications/?ethicsEvidence=${encodeURIComponent(`${row.dimension}::${segment.stance}`)}`)
+})));
+const spec = {
+  $schema: 'https://vega.github.io/schema/vega-lite/v6.json',
+  width: 'container', height: 470,
+  autosize: { type: 'fit', contains: 'padding', resize: true },
+  data: { values: rows },
+  mark: { type: 'bar', tooltip: true },
+  encoding: {
+    y: { field: 'dimension', type: 'ordinal', sort: dimensionOrder, title: null },
+    yOffset: { field: 'stance', sort: ['caused', 'both', 'resolved'] },
+    x: { field: 'count', type: 'quantitative', title: 'Publication-level assignments' },
+    color: { field: 'stance', type: 'nominal', title: 'Framed role', scale: { domain: ['caused', 'both', 'resolved'], range: ['#aa4444', '#d8a53a', '#2f7a4e'] } },
+    href: { field: 'url' },
+    tooltip: [{ field: 'dimension', title: 'Dimension' }, { field: 'stance', title: 'Framed role' }, { field: 'count', title: 'Assignments' }, { field: 'articleCount', title: 'Publications addressing dimension' }]
+  }
+};
+---
+
+<BaseLayout title="Ethics and governance evidence-gap map" description="Publication-level ethics and governance dimensions framed as caused by AI, mitigated by an AI-related approach, or caused and resolved.">
+  <PageHeader eyebrow="Evidence-gap map" title="Ethics and governance dimensions" intro="The ethics map preserves whether each publication describes an issue as caused by AI, mitigated by an AI-related approach, or caused and resolved. Select a bar to inspect its publications." />
+  <div class="container chart-page">
+    <div class="notice warning"><strong>Interpretive coding</strong><p>{metadata.evidenceMapCaution}</p></div>
+    <ScientificChart
+      id="ethics-evidence"
+      title="Ethics and governance dimensions and framed role"
+      description="Grouped bars distinguish issues framed as caused, resolved, or both caused and resolved."
+      howToRead="Compare the three bars within a dimension to see how AI’s role is framed. Select a bar to inspect the publications contributing to that exact category."
+      note="A publication may contribute to more than one ethics dimension. Sparse rows indicate limited explicit discussion in the included literature, not evidence that the issue is unimportant."
+      spec={spec}
+      columns={[{ key: 'dimension', label: 'Dimension' }, { key: 'articleCount', label: 'Publications addressing dimension' }, { key: 'stance', label: 'Framed role' }, { key: 'count', label: 'Assignments' }]}
+      rows={rows}
+      downloadHref={withBase('/downloads/visualization-ethicsevidence.csv')}
+    />
+  </div>
+</BaseLayout>
+
+<style>.chart-page { padding-block: 2rem 5rem; }.notice { margin-bottom: 2.5rem; }</style>

@@ -1,0 +1,122 @@
+---
+import { ArrowDownToLine, Database, Download, FileCodeCorner, Table2 } from '@lucide/astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHeader from '@/components/PageHeader.astro';
+import { withBase } from '@/lib/base';
+
+const groups = [
+  {
+    title: 'Included-publication metadata',
+    eyebrow: '427 included publications',
+    description: 'Bibliographic details and public publication-level classifications in analysis-ready formats.',
+    icon: Table2,
+    accent: 'blue',
+    files: [
+      ['articles.csv', 'Tabular metadata for all included publications', 'CSV'],
+      ['articles.json', 'Structured metadata with explicit arrays and null values', 'JSON'],
+      ['included-studies.bib', 'BibTeX for included publications', 'BIB']
+    ]
+  },
+  {
+    title: 'Datasets and evidence maps',
+    eyebrow: 'Reusable analytical layer',
+    description: 'Dataset registry records, publication-level evidence assignments, and aggregate visualisation values.',
+    icon: Database,
+    accent: 'teal',
+    files: [
+      ['datasets.csv', 'Dataset registry with aliases and linked publications', 'CSV'],
+      ['datasets.json', 'Machine-readable dataset registry', 'JSON'],
+      ['general-evidence-assignments.csv', 'All 1,287 general evidence-map assignments', 'CSV'],
+      ['general-evidence-assignments.json', 'Structured general evidence-map assignments', 'JSON'],
+      ['ethics-evidence-assignments.csv', 'All 309 ethics evidence-map assignments', 'CSV'],
+      ['ethics-evidence-assignments.json', 'Structured ethics evidence-map assignments', 'JSON'],
+      ['visualizations.json', 'Combined normalised visualisation layer', 'JSON']
+    ]
+  },
+  {
+    title: 'Documentation',
+    eyebrow: 'Definitions and conventions',
+    description: 'Field descriptions and missing-value conventions for interpreting the downloadable data.',
+    icon: FileCodeCorner,
+    accent: 'amber',
+    files: [
+      ['data-dictionary.md', 'Readable field definitions and conventions', 'MD'],
+      ['data-dictionary.csv', 'Machine-readable field dictionary', 'CSV'],
+      ['data-dictionary.json', 'Structured field dictionary', 'JSON']
+    ]
+  }
+];
+const fileCount = groups.reduce((sum, group) => sum + group.files.length, 0);
+---
+
+<BaseLayout title="Downloads" description="Download public publication metadata, dataset records, evidence assignments, visualisation data, BibTeX, and field definitions.">
+  <PageHeader
+    eyebrow="Public data studio"
+    title="Downloads"
+    intro="Choose focused, browser-ready files for publication metadata, dataset records, evidence assignments, visualisation values, BibTeX, and field definitions."
+  />
+  <div class="container downloads-content">
+    <div class="download-overview">
+      <span class="overview-icon"><ArrowDownToLine size={24} aria-hidden="true" /></span>
+      <div><span>Public download collection</span><strong>{fileCount} files across three focused groups</strong><p>CSV supports quick tabular work, JSON preserves structured fields, and the data dictionary explains each public field.</p></div>
+    </div>
+
+    {groups.map(({ title, eyebrow, description, icon: Icon, accent, files }, index) => (
+      <section class:list={['download-group', accent]}>
+        <header class="group-heading">
+          <span class="group-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+          <span class="group-icon"><Icon size={22} /></span>
+          <div><p>{eyebrow}</p><h2>{title}</h2><span>{description}</span></div>
+        </header>
+        <div class="download-list">
+          {files.map(([filename, description, format]) => (
+            <a href={withBase(`/downloads/${filename}`)} download>
+              <span class="format">{format}</span>
+              <span class="file-copy"><strong>{filename}</strong><small>{description}</small></span>
+              <span class="download-action"><span>Download</span><Download size={17} /></span>
+            </a>
+          ))}
+        </div>
+      </section>
+    ))}
+
+    <section class="licence-note">
+      <span aria-hidden="true">i</span>
+      <div><h2>Rights and reuse</h2><p>Bibliographic metadata, derived classifications, authored figures, and external links can have different rights holders and licence conditions. The files listed here contain only the dashboard’s public data products. Review the <a href={withBase('/licence/')}>licence and content note</a> before reuse.</p></div>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .downloads-content { max-width: 1040px; padding-block: clamp(2.5rem, 6vw, 5rem) 6rem; }
+  .download-overview { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 1rem; align-items: start; border: 1px solid var(--line); border-radius: 1rem; background: linear-gradient(135deg, color-mix(in srgb, var(--blue) 8%, var(--surface)), color-mix(in srgb, var(--teal) 7%, var(--surface))); padding: 1.35rem; box-shadow: 0 16px 44px color-mix(in srgb, var(--ink) 6%, transparent); }
+  .overview-icon { display: grid; width: 3rem; height: 3rem; place-items: center; border: 1px solid color-mix(in srgb, var(--teal) 34%, var(--line)); border-radius: 0.75rem; color: var(--teal); }
+  .download-overview div > span, .download-overview strong { display: block; }
+  .download-overview div > span { color: var(--teal); font-size: 0.68rem; font-weight: 760; letter-spacing: 0.08em; text-transform: uppercase; }
+  .download-overview strong { margin-top: 0.25rem; font-family: var(--font-serif); font-size: 1.35rem; }
+  .download-overview p { margin: 0.45rem 0 0; color: var(--muted); font-size: 0.82rem; }
+  .download-group { --group-accent: var(--blue); border-top: 1px solid var(--line); padding-top: clamp(2.7rem, 6vw, 4.5rem); margin-top: clamp(2.7rem, 6vw, 4.5rem); }
+  .download-group.teal { --group-accent: var(--teal); }
+  .download-group.amber { --group-accent: var(--amber); }
+  .group-heading { display: grid; grid-template-columns: 2rem 3rem minmax(0, 1fr); gap: 0.75rem; align-items: start; margin-bottom: 1.25rem; }
+  .group-number { padding-top: 0.8rem; color: var(--faint); font-size: 0.64rem; font-weight: 760; font-variant-numeric: tabular-nums; }
+  .group-icon { display: grid; width: 2.8rem; height: 2.8rem; place-items: center; border: 1px solid color-mix(in srgb, var(--group-accent) 35%, var(--line)); border-radius: 0.7rem; background: color-mix(in srgb, var(--group-accent) 7%, var(--surface)); color: var(--group-accent); }
+  .group-heading p { margin-bottom: 0.25rem; color: var(--group-accent); font-size: 0.67rem; font-weight: 760; letter-spacing: 0.08em; text-transform: uppercase; }
+  .group-heading h2 { margin-bottom: 0.35rem; font-size: clamp(1.55rem, 3vw, 2.05rem); }
+  .group-heading div > span { color: var(--muted); font-size: 0.84rem; }
+  .download-list { display: grid; overflow: hidden; border: 1px solid var(--line); border-radius: 0.9rem; background: var(--surface); box-shadow: 0 9px 28px color-mix(in srgb, var(--ink) 4%, transparent); }
+  .download-list a { display: grid; grid-template-columns: 58px minmax(0, 1fr) auto; gap: 0.9rem; align-items: center; border-bottom: 1px solid var(--line); color: var(--ink); padding: 0.9rem 1rem; text-decoration: none; transition: background-color 140ms ease, padding-left 140ms ease; }
+  .download-list a:last-child { border-bottom: 0; }
+  .download-list a:hover { background: color-mix(in srgb, var(--group-accent) 6%, var(--surface)); color: var(--ink); padding-left: 1.2rem; }
+  .format { display: grid; width: 45px; min-height: 30px; place-items: center; border: 1px solid color-mix(in srgb, var(--group-accent) 30%, var(--line)); border-radius: 0.4rem; color: var(--group-accent); font-family: "Cascadia Code", Consolas, monospace; font-size: 0.65rem; font-weight: 760; }
+  .file-copy strong, .file-copy small { display: block; }
+  .file-copy strong { overflow-wrap: anywhere; font-size: 0.86rem; }
+  .file-copy small { margin-top: 0.18rem; color: var(--muted); font-size: 0.74rem; }
+  .download-action { display: inline-flex; gap: 0.4rem; align-items: center; color: var(--blue); font-size: 0.72rem; font-weight: 720; }
+  .licence-note { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 0.9rem; align-items: start; border-top: 1px solid var(--line); margin-top: 4rem; padding-top: 1.5rem; }
+  .licence-note > span { display: grid; width: 1.8rem; height: 1.8rem; place-items: center; border: 1px solid var(--amber); border-radius: 50%; color: var(--amber); font-family: var(--font-serif); font-weight: 700; }
+  .licence-note h2 { margin-bottom: 0.35rem; font-size: 1.15rem; }
+  .licence-note p { margin: 0; color: var(--muted); font-size: 0.82rem; }
+  @media (max-width: 650px) { .download-overview { grid-template-columns: 1fr; } .group-heading { grid-template-columns: 2.5rem minmax(0, 1fr); } .group-number { display: none; } .download-list a { grid-template-columns: 48px minmax(0, 1fr) auto; } .download-action span { display: none; } }
+  @media (prefers-reduced-motion: reduce) { .download-list a { transition: none; } }
+</style>

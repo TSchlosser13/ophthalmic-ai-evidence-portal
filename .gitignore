@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.astro/
+.cache/
+node-v*-win-x64.zip
+__pycache__/
+*.pyc
+.DS_Store

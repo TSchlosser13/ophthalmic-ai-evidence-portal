@@ -1,0 +1,126 @@
+---
+import { ArrowDown, Download, Scale, SlidersHorizontal } from '@lucide/astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHeader from '@/components/PageHeader.astro';
+import ArticleExplorer from '@/components/ArticleExplorer.astro';
+import { withBase } from '@/lib/base';
+import metadata from '@/data/generated/review-metadata.json';
+
+const total = metadata.statistics.includedStudies;
+---
+
+<BaseLayout title="Included publications" description={`Search, compare, filter, sort, and export public metadata for all ${total} publications included in the ophthalmic AI review.`}>
+  <PageHeader
+    eyebrow="Interactive evidence atlas"
+    title="Included publications"
+    intro={`Move from the full evidence landscape to a precise publication set. Search all ${total} included publications, combine clinical and technical facets, compare classifications, and carry a filtered view into the rest of the portal.`}
+  >
+    <a class="button primary" href="#explorer">Explore the evidence <ArrowDown size={17} /></a>
+    <a class="button" href={withBase('/downloads/articles.csv')} download><Download size={17} /> Download metadata</a>
+  </PageHeader>
+
+  <section class="container explorer-orientation" aria-label="Explorer capabilities">
+    <div>
+      <span class="orientation-icon"><SlidersHorizontal size={21} /></span>
+      <p><strong>11 connected facets</strong><span>Combine clinical context, modality, methods, tasks, datasets, validation, geography, and evidence dimensions.</span></p>
+    </div>
+    <div>
+      <span class="orientation-icon"><Scale size={21} /></span>
+      <p><strong>Compare up to three</strong><span>Place public classifications side by side while keeping the current result set in view.</span></p>
+    </div>
+    <div class="orientation-signal" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+  </section>
+
+  <ArticleExplorer total={total} />
+</BaseLayout>
+
+<style>
+  .explorer-orientation {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px;
+    overflow: hidden;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    border-left: 1px solid var(--line);
+    border-radius: 0 0 16px 16px;
+    background: var(--line);
+  }
+
+  .explorer-orientation > div:not(.orientation-signal) {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+    min-height: 96px;
+    background: color-mix(in srgb, var(--surface) 92%, var(--teal) 8%);
+    padding: 1rem 1.2rem;
+  }
+
+  .orientation-icon {
+    display: grid;
+    width: 42px;
+    height: 42px;
+    flex: 0 0 auto;
+    place-items: center;
+    border: 1px solid color-mix(in srgb, var(--teal) 28%, var(--line));
+    border-radius: 12px;
+    background: color-mix(in srgb, var(--teal) 10%, var(--surface));
+    color: var(--teal);
+  }
+
+  .explorer-orientation p {
+    margin: 0;
+  }
+
+  .explorer-orientation strong,
+  .explorer-orientation span {
+    display: block;
+  }
+
+  .explorer-orientation strong {
+    color: var(--ink);
+    font-size: 0.86rem;
+  }
+
+  .explorer-orientation p span {
+    max-width: 500px;
+    color: var(--muted);
+    font-size: 0.75rem;
+    line-height: 1.45;
+  }
+
+  .orientation-signal {
+    position: absolute;
+    right: 1rem;
+    bottom: 0;
+    display: flex;
+    gap: 0.28rem;
+    align-items: end;
+    height: 38px;
+    opacity: 0.16;
+    pointer-events: none;
+  }
+
+  .orientation-signal span {
+    width: 4px;
+    border-radius: 4px 4px 0 0;
+    background: var(--teal);
+  }
+
+  .orientation-signal span:nth-child(1) { height: 30%; }
+  .orientation-signal span:nth-child(2) { height: 75%; }
+  .orientation-signal span:nth-child(3) { height: 45%; }
+  .orientation-signal span:nth-child(4) { height: 95%; }
+  .orientation-signal span:nth-child(5) { height: 58%; }
+
+  @media (max-width: 700px) {
+    .explorer-orientation {
+      grid-template-columns: 1fr;
+    }
+
+    .explorer-orientation > div:not(.orientation-signal) {
+      min-height: 88px;
+    }
+  }
+</style>

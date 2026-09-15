@@ -1,0 +1,96 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHeader from '@/components/PageHeader.astro';
+import ScientificChart from '@/components/ScientificChart.astro';
+import { withBase } from '@/lib/base';
+import visualizations from '@/data/generated/visualizations.json';
+
+type HeatmapRow = { x: number; y: number; x_label: string; y_label: string; count: number };
+
+const taskTargetRows = visualizations.taskClinicalTargetHeatmap as HeatmapRow[];
+const methodTaskRows = visualizations.methodTaskHeatmap as HeatmapRow[];
+
+const orderedLabels = (rows: HeatmapRow[], coordinate: 'x' | 'y', label: 'x_label' | 'y_label') => [
+  ...new Map([...rows].sort((a, b) => a[coordinate] - b[coordinate]).map((row) => [row[label], row[label]])).values()
+];
+
+const heatmapSpec = (rows: HeatmapRow[], xTitle: string, yTitle: string) => ({
+  $schema: 'https://vega.github.io/schema/vega-lite/v6.json',
+  width: 'container', height: 520,
+  autosize: { type: 'fit', contains: 'padding', resize: true },
+  data: { values: rows },
+  encoding: {
+    x: {
+      field: 'x_label', type: 'ordinal', title: xTitle,
+      sort: orderedLabels(rows, 'x', 'x_label'),
+      axis: { labelAngle: -35, labelAlign: 'right', labelLimit: 220 }
+    },
+    y: {
+      field: 'y_label', type: 'ordinal', title: yTitle,
+      sort: orderedLabels(rows, 'y', 'y_label'),
+      axis: { labelLimit: 300 }
+    }
+  },
+  layer: [
+    {
+      mark: { type: 'rect', tooltip: true, stroke: '#ffffff', strokeWidth: 0.7 },
+      encoding: {
+        color: {
+          field: 'count', type: 'quantitative', title: 'Assignments',
+          scale: { domain: [0, Math.max(...rows.map((row) => row.count))], range: ['#183a5a', '#2463a6', '#137e75', '#80b85a', '#f0d660'] }
+        },
+        tooltip: [
+          { field: 'y_label', type: 'nominal', title: yTitle },
+          { field: 'x_label', type: 'nominal', title: xTitle },
+          { field: 'count', type: 'quantitative', title: 'Assignments' }
+        ]
+      }
+    },
+    {
+      mark: { type: 'text', fontSize: 11, fontWeight: 650 },
+      encoding: {
+        text: { field: 'count', type: 'quantitative' },
+        color: { condition: { test: 'datum.count > 100', value: '#172126' }, value: '#ffffff' }
+      }
+    }
+  ]
+});
+---
+
+<BaseLayout title="Task, target, and method heatmaps" description="Supplementary publication-assignment matrices across task families, clinical targets, and method families.">
+  <PageHeader
+    eyebrow="Supplementary synthesis"
+    title="Task, target, and method heatmaps"
+    intro="Two multi-label matrices show where task families intersect with clinical targets and where method families intersect with tasks. Every cell retains its explicit assignment count."
+  />
+  <div class="container heatmap-page">
+    <div class="notice warning"><strong>Assignments, not mutually exclusive publications</strong><p>One publication may contribute to multiple cells when it addresses several tasks, targets, or method families. Cell counts are literature-record assignments and must not be summed as mutually exclusive publication totals.</p></div>
+    <ScientificChart
+      id="task-clinical-target-heatmap"
+      title="Task family by clinical target"
+      description="Assignment counts across nine task families and ten clinical-target families."
+      howToRead="Read across a task row or down a clinical-target column. Brighter cells and larger printed values indicate more assignments at that intersection."
+      note="Disease-specific categories were prioritised over broader anatomical categories. This aggregate matrix is presented at cell-count level and does not provide publication drill-down."
+      spec={heatmapSpec(taskTargetRows, 'Clinical target', 'Task family')}
+      columns={[{ key: 'y_label', label: 'Task family' }, { key: 'x_label', label: 'Clinical target' }, { key: 'count', label: 'Assignments' }]}
+      rows={taskTargetRows}
+      downloadHref={withBase('/downloads/visualization-taskclinicaltargetheatmap.csv')}
+    />
+    <ScientificChart
+      id="method-task-heatmap"
+      title="Method family by task family"
+      description="Assignment counts across twelve method families and nine task families."
+      howToRead="Use rows to compare the task profile of a method family, or columns to compare the method mix within one task family."
+      note="Specific model families were prioritised over generic deep-learning labels in the classification scheme. The matrices are descriptive and do not compare model effectiveness."
+      spec={heatmapSpec(methodTaskRows, 'Task family', 'Method family')}
+      columns={[{ key: 'y_label', label: 'Method family' }, { key: 'x_label', label: 'Task family' }, { key: 'count', label: 'Assignments' }]}
+      rows={methodTaskRows}
+      downloadHref={withBase('/downloads/visualization-methodtaskheatmap.csv')}
+    />
+  </div>
+</BaseLayout>
+
+<style>
+  .heatmap-page { padding-block: 2rem 5rem; }
+  .heatmap-page > :global(.chart-shell) { margin-top: 3rem; }
+</style>

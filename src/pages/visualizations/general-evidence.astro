@@ -1,0 +1,52 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHeader from '@/components/PageHeader.astro';
+import ScientificChart from '@/components/ScientificChart.astro';
+import { withBase } from '@/lib/base';
+import metadata from '@/data/generated/review-metadata.json';
+import visualizations from '@/data/generated/visualizations.json';
+
+const dimensionOrder = visualizations.generalEvidence.map((row) => row.dimension);
+const rows = visualizations.generalEvidence.flatMap((row) => row.segments.map((segment) => ({
+  dimension: row.dimension,
+  articleCount: row.articleCount,
+  stance: segment.stance,
+  count: segment.count,
+  url: withBase(`/publications/?generalEvidence=${encodeURIComponent(`${row.dimension}::${segment.stance}`)}`)
+})));
+const spec = {
+  $schema: 'https://vega.github.io/schema/vega-lite/v6.json',
+  width: 'container', height: 480,
+  autosize: { type: 'fit', contains: 'padding', resize: true },
+  data: { values: rows },
+  mark: { type: 'bar', tooltip: true },
+  encoding: {
+    y: { field: 'dimension', type: 'ordinal', sort: dimensionOrder, title: null, axis: { labelLimit: 310 } },
+    yOffset: { field: 'stance', sort: ['negative', 'balanced', 'positive'] },
+    x: { field: 'count', type: 'quantitative', title: 'Publication-level assignments' },
+    color: { field: 'stance', type: 'nominal', title: 'Framing', scale: { domain: ['negative', 'balanced', 'positive'], range: ['#aa4444', '#d8a53a', '#2f7a4e'] } },
+    href: { field: 'url' },
+    tooltip: [{ field: 'dimension', title: 'Dimension' }, { field: 'stance', title: 'Framing' }, { field: 'count', title: 'Assignments' }, { field: 'articleCount', title: 'Publications addressing dimension' }]
+  }
+};
+---
+
+<BaseLayout title="General evidence-gap map" description="Publication-level evidence volume and positive, negative, or balanced framing across nine general ophthalmic AI dimensions.">
+  <PageHeader eyebrow="Evidence-gap map" title="General dimensions" intro="Nine dimensions combine evidence volume with publication framing. Select a bar to inspect the contributing publications in the publication explorer." />
+  <div class="container chart-page">
+    <div class="notice warning"><strong>Framing is not demonstrated effect</strong><p>{metadata.evidenceMapCaution}</p></div>
+    <ScientificChart
+      id="general-evidence"
+      title="General evidence dimensions and framing"
+      description="Grouped bars distinguish positive, negative, and balanced publication-level assignments within each dimension."
+      howToRead="Read across each dimension to compare its three framing categories. Select any bar to open the publication explorer with that exact dimension and framing already applied."
+      note="A publication may contribute to several dimensions. Counts across rows therefore exceed 427 included publications. Data readiness combines availability, integration, quality, and standardisation."
+      spec={spec}
+      columns={[{ key: 'dimension', label: 'Dimension' }, { key: 'articleCount', label: 'Publications addressing dimension' }, { key: 'stance', label: 'Framing' }, { key: 'count', label: 'Assignments' }]}
+      rows={rows}
+      downloadHref={withBase('/downloads/visualization-generalevidence.csv')}
+    />
+  </div>
+</BaseLayout>
+
+<style>.chart-page { padding-block: 2rem 5rem; }.notice { margin-bottom: 2.5rem; }</style>

@@ -1,0 +1,206 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHeader from '@/components/PageHeader.astro';
+import ScientificChart from '@/components/ScientificChart.astro';
+import { withBase } from '@/lib/base';
+import visualizations from '@/data/generated/visualizations.json';
+
+type DistributionRow = { category: string; count: number; articleKeys: string[] };
+
+const distributionViews = [
+  {
+    id: 'clinical-contexts',
+    title: 'Disease and clinical-context distribution',
+    description: 'Included publications assigned to each explicitly supported ophthalmic context.',
+    note: 'Counts are publication counts within each category. Categories are multi-label, so their sum exceeds 427 publications.',
+    data: visualizations.conditions as DistributionRow[],
+    filter: 'condition',
+    color: '#2463a6',
+    download: 'conditions'
+  },
+  {
+    id: 'ai-tasks',
+    title: 'AI-task distribution',
+    description: 'Clinical and technical roles explicitly represented in the curated publication-level text.',
+    note: 'A publication may support several tasks; select a bar to inspect the matching records.',
+    data: visualizations.tasks as DistributionRow[],
+    filter: 'task',
+    color: '#137e75',
+    download: 'tasks'
+  },
+  {
+    id: 'modalities',
+    title: 'Imaging-modality distribution',
+    description: 'Modalities explicitly identified within this imaging-dependent review scope.',
+    note: 'Optical coherence tomography is the shared core modality for most records; additional modalities are counted when explicitly present.',
+    data: visualizations.modalities as DistributionRow[],
+    filter: 'modality',
+    color: '#a66d11',
+    download: 'modalities'
+  },
+  {
+    id: 'ai-methods',
+    title: 'AI-method distribution',
+    description: 'Method families supported by explicit publication-level text.',
+    note: 'Broad and specific method labels may both apply to one publication. These bars are not mutually exclusive model classes.',
+    data: visualizations.methods as DistributionRow[],
+    filter: 'method',
+    color: '#7a5a95',
+    download: 'methods'
+  },
+  {
+    id: 'translation-validation',
+    title: 'Translation and validation indicators',
+    description: 'Evaluation descriptors retained only when the curated publication data contains explicit evidence.',
+    note: 'Absence from a bar means that an indicator was not explicitly identified; it does not establish that the publication lacked that design feature.',
+    data: visualizations.validation as DistributionRow[],
+    filter: 'validation',
+    color: '#2f7a4e',
+    download: 'validation'
+  }
+];
+
+const makeDistributionRows = (view: typeof distributionViews[number]) => view.data.map((row) => ({
+  category: row.category,
+  count: row.count,
+  url: withBase(`/publications/?${view.filter}=${encodeURIComponent(row.category)}`)
+}));
+
+const makeBarSpec = (rows: Array<{ category: string; count: number; url: string }>, color: string) => ({
+  $schema: 'https://vega.github.io/schema/vega-lite/v6.json',
+  width: 'container',
+  height: Math.max(270, rows.length * 35),
+  autosize: { type: 'fit', contains: 'padding', resize: true },
+  data: { values: rows },
+  mark: { type: 'bar', color, tooltip: true, cornerRadiusEnd: 2 },
+  encoding: {
+    y: { field: 'category', type: 'ordinal', sort: '-x', title: null, axis: { labelLimit: 300 } },
+    x: { field: 'count', type: 'quantitative', title: 'Included publications' },
+    href: { field: 'url' },
+    tooltip: [
+      { field: 'category', type: 'nominal', title: 'Category' },
+      { field: 'count', type: 'quantitative', title: 'Publications' }
+    ]
+  }
+});
+
+const priorityRows = visualizations.implementationContext.priorityUseCases;
+const barrierRows = visualizations.implementationContext.implementationBarriers;
+const publicRows = [
+  ...visualizations.implementationContext.publicComfort.map((row) => ({ question: 'Comfort with provider reliance on AI', response: row.category, percent: row.percent })),
+  ...visualizations.implementationContext.expectedOutcomes.map((row) => ({ question: 'Expected effect on patient outcomes', response: row.category, percent: row.percent }))
+];
+
+const makeContextBarSpec = (rows: Array<{ category: string; percent: number }>, color: string) => ({
+  $schema: 'https://vega.github.io/schema/vega-lite/v6.json',
+  width: 'container',
+  height: Math.max(260, rows.length * 38),
+  autosize: { type: 'fit', contains: 'padding', resize: true },
+  data: { values: rows },
+  mark: { type: 'bar', color, tooltip: true, cornerRadiusEnd: 2 },
+  encoding: {
+    y: { field: 'category', type: 'ordinal', sort: '-x', title: null, axis: { labelLimit: 340 } },
+    x: { field: 'percent', type: 'quantitative', title: 'Respondents (%)' },
+    tooltip: [
+      { field: 'category', type: 'nominal', title: 'Response' },
+      { field: 'percent', type: 'quantitative', title: 'Percent', format: '.1f' }
+    ]
+  }
+});
+
+const publicSpec = {
+  $schema: 'https://vega.github.io/schema/vega-lite/v6.json',
+  width: 'container', height: 220,
+  autosize: { type: 'fit', contains: 'padding', resize: true },
+  data: { values: publicRows },
+  mark: { type: 'bar', tooltip: true },
+  encoding: {
+    y: { field: 'question', type: 'nominal', title: null, axis: { labelLimit: 280 } },
+    x: { field: 'percent', type: 'quantitative', title: 'Respondents (%)', stack: 'zero', scale: { domain: [0, 100] } },
+    color: {
+      field: 'response', type: 'nominal', title: 'Response',
+      scale: { range: ['#2f7a4e', '#aa4444', '#a66d11', '#2463a6', '#7a5a95', '#137e75', '#77858a'] }
+    },
+    tooltip: [
+      { field: 'question', type: 'nominal', title: 'Question' },
+      { field: 'response', type: 'nominal', title: 'Response' },
+      { field: 'percent', type: 'quantitative', title: 'Percent', format: '.1f' }
+    ]
+  }
+};
+
+---
+
+<BaseLayout title="Publication distributions and validation" description="Clinical-context, task, imaging-modality, method, and validation distributions for the included ophthalmic AI literature.">
+  <PageHeader
+    eyebrow="Evidence profile"
+    title="Publication distributions and validation"
+    intro="Publication-level distributions expose the clinical, technical, and translational profile of the included literature. Categories are retained only when supported by curated publication data."
+  />
+  <div class="container distribution-page">
+    <div class="notice warning"><strong>Multi-label evidence</strong><p>Most categories are not mutually exclusive. A publication can contribute to several bars, and category totals must not be interpreted as mutually exclusive publication counts.</p></div>
+    {distributionViews.map((view) => {
+      const rows = makeDistributionRows(view);
+      return (
+        <ScientificChart
+          id={view.id}
+          title={view.title}
+          description={view.description}
+          howToRead="Bars are ordered by publication count. Select any bar to continue into the publication explorer with that category already applied."
+          note={view.note}
+          spec={makeBarSpec(rows, view.color)}
+          columns={[{ key: 'category', label: 'Category' }, { key: 'count', label: 'Included publications' }]}
+          rows={rows}
+          downloadHref={withBase(`/downloads/visualization-${view.download}.csv`)}
+        />
+      );
+    })}
+
+    <section class="context-section" id="implementation-context">
+      <div class="section-intro">
+        <h2>Illustrative implementation context</h2>
+        <p>The implementation-context charts draw on external survey and report sources. These percentages contextualise clinical AI adoption and are separate from the 427-publication evidence map.</p>
+      </div>
+      <ScientificChart
+        id="priority-use-cases"
+        title="Priority clinical AI use cases"
+        description="Reported priorities among health systems and hospitals in the cited external survey source."
+        howToRead="Longer bars represent a larger reported share of respondents selecting that clinical use case as a priority."
+        note="These percentages describe the cited survey population and are not publication counts."
+        spec={makeContextBarSpec(priorityRows, '#2f7a4e')}
+        columns={[{ key: 'category', label: 'Use case' }, { key: 'percent', label: 'Priority (%)' }]}
+        rows={priorityRows}
+        downloadHref={withBase('/downloads/visualization-implementation-context.csv')}
+      />
+      <ScientificChart
+        id="implementation-barriers"
+        title="Perceived implementation barriers"
+        description="Barriers ranked among the top three by respondents in the cited external report."
+        howToRead="Compare bar lengths to see which implementation barriers were most frequently ranked among respondents’ top three."
+        note="Values are contextual survey percentages rather than frequencies in the included literature."
+        spec={makeContextBarSpec(barrierRows, '#aa4444')}
+        columns={[{ key: 'category', label: 'Barrier' }, { key: 'percent', label: 'Top-three response (%)' }]}
+        rows={barrierRows}
+        downloadHref={withBase('/downloads/visualization-implementation-context.csv')}
+      />
+      <ScientificChart
+        id="public-expectations"
+        title="Public comfort and expected outcomes"
+        description="Responses from the cited U.S. public-opinion source on provider reliance on AI and expected patient outcomes."
+        howToRead="Each horizontal stack represents a separate survey question and totals 100 percent across its response categories."
+        note="The two rows summarise different questions. They are geographically contextual and not globally representative."
+        spec={publicSpec}
+        columns={[{ key: 'question', label: 'Question' }, { key: 'response', label: 'Response' }, { key: 'percent', label: 'Respondents (%)' }]}
+        rows={publicRows}
+        downloadHref={withBase('/downloads/visualization-implementation-context.csv')}
+      />
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .distribution-page { padding-block: 2rem 5rem; }
+  .distribution-page > :global(.chart-shell) { margin-top: 3rem; }
+  .context-section { scroll-margin-top: calc(var(--header-height) + 24px); border-top: 2px solid var(--line-strong); padding-top: 3.5rem; margin-top: 5rem; }
+  .context-section > :global(.chart-shell) { margin-top: 3rem; }
+</style>

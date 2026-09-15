@@ -1,0 +1,129 @@
+---
+import { Download, Expand, Minus, Plus, RotateCcw } from '@lucide/astro';
+
+interface Props {
+  id: string;
+  title: string;
+  description: string;
+  src: string;
+  alt: string;
+  caption: string;
+  fit?: boolean;
+}
+
+const { id, title, description, src, alt, caption, fit = false } = Astro.props;
+---
+
+<figure class:list={['zoom-figure', { 'fit-figure': fit }]} id={id} data-zoom-figure={fit ? undefined : true}>
+  <header class="chart-toolbar">
+    <div class="figure-heading">
+      <p class="figure-kicker"><span aria-hidden="true"></span> Authored scientific figure</p>
+      <h2>{title}</h2>
+      <p>{description}</p>
+    </div>
+    <div class="figure-actions" data-pagefind-ignore>
+      {!fit && (
+        <div class="zoom-controls" role="group" aria-label={`Zoom controls for ${title}`}>
+          <button type="button" title="Zoom out" aria-label="Zoom out" data-zoom-out><Minus size={17} /></button>
+          <output class="zoom-readout" data-zoom-readout aria-live="polite">100%</output>
+          <button type="button" title="Zoom in" aria-label="Zoom in" data-zoom-in><Plus size={17} /></button>
+          <button type="button" title="Reset zoom" aria-label="Reset zoom" data-zoom-reset><RotateCcw size={17} /></button>
+        </div>
+      )}
+      <a class="button" href={src} download aria-label={`Download ${title}`}><Download size={17} /> Image</a>
+    </div>
+  </header>
+  {!fit && <p class="figure-hint"><Expand size={15} aria-hidden="true" /> Zoom to inspect detail, then scroll or use Shift + mouse wheel to move horizontally.</p>}
+  <div
+    class:list={['zoom-viewport', { 'fit-viewport': fit }]}
+    tabindex={fit ? undefined : 0}
+    aria-label={fit ? `${title}. Full image scaled to fit.` : `${title}. Scroll to inspect the enlarged image. Use plus, minus, or zero on the keyboard to control zoom.`}
+    data-zoom-viewport={fit ? undefined : true}
+  >
+    <img src={src} alt={alt} loading="lazy" decoding="async" data-zoom-image={fit ? undefined : true} />
+  </div>
+  <slot name="legend" />
+  <figcaption class="figure-caption"><span>Figure note</span>{caption}</figcaption>
+</figure>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-zoom-figure]').forEach((root) => {
+    const image = root.querySelector<HTMLImageElement>('[data-zoom-image]');
+    const viewport = root.querySelector<HTMLElement>('[data-zoom-viewport]');
+    const readout = root.querySelector<HTMLOutputElement>('[data-zoom-readout]');
+    const out = root.querySelector<HTMLButtonElement>('[data-zoom-out]');
+    const reset = root.querySelector<HTMLButtonElement>('[data-zoom-reset]');
+    const inside = root.querySelector<HTMLButtonElement>('[data-zoom-in]');
+    if (!image || !viewport || !readout || !out || !reset || !inside) return;
+    let scale = 1;
+    const update = () => {
+      image.style.width = `${scale * 100}%`;
+      readout.value = `${Math.round(scale * 100)}%`;
+      out.disabled = scale <= 1;
+      inside.disabled = scale >= 3;
+    };
+    const change = (amount: number) => { scale = Math.min(3, Math.max(1, scale + amount)); update(); };
+    out.addEventListener('click', () => change(-0.25));
+    inside.addEventListener('click', () => change(0.25));
+    reset.addEventListener('click', () => {
+      scale = 1;
+      viewport.scrollTo({ top: 0, left: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+      update();
+    });
+    viewport.addEventListener('keydown', (event) => {
+      if (event.key === '+' || event.key === '=') { event.preventDefault(); change(0.25); }
+      if (event.key === '-') { event.preventDefault(); change(-0.25); }
+      if (event.key === '0') { event.preventDefault(); reset.click(); }
+    });
+    update();
+  });
+</script>
+
+<style>
+  .zoom-figure {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 1.15rem;
+    background: linear-gradient(145deg, color-mix(in srgb, var(--surface) 95%, var(--blue) 5%), var(--surface));
+    padding: clamp(1rem, 2.4vw, 1.75rem);
+    box-shadow: 0 16px 48px color-mix(in srgb, var(--ink) 7%, transparent);
+  }
+  .zoom-figure::before {
+    content: '';
+    position: absolute;
+    inset: 0 0 auto;
+    height: 6rem;
+    pointer-events: none;
+    background: radial-gradient(circle at 90% 0%, color-mix(in srgb, var(--blue) 11%, transparent), transparent 48%);
+  }
+  .chart-toolbar { position: relative; margin-bottom: 1.15rem; }
+  .figure-heading { max-width: 800px; }
+  .figure-kicker { display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.65rem !important; color: var(--teal) !important; font-size: 0.7rem !important; font-weight: 760; letter-spacing: 0.09em; text-transform: uppercase; }
+  .figure-kicker span { width: 1.65rem; height: 1px; background: currentColor; }
+  .chart-toolbar h2 { margin-bottom: 0.45rem; font-size: clamp(1.45rem, 2.6vw, 2rem); }
+  .chart-toolbar p:not(.figure-kicker) { font-size: 0.94rem; line-height: 1.6; }
+  .figure-actions { display: flex; flex: 0 0 auto; flex-wrap: wrap; gap: 0.6rem; align-items: center; }
+  .zoom-controls { display: inline-flex; overflow: hidden; border: 1px solid var(--line-strong); border-radius: 0.45rem; background: color-mix(in srgb, var(--surface) 90%, transparent); }
+  .zoom-controls button { display: grid; width: 42px; min-height: 42px; place-items: center; border: 0; border-right: 1px solid var(--line); background: transparent; color: var(--ink); }
+  .zoom-controls button:last-child { border-right: 0; border-left: 1px solid var(--line); }
+  .zoom-controls button:hover:not(:disabled) { background: var(--surface-2); color: var(--blue); }
+  .zoom-controls button:disabled { cursor: not-allowed; opacity: 0.38; }
+  .zoom-readout { display: grid; min-width: 58px; place-items: center; color: var(--muted); font-size: 0.75rem; font-variant-numeric: tabular-nums; }
+  .figure-hint { display: flex; gap: 0.45rem; align-items: center; margin: 0 0 0.75rem; color: var(--faint); font-size: 0.75rem; }
+  .figure-hint svg { flex: 0 0 auto; }
+  .zoom-viewport { max-height: min(72vh, 860px); overflow: auto; border: 1px solid var(--line); border-radius: 0.75rem; background: #ffffff; overscroll-behavior: contain; scrollbar-color: var(--line-strong) transparent; }
+  .zoom-viewport img { width: 100%; max-width: none; height: auto; transform-origin: top left; }
+  .fit-viewport { display: flex; justify-content: center; max-height: none; overflow: hidden; padding: clamp(0.35rem, 1vw, 0.8rem); }
+  .fit-viewport img { width: auto; max-width: 100%; max-height: min(80vh, 860px); object-fit: contain; }
+  .figure-caption { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 0.75rem; border-top: 1px solid var(--line); margin-top: 1rem; padding-top: 0.9rem; line-height: 1.6; }
+  .figure-caption span { color: var(--ink); font-size: 0.68rem; font-weight: 760; letter-spacing: 0.08em; text-transform: uppercase; }
+  @media (max-width: 700px) {
+    .zoom-figure { border-radius: 0.85rem; }
+    .figure-actions { width: 100%; }
+    .figure-actions > .button { flex: 1 1 auto; }
+    .zoom-controls { flex: 1 1 auto; justify-content: space-between; }
+    .figure-hint { align-items: start; }
+    .figure-caption { grid-template-columns: 1fr; gap: 0.2rem; }
+  }
+</style>

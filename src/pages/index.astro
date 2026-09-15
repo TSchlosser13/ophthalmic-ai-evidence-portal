@@ -1,0 +1,476 @@
+---
+import { ArrowDown, ArrowRight, BookOpen, ChartColumn, Database, Download, Eye, FileSearchCorner, Layers, Scale, ShieldCheck } from '@lucide/astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ConceptualOverview from '@/components/ConceptualOverview.astro';
+import StatStrip from '@/components/StatStrip.astro';
+import { withBase } from '@/lib/base';
+import metadata from '@/data/generated/review-metadata.json';
+
+const stats = [
+  { value: '6,482', label: 'Harmonised records', detail: 'Four bibliographic databases' },
+  { value: metadata.statistics.includedStudies, label: 'Included publications', detail: 'Publication-level evidence base' },
+  { value: metadata.statistics.generalEvidenceAssignments.toLocaleString('en-GB'), label: 'General evidence assignments', detail: 'Nine analytical dimensions' },
+  { value: metadata.statistics.ethicsEvidenceAssignments.toLocaleString('en-GB'), label: 'Ethics assignments', detail: 'Nine ethics and governance dimensions' },
+  { value: '2010–2026', label: 'Publication range', detail: 'Search cut-off: 30 April 2026' }
+];
+const publicSummary = 'This portal maps publication-level evidence on ophthalmic AI across image analysis, multimodal interpretation, prediction, workflow integration, and governance.';
+const authorRows = [metadata.authors.slice(0, 3), metadata.authors.slice(3, 7), metadata.authors.slice(7, 11)];
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Ophthalmic AI Evidence Portal',
+  description: publicSummary,
+  creator: metadata.authors.map((author) => ({ '@type': 'Person', name: author.name, sameAs: author.orcid ? `https://orcid.org/${author.orcid}` : undefined })),
+  keywords: metadata.keywords.join(', '),
+  about: ['Artificial intelligence', 'Ophthalmology', 'Clinical translation', 'Evidence mapping']
+};
+---
+
+<BaseLayout title="Ophthalmic AI Evidence Portal" description={publicSummary} structuredData={structuredData}>
+  <section class="hero">
+    <div class="hero-ambient" aria-hidden="true"><span></span><i></i></div>
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <div class="hero-meta">
+          <span class="hero-signal"><i aria-hidden="true"></i> Interactive evidence synthesis</span>
+          <span>{metadata.status}</span>
+        </div>
+        <p class="hero-product">Ophthalmic AI Evidence Portal</p>
+        <h1>Bringing the evidence landscape into focus.</h1>
+        <p class="study-title">{metadata.title}</p>
+        <div class="hero-authors" role="list" aria-label="Review authors">
+          {authorRows.map((row) => <div class="author-row" role="presentation" style={`--authors-in-row: ${row.length}`}>
+            {row.map((author) => <span class="author-name" role="listitem">{author.name}</span>)}
+          </div>)}
+        </div>
+        <p class="hero-summary">Explore publication-level evidence spanning image analysis, multimodal interpretation, prediction, and clinical integration—and the conditions required for accountable impact.</p>
+        <div class="hero-actions cluster">
+          <a class="button primary" href={withBase('/publications/')}>Explore 427 publications <ArrowRight size={17} /></a>
+          <a class="button" href={withBase('/manuscript/')}><BookOpen size={17} /> Read manuscript</a>
+          <a class="button" href={withBase('/downloads/')}><Download size={17} /> Download data</a>
+        </div>
+        <div class="hero-keyline" aria-label="Portal qualities">
+          <span>Publication-level mapping</span><span>18 evidence dimensions</span>
+        </div>
+      </div>
+      <div class="hero-lens" role="img" aria-label="Layered abstract visualisation inspired by retinal imaging and OCT scans">
+        <div class="lens-orbit lens-orbit-one" aria-hidden="true"></div>
+        <div class="lens-orbit lens-orbit-two" aria-hidden="true"></div>
+        <div class="lens-scan" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="lens-core" aria-hidden="true"><i></i></div>
+        <div class="lens-marker lens-marker-one" aria-hidden="true"></div>
+        <div class="lens-marker lens-marker-two" aria-hidden="true"></div>
+        <div class="lens-caption" aria-hidden="true"><span>Evidence in focus</span><small>Clinical, technical, and governance</small></div>
+      </div>
+    </div>
+    <div class="container stats-bridge"><StatStrip stats={stats} /></div>
+    <div class="hero-scroll">
+      <a class="hero-scroll-link" href="#explore" aria-label="Continue scrolling to Explore the evidence">Continue scrolling <ArrowDown size={16} aria-hidden="true" /></a>
+    </div>
+  </section>
+
+  <section class="section-band explore-band" id="explore">
+    <div class="container">
+      <div class="section-intro">
+        <h2>Explore the evidence</h2>
+        <p>Every included publication has a stable page. Aggregates link back to their contributing publications, and all charts retain a nonvisual data table.</p>
+      </div>
+      <div class="portal-grid">
+        <a class="portal-link portal-studies" href={withBase('/publications/')}>
+          <span class="portal-index">01</span><span class="portal-icon"><FileSearchCorner size={22} /></span>
+          <div><p class="portal-kicker">427 publication profiles</p><h3>Publication explorer</h3><p>Search, combine facets, compare classifications, and move from an aggregate view to individual publications.</p></div>
+          <ArrowRight class="portal-arrow" size={18} />
+        </a>
+        <a class="portal-link portal-visuals" href={withBase('/visualizations/')}>
+          <span class="portal-index">02</span><span class="portal-icon"><ChartColumn size={22} /></span>
+          <div><p class="portal-kicker">General + ethics views</p><h3>Visual evidence</h3><p>Read publication timelines, evidence-gap maps, distributions, and heatmaps as connected scientific exhibits.</p></div>
+          <ArrowRight class="portal-arrow" size={18} />
+        </a>
+        <a class="portal-link portal-datasets" href={withBase('/datasets/')}>
+          <span class="portal-index">03</span><span class="portal-icon"><Database size={22} /></span>
+          <div><p class="portal-kicker">Resources in context</p><h3>Dataset registry</h3><p>Navigate named public resources, aliases, modalities, scale, typical tasks, and their linked publications.</p></div>
+          <ArrowRight class="portal-arrow" size={18} />
+        </a>
+        <a class="portal-link portal-methods" href={withBase('/methods/')}>
+          <span class="portal-index">04</span><span class="portal-icon"><ShieldCheck size={22} /></span>
+          <div><p class="portal-kicker">Definitions + boundaries</p><h3>Methods and interpretation</h3><p>Understand the review scope, coding definitions, analytical framework, and interpretation limits.</p></div>
+          <ArrowRight class="portal-arrow" size={18} />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-band concept-band">
+    <div class="container">
+      <div class="section-intro">
+        <h2>From data to accountable impact</h2>
+        <p>The review connects multimodal ophthalmic data, integration readiness, and AI methods to potential clinical implementation and the safeguards required across every stage.</p>
+      </div>
+      <ConceptualOverview />
+    </div>
+  </section>
+
+  <section class="section-band evidence-highlight">
+    <div class="container highlight-layout">
+      <div class="highlight-copy">
+        <p class="eyebrow">Central finding</p>
+        <h2>Technical performance alone does not establish clinical usefulness.</h2>
+        <p>Accountable value depends on interoperable data, representative validation, transparency, fairness, privacy, cybersecurity, regulation, workflow fit, cost-effectiveness, and post-deployment monitoring.</p>
+        <a class="button" href={withBase('/visualizations/general-evidence/')}>Inspect the evidence-gap map <ArrowRight size={17} /></a>
+      </div>
+      <figure class="media-frame evidence-figure">
+        <img src={withBase('/assets/generated/network_cropped.png')} alt="Keyword co-occurrence network for the included ophthalmic AI literature, with coloured thematic clusters and links among frequently co-occurring terms." width="1700" height="1400" loading="lazy" />
+        <figcaption class="figure-caption">Keyword co-occurrence clusters were interpreted as interconnected methodological, retinal-imaging, disease-monitoring, and translational themes.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section-band">
+    <div class="container">
+      <div class="section-intro">
+        <h2>Transparency and interpretive safeguards</h2>
+        <p>The portal distinguishes included publications from dimension-level assignments, preserves uncertainty, defaults to restrictive copyright handling, and does not treat positive framing as demonstrated clinical benefit.</p>
+      </div>
+      <div class="integrity-grid">
+        <article>
+          <span><Eye size={20} /></span><h3>Evidence you can inspect</h3>
+          <p>Aggregate views connect to stable publication pages, while charts retain accessible tables and exact values.</p>
+        </article>
+        <article>
+          <span><Layers size={20} /></span><h3>Distinct analytical layers</h3>
+          <p>Clinical, technical, implementation, and governance dimensions remain visible without collapsing unlike concepts.</p>
+        </article>
+        <article>
+          <span><Scale size={20} /></span><h3>Claims kept in proportion</h3>
+          <p>Positive framing is not treated as demonstrated clinical benefit, and interpretive boundaries remain explicit.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+
+<style>
+  .hero {
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    overflow: hidden;
+    padding: 0;
+    background: #082447;
+    color: #f5fbff;
+  }
+  .hero::after {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(119, 167, 255, 0.42), rgba(77, 214, 210, 0.58), transparent);
+    content: "";
+  }
+  .hero-ambient,
+  .hero-ambient::before,
+  .hero-ambient::after {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  .hero-ambient {
+    z-index: 0;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 78% 38%, rgba(77, 214, 210, 0.27), transparent 18rem),
+      radial-gradient(circle at 68% 28%, rgba(119, 167, 255, 0.23), transparent 31rem),
+      radial-gradient(circle at 9% 94%, rgba(255, 145, 135, 0.17), transparent 23rem),
+      radial-gradient(circle at 96% 92%, rgba(255, 209, 102, 0.12), transparent 20rem),
+      linear-gradient(128deg, #071827 0%, #0b3263 50%, #075a63 100%);
+  }
+  .hero-ambient::before {
+    background: repeating-linear-gradient(0deg, transparent 0 20px, rgba(180, 225, 255, 0.05) 20px 21px);
+    content: "";
+    mask-image: linear-gradient(90deg, transparent, #000 35%, #000);
+  }
+  .hero-ambient::after {
+    left: 52%;
+    width: 56%;
+    height: 140%;
+    border-left: 1px solid rgba(89, 210, 216, 0.09);
+    background: repeating-linear-gradient(90deg, transparent 0 48px, rgba(99, 199, 208, 0.04) 48px 49px);
+    content: "";
+    transform: rotate(8deg) translateY(-12%);
+  }
+  .hero-ambient > span,
+  .hero-ambient > i {
+    position: absolute;
+    border-radius: 50%;
+  }
+  .hero-ambient > span {
+    top: 17%;
+    right: -15rem;
+    width: 42rem;
+    height: 42rem;
+    border: 1px solid rgba(88, 216, 222, 0.12);
+    box-shadow: inset 0 0 0 6rem rgba(33, 169, 183, 0.018), inset 0 0 0 6.1rem rgba(77, 221, 224, 0.09);
+  }
+  .hero-ambient > i {
+    bottom: 8%;
+    left: 46%;
+    width: 7px;
+    height: 7px;
+    background: #e8bd69;
+    box-shadow: 0 0 20px rgba(238, 194, 104, 0.7);
+  }
+  .hero-grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: minmax(0, 1.78fr) minmax(270px, 0.62fr);
+    gap: clamp(2.75rem, 5vw, 4.5rem);
+    align-items: center;
+    padding-block: clamp(2.1rem, 4.6vh, 3.1rem) clamp(2.4rem, 5.5vh, 3.6rem);
+  }
+  .hero-copy { position: relative; z-index: 2; min-width: 0; }
+  .hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem 1.75rem;
+    align-items: center;
+    margin-bottom: 1.15rem;
+    color: #a8bed7;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .hero-signal { display: inline-flex; gap: 0.5rem; align-items: center; color: #d4ebff; }
+  .hero-signal i {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #4dd6d2;
+    box-shadow: 0 0 0 5px rgba(77, 214, 210, 0.13), 0 0 16px rgba(77, 214, 210, 0.8);
+  }
+  .hero-product {
+    margin-bottom: 0.85rem;
+    color: #71e3df;
+    font-size: 0.72rem;
+    font-weight: 770;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  .hero h1 {
+    max-width: 24ch;
+    margin-bottom: 1.5rem;
+    color: #f8fbff;
+    font-size: clamp(2.75rem, 4vw, 3.85rem);
+    font-weight: 600;
+    letter-spacing: -0.055em;
+    line-height: 1.08;
+    text-wrap: balance;
+    text-shadow: 0 10px 36px rgba(0, 0, 0, 0.22);
+  }
+  .study-title {
+    max-width: 780px;
+    margin-bottom: 0.65rem;
+    color: #d2e3f4;
+    font-family: var(--font-serif);
+    font-size: 0.84rem;
+    font-style: italic;
+    line-height: 1.5;
+  }
+  .hero-authors {
+    display: grid;
+    gap: 0.2rem;
+    max-width: 760px;
+    margin-bottom: 1.6rem;
+    color: #9bb5cd;
+    font-size: 0.72rem;
+    line-height: 1.35;
+  }
+  .author-row { display: flex; gap: 0.75rem; }
+  .author-name { min-width: 0; white-space: nowrap; }
+  .author-name + .author-name::before { content: "\00b7"; display: inline-block; margin-right: 0.65rem; }
+  .hero-summary {
+    max-width: 760px;
+    color: #d7e7f3;
+    font-family: var(--font-sans);
+    font-size: clamp(0.96rem, 1.35vw, 1.08rem);
+    line-height: 1.65;
+  }
+  .hero-actions { gap: 1rem 1.25rem; margin-top: 1.6rem; }
+  .hero .button:not(.primary) {
+    border-color: rgba(173, 219, 224, 0.24);
+    background: rgba(12, 39, 52, 0.64);
+    color: #d9eef0;
+    backdrop-filter: blur(10px);
+  }
+  .hero .button:not(.primary):hover { border-color: rgba(92, 213, 218, 0.5); background: rgba(19, 55, 69, 0.9); color: #fff; }
+  .hero-keyline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.75rem;
+    margin-top: 1.25rem;
+    color: #a6bdd1;
+    font-size: 0.68rem;
+  }
+  .hero-keyline span { display: inline-flex; gap: 0.45rem; align-items: center; }
+  .hero-keyline span::before { width: 4px; height: 4px; border-radius: 50%; background: #4dd6d2; content: ""; }
+  .hero-lens {
+    position: relative;
+    width: min(100%, 315px);
+    aspect-ratio: 1 / 1;
+    justify-self: end;
+    border: 1px solid rgba(106, 223, 225, 0.22);
+    border-radius: 50%;
+    background:
+      radial-gradient(circle, rgba(72, 210, 217, 0.15) 0 8%, rgba(14, 112, 136, 0.16) 9% 22%, transparent 23%),
+      radial-gradient(ellipse at center, rgba(22, 108, 132, 0.2), rgba(2, 20, 31, 0.1) 62%);
+    box-shadow: inset 0 0 80px rgba(51, 198, 208, 0.08), 0 0 110px rgba(20, 137, 157, 0.13);
+    animation: lens-breathe 7s ease-in-out infinite;
+  }
+  .hero-lens::before,
+  .hero-lens::after {
+    position: absolute;
+    border-radius: 50%;
+    content: "";
+  }
+  .hero-lens::before { inset: 9%; border: 1px solid rgba(97, 216, 221, 0.24); }
+  .hero-lens::after { inset: 26%; border: 1px dashed rgba(103, 216, 220, 0.3); animation: lens-spin 24s linear infinite; }
+  .lens-orbit { position: absolute; top: 50%; left: 50%; border: 1px solid rgba(103, 216, 220, 0.23); border-radius: 50%; transform: translate(-50%, -50%) rotate(-12deg); }
+  .lens-orbit-one { width: 112%; height: 54%; }
+  .lens-orbit-two { width: 70%; height: 102%; transform: translate(-50%, -50%) rotate(46deg); }
+  .lens-core { position: absolute; top: 50%; left: 50%; display: grid; width: 82px; height: 82px; place-items: center; border: 1px solid rgba(138, 234, 233, 0.48); border-radius: 50%; background: radial-gradient(circle, #f1c66f 0 7%, #47c4cb 8% 18%, #0a5f75 19% 58%, #072a3a 59%); transform: translate(-50%, -50%); box-shadow: 0 0 46px rgba(57, 202, 209, 0.35); }
+  .lens-core i { width: 10px; height: 10px; border-radius: 50%; background: #ffe0a0; box-shadow: 0 0 20px rgba(255, 214, 129, 0.9); }
+  .lens-scan { position: absolute; top: 28%; right: 4%; left: 4%; display: grid; gap: 12px; transform: rotate(-7deg); }
+  .lens-scan span { display: block; height: 1px; background: linear-gradient(90deg, transparent, rgba(83, 205, 213, 0.18) 10%, rgba(117, 231, 232, 0.58) 48%, rgba(83, 205, 213, 0.16) 88%, transparent); }
+  .lens-marker { position: absolute; width: 9px; height: 9px; border: 2px solid #f0c36f; border-radius: 50%; box-shadow: 0 0 14px rgba(239, 191, 104, 0.6); }
+  .lens-marker-one { top: 19%; right: 23%; }
+  .lens-marker-two { bottom: 23%; left: 17%; border-color: #62d5d8; }
+  .lens-caption { position: absolute; right: 8%; bottom: 12%; display: grid; color: #bfdbde; text-align: right; text-transform: uppercase; }
+  .lens-caption span { font-size: 0.69rem; font-weight: 760; letter-spacing: 0.15em; }
+  .lens-caption small { margin-top: 0.3rem; color: #668c98; font-size: 0.55rem; letter-spacing: 0.1em; }
+  .stats-bridge { position: relative; z-index: 3; padding-bottom: 1rem; }
+  .hero-scroll { position: relative; z-index: 3; display: flex; justify-content: center; padding-bottom: 0.65rem; }
+  .hero-scroll-link { display: inline-flex; align-items: center; justify-content: center; gap: 0.55rem; min-height: 44px; padding: 0.45rem 1rem; border: 1px solid rgba(173, 219, 224, 0.28); border-radius: 999px; background: rgba(12, 39, 52, 0.35); color: #d7e7f3; font-size: 0.72rem; font-weight: 650; text-decoration: none; transition: background 150ms ease, border-color 150ms ease; }
+  .hero-scroll-link:hover { border-color: rgba(92, 213, 218, 0.6); background: rgba(19, 55, 69, 0.8); color: #fff; }
+  .explore-band {
+    /* Cancel the reading gap so the section meets the sticky header. */
+    scroll-margin-top: -24px;
+    background: linear-gradient(180deg, color-mix(in srgb, var(--sky-soft) 76%, var(--bg)), color-mix(in srgb, var(--surface) 92%, var(--mint-soft)));
+  }
+  .concept-band {
+    background: linear-gradient(135deg, color-mix(in srgb, var(--mint-soft) 46%, var(--surface)), color-mix(in srgb, var(--lavender-soft) 32%, var(--surface)));
+  }
+  .portal-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    overflow: visible;
+    border: 0;
+    border-radius: 0;
+  }
+  .portal-link { --portal-accent: var(--blue); }
+  .portal-link,
+  .portal-link:nth-child(2n),
+  .portal-link:nth-last-child(-n + 2) {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-rows: auto 1fr;
+    column-gap: 1.15rem;
+    min-height: 220px;
+    overflow: hidden;
+    border: 1px solid color-mix(in srgb, var(--portal-accent) 18%, var(--line));
+    border-radius: var(--radius-lg);
+    background: linear-gradient(145deg, var(--surface), color-mix(in srgb, var(--portal-accent) 5%, var(--surface)));
+    color: var(--ink);
+    padding: 1.4rem;
+    box-shadow: 0 10px 34px color-mix(in srgb, var(--ink) 5%, transparent);
+    text-decoration: none;
+    transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+  }
+  .portal-link::before { position: absolute; top: 0; left: 0; width: 46%; height: 3px; background: linear-gradient(90deg, var(--portal-accent), transparent); content: ""; }
+  .portal-link::after { position: absolute; right: -4rem; bottom: -5rem; width: 12rem; height: 12rem; border: 1px solid color-mix(in srgb, var(--portal-accent) 16%, transparent); border-radius: 50%; content: ""; pointer-events: none; }
+  .portal-link:hover { border-color: color-mix(in srgb, var(--portal-accent) 48%, var(--line)); background: linear-gradient(145deg, var(--surface), color-mix(in srgb, var(--portal-accent) 8%, var(--surface-2))); color: var(--ink); transform: translateY(-4px); box-shadow: var(--glow); }
+  .portal-index { color: var(--faint); font-size: 0.64rem; font-weight: 760; letter-spacing: 0.13em; }
+  .portal-icon { display: grid; width: 44px; height: 44px; grid-column: 1; grid-row: 2; place-items: center; align-self: start; border: 1px solid color-mix(in srgb, var(--portal-accent) 30%, var(--line)); border-radius: 12px; background: color-mix(in srgb, var(--portal-accent) 10%, var(--surface)); color: var(--portal-accent); }
+  .portal-link > div { grid-column: 2; grid-row: 1 / span 2; }
+  .portal-kicker { margin-bottom: 0.55rem !important; color: var(--portal-accent) !important; font-size: 0.65rem !important; font-weight: 760; letter-spacing: 0.1em; text-transform: uppercase; }
+  .portal-link h3 { font-family: var(--font-serif); font-size: 1.35rem; }
+  .portal-link p:not(.portal-kicker) { max-width: 440px; margin: 0; color: var(--muted); font-size: 0.82rem; line-height: 1.65; }
+  .portal-arrow { position: relative; z-index: 1; grid-column: 3; grid-row: 1 / span 2; align-self: end !important; transition: color 150ms ease, transform 150ms ease; }
+  .portal-link:hover .portal-arrow { color: var(--portal-accent); transform: translateX(3px); }
+  .portal-visuals { --portal-accent: var(--teal); }
+  .portal-datasets { --portal-accent: var(--green); }
+  .portal-methods { --portal-accent: var(--violet); }
+  .highlight-layout { display: grid; grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr); gap: 3rem; align-items: center; }
+  .highlight-layout h2 { max-width: 560px; }
+  .highlight-layout p:not(.eyebrow) { color: var(--muted); }
+  .evidence-highlight { position: relative; overflow: hidden; background: linear-gradient(135deg, color-mix(in srgb, var(--peach-soft) 72%, var(--surface)), color-mix(in srgb, var(--lavender-soft) 40%, var(--surface-2))); }
+  .evidence-highlight::before { position: absolute; top: -8rem; left: -8rem; width: 24rem; height: 24rem; border: 1px solid color-mix(in srgb, var(--coral) 20%, transparent); border-radius: 50%; content: ""; }
+  .highlight-copy { position: relative; z-index: 1; }
+  .highlight-copy h2 { font-size: clamp(2.1rem, 4vw, 3.7rem); letter-spacing: -0.035em; }
+  .highlight-copy .button { margin-top: 0.5rem; }
+  .evidence-figure { position: relative; overflow: hidden; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); }
+  .evidence-figure::before { position: absolute; z-index: 1; top: 1.5rem; left: 1.5rem; width: 8px; height: 8px; border-radius: 50%; background: var(--coral); box-shadow: 0 0 18px var(--coral); content: ""; }
+  .integrity-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+  .integrity-grid article { border-top: 3px solid color-mix(in srgb, var(--blue) 58%, var(--line)); border-radius: 0 0 var(--radius) var(--radius); background: linear-gradient(180deg, color-mix(in srgb, var(--sky-soft) 54%, transparent), transparent 72%); padding: 1.4rem 1rem 1rem; }
+  .integrity-grid article > span { display: grid; width: 40px; height: 40px; place-items: center; margin-bottom: 1.25rem; border-radius: 10px; background: color-mix(in srgb, var(--teal) 9%, var(--surface-2)); color: var(--teal); }
+  .integrity-grid article:nth-child(2) { border-top-color: color-mix(in srgb, var(--violet) 58%, var(--line)); background: linear-gradient(180deg, color-mix(in srgb, var(--lavender-soft) 60%, transparent), transparent 72%); }
+  .integrity-grid article:nth-child(2) > span { color: var(--violet); }
+  .integrity-grid article:nth-child(3) { border-top-color: color-mix(in srgb, var(--gold) 58%, var(--line)); background: linear-gradient(180deg, color-mix(in srgb, var(--sun-soft) 60%, transparent), transparent 72%); }
+  .integrity-grid article:nth-child(3) > span { color: var(--gold); }
+  .integrity-grid h3 { font-family: var(--font-serif); font-size: 1.18rem; }
+  .integrity-grid p { margin: 0; color: var(--muted); font-size: 0.84rem; }
+  @keyframes lens-spin { to { transform: rotate(360deg); } }
+  @keyframes lens-breathe { 0%, 100% { box-shadow: inset 0 0 80px rgba(51, 198, 208, 0.08), 0 0 90px rgba(20, 137, 157, 0.1); } 50% { box-shadow: inset 0 0 92px rgba(51, 198, 208, 0.12), 0 0 125px rgba(20, 137, 157, 0.19); } }
+  @media (max-width: 1060px) {
+    .hero-grid { grid-template-columns: minmax(0, 1fr) 255px; gap: 1.5rem; }
+    .hero h1 { max-width: 24ch; font-size: clamp(2.7rem, 5vw, 3.55rem); }
+  }
+  @media (max-width: 850px) {
+    .hero-grid { grid-template-columns: 1fr; padding-block: 2.5rem 3.2rem; }
+    .hero-lens { display: none; }
+    .highlight-layout { grid-template-columns: 1fr; }
+    .integrity-grid { grid-template-columns: 1fr; gap: 2rem; }
+  }
+  @media (max-width: 620px) {
+    .hero-authors { max-width: 32rem; }
+    .author-row { display: grid; grid-template-columns: repeat(var(--authors-in-row), minmax(0, 1fr)); gap: 0.75rem; }
+    .author-name { overflow-wrap: anywhere; white-space: normal; }
+    .author-name + .author-name::before { content: none; }
+    .hero h1 { max-width: 22ch; font-size: clamp(2.35rem, 11.5vw, 3.15rem); }
+    .hero-meta { align-items: flex-start; }
+    .hero-keyline { display: grid; }
+    .portal-grid { grid-template-columns: 1fr; }
+    .portal-link,
+    .portal-link:nth-child(2n),
+    .portal-link:nth-last-child(-n + 2) { min-height: 210px; border: 1px solid color-mix(in srgb, var(--cyan) 13%, var(--line)); }
+  }
+  @media (min-width: 1180px) and (max-height: 820px) {
+    .hero-grid { padding-block: 0.8rem; }
+    .hero-meta { margin-bottom: 0.85rem; }
+    .hero-product { margin-bottom: 0.65rem; }
+    .hero h1 { margin-bottom: 1.15rem; font-size: clamp(2.7rem, 3.8vw, 3.5rem); line-height: 1.06; }
+    .study-title { margin-bottom: 0.55rem; line-height: 1.4; }
+    .hero-authors { margin-bottom: 1.1rem; }
+    .hero-summary { line-height: 1.6; }
+    .hero-actions { margin-top: 1.2rem; }
+    .hero-keyline { margin-top: 1rem; }
+    .hero-lens { width: min(100%, 292px); }
+  }
+  @media screen {
+    .hero {
+      grid-template-rows: minmax(min-content, 1fr) auto auto;
+      min-height: calc(100vh - var(--header-height));
+      min-height: calc(100svh - var(--header-height));
+    }
+  }
+  @media print { .hero-scroll { display: none; } }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-lens,
+    .hero-lens::after { animation: none; }
+  }
+</style>
+

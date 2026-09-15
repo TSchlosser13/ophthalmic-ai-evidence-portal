@@ -1,0 +1,730 @@
+---
+import { britishText } from '@/lib/britishEnglish';
+import { Database, Download, ExternalLink, Grid2x2, List, RotateCcw, Search } from '@lucide/astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHeader from '@/components/PageHeader.astro';
+import { withBase } from '@/lib/base';
+import datasets from '@/data/generated/datasets.json';
+
+const areas = [...new Set(datasets.map((dataset) => dataset.area))].sort();
+const modalities = [...new Set(datasets.map((dataset) => dataset.modality))].sort();
+const linkedPublications = datasets.reduce((sum, dataset) => sum + dataset.articleCount, 0);
+---
+
+<BaseLayout title="Dataset registry" description="Interactive registry of identifiable public ophthalmic datasets and benchmark resources represented in the included literature.">
+  <PageHeader
+    eyebrow="Reusable research landscape"
+    title="Dataset registry"
+    intro="Explore named public datasets and benchmark resources through their aliases, imaging context, scale, typical tasks, and links to included publications. Switch between an editorial card atlas and a compact comparison table."
+  >
+    <a class="button primary" href="#dataset-atlas"><Search size={17} /> Explore datasets</a>
+    <a class="button" href={withBase('/downloads/datasets.csv')} download><Download size={17} /> CSV</a>
+    <a class="button" href={withBase('/downloads/datasets.json')} download>JSON</a>
+  </PageHeader>
+
+  <section class="container registry-overview" aria-label="Dataset registry overview">
+    <div><span>Registry resources</span><strong>{datasets.length}</strong></div>
+    <div><span>Clinical areas</span><strong>{areas.length}</strong></div>
+    <div><span>Imaging modalities</span><strong>{modalities.length}</strong></div>
+    <div><span>Publication links</span><strong>{linkedPublications}</strong></div>
+  </section>
+
+  <section id="dataset-atlas" class="container registry" data-dataset-registry>
+    <div class="registry-workspace" data-pagefind-ignore>
+      <div class="registry-controls">
+        <label class="search-control">
+          <span class="field-label">Search datasets</span>
+          <span><Search size={18} /><input class="input" type="search" autocomplete="off" placeholder="Name, alias, area, modality, or task" data-dataset-search /></span>
+        </label>
+        <label><span class="field-label">Area</span><select class="select" data-dataset-area><option value="">All areas</option>{areas.map((area) => <option value={area}>{britishText(area)}</option>)}</select></label>
+        <label><span class="field-label">Modality</span><select class="select" data-dataset-modality><option value="">All modalities</option>{modalities.map((modality) => <option value={modality}>{britishText(modality)}</option>)}</select></label>
+        <label><span class="field-label">Sort</span><select class="select" data-dataset-sort><option value="name">Name A-Z</option><option value="count">Most linked publications</option><option value="area">Clinical area</option></select></label>
+      </div>
+
+      <div class="registry-state">
+        <p class="registry-status"><strong data-dataset-count>{datasets.length}</strong><span>of {datasets.length} resources</span></p>
+        <div class="registry-chips" aria-label="Active dataset filters" data-dataset-chips><span>No filters active</span></div>
+        <button class="button clear-datasets" type="button" data-dataset-clear hidden><RotateCcw size={16} /> Clear</button>
+        <div class="view-control">
+          <span class="field-label">View</span>
+          <div class="segmented" role="group" aria-label="Dataset display">
+            <button type="button" title="Card view" aria-label="Card view" aria-pressed="true" data-dataset-view="cards"><Grid2x2 size={18} /></button>
+            <button type="button" title="Table view" aria-label="Table view" aria-pressed="false" data-dataset-view="table"><List size={18} /></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dataset-grid" data-dataset-grid>
+      {datasets.map((dataset) => (
+        <article
+          class="dataset-card"
+          data-dataset-card
+          data-search={[dataset.name, ...dataset.aliases, dataset.area, dataset.modality, dataset.typicalTasks].join(' ').toLowerCase()}
+          data-area={dataset.area}
+          data-modality={dataset.modality}
+          data-name={dataset.name}
+          data-count={dataset.articleCount}
+        >
+          <div class="dataset-card-head">
+            <span class="dataset-mark"><Database size={18} /></span>
+            <span class="linked-count"><strong>{dataset.articleCount}</strong> linked</span>
+          </div>
+          <p class="dataset-context">{britishText(dataset.area)} — {britishText(dataset.modality)}</p>
+          <h2><a href={withBase(`/datasets/${dataset.slug}/`)}>{dataset.name}</a></h2>
+          {dataset.aliases.length > 0 && <p class="aliases">Also known as {dataset.aliases.join(' — ')}</p>}
+          <p class="dataset-scale">{britishText(dataset.scale)}</p>
+          <p class="dataset-tasks">{britishText(dataset.typicalTasks)}</p>
+          <div class="dataset-card-actions">
+            <a class="record-link" href={withBase(`/datasets/${dataset.slug}/`)}>Open registry record <span>-></span></a>
+            <div class="cluster">
+              <a class="mini-link" href={withBase(`/publications/?dataset=${encodeURIComponent(dataset.name)}`)}>{dataset.articleCount} {dataset.articleCount === 1 ? 'publication' : 'publications'}</a>
+              {dataset.resourceUrl && <a class="external mini-link" href={dataset.resourceUrl} rel="noopener noreferrer" aria-label={`Open dataset ${dataset.name}`}>Resource <ExternalLink size={14} /></a>}
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <div class="table-wrap registry-table" hidden data-dataset-table-wrap>
+      <table data-dataset-table>
+        <caption class="visually-hidden">Identifiable public ophthalmic datasets and benchmark resources</caption>
+        <thead><tr><th scope="col">Dataset and aliases</th><th scope="col">Area</th><th scope="col">Modality</th><th scope="col">Scale</th><th scope="col">Linked publications</th><th scope="col">Resource</th></tr></thead>
+        <tbody>
+          {datasets.map((dataset) => (
+            <tr
+              data-dataset-row
+              data-search={[dataset.name, ...dataset.aliases, dataset.area, dataset.modality, dataset.typicalTasks].join(' ').toLowerCase()}
+              data-area={dataset.area}
+              data-modality={dataset.modality}
+              data-name={dataset.name}
+              data-count={dataset.articleCount}
+            >
+              <td><a class="dataset-name" href={withBase(`/datasets/${dataset.slug}/`)}>{dataset.name}</a><span class="aliases">{dataset.aliases.join(' — ')}</span></td>
+              <td>{britishText(dataset.area)}</td>
+              <td>{britishText(dataset.modality)}</td>
+              <td>{britishText(dataset.scale)}</td>
+              <td><a href={withBase(`/publications/?dataset=${encodeURIComponent(dataset.name)}`)}>{dataset.articleCount}</a></td>
+              <td>{dataset.resourceUrl ? <a class="external" href={dataset.resourceUrl} rel="noopener noreferrer" aria-label={`Open dataset ${dataset.name}`}><ExternalLink size={17} /></a> : <span class="muted">Not linked</span>}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="empty-state registry-empty" hidden data-dataset-empty>
+      <div><span aria-hidden="true">No</span><h2>No dataset resources match this view</h2><p>Broaden the search or clear one of the selected filters.</p><button class="button primary" type="button" data-dataset-empty-reset>Reset filters</button></div>
+    </div>
+
+    <div class="registry-note">
+      <span class="dataset-mark"><Database size={18} /></span>
+      <p><strong>Registry conventions</strong><span>Equivalent names are consolidated as aliases. Links and licence details are presented only when they are part of the public registry; missing details are not inferred.</span></p>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  import { britishText } from '@/lib/britishEnglish';
+  const registry = document.querySelector<HTMLElement>('[data-dataset-registry]');
+  if (registry) {
+    type DatasetView = 'cards' | 'table';
+    const params = new URLSearchParams(window.location.search);
+    const search = registry.querySelector<HTMLInputElement>('[data-dataset-search]')!;
+    const area = registry.querySelector<HTMLSelectElement>('[data-dataset-area]')!;
+    const modality = registry.querySelector<HTMLSelectElement>('[data-dataset-modality]')!;
+    const sort = registry.querySelector<HTMLSelectElement>('[data-dataset-sort]')!;
+    const body = registry.querySelector<HTMLTableSectionElement>('tbody')!;
+    const count = registry.querySelector<HTMLElement>('[data-dataset-count]')!;
+    const table = registry.querySelector<HTMLElement>('[data-dataset-table-wrap]')!;
+    const grid = registry.querySelector<HTMLElement>('[data-dataset-grid]')!;
+    const empty = registry.querySelector<HTMLElement>('[data-dataset-empty]')!;
+    const chips = registry.querySelector<HTMLElement>('[data-dataset-chips]')!;
+    const clear = registry.querySelector<HTMLButtonElement>('[data-dataset-clear]')!;
+    const rows = [...registry.querySelectorAll<HTMLTableRowElement>('[data-dataset-row]')];
+    const cards = [...registry.querySelectorAll<HTMLElement>('[data-dataset-card]')];
+    let view: DatasetView = params.get('view') === 'table' ? 'table' : 'cards';
+
+    search.value = params.get('q') ?? '';
+    area.value = params.get('area') ?? '';
+    modality.value = params.get('modality') ?? '';
+    if ([...sort.options].some((option) => option.value === params.get('sort'))) sort.value = params.get('sort') ?? 'name';
+
+    const compare = (a: HTMLElement, b: HTMLElement) => sort.value === 'count'
+      ? Number(b.dataset.count) - Number(a.dataset.count) || (a.dataset.name ?? '').localeCompare(b.dataset.name ?? '')
+      : sort.value === 'area'
+        ? (a.dataset.area ?? '').localeCompare(b.dataset.area ?? '') || (a.dataset.name ?? '').localeCompare(b.dataset.name ?? '')
+        : (a.dataset.name ?? '').localeCompare(b.dataset.name ?? '');
+
+    const isVisible = (node: HTMLElement) => {
+      const query = search.value.trim().toLowerCase();
+      return (!query || node.dataset.search?.includes(query)) && (!area.value || node.dataset.area === area.value) && (!modality.value || node.dataset.modality === modality.value);
+    };
+
+    const updateUrl = () => {
+      const next = new URLSearchParams();
+      if (search.value.trim()) next.set('q', search.value.trim());
+      if (area.value) next.set('area', area.value);
+      if (modality.value) next.set('modality', modality.value);
+      if (sort.value !== 'name') next.set('sort', sort.value);
+      if (view === 'table') next.set('view', view);
+      const query = next.toString();
+      history.replaceState(null, '', `${window.location.pathname}${query ? `?${query}` : ''}`);
+    };
+
+    const renderChips = () => {
+      chips.replaceChildren();
+      const active: Array<{ label: string; clear: () => void }> = [];
+      if (search.value.trim()) active.push({ label: `Search: ${search.value.trim()}`, clear: () => { search.value = ''; } });
+      if (area.value) active.push({ label: `Area: ${britishText(area.value)}`, clear: () => { area.value = ''; } });
+      if (modality.value) active.push({ label: `Modality: ${britishText(modality.value)}`, clear: () => { modality.value = ''; } });
+      if (!active.length) chips.append(Object.assign(document.createElement('span'), { textContent: 'No filters active' }));
+      for (const item of active) {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'chip';
+        button.setAttribute('aria-label', `Remove ${item.label}`);
+        button.textContent = `${item.label} x`;
+        button.addEventListener('click', () => { item.clear(); update(); });
+        chips.append(button);
+      }
+      clear.hidden = active.length === 0;
+    };
+
+    const update = () => {
+      const orderedRows = [...rows].sort(compare);
+      const orderedCards = [...cards].sort(compare);
+      let visible = 0;
+      for (const row of orderedRows) {
+        const show = isVisible(row);
+        row.hidden = !show;
+        if (show) visible += 1;
+        body.append(row);
+      }
+      for (const card of orderedCards) {
+        card.hidden = !isVisible(card);
+        grid.append(card);
+      }
+      count.textContent = String(visible);
+      const hasResults = visible > 0;
+      table.hidden = !hasResults || view !== 'table';
+      grid.hidden = !hasResults || view !== 'cards';
+      empty.hidden = hasResults;
+      registry.querySelectorAll<HTMLButtonElement>('[data-dataset-view]').forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.datasetView === view)));
+      renderChips();
+      updateUrl();
+    };
+
+    const reset = () => {
+      search.value = '';
+      area.value = '';
+      modality.value = '';
+      update();
+      search.focus();
+    };
+
+    let timer = 0;
+    search.addEventListener('input', () => {
+      window.clearTimeout(timer);
+      timer = window.setTimeout(update, 140);
+    });
+    [area, modality, sort].forEach((control) => control.addEventListener('change', update));
+    registry.querySelectorAll<HTMLButtonElement>('[data-dataset-view]').forEach((button) => button.addEventListener('click', () => {
+      view = button.dataset.datasetView === 'table' ? 'table' : 'cards';
+      update();
+    }));
+    clear.addEventListener('click', reset);
+    registry.querySelector<HTMLButtonElement>('[data-dataset-empty-reset]')!.addEventListener('click', reset);
+    update();
+  }
+</script>
+
+<style>
+  .registry-overview {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    overflow: hidden;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    border-left: 1px solid var(--line);
+    border-radius: 0 0 16px 16px;
+    background: var(--surface);
+  }
+
+  .registry-overview > div {
+    border-left: 1px solid var(--line);
+    padding: 1rem 1.2rem;
+  }
+
+  .registry-overview > div:first-child {
+    border-left: 0;
+  }
+
+  .registry-overview span,
+  .registry-overview strong {
+    display: block;
+  }
+
+  .registry-overview span {
+    color: var(--faint);
+    font-size: 0.65rem;
+    font-weight: 720;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .registry-overview strong {
+    color: var(--ink);
+    font-family: var(--font-serif);
+    font-size: 1.7rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .registry {
+    padding-block: 1.5rem 5rem;
+  }
+
+  .registry-workspace {
+    position: sticky;
+    z-index: 16;
+    top: calc(var(--header-height) + 0.45rem);
+    overflow: hidden;
+    border: 1px solid color-mix(in srgb, var(--teal) 22%, var(--line));
+    border-radius: 16px;
+    background: color-mix(in srgb, var(--surface) 93%, transparent);
+    box-shadow: 0 16px 42px color-mix(in srgb, var(--ink) 9%, transparent);
+    backdrop-filter: blur(18px);
+  }
+
+  .registry-controls {
+    display: grid;
+    grid-template-columns: minmax(280px, 1fr) 190px 190px 165px;
+    gap: 0.55rem;
+    align-items: end;
+    background:
+      linear-gradient(115deg, color-mix(in srgb, var(--teal) 8%, transparent), transparent 48%),
+      var(--surface);
+    padding: 0.55rem 0.75rem;
+  }
+
+  .registry-controls .select,
+  .registry-controls .input {
+    width: 100%;
+    min-height: 40px;
+    border-radius: 10px;
+  }
+
+  .search-control > span:last-child {
+    position: relative;
+    display: block;
+  }
+
+  .search-control svg {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 0.85rem;
+    color: var(--teal);
+    transform: translateY(-50%);
+  }
+
+  .search-control input {
+    padding-left: 2.6rem;
+  }
+
+  .registry-state {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto auto;
+    gap: 0.55rem;
+    align-items: center;
+    border-top: 1px solid var(--line);
+    background: color-mix(in srgb, var(--surface-2) 66%, var(--surface));
+    padding: 0.45rem 0.75rem;
+  }
+
+  .registry-status {
+    display: flex;
+    gap: 0.45rem;
+    align-items: baseline;
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.76rem;
+    white-space: nowrap;
+  }
+
+  .registry-status strong {
+    color: var(--ink);
+    font-family: var(--font-serif);
+    font-size: 1.24rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .registry-chips {
+    display: flex;
+    min-width: 0;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    align-items: center;
+  }
+
+  .registry-chips > span {
+    color: var(--faint);
+    font-size: 0.74rem;
+  }
+
+  .registry-chips :global(.chip) {
+    border-color: color-mix(in srgb, var(--blue) 32%, var(--line));
+    background: color-mix(in srgb, var(--blue) 8%, var(--surface));
+    color: var(--blue-strong);
+  }
+
+  .clear-datasets {
+    min-height: 32px;
+    border: 0;
+    background: transparent;
+  }
+
+  .view-control {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .view-control .field-label {
+    margin: 0;
+    font-size: 0.68rem;
+  }
+
+  .dataset-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.85rem;
+    margin-top: 1.15rem;
+  }
+
+  .dataset-card {
+    position: relative;
+    display: flex;
+    min-height: 395px;
+    overflow: hidden;
+    flex-direction: column;
+    border: 1px solid var(--line);
+    border-radius: 15px;
+    background: var(--surface);
+    padding: 1.15rem;
+    box-shadow: 0 8px 24px color-mix(in srgb, var(--ink) 5%, transparent);
+    transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+  }
+
+  .dataset-card::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--teal), var(--blue), var(--amber));
+    content: '';
+    opacity: 0.72;
+  }
+
+  .dataset-card:hover {
+    border-color: color-mix(in srgb, var(--blue) 42%, var(--line));
+    box-shadow: 0 16px 38px color-mix(in srgb, var(--ink) 10%, transparent);
+    transform: translateY(-3px);
+  }
+
+  .dataset-card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .dataset-mark {
+    display: grid;
+    width: 38px;
+    height: 38px;
+    flex: 0 0 auto;
+    place-items: center;
+    border-radius: 10px;
+    background: color-mix(in srgb, var(--teal) 12%, var(--surface));
+    color: var(--teal);
+  }
+
+  .linked-count {
+    color: var(--faint);
+    font-size: 0.68rem;
+  }
+
+  .linked-count strong {
+    color: var(--ink);
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+  }
+
+  .dataset-context {
+    margin-bottom: 0.35rem;
+    color: var(--teal);
+    font-size: 0.65rem;
+    font-weight: 740;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .dataset-card h2 {
+    margin-bottom: 0.6rem;
+    font-size: 1.28rem;
+    line-height: 1.24;
+  }
+
+  .dataset-card h2 a {
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .dataset-card h2 a:hover {
+    color: var(--blue-strong);
+  }
+
+  .aliases {
+    display: block;
+    margin-bottom: 0.75rem;
+    color: var(--faint);
+    font-size: 0.68rem;
+  }
+
+  .dataset-scale {
+    display: -webkit-box;
+    overflow: hidden;
+    margin-bottom: 0.75rem;
+    color: var(--muted);
+    font-family: var(--font-serif);
+    font-size: 0.86rem;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+
+  .dataset-tasks {
+    display: -webkit-box;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    color: var(--muted);
+    font-size: 0.74rem;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+
+  .dataset-card-actions {
+    margin-top: auto;
+    border-top: 1px solid var(--line);
+    padding-top: 0.8rem;
+  }
+
+  .record-link {
+    display: flex;
+    justify-content: space-between;
+    color: var(--blue-strong);
+    font-size: 0.76rem;
+    font-weight: 740;
+    text-decoration: none;
+  }
+
+  .record-link span {
+    transition: transform 140ms ease;
+  }
+
+  .record-link:hover span {
+    transform: translateX(3px);
+  }
+
+  .dataset-card-actions .cluster {
+    margin-top: 0.65rem;
+  }
+
+  .mini-link {
+    display: inline-flex;
+    gap: 0.25rem;
+    align-items: center;
+    border-radius: 999px;
+    background: var(--surface-2);
+    color: var(--muted);
+    padding: 0.25rem 0.5rem;
+    font-size: 0.65rem;
+    text-decoration: none;
+  }
+
+  .mini-link:hover {
+    color: var(--blue-strong);
+  }
+
+  .registry-table {
+    margin-top: 1.15rem;
+    border-radius: 14px;
+    box-shadow: 0 8px 26px color-mix(in srgb, var(--ink) 5%, transparent);
+  }
+
+  .registry-table table {
+    min-width: 1180px;
+  }
+
+  .registry-table th:nth-child(1) { width: 24%; }
+  .registry-table th:nth-child(2) { width: 14%; }
+  .registry-table th:nth-child(3) { width: 13%; }
+  .registry-table th:nth-child(4) { width: 34%; }
+
+  .dataset-name {
+    display: block;
+    color: var(--ink);
+    font-family: var(--font-serif);
+    font-size: 0.98rem;
+    font-weight: 700;
+    line-height: 1.4;
+    text-decoration: none;
+  }
+
+  .dataset-name:hover {
+    color: var(--blue-strong);
+  }
+
+  .registry-table .aliases {
+    margin: 0.3rem 0 0;
+  }
+
+  .external {
+    display: inline-flex;
+  }
+
+  .muted {
+    color: var(--faint);
+    font-size: 0.72rem;
+  }
+
+  .registry-empty {
+    min-height: 360px;
+    margin-top: 1.15rem;
+    border-radius: 14px;
+  }
+
+  .registry-empty > div {
+    display: grid;
+    max-width: 390px;
+    justify-items: center;
+  }
+
+  .registry-empty > div > span {
+    display: grid;
+    width: 50px;
+    height: 50px;
+    place-items: center;
+    border: 1px solid color-mix(in srgb, var(--teal) 35%, var(--line));
+    border-radius: 50%;
+    color: var(--teal);
+    font-size: 1.7rem;
+  }
+
+  .registry-empty h2 {
+    margin: 0.8rem 0 0.3rem;
+    font-size: 1.35rem;
+  }
+
+  .registry-empty p {
+    color: var(--muted);
+    font-size: 0.82rem;
+  }
+
+  .registry-note {
+    display: flex;
+    gap: 0.85rem;
+    align-items: center;
+    border: 1px solid var(--line);
+    border-radius: 13px;
+    background: color-mix(in srgb, var(--teal) 6%, var(--surface));
+    margin-top: 1.2rem;
+    padding: 0.55rem 0.75rem;
+  }
+
+  .registry-note p {
+    margin: 0;
+  }
+
+  .registry-note strong,
+  .registry-note p span {
+    display: block;
+  }
+
+  .registry-note strong {
+    font-size: 0.8rem;
+  }
+
+  .registry-note p span {
+    color: var(--muted);
+    font-size: 0.72rem;
+  }
+
+  @media (max-width: 1120px) {
+    .registry-workspace {
+      position: relative;
+      top: auto;
+    }
+
+    .registry-controls {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .search-control {
+      grid-column: 1 / -1;
+    }
+
+    .dataset-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 760px) {
+    .registry-overview {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .registry-overview > div:nth-child(3) {
+      border-top: 1px solid var(--line);
+      border-left: 0;
+    }
+
+    .registry-overview > div:nth-child(4) {
+      border-top: 1px solid var(--line);
+    }
+
+    .registry-controls {
+      grid-template-columns: 1fr;
+    }
+
+    .search-control {
+      grid-column: auto;
+    }
+
+    .registry-state {
+      grid-template-columns: auto 1fr auto;
+    }
+
+    .registry-chips {
+      grid-column: 1 / -1;
+      grid-row: 2;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+    }
+
+    .view-control {
+      grid-column: 3;
+      grid-row: 1;
+    }
+
+    .dataset-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .dataset-card {
+      min-height: 0;
+    }
+  }
+</style>
+
+

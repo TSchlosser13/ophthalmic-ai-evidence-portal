@@ -1,0 +1,571 @@
+---
+import { britishText } from '@/lib/britishEnglish';
+import { ArrowLeft, ArrowRight, BookOpen, Database, ExternalLink, ScanLine, Search } from '@lucide/astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { withBase } from '@/lib/base';
+import datasetData from '@/data/generated/datasets.json';
+
+type Dataset = (typeof datasetData)[number];
+export function getStaticPaths() {
+  return datasetData.map((dataset) => ({ params: { slug: dataset.slug }, props: { dataset } }));
+}
+interface Props { dataset: Dataset; }
+const { dataset } = Astro.props;
+---
+
+<BaseLayout title={dataset.name} description={`${britishText(dataset.area)}; ${britishText(dataset.modality)}. ${britishText(dataset.scale)}`}>
+  <header class="dataset-header" data-pagefind-body>
+    <div class="dataset-orbits" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="container dataset-header-inner">
+      <a class="back-link" href={withBase('/datasets/')}><ArrowLeft size={16} /> Dataset registry</a>
+      <div class="dataset-title-grid">
+        <div>
+          <p class="eyebrow">Public dataset or benchmark</p>
+          <h1 data-pagefind-meta="title">{dataset.name}</h1>
+          <p class="dataset-context">{britishText(dataset.area)} · {britishText(dataset.modality)}</p>
+          {dataset.aliases.length > 0 && <p class="dataset-aliases">Aliases: {dataset.aliases.join(' · ')}</p>}
+          <div class="cluster header-actions">
+            {dataset.resourceUrl && <a class="button primary" href={dataset.resourceUrl} rel="noopener noreferrer">Open dataset <ExternalLink size={16} /></a>}
+            <a class="button" href={withBase(`/publications/?dataset=${encodeURIComponent(dataset.name)}`)}><Search size={16} /> View linked publications</a>
+          </div>
+        </div>
+        <div class="dataset-emblem" aria-hidden="true"><Database size={40} /><span></span></div>
+      </div>
+
+      <div class="dataset-pulse" aria-label="Dataset overview">
+        <div><span>Linked publications</span><strong>{dataset.articleCount}</strong></div>
+        <div><span>Aliases</span><strong>{dataset.aliases.length}</strong></div>
+        <div><span>Area</span><strong>{britishText(dataset.area)}</strong></div>
+        <div><span>Modality</span><strong>{britishText(dataset.modality)}</strong></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container dataset-content" data-pagefind-body>
+    <section class="registry-section">
+      <div class="section-heading">
+        <div><p class="section-kicker">At a glance</p><h2>Registry record</h2></div>
+        <span class="section-icon"><ScanLine size={21} /></span>
+      </div>
+
+      <div class="record-grid">
+        <div class="scale-card">
+          <span class="card-label">Scale and composition</span>
+          <p>{britishText(dataset.scale)}</p>
+        </div>
+        <div class="task-card">
+          <span class="card-label">Typical tasks and notes</span>
+          <p>{britishText(dataset.typicalTasks)}</p>
+        </div>
+      </div>
+
+      <dl class="meta-list dataset-meta">
+        <div><dt>Aliases</dt><dd>{dataset.aliases.length ? dataset.aliases.join(', ') : 'No additional aliases'}</dd></div>
+        <div><dt>Clinical area</dt><dd>{britishText(dataset.area)}</dd></div>
+        <div><dt>Modality</dt><dd>{britishText(dataset.modality)}</dd></div>
+        <div><dt>Licence</dt><dd>{dataset.licence ?? 'Not specified'}</dd></div>
+      </dl>
+    </section>
+
+    <section>
+      <div class="section-heading linked-heading">
+        <div><p class="section-kicker">Across the evidence atlas</p><h2>Linked included publications</h2><p>These publications are assigned to {dataset.name} in the public evidence map.</p></div>
+        <a class="button" href={withBase(`/publications/?dataset=${encodeURIComponent(dataset.name)}`)}>Open filtered explorer <ArrowRight size={16} /></a>
+      </div>
+
+      {dataset.linkedArticles.length ? (
+        <div class="linked-study-list">
+          {dataset.linkedArticles.map((article, index) => (
+            <a href={withBase(`/publications/${article.slug}/`)}>
+              <span class="study-order">{String(index + 1).padStart(2, '0')}</span>
+              <span class="study-year">{article.year}</span>
+              <span class="study-title">{article.title}<small>{article.citationKey}</small></span>
+              <ArrowRight size={17} />
+            </a>
+          ))}
+        </div>
+      ) : <div class="notice warning"><strong>No linked publication in the current public map</strong><p>This registry record remains available for discovery even though no included publication is presently assigned to it.</p></div>}
+    </section>
+
+    <section>
+      <div class="section-heading">
+        <div><p class="section-kicker">Foundational reading</p><h2>Original resource references</h2></div>
+        <span class="section-icon"><BookOpen size={21} /></span>
+      </div>
+      {dataset.originalPublications.length ? (
+        <div class="reference-list">
+          {dataset.originalPublications.map((reference, index) => (
+            <article>
+              <span class="reference-order">{String(index + 1).padStart(2, '0')}</span>
+              <div><code>{reference.citationKey}</code><p>{reference.title}</p></div>
+              {reference.doi && <a class="button" href={`https://doi.org/${reference.doi}`} rel="noopener noreferrer">DOI <ExternalLink size={14} /></a>}
+            </article>
+          ))}
+        </div>
+      ) : <p class="muted">No original publication is listed for this registry record.</p>}
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .dataset-header {
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--line);
+    background:
+      radial-gradient(circle at 78% 18%, color-mix(in srgb, var(--teal) 15%, transparent), transparent 30%),
+      radial-gradient(circle at 10% 85%, color-mix(in srgb, var(--blue) 11%, transparent), transparent 36%),
+      linear-gradient(145deg, color-mix(in srgb, var(--surface) 88%, var(--teal) 12%), var(--bg));
+    padding: 3rem 0 0;
+  }
+
+  .dataset-header::after {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(color-mix(in srgb, var(--line) 30%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in srgb, var(--line) 30%, transparent) 1px, transparent 1px);
+    background-size: 38px 38px;
+    content: '';
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.45), transparent 78%);
+    pointer-events: none;
+  }
+
+  .dataset-orbits {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .dataset-orbits span {
+    position: absolute;
+    border: 1px solid color-mix(in srgb, var(--teal) 22%, transparent);
+    border-radius: 50%;
+  }
+
+  .dataset-orbits span:nth-child(1) { top: -250px; right: -120px; width: 560px; height: 560px; }
+  .dataset-orbits span:nth-child(2) { top: -180px; right: -50px; width: 420px; height: 420px; }
+  .dataset-orbits span:nth-child(3) { top: -110px; right: 20px; width: 280px; height: 280px; }
+
+  .dataset-header-inner {
+    position: relative;
+    z-index: 1;
+  }
+
+  .back-link {
+    display: inline-flex;
+    gap: 0.4rem;
+    align-items: center;
+    margin-bottom: 1.4rem;
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-weight: 680;
+    text-decoration: none;
+  }
+
+  .dataset-title-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 180px;
+    gap: 2rem;
+    align-items: center;
+    padding-bottom: 2.3rem;
+  }
+
+  h1 {
+    max-width: 980px;
+    margin-bottom: 0.7rem;
+    font-size: clamp(2.25rem, 5vw, 4rem);
+    line-height: 1.05;
+  }
+
+  .dataset-context {
+    margin-bottom: 0.35rem;
+    color: var(--teal);
+    font-size: 0.78rem;
+    font-weight: 720;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .dataset-aliases {
+    max-width: 760px;
+    color: var(--muted);
+    font-size: 0.82rem;
+  }
+
+  .header-actions {
+    margin-top: 1.2rem;
+  }
+
+  .dataset-emblem {
+    position: relative;
+    display: grid;
+    width: 150px;
+    height: 150px;
+    place-items: center;
+    border: 1px solid color-mix(in srgb, var(--teal) 30%, var(--line));
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--surface) 76%, transparent);
+    color: var(--teal);
+    box-shadow: inset 0 0 0 18px color-mix(in srgb, var(--teal) 4%, transparent);
+    backdrop-filter: blur(10px);
+  }
+
+  .dataset-emblem::before,
+  .dataset-emblem::after,
+  .dataset-emblem span {
+    position: absolute;
+    border: 1px solid color-mix(in srgb, var(--blue) 22%, transparent);
+    border-radius: 50%;
+    content: '';
+  }
+
+  .dataset-emblem::before { inset: 18px; }
+  .dataset-emblem::after { inset: 34px; }
+  .dataset-emblem span { inset: -12px; }
+
+  .dataset-pulse {
+    display: grid;
+    grid-template-columns: 150px 120px minmax(0, 1fr) minmax(0, 1fr);
+    overflow: hidden;
+    border-top: 1px solid var(--line);
+    border-right: 1px solid var(--line);
+    border-left: 1px solid var(--line);
+    border-radius: 14px 14px 0 0;
+    background: color-mix(in srgb, var(--surface) 84%, transparent);
+    backdrop-filter: blur(14px);
+  }
+
+  .dataset-pulse > div {
+    min-height: 86px;
+    border-left: 1px solid var(--line);
+    padding: 1rem 1.1rem;
+  }
+
+  .dataset-pulse > div:first-child {
+    border-left: 0;
+  }
+
+  .dataset-pulse span,
+  .dataset-pulse strong {
+    display: block;
+  }
+
+  .dataset-pulse span {
+    margin-bottom: 0.2rem;
+    color: var(--faint);
+    font-size: 0.63rem;
+    font-weight: 720;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .dataset-pulse strong {
+    overflow: hidden;
+    color: var(--ink);
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    line-height: 1.3;
+    text-overflow: ellipsis;
+  }
+
+  .dataset-pulse > div:nth-child(-n + 2) strong {
+    font-size: 1.65rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .dataset-content {
+    max-width: 1080px;
+    padding-block: 3.8rem 6rem;
+  }
+
+  .dataset-content > section {
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 3.4rem;
+    margin-bottom: 3.4rem;
+  }
+
+  .dataset-content > section:last-child {
+    border-bottom: 0;
+  }
+
+  .section-heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    align-items: start;
+    margin-bottom: 1.35rem;
+  }
+
+  .section-heading h2 {
+    margin-bottom: 0.45rem;
+  }
+
+  .section-heading p:not(.section-kicker) {
+    max-width: 650px;
+    margin-bottom: 0;
+    color: var(--muted);
+    font-size: 0.83rem;
+  }
+
+  .section-kicker {
+    margin-bottom: 0.4rem;
+    color: var(--teal);
+    font-size: 0.67rem;
+    font-weight: 760;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .section-icon {
+    display: grid;
+    width: 44px;
+    height: 44px;
+    flex: 0 0 auto;
+    place-items: center;
+    border: 1px solid color-mix(in srgb, var(--teal) 28%, var(--line));
+    border-radius: 12px;
+    background: color-mix(in srgb, var(--teal) 9%, var(--surface));
+    color: var(--teal);
+  }
+
+  .record-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .record-grid > div {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 15px;
+    background:
+      radial-gradient(circle at 100% 0, color-mix(in srgb, var(--teal) 10%, transparent), transparent 42%),
+      var(--surface);
+    padding: 1.25rem;
+  }
+
+  .record-grid > div::before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 3px;
+    background: var(--teal);
+    content: '';
+  }
+
+  .record-grid > div:nth-child(2)::before {
+    background: var(--blue);
+  }
+
+  .card-label {
+    display: block;
+    margin-bottom: 0.55rem;
+    color: var(--faint);
+    font-size: 0.65rem;
+    font-weight: 740;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .record-grid p {
+    margin: 0;
+    color: var(--ink);
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .dataset-meta {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    overflow: hidden;
+    border-radius: 12px;
+  }
+
+  .linked-heading {
+    align-items: center;
+  }
+
+  .linked-study-list {
+    display: grid;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: var(--surface);
+  }
+
+  .linked-study-list > a {
+    display: grid;
+    grid-template-columns: 42px 60px minmax(0, 1fr) auto;
+    gap: 0.8rem;
+    align-items: center;
+    border-bottom: 1px solid var(--line);
+    color: var(--ink);
+    padding: 0.85rem 1rem;
+    text-decoration: none;
+    transition: background 140ms ease;
+  }
+
+  .linked-study-list > a:last-child {
+    border-bottom: 0;
+  }
+
+  .linked-study-list > a:hover {
+    background: color-mix(in srgb, var(--teal) 6%, var(--surface));
+  }
+
+  .study-order {
+    color: var(--faint);
+    font-family: "Cascadia Code", Consolas, monospace;
+    font-size: 0.65rem;
+  }
+
+  .study-year {
+    color: var(--teal);
+    font-variant-numeric: tabular-nums;
+    font-weight: 720;
+  }
+
+  .study-title {
+    font-family: var(--font-serif);
+    font-size: 0.94rem;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  .study-title small {
+    display: block;
+    margin-top: 0.2rem;
+    color: var(--faint);
+    font-family: "Cascadia Code", Consolas, monospace;
+    font-size: 0.62rem;
+    font-weight: 500;
+  }
+
+  .linked-study-list > a > svg {
+    color: var(--faint);
+    transition: transform 140ms ease;
+  }
+
+  .linked-study-list > a:hover > svg {
+    transform: translateX(3px);
+  }
+
+  .reference-list {
+    display: grid;
+    gap: 0.65rem;
+  }
+
+  .reference-list > article {
+    display: grid;
+    grid-template-columns: 44px minmax(0, 1fr) auto;
+    gap: 1rem;
+    align-items: center;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--surface);
+    padding: 0.9rem 1rem;
+  }
+
+  .reference-order {
+    color: var(--faint);
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+  }
+
+  .reference-list code {
+    display: block;
+    margin-bottom: 0.25rem;
+    color: var(--teal);
+    font-size: 0.67rem;
+  }
+
+  .reference-list p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.82rem;
+  }
+
+  .muted {
+    color: var(--muted);
+  }
+
+  @media (max-width: 800px) {
+    .dataset-title-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .dataset-emblem {
+      display: none;
+    }
+
+    .dataset-pulse {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .dataset-pulse > div:nth-child(3) {
+      border-top: 1px solid var(--line);
+      border-left: 0;
+    }
+
+    .dataset-pulse > div:nth-child(4) {
+      border-top: 1px solid var(--line);
+    }
+
+    .record-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .dataset-header {
+      padding-top: 2.2rem;
+    }
+
+    .dataset-content {
+      padding-top: 2.4rem;
+    }
+
+    .section-heading {
+      flex-direction: column;
+    }
+
+    .section-icon {
+      display: none;
+    }
+
+    .dataset-meta {
+      grid-template-columns: 1fr;
+    }
+
+    .linked-study-list > a {
+      grid-template-columns: 34px minmax(0, 1fr) auto;
+    }
+
+    .study-year {
+      grid-column: 2;
+      grid-row: 1;
+      font-size: 0.7rem;
+    }
+
+    .study-title {
+      grid-column: 2;
+      grid-row: 2;
+    }
+
+    .linked-study-list > a > svg {
+      grid-column: 3;
+      grid-row: 1 / 3;
+    }
+
+    .reference-list > article {
+      grid-template-columns: 34px minmax(0, 1fr);
+    }
+
+    .reference-list .button {
+      grid-column: 2;
+      justify-self: start;
+    }
+  }
+</style>

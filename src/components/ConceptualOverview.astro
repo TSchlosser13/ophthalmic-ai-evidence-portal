@@ -1,0 +1,181 @@
+﻿---
+import { BrainCircuit, Database, HeartPulse, Network } from '@lucide/astro';
+
+const stages = [
+  { icon: Database, number: '01', title: 'Multimodal ophthalmic data', text: 'Clinical, imaging, functional, and outcome data, including diagnoses, treatment history, OCT, fundus photography, visual fields, visual acuity, and patient-reported information' },
+  { icon: Network, number: '02', title: 'Data integration and readiness', text: 'Interoperability, curation, quality, governance, privacy, harmonisation, annotation, standardisation, and security' },
+  { icon: BrainCircuit, number: '03', title: 'AI methods and clinical tasks', text: 'Machine learning, deep learning, computer vision, multimodal models, detection, classification, segmentation, prognosis, and workflow support' },
+  { icon: HeartPulse, number: '04', title: 'Potential clinical implementation and impact', text: 'Potential diagnostic and personalised-care value, with intended gains in efficiency, access, equity, and adoption in clinical practice' }
+];
+---
+
+<figure class="conceptual-overview" id="conceptual-overview" aria-labelledby="conceptual-title">
+  <div class="flow" role="list">
+    {stages.map(({ icon: Icon, number, title, text }, index) => (
+      <div class="stage" role="listitem" style={`--stage-index: ${index}`}>
+        <div class="stage-head">
+          <span class="stage-number">{number}</span>
+          <Icon size={23} aria-hidden="true" />
+        </div>
+        <h3>{title}</h3>
+        <p>{text}</p>
+      </div>
+    ))}
+  </div>
+  <div class="safeguards">
+    <strong id="conceptual-title">Cross-cutting challenges and safeguards</strong>
+    <span>Fairness and bias mitigation</span><span>Explainability</span><span>Clinician oversight</span><span>Accountability</span><span>External validation</span><span>Regulatory compliance</span><span>Infrastructure</span><span>Continuous monitoring</span>
+  </div>
+</figure>
+
+<style>
+  .conceptual-overview {
+    border-block: 1px solid var(--line);
+  }
+  .flow {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .stage {
+    position: relative;
+    min-height: 235px;
+    border-right: 1px solid var(--line);
+    padding: 1.35rem 1.3rem 1.5rem;
+  }
+  .stage:last-child {
+    border-right: 0;
+  }
+  .stage-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.4rem;
+    color: var(--teal);
+  }
+  .stage-number {
+    color: var(--faint);
+    font-family: var(--font-serif);
+    font-size: 0.82rem;
+    font-weight: 700;
+  }
+  h3 {
+    margin-bottom: 0.65rem;
+  }
+  p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.85rem;
+    line-height: 1.55;
+  }
+  .safeguards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    align-items: center;
+    border-top: 1px solid var(--line);
+    background: var(--surface-2);
+    padding: 0.9rem 1.2rem;
+  }
+  .safeguards strong {
+    margin-right: 0.35rem;
+    font-size: 0.79rem;
+  }
+  .safeguards span {
+    border-left: 1px solid var(--line-strong);
+    padding-left: 0.6rem;
+    color: var(--muted);
+    font-size: 0.75rem;
+  }
+  @media (max-width: 900px) {
+    .flow {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .stage:nth-child(2) {
+      border-right: 0;
+    }
+    .stage:nth-child(-n + 2) {
+      border-bottom: 1px solid var(--line);
+    }
+  }
+  @media (max-width: 560px) {
+    .flow {
+      grid-template-columns: 1fr;
+    }
+    .stage {
+      min-height: 0;
+      border-right: 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .stage:last-child {
+      border-bottom: 0;
+    }
+    .stage-head {
+      margin-bottom: 1rem;
+    }
+  }
+</style>
+
+<style>
+  .conceptual-overview {
+    overflow: hidden;
+    border: 1px solid color-mix(in srgb, var(--cyan) 18%, var(--line));
+    border-radius: var(--radius-lg);
+    background: var(--surface);
+    box-shadow: var(--shadow);
+  }
+  .stage {
+    overflow: hidden;
+    min-height: 255px;
+    background:
+      linear-gradient(160deg, color-mix(in srgb, var(--surface) 96%, transparent), color-mix(in srgb, var(--cyan) 3%, var(--surface-2)));
+    padding: 1.55rem 1.45rem 1.65rem;
+    animation: stage-enter 620ms cubic-bezier(.2,.75,.25,1) both;
+    animation-delay: calc(var(--stage-index) * 85ms);
+    transition: background 180ms ease, transform 180ms ease;
+  }
+  .stage::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--cyan), transparent 72%);
+    content: "";
+    opacity: 0.58;
+  }
+  .stage:hover {
+    z-index: 1;
+    background: color-mix(in srgb, var(--cyan) 6%, var(--surface));
+    transform: translateY(-3px);
+  }
+  .stage-head {
+    margin-bottom: 2.8rem;
+  }
+  .stage-head :global(svg) {
+    box-sizing: content-box;
+    border: 1px solid color-mix(in srgb, var(--teal) 24%, var(--line));
+    border-radius: 10px;
+    background: color-mix(in srgb, var(--teal) 8%, var(--surface));
+    padding: 0.55rem;
+  }
+  .stage-number {
+    color: var(--cyan);
+    font-family: var(--font-sans);
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+  }
+  .safeguards {
+    background: linear-gradient(90deg, color-mix(in srgb, var(--teal) 8%, var(--surface-2)), var(--surface-2));
+    padding: 1rem 1.35rem;
+  }
+  .safeguards strong { color: var(--ink); }
+  @keyframes stage-enter {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @media (max-width: 560px) {
+    .stage { min-height: 0; }
+    .stage:hover { transform: none; }
+  }
+</style>
+

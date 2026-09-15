@@ -1,0 +1,91 @@
+---
+import { ArrowRight } from '@lucide/astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHeader from '@/components/PageHeader.astro';
+import ScientificChart from '@/components/ScientificChart.astro';
+import { withBase } from '@/lib/base';
+import datasetData from '@/data/generated/datasets.json';
+import visualizations from '@/data/generated/visualizations.json';
+
+const slugByName = new Map(datasetData.map((dataset) => [dataset.name, dataset.slug]));
+const rows = visualizations.datasets.map((row) => ({
+  dataset: row.category,
+  count: row.count,
+  articleUrl: withBase(`/publications/?dataset=${encodeURIComponent(row.category)}`),
+  registryUrl: withBase(`/datasets/${slugByName.get(row.category)}/`),
+  targetUrl: row.count > 0
+    ? withBase(`/publications/?dataset=${encodeURIComponent(row.category)}`)
+    : withBase(`/datasets/${slugByName.get(row.category)}/`)
+}));
+const positiveCount = rows.filter((row) => row.count > 0).length;
+const order = rows.map((row) => row.dataset);
+const spec = {
+  $schema: 'https://vega.github.io/schema/vega-lite/v6.json',
+  width: 'container', height: 660,
+  autosize: { type: 'fit', contains: 'padding', resize: true },
+  data: { values: rows },
+  mark: { type: 'bar', color: '#137e75', tooltip: true, cornerRadiusEnd: 2 },
+  encoding: {
+    y: { field: 'dataset', type: 'ordinal', sort: order, title: null, axis: { labelLimit: 360 } },
+    x: { field: 'count', type: 'quantitative', title: 'Conservatively linked included publications', tickMinStep: 1 },
+    href: { field: 'targetUrl' },
+    tooltip: [
+      { field: 'dataset', type: 'nominal', title: 'Dataset or benchmark' },
+      { field: 'count', type: 'quantitative', title: 'Linked publications' }
+    ]
+  }
+};
+---
+
+<BaseLayout title="Dataset reuse" description="Conservatively matched reuse of identifiable public ophthalmic datasets across the included literature.">
+  <PageHeader
+    eyebrow="Reusable data"
+    title="Dataset reuse"
+    intro="The chart connects named public datasets and benchmarks to included publications only where the public classifications retain an explicit named association."
+  >
+    <a class="button" href={withBase('/datasets/')}>Dataset registry <ArrowRight size={16} /></a>
+  </PageHeader>
+  <div class="container dataset-page">
+    <div class="notice warning"><strong>Conservative classification</strong><p>{positiveCount} of {rows.length} registry resources have at least one explicit publication link. A zero does not establish non-use; it means that no sufficiently explicit named association is represented in the public classification.</p></div>
+    <ScientificChart
+      id="dataset-reuse"
+      title="Included publications linked to identifiable public datasets"
+      description="Publication counts for the 20 dataset and benchmark resources preserved in the supplementary registry."
+      howToRead="Longer bars indicate more linked publications. Select a nonzero bar to open those publications; select a zero-count row to open the corresponding dataset-registry entry."
+      note="Links use a conservative named-association rule and may understate reuse. A zero is not evidence that a resource was never used."
+      spec={spec}
+      columns={[{ key: 'dataset', label: 'Dataset or benchmark' }, { key: 'count', label: 'Linked publications' }]}
+      rows={rows}
+      downloadHref={withBase('/downloads/visualization-datasets.csv')}
+    />
+    <section class="dataset-links">
+      <h2>Registry links</h2>
+      <div class="link-grid">
+        {rows.map((row) => (
+          <div>
+            <a href={row.registryUrl}>{row.dataset}</a>
+            {row.count > 0 ? <a class="study-link" href={row.articleUrl}>{row.count} matching {row.count === 1 ? 'publication' : 'publications'}</a> : <span>No conservative match</span>}
+          </div>
+        ))}
+      </div>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .dataset-page { padding-block: 2rem 5rem; }
+  .dataset-page > :global(.chart-shell) { margin-top: 3rem; }
+  .dataset-links { border-top: 1px solid var(--line); padding-top: 2.5rem; margin-top: 3rem; }
+  .link-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border: 1px solid var(--line); }
+  .link-grid > div { display: flex; justify-content: space-between; gap: 1rem; border-bottom: 1px solid var(--line); padding: 0.8rem; }
+  .link-grid > div:nth-child(odd) { border-right: 1px solid var(--line); }
+  .link-grid > div:nth-last-child(-n + 2) { border-bottom: 0; }
+  .link-grid a:first-child { color: var(--ink); font-weight: 650; text-decoration: none; }
+  .link-grid a:first-child:hover { color: var(--blue); }
+  .link-grid .study-link, .link-grid span { flex: 0 0 auto; color: var(--faint); font-size: 0.75rem; }
+  @media (max-width: 760px) {
+    .link-grid { grid-template-columns: 1fr; }
+    .link-grid > div:nth-child(odd) { border-right: 0; }
+    .link-grid > div:nth-last-child(2) { border-bottom: 1px solid var(--line); }
+  }
+</style>

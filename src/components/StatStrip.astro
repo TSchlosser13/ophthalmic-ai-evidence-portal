@@ -1,0 +1,111 @@
+---
+interface Stat {
+  value: string | number;
+  label: string;
+  detail?: string;
+}
+interface Props { stats: Stat[]; }
+const { stats } = Astro.props;
+---
+
+<dl class="stat-strip" aria-label="Review statistics">
+  {stats.map((stat) => (
+    <div>
+      <dt>{stat.label}</dt>
+      <dd class="stat-value">{stat.value}</dd>
+      {stat.detail && <dd class="stat-detail">{stat.detail}</dd>}
+    </div>
+  ))}
+</dl>
+
+<style>
+  .stat-strip {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    column-gap: 1px;
+    overflow: hidden;
+    margin: 0;
+    border: 1px solid color-mix(in srgb, var(--blue) 20%, var(--line));
+    border-radius: var(--radius-lg);
+    background: var(--line);
+    box-shadow: 0 22px 58px rgba(3, 22, 43, 0.22);
+  }
+  .stat-strip > div {
+    --stat-accent: var(--green);
+    position: relative;
+    display: grid;
+    grid-template-rows: 2.45rem 3.15rem 2.55rem;
+    min-width: 0;
+    align-content: start;
+    padding: 1rem 1.05rem 0.9rem;
+    background:
+      linear-gradient(180deg, color-mix(in srgb, var(--stat-accent) 8%, transparent), transparent 72%),
+      var(--surface);
+  }
+  .stat-strip > div:nth-child(2) { --stat-accent: var(--blue); }
+  .stat-strip > div:nth-child(3) { --stat-accent: var(--teal); }
+  .stat-strip > div:nth-child(4) { --stat-accent: var(--violet); }
+  .stat-strip > div:nth-child(5) { --stat-accent: var(--gold); }
+  dt {
+    align-self: start;
+    color: var(--muted);
+    font-size: 0.7rem;
+    font-weight: 780;
+    letter-spacing: 0.075em;
+    line-height: 1.35;
+    text-transform: uppercase;
+  }
+  .stat-value {
+    align-self: center;
+    margin: 0;
+    color: var(--ink);
+    font-family: var(--font-serif);
+    font-size: clamp(1.65rem, 2.35vw, 2.35rem);
+    font-weight: 700;
+    line-height: 1.1;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.035em;
+    white-space: nowrap;
+  }
+  .stat-detail {
+    align-self: start;
+    margin: 0;
+    color: var(--faint);
+    font-size: 0.68rem;
+    font-weight: 620;
+    line-height: 1.45;
+  }
+  .stat-strip > div::after {
+    position: absolute;
+    bottom: 0;
+    left: 1.05rem;
+    width: 42px;
+    height: 3px;
+    border-radius: 3px 3px 0 0;
+    background: var(--stat-accent);
+    content: "";
+  }
+  @media (max-width: 1179px) {
+    .stat-strip {
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 1px;
+    }
+    .stat-strip > div { grid-column: span 2; }
+    .stat-strip > div:nth-last-child(-n + 2) { grid-column: span 3; }
+  }
+  @media (max-width: 659px) {
+    .stat-strip {
+      grid-template-columns: 1fr;
+    }
+    .stat-strip > div,
+    .stat-strip > div:nth-last-child(-n + 2) {
+      grid-column: 1;
+      grid-template-rows: auto auto auto;
+      padding: 0.9rem 1rem;
+    }
+    dt { min-height: 1.35rem; }
+    .stat-value { min-height: 2.45rem; }
+    .stat-detail { min-height: 1.2rem; }
+  }
+</style>

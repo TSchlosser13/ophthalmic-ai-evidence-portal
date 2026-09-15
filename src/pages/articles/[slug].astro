@@ -1,0 +1,8 @@
+---
+import PublicationRedirect from '@/components/PublicationRedirect.astro';
+import articleData from '@/data/generated/articles.json';
+export function getStaticPaths() {
+  return articleData.map((article) => ({ params: { slug: article.slug } }));
+}
+---
+<PublicationRedirect path={`/publications/${Astro.params.slug}/`} />

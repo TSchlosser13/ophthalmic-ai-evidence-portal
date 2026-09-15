@@ -1,0 +1,352 @@
+---
+import { Download, ExternalLink, FileText } from '@lucide/astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHeader from '@/components/PageHeader.astro';
+import { withBase } from '@/lib/base';
+import metadata from '@/data/generated/review-metadata.json';
+
+const documents = [
+  {
+    id: 'main-manuscript',
+    label: 'Document 01',
+    title: 'Main manuscript',
+    description: 'The complete review article, including the synthesis, discussion, conclusions, and references.',
+    accent: 'main',
+    href: withBase('/documents/main.pdf')
+  },
+  {
+    id: 'supplementary-material',
+    label: 'Document 02',
+    title: 'Supplementary material',
+    description: 'The complete supporting document, including extended methods, analyses, tables, and references.',
+    accent: 'supplement',
+    href: withBase('/documents/main_supplementary.pdf')
+  }
+];
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'ScholarlyArticle',
+  headline: metadata.title,
+  description: metadata.abstract,
+  author: metadata.authors.map((author) => ({
+    '@type': 'Person',
+    name: author.name,
+    sameAs: author.orcid ? 'https://orcid.org/' + author.orcid : undefined
+  })),
+  keywords: metadata.keywords.join(', '),
+  inLanguage: 'en-GB',
+  creativeWorkStatus: metadata.status,
+  encoding: documents.map((document) => ({
+    '@type': 'MediaObject',
+    name: document.title,
+    contentUrl: new URL(document.href, Astro.site ?? Astro.url).href,
+    encodingFormat: 'application/pdf'
+  }))
+};
+---
+
+<BaseLayout
+  title="Manuscript and supplementary material"
+  description="Read or download the complete ophthalmic AI review manuscript and its supplementary material."
+  type="article"
+  structuredData={structuredData}
+  citation={{
+    title: metadata.title,
+    authors: metadata.authors.map((author) => author.name)
+  }}
+>
+  <div class="manuscript-page">
+    <PageHeader
+      eyebrow="Review documents"
+      title="Manuscript and supplementary material"
+      intro="Read both documents in their authored PDF layouts. Each can also be opened separately or downloaded."
+    >
+      <a class="button primary" href="#main-manuscript">
+        <FileText size={17} aria-hidden="true" /> Main manuscript
+      </a>
+      <a class="button" href="#supplementary-material">Supplementary material</a>
+    </PageHeader>
+
+    <div class="container document-page" aria-label="Review documents">
+      <nav class="document-index" aria-label="Documents on this page">
+        {documents.map((document) => (
+          <a href={'#' + document.id}>
+            <span class="document-index-number" aria-hidden="true">{document.label.slice(-2)}</span>
+            <span>
+              <strong>{document.title}</strong>
+              <small>PDF document</small>
+            </span>
+          </a>
+        ))}
+      </nav>
+
+      <div class="document-stack">
+        {documents.map((document) => (
+          <section
+            id={document.id}
+            class:list={['document-panel', document.accent]}
+            aria-labelledby={document.id + '-title'}
+          >
+            <header class="document-header">
+              <div class="document-copy">
+                <p class="document-label">{document.label}</p>
+                <h2 id={document.id + '-title'}>{document.title}</h2>
+                <p id={document.id + '-description'}>{document.description}</p>
+                <ul class="document-meta" aria-label={document.title + ' details'}>
+                  <li>PDF document</li>
+                </ul>
+              </div>
+
+              <div class="document-actions">
+                <a
+                  class="button primary"
+                  href={document.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Open PDF <ExternalLink size={17} aria-hidden="true" />
+                </a>
+                <a class="button" href={document.href} download>
+                  <Download size={17} aria-hidden="true" /> Download PDF
+                </a>
+              </div>
+            </header>
+
+            <div class="reader-shell">
+              <div class="reader-toolbar" aria-hidden="true">
+                <span class="reader-dots"><i></i><i></i><i></i></span>
+                <span>{document.title}</span>
+                <span>PDF reader</span>
+              </div>
+              <iframe
+                class="pdf-reader"
+                src={document.href + '#zoom=100&toolbar=1&navpanes=0'}
+                title={document.title + ' PDF reader'}
+                aria-describedby={document.id + '-description ' + document.id + '-help'}
+                loading="lazy"
+              ></iframe>
+            </div>
+
+            <p id={document.id + '-help'} class="reader-help">
+              Embedded viewing depends on browser PDF support. If the reader remains blank, use Open PDF or Download PDF above.
+            </p>
+          </section>
+        ))}
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .manuscript-page :global(.page-header) {
+    padding-block: clamp(2.7rem, 5vw, 4.4rem) clamp(2.1rem, 4vw, 3.2rem);
+  }
+  .document-page {
+    padding-block: clamp(1.5rem, 4vw, 3rem) clamp(4.5rem, 8vw, 7rem);
+  }
+  .document-index {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.8rem;
+    max-width: 820px;
+    margin-bottom: clamp(2.5rem, 5vw, 4rem);
+  }
+  .document-index a {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 0.8rem;
+    align-items: center;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: color-mix(in srgb, var(--surface) 92%, transparent);
+    padding: 0.9rem 1rem;
+    color: var(--ink);
+    box-shadow: 0 8px 24px color-mix(in srgb, var(--ink) 5%, transparent);
+    text-decoration: none;
+    transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
+  }
+  .document-index a:hover {
+    transform: translateY(-2px);
+    border-color: var(--cyan);
+    background: var(--surface);
+  }
+  .document-index-number {
+    display: grid;
+    place-items: center;
+    width: 2.35rem;
+    height: 2.35rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, color-mix(in srgb, var(--blue) 16%, var(--surface)), color-mix(in srgb, var(--teal) 18%, var(--surface)));
+    color: var(--blue-strong);
+    font-size: 0.76rem;
+    font-weight: 780;
+  }
+  .document-index strong,
+  .document-index small {
+    display: block;
+  }
+  .document-index strong {
+    font-size: 0.9rem;
+  }
+  .document-index small {
+    margin-top: 0.14rem;
+    color: var(--muted);
+    font-size: 0.72rem;
+  }
+  .document-stack {
+    display: grid;
+    gap: clamp(4rem, 8vw, 7rem);
+  }
+  .document-panel {
+    scroll-margin-top: calc(var(--header-height) + 2rem);
+  }
+  .document-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: clamp(1.5rem, 4vw, 3rem);
+    align-items: end;
+    border-top: 3px solid var(--blue);
+    padding: 1.4rem 0 1.35rem;
+  }
+  .document-panel.supplement .document-header {
+    border-top-color: var(--teal);
+  }
+  .document-copy {
+    max-width: 760px;
+  }
+  .document-label {
+    margin-bottom: 0.45rem;
+    color: var(--blue);
+    font-size: 0.68rem;
+    font-weight: 780;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+  }
+  .supplement .document-label {
+    color: var(--teal);
+  }
+  .document-copy h2 {
+    margin-bottom: 0.55rem;
+    font-size: clamp(1.9rem, 4vw, 2.8rem);
+  }
+  .document-copy > p:not(.document-label) {
+    max-width: 700px;
+    margin-bottom: 0;
+    color: var(--muted);
+  }
+  .document-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin: 1rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .document-meta li {
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--surface-2);
+    padding: 0.28rem 0.62rem;
+    color: var(--faint);
+    font-size: 0.7rem;
+    font-weight: 680;
+  }
+  .document-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    justify-content: flex-end;
+  }
+  .reader-shell {
+    overflow: hidden;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-lg);
+    background: var(--surface-3);
+    box-shadow: var(--shadow-lg);
+  }
+  .reader-toolbar {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 1rem;
+    align-items: center;
+    min-height: 48px;
+    border-bottom: 1px solid var(--line);
+    background: color-mix(in srgb, var(--surface) 94%, transparent);
+    padding: 0.65rem 1rem;
+    color: var(--faint);
+    font-size: 0.7rem;
+    font-weight: 680;
+    letter-spacing: 0.02em;
+  }
+  .reader-toolbar > :last-child {
+    justify-self: end;
+  }
+  .reader-dots {
+    display: flex;
+    gap: 0.35rem;
+  }
+  .reader-dots i {
+    width: 0.58rem;
+    height: 0.58rem;
+    border-radius: 50%;
+    background: var(--line-strong);
+  }
+  .reader-dots i:first-child {
+    background: var(--coral);
+  }
+  .reader-dots i:nth-child(2) {
+    background: var(--gold);
+  }
+  .reader-dots i:last-child {
+    background: var(--teal);
+  }
+  .pdf-reader {
+    display: block;
+    width: 100%;
+    height: clamp(620px, 78vh, 960px);
+    border: 0;
+    background: #525659;
+  }
+  .reader-help {
+    margin: 0.85rem 0 0;
+    color: var(--faint);
+    font-size: 0.76rem;
+  }
+  @media (max-width: 760px) {
+    .document-index {
+      grid-template-columns: 1fr;
+    }
+    .document-header {
+      grid-template-columns: 1fr;
+      align-items: start;
+    }
+    .document-actions {
+      justify-content: flex-start;
+    }
+    .document-actions .button {
+      flex: 1 1 12rem;
+    }
+    .reader-toolbar {
+      grid-template-columns: 1fr auto;
+    }
+    .reader-toolbar > :nth-child(2) {
+      display: none;
+    }
+    .pdf-reader {
+      height: clamp(480px, 72vh, 760px);
+    }
+  }
+  @media print {
+    .document-index,
+    .document-actions,
+    .reader-shell,
+    .reader-help {
+      display: none;
+    }
+    .document-stack {
+      gap: 2rem;
+    }
+  }
+</style>
+

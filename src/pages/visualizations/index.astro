@@ -1,0 +1,82 @@
+---
+import { ArrowRight, ChartColumn, Database, Earth, Grid3x3, Network, Scale, ShieldCheck } from '@lucide/astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHeader from '@/components/PageHeader.astro';
+import { withBase } from '@/lib/base';
+import metadata from '@/data/generated/review-metadata.json';
+import visualizations from '@/data/generated/visualizations.json';
+
+const cards = [
+  { href: '/visualizations/publication-timeline/', icon: ChartColumn, title: 'Publication timeline', text: 'Trace the development of the included literature by year and normalized document type.', metric: `${visualizations.publicationTimeline.length} years`, action: 'Explore the timeline', accent: 'var(--blue)' },
+  { href: '/visualizations/general-evidence/', icon: Scale, title: 'General evidence gaps', text: 'Compare nine dimensions across positive, negative, and balanced publication framing.', metric: `${metadata.statistics.generalEvidenceAssignments.toLocaleString('en-GB')} assignments`, action: 'Explore general evidence', accent: 'var(--teal)' },
+  { href: '/visualizations/ethics-evidence/', icon: ShieldCheck, title: 'Ethics and governance', text: 'See where publications frame nine governance dimensions as caused, resolved, or both.', metric: `${visualizations.ethicsEvidence.reduce((sum, row) => sum + row.segments.reduce((subtotal, segment) => subtotal + segment.count, 0), 0)} assignments`, action: 'Explore ethics evidence', accent: 'var(--amber)' },
+  { href: '/visualizations/distributions/', icon: ChartColumn, title: 'Publication distributions', text: 'Move across clinical contexts, tasks, modalities, methods, and validation indicators.', metric: 'Five analytical lenses', action: 'Open distributions', accent: 'var(--blue)' },
+  { href: '/visualizations/dataset-reuse/', icon: Database, title: 'Dataset reuse', text: 'Follow conservatively classified links between identifiable public resources and publications.', metric: `${visualizations.datasets.filter((item) => item.count > 0).length} linked resources`, action: 'Explore datasets', accent: 'var(--teal)' },
+  { href: '/visualizations/heatmaps/', icon: Grid3x3, title: 'Task, target, and method heatmaps', text: 'Read explicit cell counts across two complementary multi-label assignment matrices.', metric: 'Two matrices', action: 'Inspect heatmaps', accent: 'var(--amber)' },
+  { href: '/visualizations/keyword-network/', icon: Network, title: 'Keyword co-occurrence', text: 'Inspect the authored thematic network and its temporal overlay at full resolution.', metric: 'Two authored figures', action: 'Inspect the network', accent: 'var(--blue)' },
+  { href: '/visualizations/collaboration/', icon: Earth, title: 'International collaboration', text: 'Select countries and collaboration links to explore the publications behind the map.', metric: 'Global perspective', action: 'Explore the map', accent: 'var(--teal)' }
+];
+---
+
+<BaseLayout title="Visualizations" description="Interactive publication, evidence-gap, clinical, methodological, dataset, keyword, and collaboration views for the ophthalmic AI review.">
+  <PageHeader
+    eyebrow="Visual evidence atlas"
+    title="Explore the shape of ophthalmic AI"
+    intro="Eight coordinated views turn the review’s public classifications into an explorable scientific atlas. Follow a chart into its contributing publications, switch to the data table, or download the displayed values."
+  />
+  <section class="container visualization-index">
+    <div class="atlas-intro">
+      <div><span>427</span><p>included publications form the shared analytical foundation.</p></div>
+      <div><span>{(metadata.statistics.generalEvidenceAssignments + metadata.statistics.ethicsEvidenceAssignments).toLocaleString('en-GB')}</span><p>general and ethics assignments reveal thematic concentration and gaps.</p></div>
+      <div><span>8</span><p>visual exhibits connect aggregate patterns with deeper exploration.</p></div>
+    </div>
+
+    <div class="visual-grid">
+      {cards.map(({ href, icon: Icon, title, text, metric, action, accent }, index) => (
+        <a class:list={['visual-card', { featured: index === 0 }]} href={withBase(href)} style={`--card-accent: ${accent}`}>
+          <span class="card-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+          <div class="visual-icon"><Icon size={23} /></div>
+          <div class="card-copy">
+            <span class="metric">{metric}</span>
+            <h2>{title}</h2>
+            <p>{text}</p>
+          </div>
+          <span class="open">{action} <ArrowRight size={16} /></span>
+        </a>
+      ))}
+    </div>
+    <div class="reading-note"><span aria-hidden="true">i</span><div><strong>Read counts with their classification rules</strong><p>{metadata.evidenceMapCaution} Multi-label chart totals can exceed the 427 included publications because one publication may contribute to several categories.</p></div></div>
+  </section>
+</BaseLayout>
+
+<style>
+  .visualization-index { padding-block: clamp(2.5rem, 6vw, 5rem) 6rem; }
+  .atlas-intro { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); overflow: hidden; border: 1px solid var(--line); border-radius: 1rem; margin-bottom: 2.5rem; background: linear-gradient(120deg, color-mix(in srgb, var(--blue) 7%, var(--surface)), color-mix(in srgb, var(--teal) 6%, var(--surface))); box-shadow: 0 16px 44px color-mix(in srgb, var(--ink) 6%, transparent); }
+  .atlas-intro > div { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 0.85rem; align-items: center; min-height: 118px; border-right: 1px solid var(--line); padding: 1.25rem; }
+  .atlas-intro > div:last-child { border-right: 0; }
+  .atlas-intro span { color: var(--teal); font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 3.15rem); font-weight: 700; line-height: 1; font-variant-numeric: tabular-nums; }
+  .atlas-intro p { margin: 0; color: var(--muted); font-size: 0.79rem; line-height: 1.5; }
+  .visual-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+  .visual-card { position: relative; isolation: isolate; display: grid; min-height: 310px; overflow: hidden; border: 1px solid var(--line); border-radius: 1rem; background: var(--surface); color: inherit; padding: 1.25rem; text-decoration: none; box-shadow: 0 8px 26px color-mix(in srgb, var(--ink) 4%, transparent); transition: transform 170ms ease, border-color 170ms ease, box-shadow 170ms ease; }
+  .visual-card::before { content: ''; position: absolute; z-index: -1; inset: 0; opacity: 0; background: radial-gradient(circle at 100% 0%, color-mix(in srgb, var(--card-accent) 17%, transparent), transparent 56%); transition: opacity 170ms ease; }
+  .visual-card::after { content: ''; position: absolute; right: -2rem; bottom: -2rem; width: 8rem; height: 8rem; border: 1px solid color-mix(in srgb, var(--card-accent) 24%, transparent); border-radius: 50%; box-shadow: 0 0 0 1.7rem color-mix(in srgb, var(--card-accent) 5%, transparent), 0 0 0 3.4rem color-mix(in srgb, var(--card-accent) 3%, transparent); }
+  .visual-card:hover { border-color: color-mix(in srgb, var(--card-accent) 62%, var(--line)); color: inherit; transform: translateY(-4px); box-shadow: 0 20px 48px color-mix(in srgb, var(--ink) 10%, transparent); }
+  .visual-card:hover::before { opacity: 1; }
+  .visual-card.featured { grid-column: span 2; background: linear-gradient(135deg, color-mix(in srgb, var(--blue) 10%, var(--surface)), var(--surface) 68%); }
+  .card-number { position: absolute; top: 1.15rem; right: 1.2rem; color: var(--faint); font-size: 0.65rem; font-weight: 760; letter-spacing: 0.08em; }
+  .visual-icon { display: grid; width: 46px; height: 46px; place-items: center; border: 1px solid color-mix(in srgb, var(--card-accent) 38%, var(--line)); border-radius: 0.7rem; background: color-mix(in srgb, var(--card-accent) 7%, var(--surface)); color: var(--card-accent); }
+  .card-copy { align-self: end; max-width: 34rem; }
+  .metric { display: block; margin: 2rem 0 0.5rem; color: var(--card-accent); font-size: 0.69rem; font-weight: 760; letter-spacing: 0.08em; text-transform: uppercase; }
+  .visual-card h2 { margin-bottom: 0.6rem; font-size: clamp(1.3rem, 2vw, 1.65rem); }
+  .visual-card p { margin: 0; color: var(--muted); font-size: 0.84rem; line-height: 1.55; }
+  .open { display: inline-flex; gap: 0.4rem; align-items: center; align-self: end; width: fit-content; margin-top: 1.35rem; color: var(--blue); font-size: 0.78rem; font-weight: 720; }
+  .open svg { transition: transform 170ms ease; }
+  .visual-card:hover .open svg { transform: translateX(3px); }
+  .reading-note { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 0.9rem; align-items: start; max-width: 920px; border-top: 1px solid var(--line); margin-top: 2.5rem; padding-top: 1.35rem; }
+  .reading-note > span { display: grid; width: 1.8rem; height: 1.8rem; place-items: center; border: 1px solid var(--amber); border-radius: 50%; color: var(--amber); font-family: var(--font-serif); font-weight: 700; }
+  .reading-note strong { display: block; margin-bottom: 0.2rem; }
+  .reading-note p { margin: 0; color: var(--muted); font-size: 0.84rem; }
+  @media (max-width: 920px) { .visual-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .visual-card.featured { grid-column: span 2; } .atlas-intro { grid-template-columns: 1fr; } .atlas-intro > div { border-right: 0; border-bottom: 1px solid var(--line); } .atlas-intro > div:last-child { border-bottom: 0; } }
+  @media (max-width: 600px) { .visual-grid { grid-template-columns: 1fr; } .visual-card, .visual-card.featured { grid-column: auto; min-height: 270px; } }
+  @media (prefers-reduced-motion: reduce) { .visual-card, .open svg { transition: none; } }
+</style>

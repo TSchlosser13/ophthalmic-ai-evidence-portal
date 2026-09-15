@@ -1,0 +1,40 @@
+{
+  "name": "ophthalmic-ai-evidence-portal",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Static documentation and evidence portal for the ophthalmic artificial intelligence review.",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "dev": "python scripts/sync_collaboration.py && astro dev",
+    "audit:public:source": "python scripts/audit_public_output.py --stage source",
+    "audit:public:dist": "python scripts/audit_public_output.py --stage dist",
+    "validate:data": "python scripts/validate_data.py",
+    "test:data": "python -m unittest discover -s tests/python -p \"test_*.py\"",
+    "test:unit": "vitest run",
+    "test": "npm run test:data && npm run test:unit",
+    "typecheck": "astro check",
+    "test:e2e": "npm run build && node scripts/run_e2e.mjs",
+    "test:e2e:built": "node scripts/run_e2e.mjs",
+    "build": "python scripts/sync_collaboration.py && python scripts/validate_data.py && python scripts/audit_public_output.py --stage source && astro build && pagefind --site dist && python scripts/audit_public_output.py --stage dist",
+    "build:github-pages": "node scripts/build_github_pages.mjs",
+    "preview": "astro preview",
+    "check": "npm run build && npm run typecheck && npm test && npm run test:e2e:built"
+  },
+  "dependencies": {
+    "@astrojs/check": "0.9.9",
+    "@astrojs/sitemap": "3.7.3",
+    "@lucide/astro": "1.24.0",
+    "@playwright/test": "1.61.1",
+    "@types/node": "26.1.1",
+    "astro": "7.0.7",
+    "pagefind": "1.5.2",
+    "typescript": "6.0.3",
+    "vega": "6.2.0",
+    "vega-embed": "7.1.0",
+    "vega-lite": "6.4.3",
+    "vitest": "4.1.10"
+  }
+}

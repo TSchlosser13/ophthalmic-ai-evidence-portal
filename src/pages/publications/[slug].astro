@@ -1,0 +1,894 @@
+---
+import { britishText } from '@/lib/britishEnglish';
+import { ArrowLeft, ArrowRight, Clipboard, Database, ExternalLink, Layers, Scale, Search } from '@lucide/astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SectionNav from '@/components/SectionNav.astro';
+import { withBase } from '@/lib/base';
+import articleData from '@/data/generated/articles.json';
+
+type GeneratedArticle = (typeof articleData)[number];
+type Article = GeneratedArticle;
+
+export function getStaticPaths() {
+  return articleData.map((article) => ({ params: { slug: article.slug }, props: { article } }));
+}
+
+interface Props { article: Article; }
+const { article } = Astro.props;
+const facetLink = (key: string, value: string) => withBase(`/publications/?${new URLSearchParams([[key, value]]).toString()}`);
+const evidenceColor = (stance: string) => stance === 'positive' || stance === 'resolved' ? 'green' : stance === 'negative' || stance === 'caused' ? 'red' : 'amber';
+const assignmentCount = article.generalEvidenceAssignments.length + article.ethicsEvidenceAssignments.length;
+const taxonomyCount = [
+  ...article.ophthalmicConditions,
+  ...article.modalities,
+  ...article.aiMethods,
+  ...article.clinicalTasks,
+  ...article.datasets,
+  ...article.validationTypes
+].length;
+const publicationLinks = [article.doi, article.pmid, article.openAlexId, article.url].filter(Boolean).length;
+const isRetracted =
+  article.title.trim().toUpperCase().startsWith('RETRACTION:') ||
+  /\bnow-retracted (?:report|article|publication)\b/i.test(`${article.overallReasoning} ${article.contributionSummary}`) ||
+  /\bpublisher later retracted\b/i.test(article.contributionSummary);
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'ScholarlyArticle',
+  headline: article.title,
+  author: article.authors.map((name) => ({ '@type': 'Person', name })),
+  datePublished: String(article.year),
+  identifier: [article.doi ? `https://doi.org/${article.doi}` : null, article.pmid ? `https://pubmed.ncbi.nlm.nih.gov/${article.pmid}/` : null].filter(Boolean),
+  isPartOf: article.venue ? { '@type': 'Periodical', name: article.venue } : undefined,
+  description: britishText(article.contributionSummary),
+  sameAs: article.url ?? undefined
+};
+---
+
+<BaseLayout
+  title={article.title}
+  description={britishText(article.contributionSummary).slice(0, 155)}
+  type="article"
+  structuredData={structuredData}
+  citation={{ title: article.title, authors: article.authors, year: article.year, journal: article.venue, doi: article.doi }}
+>
+  <header class="article-header" data-pagefind-body>
+    <div class="article-radiance" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="container article-header-inner">
+      <a class="back-link" href={withBase('/publications/')}><ArrowLeft size={16} /> Included publications</a>
+      <div class="title-lockup">
+        <p class="article-key">Structured publication record · {article.citationKey}</p>
+        <h1 data-pagefind-meta="title">{article.title}</h1>
+        <p class="authors">{article.authors.length ? article.authors.join(', ') : 'Authors not listed'}</p>
+        {article.venue && <p class="venue">{article.venue}</p>}
+        <div class="cluster header-badges">
+          <span class="badge blue" data-pagefind-filter="year">{article.year}</span>
+          <span class="badge" data-pagefind-filter="article-type">{article.articleType}</span>
+          {isRetracted && <span class="badge red">Retracted</span>}
+          {article.ophthalmicConditions.slice(0, 2).map((value) => <a class="badge context-badge" href={facetLink('condition', value)}>{britishText(value)}</a>)}
+        </div>
+      </div>
+
+      <div class="record-pulse" aria-label="Record overview">
+        <div><span>Year</span><strong>{article.year}</strong></div>
+        <div><span>Structured terms</span><strong>{taxonomyCount}</strong></div>
+        <div><span>Evidence assignments</span><strong>{assignmentCount}</strong></div>
+        <div><span>Publication links</span><strong>{publicationLinks}</strong></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container article-layout">
+    <main class="article-content" data-pagefind-body>
+      {isRetracted && (
+        <aside class="notice retraction-notice" role="alert">
+          <strong>Retracted publication</strong>
+          <p>The publisher has retracted this publication. Its reported findings are retained for transparency but should not be treated as reliable evidence.</p>
+        </aside>
+      )}
+      <section id="summary" class="summary-section">
+        <p class="section-kicker">Interpretive overview</p>
+        <h2>Contribution summary</h2>
+        <div class="contribution-panel">
+          <span class="panel-marker" aria-hidden="true">01</span>
+          <p class="lead">{britishText(article.contributionSummary)}</p>
+        </div>
+        <div class="reasoning-panel">
+          <h3>Overall reasoning</h3>
+          <p>{britishText(article.overallReasoning)}</p>
+        </div>
+      </section>
+
+      <section id="structured-extraction">
+        <div class="section-title-row">
+          <div><p class="section-kicker">Publication taxonomy</p><h2>Structured extraction</h2></div>
+          <span class="section-icon"><Layers size={21} /></span>
+        </div>
+        <p class="section-note">Select any term to open the evidence explorer with that facet applied.</p>
+
+        <div class="taxonomy-block">
+          <div class="taxonomy-card clinical">
+            <span class="taxonomy-index">01</span><h3>Clinical context</h3>
+            <div class="cluster">{article.ophthalmicConditions.length ? article.ophthalmicConditions.map((value) => <a class="chip" href={facetLink('condition', value)} data-pagefind-filter="condition">{britishText(value)}</a>) : <span class="muted">No clinical context assigned.</span>}</div>
+          </div>
+          <div class="taxonomy-card modality">
+            <span class="taxonomy-index">02</span><h3>Modalities</h3>
+            <div class="cluster">{article.modalities.length ? article.modalities.map((value) => <a class="chip" href={facetLink('modality', value)} data-pagefind-filter="modality">{britishText(value)}</a>) : <span class="muted">No additional modality assigned.</span>}</div>
+          </div>
+          <div class="taxonomy-card method">
+            <span class="taxonomy-index">03</span><h3>AI methods</h3>
+            <div class="cluster">{article.aiMethods.length ? article.aiMethods.map((value) => <a class="chip" href={facetLink('method', value)} data-pagefind-filter="method">{britishText(value)}</a>) : <span class="muted">No method family assigned.</span>}</div>
+          </div>
+          <div class="taxonomy-card task">
+            <span class="taxonomy-index">04</span><h3>Tasks and roles</h3>
+            <div class="cluster">{article.clinicalTasks.length ? article.clinicalTasks.map((value) => <a class="chip" href={facetLink('task', value)} data-pagefind-filter="task">{britishText(value)}</a>) : <span class="muted">No task category assigned.</span>}</div>
+          </div>
+          <div class="taxonomy-card dataset">
+            <span class="taxonomy-index">05</span><h3>Named datasets</h3>
+            <div class="cluster">{article.datasets.length ? article.datasets.map((value) => <a class="chip" href={facetLink('dataset', value)} data-pagefind-filter="dataset">{value}</a>) : <span class="muted">No registry dataset assigned.</span>}</div>
+          </div>
+          <div class="taxonomy-card validation">
+            <span class="taxonomy-index">06</span><h3>Validation indicators</h3>
+            <div class="cluster">{article.validationTypes.length ? article.validationTypes.map((value) => <a class="chip" href={facetLink('validation', value)} data-pagefind-filter="validation">{britishText(value)}</a>) : <span class="muted">No validation type assigned.</span>}</div>
+          </div>
+        </div>
+
+        {(article.dataChallenges.length > 0 || article.implementationBarriers.length > 0) && (
+          <div class="observation-grid">
+            {article.dataChallenges.length > 0 && <div class="text-extract"><h3>Data-related observations</h3><ul>{article.dataChallenges.map((value) => <li>{britishText(value)}</li>)}</ul></div>}
+            {article.implementationBarriers.length > 0 && <div class="text-extract"><h3>Implementation-related observations</h3><ul>{article.implementationBarriers.map((value) => <li>{britishText(value)}</li>)}</ul></div>}
+          </div>
+        )}
+      </section>
+
+      <section id="evidence-map">
+        <div class="section-title-row">
+          <div><p class="section-kicker">Interpretive classification</p><h2>Evidence-gap assignments</h2></div>
+          <span class="section-icon"><Scale size={21} /></span>
+        </div>
+        <p class="section-note">Assignments describe how the publication frames a dimension. They are neither effect estimates nor ratings of study quality. Select an assignment to see every publication in the same category.</p>
+
+        <div class="evidence-columns">
+          <div class="evidence-column">
+            <div class="evidence-heading"><div><span>General</span><h3>General dimensions</h3></div><strong>{article.generalEvidenceAssignments.length}</strong></div>
+            {article.generalEvidenceAssignments.length
+              ? <div class="assignment-list">{article.generalEvidenceAssignments.map((item) => <a href={facetLink('generalEvidence', `${item.dimension}::${item.stance}`)}><span>{britishText(item.dimension)}</span><span class={`badge ${evidenceColor(item.stance)}`}>{item.stance}</span><ArrowRight size={15} /></a>)}</div>
+              : <p class="muted empty-assignment">No general evidence-gap assignment.</p>}
+          </div>
+          <div class="evidence-column ethics">
+            <div class="evidence-heading"><div><span>Ethics</span><h3>Ethics and governance</h3></div><strong>{article.ethicsEvidenceAssignments.length}</strong></div>
+            {article.ethicsEvidenceAssignments.length
+              ? <div class="assignment-list">{article.ethicsEvidenceAssignments.map((item) => <a href={facetLink('ethicsEvidence', `${item.dimension}::${item.stance}`)}><span>{britishText(item.dimension)}</span><span class={`badge ${evidenceColor(item.stance)}`}>{item.stance}</span><ArrowRight size={15} /></a>)}</div>
+              : <p class="muted empty-assignment">No ethics-specific assignment.</p>}
+          </div>
+        </div>
+      </section>
+
+      <section id="publication-links">
+        <div class="section-title-row">
+          <div><p class="section-kicker">Continue reading</p><h2>Publication links</h2></div>
+          <span class="section-icon"><Search size={21} /></span>
+        </div>
+        <div class="publication-link-grid">
+          {article.doi && <a href={`https://doi.org/${article.doi}`} rel="noopener noreferrer"><span>DOI</span><strong>{article.doi}</strong><ExternalLink size={17} /></a>}
+          {article.pmid && <a href={`https://pubmed.ncbi.nlm.nih.gov/${article.pmid}/`} rel="noopener noreferrer"><span>PubMed</span><strong>{article.pmid}</strong><ExternalLink size={17} /></a>}
+          {article.openAlexId && <a href={article.openAlexId} rel="noopener noreferrer"><span>OpenAlex</span><strong>Open record</strong><ExternalLink size={17} /></a>}
+          {article.url && <a href={article.url} rel="noopener noreferrer"><span>Publication page</span><strong>Visit publication</strong><ExternalLink size={17} /></a>}
+        </div>
+      </section>
+
+      <section id="citation">
+        <div class="section-title-row">
+          <div><p class="section-kicker">Reference tools</p><h2>Citation export</h2></div>
+          <span class="section-icon"><Clipboard size={21} /></span>
+        </div>
+        <div class="citation-grid">
+          <div class="citation-block">
+            <div class="citation-heading"><h3>Plain text</h3><button class="icon-button" type="button" title="Copy plain-text citation" aria-label="Copy plain-text citation" data-copy-target="plain-citation"><Clipboard size={17} /></button></div>
+            <p id="plain-citation">{article.citationText}</p>
+          </div>
+          <div class="citation-block code-block">
+            <div class="citation-heading"><h3>BibTeX</h3><button class="icon-button" type="button" title="Copy BibTeX" aria-label="Copy BibTeX" data-copy-target="bibtex-citation"><Clipboard size={17} /></button></div>
+            <pre id="bibtex-citation">{article.bibtex}</pre>
+          </div>
+        </div>
+        <p class="copy-status" aria-live="polite" data-copy-status></p>
+      </section>
+
+      <section id="related-views">
+        <div class="section-title-row">
+          <div><p class="section-kicker">Across the atlas</p><h2>Related evidence views</h2></div>
+          <span class="section-icon"><Database size={21} /></span>
+        </div>
+        <div class="related-grid">
+          <a href={withBase('/visualizations/distributions/')}><Search size={19} /><div><strong>Task and method distributions</strong><span>Place this publication in the wider technical landscape.</span></div><ArrowRight size={17} /></a>
+          {article.generalEvidenceAssignments.length > 0 && <a href={withBase('/visualizations/general-evidence/')}><Scale size={19} /><div><strong>General evidence map</strong><span>Explore patterns across the general dimensions.</span></div><ArrowRight size={17} /></a>}
+          {article.ethicsEvidenceAssignments.length > 0 && <a href={withBase('/visualizations/ethics-evidence/')}><Scale size={19} /><div><strong>Ethics evidence map</strong><span>Explore ethics and governance patterns.</span></div><ArrowRight size={17} /></a>}
+        </div>
+      </section>
+    </main>
+
+    <aside class="article-sidebar">
+      <SectionNav items={[
+        { slug: 'summary', heading: 'Contribution summary' },
+        { slug: 'structured-extraction', heading: 'Structured extraction' },
+        { slug: 'evidence-map', heading: 'Evidence-gap assignments' },
+        { slug: 'publication-links', heading: 'Publication links' },
+        { slug: 'citation', heading: 'Citation export' },
+        { slug: 'related-views', heading: 'Related evidence views' }
+      ]} />
+    </aside>
+  </div>
+</BaseLayout>
+
+<script>
+  const status = document.querySelector<HTMLElement>('[data-copy-status]');
+  document.querySelectorAll<HTMLButtonElement>('[data-copy-target]').forEach((button) => {
+    button.addEventListener('click', async () => {
+      const target = document.getElementById(button.dataset.copyTarget ?? '');
+      if (!target) return;
+      try {
+        await navigator.clipboard.writeText(target.textContent ?? '');
+        button.classList.add('is-copied');
+        if (status) status.textContent = 'Citation copied to the clipboard.';
+        window.setTimeout(() => button.classList.remove('is-copied'), 1400);
+      } catch {
+        if (status) status.textContent = 'Copy was unavailable. Select the citation text manually.';
+      }
+    });
+  });
+</script>
+
+<style>
+  .article-header {
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--line);
+    background:
+      radial-gradient(circle at 82% 20%, color-mix(in srgb, var(--blue) 13%, transparent), transparent 30%),
+      radial-gradient(circle at 15% 80%, color-mix(in srgb, var(--teal) 12%, transparent), transparent 34%),
+      linear-gradient(145deg, color-mix(in srgb, var(--surface) 88%, var(--blue) 12%), var(--bg));
+    padding: 3.2rem 0 0;
+  }
+
+  .article-header::after {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(color-mix(in srgb, var(--line) 32%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in srgb, var(--line) 32%, transparent) 1px, transparent 1px);
+    background-size: 38px 38px;
+    content: '';
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.48), transparent 76%);
+    pointer-events: none;
+  }
+
+  .article-radiance {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .article-radiance span {
+    position: absolute;
+    border: 1px solid color-mix(in srgb, var(--teal) 22%, transparent);
+    border-radius: 50%;
+  }
+
+  .article-radiance span:nth-child(1) { top: -220px; right: -80px; width: 520px; height: 520px; }
+  .article-radiance span:nth-child(2) { top: -160px; right: -20px; width: 400px; height: 400px; }
+  .article-radiance span:nth-child(3) { top: -100px; right: 40px; width: 280px; height: 280px; }
+
+  .article-header-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 1120px;
+  }
+
+  .back-link {
+    display: inline-flex;
+    gap: 0.4rem;
+    align-items: center;
+    margin-bottom: 1.45rem;
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-weight: 680;
+    text-decoration: none;
+  }
+
+  .back-link:hover {
+    color: var(--blue-strong);
+  }
+
+  .title-lockup {
+    max-width: 940px;
+    padding-bottom: 2.4rem;
+  }
+
+  .article-key {
+    margin-bottom: 0.65rem;
+    color: var(--teal);
+    font-family: "Cascadia Code", Consolas, monospace;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    max-width: 960px;
+    margin-bottom: 0.95rem;
+    font-size: clamp(2.15rem, 4.2vw, 3.65rem);
+    line-height: 1.08;
+  }
+
+  .authors {
+    max-width: 920px;
+    margin-bottom: 0.35rem;
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+
+  .venue {
+    margin-bottom: 1.1rem;
+    color: var(--faint);
+    font-family: var(--font-serif);
+    font-size: 0.86rem;
+    font-style: italic;
+  }
+
+  .header-badges .context-badge {
+    color: var(--teal);
+    text-decoration: none;
+  }
+
+  .record-pulse {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    overflow: hidden;
+    border-top: 1px solid var(--line);
+    border-right: 1px solid var(--line);
+    border-left: 1px solid var(--line);
+    border-radius: 14px 14px 0 0;
+    background: color-mix(in srgb, var(--surface) 84%, transparent);
+    backdrop-filter: blur(14px);
+  }
+
+  .record-pulse > div {
+    min-height: 86px;
+    border-left: 1px solid var(--line);
+    padding: 1rem 1.15rem;
+  }
+
+  .record-pulse > div:first-child {
+    border-left: 0;
+  }
+
+  .record-pulse span,
+  .record-pulse strong {
+    display: block;
+  }
+
+  .record-pulse span {
+    margin-bottom: 0.2rem;
+    color: var(--faint);
+    font-size: 0.66rem;
+    font-weight: 720;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .record-pulse strong {
+    color: var(--ink);
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .article-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 860px) 250px;
+    gap: 4.5rem;
+    justify-content: space-between;
+    padding-block: 3.6rem 6rem;
+  }
+
+  .article-content > section {
+    scroll-margin-top: calc(var(--header-height) + 24px);
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 3.4rem;
+    margin-bottom: 3.4rem;
+  }
+
+  .retraction-notice {
+    border-left-color: var(--red);
+    margin-bottom: 2rem;
+    background: color-mix(in srgb, var(--red) 8%, var(--surface));
+  }
+
+  .retraction-notice strong {
+    color: var(--red);
+  }
+
+  .article-content > section:last-child {
+    border-bottom: 0;
+  }
+
+  .section-kicker {
+    margin-bottom: 0.45rem;
+    color: var(--teal);
+    font-size: 0.68rem;
+    font-weight: 760;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .article-content h2 {
+    margin-bottom: 1rem;
+    font-size: clamp(1.65rem, 3vw, 2.15rem);
+  }
+
+  .article-content h3 {
+    margin: 1.4rem 0 0.65rem;
+    font-size: 0.97rem;
+  }
+
+  .article-content p,
+  .article-content li {
+    max-width: 780px;
+  }
+
+  .section-title-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: start;
+  }
+
+  .section-icon {
+    display: grid;
+    width: 44px;
+    height: 44px;
+    flex: 0 0 auto;
+    place-items: center;
+    border: 1px solid color-mix(in srgb, var(--teal) 28%, var(--line));
+    border-radius: 12px;
+    background: color-mix(in srgb, var(--teal) 9%, var(--surface));
+    color: var(--teal);
+  }
+
+  .contribution-panel {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid color-mix(in srgb, var(--teal) 28%, var(--line));
+    border-radius: 16px;
+    background:
+      radial-gradient(circle at 100% 0, color-mix(in srgb, var(--blue) 12%, transparent), transparent 42%),
+      color-mix(in srgb, var(--surface) 93%, var(--teal) 7%);
+    padding: 1.6rem 1.6rem 1.6rem 5.1rem;
+    box-shadow: 0 12px 34px color-mix(in srgb, var(--ink) 6%, transparent);
+  }
+
+  .panel-marker {
+    position: absolute;
+    top: 1.65rem;
+    left: 1.45rem;
+    color: color-mix(in srgb, var(--teal) 55%, var(--faint));
+    font-family: var(--font-serif);
+    font-size: 1.35rem;
+    font-weight: 700;
+  }
+
+  .lead {
+    margin: 0;
+    font-family: var(--font-serif);
+    font-size: 1.18rem;
+    line-height: 1.73;
+  }
+
+  .reasoning-panel {
+    border-left: 2px solid color-mix(in srgb, var(--blue) 45%, var(--line));
+    margin: 1.4rem 0 0 1.45rem;
+    padding: 0.15rem 0 0.15rem 1.2rem;
+  }
+
+  .reasoning-panel h3 {
+    margin-top: 0;
+  }
+
+  .reasoning-panel p {
+    margin-bottom: 0;
+    color: var(--muted);
+  }
+
+  .section-note,
+  .muted {
+    color: var(--muted);
+    font-size: 0.84rem;
+  }
+
+  .taxonomy-block {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin-top: 1.4rem;
+  }
+
+  .taxonomy-card {
+    position: relative;
+    min-height: 150px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 13px;
+    background: var(--surface);
+    padding: 1.05rem;
+    transition: border-color 140ms ease, transform 140ms ease;
+  }
+
+  .taxonomy-card::before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 3px;
+    background: var(--teal);
+    content: '';
+  }
+
+  .taxonomy-card:nth-child(2n)::before { background: var(--blue); }
+  .taxonomy-card:nth-child(3n)::before { background: var(--amber); }
+
+  .taxonomy-card:hover {
+    border-color: color-mix(in srgb, var(--blue) 38%, var(--line));
+    transform: translateY(-2px);
+  }
+
+  .taxonomy-index {
+    position: absolute;
+    top: 0.8rem;
+    right: 0.9rem;
+    color: var(--faint);
+    font-family: "Cascadia Code", Consolas, monospace;
+    font-size: 0.63rem;
+  }
+
+  .taxonomy-card h3 {
+    margin-top: 0;
+    padding-right: 2rem;
+  }
+
+  .taxonomy-card .chip {
+    border-color: color-mix(in srgb, var(--blue) 28%, var(--line));
+    background: color-mix(in srgb, var(--blue) 6%, var(--surface));
+    color: var(--blue-strong);
+    text-decoration: none;
+  }
+
+  .taxonomy-card .chip:hover {
+    border-color: var(--blue);
+  }
+
+  .observation-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin-top: 1.4rem;
+  }
+
+  .text-extract {
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: color-mix(in srgb, var(--surface-2) 54%, var(--surface));
+    padding: 1rem;
+  }
+
+  .text-extract h3 {
+    margin-top: 0;
+  }
+
+  .text-extract ul {
+    margin-bottom: 0;
+    padding-left: 1.1rem;
+  }
+
+  .text-extract li {
+    margin-bottom: 0.45rem;
+    color: var(--muted);
+    font-size: 0.8rem;
+  }
+
+  .evidence-columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.85rem;
+    margin-top: 1.35rem;
+  }
+
+  .evidence-column {
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: var(--surface);
+  }
+
+  .evidence-heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+    border-bottom: 1px solid var(--line);
+    background: color-mix(in srgb, var(--blue) 7%, var(--surface));
+    padding: 0.9rem 1rem;
+  }
+
+  .evidence-column.ethics .evidence-heading {
+    background: color-mix(in srgb, var(--teal) 8%, var(--surface));
+  }
+
+  .evidence-heading span {
+    display: block;
+    margin-bottom: 0.12rem;
+    color: var(--faint);
+    font-size: 0.58rem;
+    font-weight: 750;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .evidence-heading h3 {
+    margin: 0;
+  }
+
+  .evidence-heading > strong {
+    color: var(--teal);
+    font-family: var(--font-serif);
+    font-size: 1.65rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .assignment-list {
+    display: grid;
+  }
+
+  .assignment-list a {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    gap: 0.55rem;
+    align-items: center;
+    border-bottom: 1px solid var(--line);
+    color: var(--ink);
+    padding: 0.72rem 0.9rem;
+    font-size: 0.75rem;
+    text-decoration: none;
+    transition: background 140ms ease;
+  }
+
+  .assignment-list a:last-child {
+    border-bottom: 0;
+  }
+
+  .assignment-list a:hover {
+    background: color-mix(in srgb, var(--blue) 6%, var(--surface));
+  }
+
+  .assignment-list a > svg {
+    color: var(--faint);
+    transition: transform 140ms ease;
+  }
+
+  .assignment-list a:hover > svg {
+    transform: translateX(2px);
+  }
+
+  .empty-assignment {
+    min-height: 100px;
+    margin: 0;
+    padding: 1rem;
+  }
+
+  .publication-link-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem;
+    margin-top: 1.2rem;
+  }
+
+  .publication-link-grid > a {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.25rem 1rem;
+    align-items: center;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--surface);
+    color: var(--ink);
+    padding: 0.9rem 1rem;
+    text-decoration: none;
+    transition: border-color 140ms ease, transform 140ms ease;
+  }
+
+  .publication-link-grid > a:hover {
+    border-color: var(--blue);
+    transform: translateY(-2px);
+  }
+
+  .publication-link-grid span,
+  .publication-link-grid strong {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .publication-link-grid span {
+    color: var(--faint);
+    font-size: 0.65rem;
+    font-weight: 720;
+    text-transform: uppercase;
+  }
+
+  .publication-link-grid strong {
+    grid-column: 1;
+    color: var(--blue-strong);
+    font-size: 0.8rem;
+  }
+
+  .publication-link-grid svg {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    color: var(--teal);
+  }
+
+  .citation-grid {
+    display: grid;
+    gap: 0.75rem;
+    margin-top: 1.2rem;
+  }
+
+  .citation-block {
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--surface);
+    padding: 1rem;
+  }
+
+  .citation-heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 0.75rem;
+  }
+
+  .citation-heading h3 {
+    margin: 0;
+  }
+
+  .citation-block p {
+    margin-bottom: 0;
+    color: var(--muted);
+    font-family: var(--font-serif);
+  }
+
+  .citation-block pre {
+    max-height: 330px;
+    margin: 0;
+    border: 0;
+    background: color-mix(in srgb, var(--surface-2) 72%, var(--surface));
+  }
+
+  .citation-heading button.is-copied {
+    border-color: var(--green);
+    color: var(--green);
+  }
+
+  .copy-status {
+    min-height: 1.5rem;
+    margin-top: 0.6rem;
+    color: var(--green);
+    font-size: 0.78rem;
+  }
+
+  .related-grid {
+    display: grid;
+    gap: 0.6rem;
+    margin-top: 1.2rem;
+  }
+
+  .related-grid > a {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 0.8rem;
+    align-items: center;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--surface);
+    color: var(--ink);
+    padding: 0.9rem 1rem;
+    text-decoration: none;
+  }
+
+  .related-grid > a:hover {
+    border-color: var(--blue);
+  }
+
+  .related-grid > a > svg:first-child {
+    color: var(--teal);
+  }
+
+  .related-grid strong,
+  .related-grid span {
+    display: block;
+  }
+
+  .related-grid strong {
+    font-size: 0.82rem;
+  }
+
+  .related-grid span {
+    color: var(--muted);
+    font-size: 0.71rem;
+  }
+
+  .article-sidebar {
+    min-width: 0;
+  }
+
+  @media (max-width: 980px) {
+    .article-layout {
+      grid-template-columns: 1fr;
+      gap: 2.2rem;
+    }
+
+    .article-sidebar {
+      grid-row: 1;
+    }
+
+    .record-pulse {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .record-pulse > div:nth-child(3) {
+      border-left: 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .record-pulse > div:nth-child(4) {
+      border-top: 1px solid var(--line);
+    }
+  }
+
+  @media (max-width: 700px) {
+    .article-header {
+      padding-top: 2.2rem;
+    }
+
+    .article-layout {
+      padding-top: 2rem;
+    }
+
+    .contribution-panel {
+      padding: 1.2rem;
+    }
+
+    .panel-marker {
+      position: static;
+      display: block;
+      margin-bottom: 0.6rem;
+    }
+
+    .lead {
+      font-size: 1.05rem;
+    }
+
+    .taxonomy-block,
+    .observation-grid,
+    .evidence-columns,
+    .publication-link-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .record-pulse > div {
+      min-height: 74px;
+      padding: 0.8rem;
+    }
+  }
+</style>

@@ -1,0 +1,60 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHeader from '@/components/PageHeader.astro';
+import ScientificChart from '@/components/ScientificChart.astro';
+import { withBase } from '@/lib/base';
+import visualizations from '@/data/generated/visualizations.json';
+
+const excluded = new Set(['year', 'Total', 'is_incomplete_year']);
+const rows = visualizations.publicationTimeline.flatMap((row) => Object.entries(row)
+  .filter(([key, value]) => !excluded.has(key) && typeof value === 'number' && value > 0)
+  .map(([articleType, count]) => ({
+    year: row.year,
+    articleType,
+    count,
+    incomplete: row.is_incomplete_year === 'true' ? 'Ongoing year' : 'Complete year',
+    url: withBase(`/publications/?year=${row.year}&articleType=${encodeURIComponent(articleType)}`)
+  })));
+const spec = {
+  $schema: 'https://vega.github.io/schema/vega-lite/v6.json',
+  width: 'container',
+  height: 430,
+  autosize: { type: 'fit', contains: 'padding', resize: true },
+  data: { values: rows },
+  mark: { type: 'bar', tooltip: true },
+  encoding: {
+    x: { field: 'year', type: 'ordinal', title: 'Publication year', axis: { labelAngle: -45 } },
+    y: { field: 'count', type: 'quantitative', title: 'Included publications', stack: 'zero' },
+    color: {
+      field: 'articleType', type: 'nominal', title: 'Document type',
+      scale: { domain: ['Journal article', 'Conference / proceedings', 'Review', 'Book / chapter', 'Other / unclear'], range: ['#2463a6', '#2f7a4e', '#a66d11', '#aa4444', '#7a5a95'] }
+    },
+    href: { field: 'url' },
+    tooltip: [
+      { field: 'year', type: 'ordinal', title: 'Year' },
+      { field: 'articleType', type: 'nominal', title: 'Document type' },
+      { field: 'count', type: 'quantitative', title: 'Publications' },
+      { field: 'incomplete', type: 'nominal', title: 'Coverage' }
+    ]
+  }
+};
+---
+
+<BaseLayout title="Publication timeline" description="Annual counts of included ophthalmic AI publications from 2010 through the incomplete 2026 reporting interval, stacked by document type.">
+  <PageHeader eyebrow="Temporal evidence" title="Publication timeline" intro="Follow the included literature across publication years and normalised document types. Select any bar segment to open its matching publications." />
+  <div class="container chart-page">
+    <ScientificChart
+      id="publication-timeline"
+      title="Included publications by year and document type"
+      description="Counts represent publications, with one primary normalised document type per included record."
+      howToRead="Each vertical bar represents one publication year; coloured segments show document types. Select a segment to continue into that year-and-type combination in the publication explorer."
+      note="The 2026 interval is incomplete in this edition. The timeline contains 427 publications in total."
+      spec={spec}
+      columns={[{ key: 'year', label: 'Year' }, { key: 'articleType', label: 'Document type' }, { key: 'count', label: 'Publications' }, { key: 'incomplete', label: 'Coverage' }]}
+      rows={rows}
+      downloadHref={withBase('/downloads/visualization-publicationtimeline.csv')}
+    />
+  </div>
+</BaseLayout>
+
+<style>.chart-page { padding-block: 3rem 5rem; }</style>
