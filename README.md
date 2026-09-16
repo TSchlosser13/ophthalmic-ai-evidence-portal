@@ -2,6 +2,8 @@
 
 A static, interactive companion to **Beyond Benchmark Performance in Ophthalmic AI: A Review and Evidence Gap Map**. The portal supports publication-level exploration of ophthalmic AI across image analysis, multimodal interpretation, prediction, clinical integration, and governance.
 
+![Ophthalmic AI Evidence Portal](public/documents/website.png)
+
 
 ## Evidence at a glance
 
@@ -10,8 +12,8 @@ A static, interactive companion to **Beyond Benchmark Performance in Ophthalmic 
 | Harmonised records | 6,482 |
 | Included publications | 427 |
 | Dataset registry records | 20 |
-| General evidence assignments | 1,287 |
-| Ethics and governance assignments | 309 |
+| General evidence assignments | 1,314 |
+| Ethics and governance assignments | 345 |
 | Publication range | 2010–2026 |
 | Search cut-off | 30 April 2026 |
 

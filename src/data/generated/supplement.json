@@ -45,7 +45,7 @@
         "William Shi",
         "Xin Fu",
         "Yaou Duan",
-        "Viet Anh N. Huu",
+        "Viet A. N. Huu",
         "Cindy Wen",
         "Edward D. Zhang",
         "Charlotte L. Zhang",
@@ -55,7 +55,7 @@
         "Xiaodong Sun",
         "Jie Xu",
         "Ali Tafreshi",
-        "Mark A. Lewis",
+        "M. Anthony Lewis",
         "Huimin Xia",
         "Kang Zhang"
       ],
@@ -69,7 +69,16 @@
       "citationKey": "kulyabin2024octdldataset",
       "title": "OCTDL: Optical Coherence Tomography Dataset for Image-Based Deep Learning Methods",
       "authors": [
-        "Mikhail Kulyabin"
+        "Mikhail Kulyabin",
+        "Aleksei Zhdanov",
+        "Anastasia Nikiforova",
+        "Andrey Stepichev",
+        "Anna Kuznetsova",
+        "Vasilii Borisov",
+        "Mikhail Ronkin",
+        "Alexander Bogachev",
+        "Sergey Korotkich",
+        "Andreas Maier"
       ],
       "year": 2024,
       "venue": null,
@@ -81,7 +90,17 @@
       "citationKey": "kulyabin2024octdl",
       "title": "OCTDL: Optical Coherence Tomography Dataset for Image-Based Deep Learning Methods",
       "authors": [
-        "Mikhail Kulyabin"
+        "Mikhail Kulyabin",
+        "Aleksei Zhdanov",
+        "Anastasia Nikiforova",
+        "Andrey Stepichev",
+        "Anna Kuznetsova",
+        "Mikhail Ronkin",
+        "Vasilii Borisov",
+        "Alexander Bogachev",
+        "Sergey Korotkich",
+        "Paul A. Constable",
+        "Andreas Maier"
       ],
       "year": 2024,
       "venue": "Scientific Data",
@@ -94,8 +113,8 @@
       "title": "Optical Coherence Tomography Image Retinal Database",
       "authors": [
         "Peyman Gholami",
-        "Priyanka Roy",
         "Mohana Kuppuswamy Parthasarathy",
+        "Priyanka Roy",
         "Vasudevan Lakshminarayanan"
       ],
       "year": 2018,
@@ -120,7 +139,7 @@
     },
     {
       "number": 7,
-      "citationKey": "yang2023medmnistdataset",
+      "citationKey": "yang2024medmnistdataset",
       "title": "MedMNIST v2",
       "authors": [
         "Jiancheng Yang",
@@ -158,7 +177,7 @@
     },
     {
       "number": 9,
-      "citationKey": "sainaren2021retinal",
+      "citationKey": "naren2021retinal",
       "title": "Retinal OCT Image Classification - C8",
       "authors": [
         "Obuli Sai Naren"
@@ -170,11 +189,11 @@
     },
     {
       "number": 10,
-      "citationKey": "subramanian2022classification",
+      "citationKey": "925beb945b38",
       "title": "Classification of Retinal OCT Images Using Deep Learning",
       "authors": [
         "Malliga Subramanian",
-        "P. Shanmugavadivu",
+        "Kogilavani Shanmugavadivel",
         "Obuli Sai Naren",
         "K. Premkumar",
         "K. Rankish"
@@ -201,11 +220,12 @@
       "authors": [
         "Sina Farsiu",
         "Stephanie J. Chiu",
-        "Ryan V. O'Connell",
+        "Rachelle V. O'Connell",
         "Francisco A. Folgar",
-        "Eleonora Yuan",
+        "Eric Yuan",
         "Joseph A. Izatt",
-        "Cynthia A. Toth"
+        "Cynthia A. Toth",
+        "Age-Related Eye Disease Study 2 Ancillary Spectral Domain Optical Coherence Tomography Study Group"
       ],
       "year": 2014,
       "venue": "Ophthalmology",
@@ -217,11 +237,11 @@
       "citationKey": "alsaih2017machine",
       "title": "Machine Learning Techniques for Diabetic Macular Edema Classification on SD-OCT Images",
       "authors": [
-        "Khalid Alsaih",
-        "Guillaume Lemaitre",
+        "Khaled Alsaih",
+        "Guillaume Lemaître",
         "Mojdeh Rastgoo",
         "Joan Massich",
-        "Désiré Sidibé",
+        "D.ésiré Sidibé",
         "Fabrice Mériaudeau"
       ],
       "year": 2017,
@@ -231,14 +251,16 @@
     },
     {
       "number": 14,
-      "citationKey": "perdomo2019classification",
+      "citationKey": "a610a9d426b3",
       "title": "Classification of Diabetes-Related Retinal Diseases Using a Deep Learning Approach in Optical Coherence Tomography",
       "authors": [
         "Oscar Perdomo",
-        "Sebastian Otálora",
-        "Fabio A. González",
-        "Fabrice Mériaudeau",
-        "Henning Müller"
+        "Hernán Rios",
+        "Francisco J Rodríguez",
+        "Sebastián Otálora",
+        "Fabrice Meriaudeau",
+        "Henning Müller",
+        "Fabio A González"
       ],
       "year": 2019,
       "venue": "Computer Methods and Programs in Biomedicine",
@@ -263,22 +285,35 @@
         "Hrvoje Bogunović",
         "Freerk Venhuizen",
         "Sophie Klimscha",
-        "Stamatios Apostolopoulos",
+        "Stefanos Apostolopoulos",
         "Alireza Bab-Hadiashar",
         "Ulas Bagci",
         "Mirza Faisal Beg",
-        "Lasha Bekalo",
+        "Loza Bekalo",
         "Qiang Chen",
-        "Cristina Ciller",
+        "Carlos Ciller",
         "Karthik Gopinath",
-        "Jayden Hamwood",
-        "Xintong Han",
-        "Xiaowei Hu",
-        "Isaac Jang",
-        "Ivan Kirchberger",
-        "Karl Krissian",
-        "Seungyong Lee",
-        "Fabrice Mériaudeau"
+        "Amirali K. Gostar",
+        "Kiwan Jeon",
+        "Zexuan Ji",
+        "Sung Ho Kang",
+        "Dara D. Koozekanani",
+        "Donghuan Lu",
+        "Dustin Morley",
+        "Keshab K. Parhi",
+        "Hyoung Suk Park",
+        "Abdolreza Rashno",
+        "Marinko Sarunic",
+        "Saad Shaikh",
+        "Jayanthi Sivaswamy",
+        "Ruwan Tennakoon",
+        "Shivin Yadav",
+        "Sandro De Zanet",
+        "Sebastian M. Waldstein",
+        "Bianca S. Gerendas",
+        "Caroline Klaver",
+        "Clara I. Sanchez",
+        "Ursula Schmidt-Erfurth"
       ],
       "year": 2019,
       "venue": "IEEE Transactions on Medical Imaging",
@@ -448,11 +483,12 @@
       "title": "Deep Iterative Vessel Segmentation in OCT Angiography",
       "authors": [
         "Theodoros Pissas",
-        "Elinor Bloch",
-        "Ben Flores",
-        "Orestis Georgiadis",
-        "Shafiq Jalali",
-        "Chiara Ravasio",
+        "Edward Bloch",
+        "M. Jorge Cardoso",
+        "Blanca Flores",
+        "Odysseas Georgiadis",
+        "Sepehr Jalali",
+        "Claudio Ravasio",
         "Danail Stoyanov",
         "Lyndon Da Cruz",
         "Christos Bergeles"
@@ -464,17 +500,10 @@
     },
     {
       "number": 29,
-      "citationKey": "ma2024rose",
+      "citationKey": "imed2021rose",
       "title": "ROSE: Retinal OCT-Angiography Vessel Segmentation Dataset",
       "authors": [
-        "Yuhui Ma",
-        "Huaying Hao",
-        "Huazhu Fu",
-        "Jiong Zhang",
-        "Jianlong Yang",
-        "Jiang Liu",
-        "Yalin Zheng",
-        "Yitian Zhao"
+        "iMED"
       ],
       "year": 2024,
       "venue": null,
@@ -488,9 +517,11 @@
       "authors": [
         "Yuhui Ma",
         "Huaying Hao",
+        "Jianyang Xie",
         "Huazhu Fu",
         "Jiong Zhang",
         "Jianlong Yang",
+        "Zhen Wang",
         "Jiang Liu",
         "Yalin Zheng",
         "Yitian Zhao"
@@ -502,9 +533,11 @@
     },
     {
       "number": 31,
-      "citationKey": "zenodo2022faros",
+      "citationKey": "zhongshan2022faros",
       "title": "FAROS: Fully Annotated Retinal OCTA Segmentation Dataset",
-      "authors": [],
+      "authors": [
+        "Zhongshan Ophthalmic Center"
+      ],
       "year": 2022,
       "venue": null,
       "doi": "10.5281/zenodo.6381668",
@@ -515,7 +548,13 @@
       "citationKey": "xiao2022omsn",
       "title": "OMSN and FAROS: OCTA Microstructure Segmentation Network and Fully Annotated Retinal OCTA Segmentation Dataset",
       "authors": [
-        "Peng Xiao"
+        "Peng Xiao",
+        "Xiaodong Hu",
+        "Ke Ma",
+        "Gengyuan Wang",
+        "Ziqing Feng",
+        "Yuancong Huang",
+        "Jin Yuan"
       ],
       "year": 2022,
       "venue": null,
@@ -526,7 +565,9 @@
       "number": 33,
       "citationKey": "drac2023diabetic",
       "title": "DRAC 2022: Diabetic Retinopathy Analysis Challenge 2022 Dataset",
-      "authors": [],
+      "authors": [
+        "DRAC Challenge"
+      ],
       "year": 2023,
       "venue": null,
       "doi": "10.17632/s8kbw25s3x.1",
@@ -539,7 +580,35 @@
       "authors": [
         "Bo Qian",
         "Hao Chen",
-        "Xiangning Wang"
+        "Xiangning Wang",
+        "Zhouyu Guan",
+        "Tingyao Li",
+        "Yixiao Jin",
+        "Yilan Wu",
+        "Yang Wen",
+        "Haoxuan Che",
+        "Gitaek Kwon",
+        "Jaeyoung Kim",
+        "Sungjin Choi",
+        "Seoyoung Shin",
+        "Felix Krause",
+        "Markus Unterdechler",
+        "Junlin Hou",
+        "Rui Feng",
+        "Yihao Li",
+        "Mostafa El Habib Daho",
+        "Dawei Yang",
+        "Qiang Wu",
+        "Ping Zhang",
+        "Xiaokang Yang",
+        "Yiyu Cai",
+        "Gavin Siew Wei Tan",
+        "Carol Y. Cheung",
+        "Weiping Jia",
+        "Huating Li",
+        "Yih Chung Tham",
+        "Tien Yin Wong",
+        "Bin Sheng"
       ],
       "year": 2024,
       "venue": "Patterns",
@@ -582,9 +651,25 @@
     },
     {
       "number": 37,
-      "citationKey": "figshare2023retinal",
+      "citationKey": "fu2023retinal",
       "title": "Retinal Fundus Glaucoma Image Dataset",
-      "authors": [],
+      "authors": [
+        "Huazhu Fu",
+        "Fei Li",
+        "José Ignacio Orlando",
+        "Hrvoje Bogunović",
+        "Jingan Liao",
+        "Shaochong Zhang",
+        "Xiulan Zhang",
+        "Zhuo Zhang",
+        "Feng Shou Yin",
+        "Jiang Liu",
+        "Wing Kee Wong",
+        "Ngan Meng Tan",
+        "Beng Hai Lee",
+        "Jun Cheng",
+        "Tien Yin Wong"
+      ],
       "year": 2023,
       "venue": null,
       "doi": null,
@@ -596,9 +681,9 @@
       "title": "ORIGA(-light): An Online Retinal Fundus Image Database for Glaucoma Analysis and Research",
       "authors": [
         "Zhuo Zhang",
-        "F. S. Yin",
+        "Feng Shou Yin",
         "Jiang Liu",
-        "Damon W. K. Wong",
+        "Wing Kee Wong",
         "Ngan Meng Tan",
         "Beng Hai Lee",
         "Jun Cheng",
@@ -611,9 +696,14 @@
     },
     {
       "number": 39,
-      "citationKey": "kaggle2015diabetic",
+      "citationKey": "dugas2015diabetic",
       "title": "Diabetic Retinopathy Detection",
-      "authors": [],
+      "authors": [
+        "Emma Dugas",
+        "Jared",
+        "Jorge",
+        "Will Cukierski"
+      ],
       "year": 2015,
       "venue": null,
       "doi": null,
@@ -720,7 +810,7 @@
         "Deepankan Bharathi Nagaraj",
         "Maximilian Bryan",
         "Sobhan Moazemi",
-        "Sabine Gr\\\"under-Fahrer",
+        "Sabine Gründer-Fahrer",
         "Michael Martin"
       ],
       "year": 2023,
@@ -788,7 +878,7 @@
       "citationKey": "8b31cb8429dc",
       "title": "A Comprehensive Review of Deep Learning-Based Retinal Layer Integrity Assessment in Optical Coherence Tomography (OCT)",
       "authors": [
-        "T.K. Shivaprasad",
+        "T. K. Shivaprasad",
         "Preetham Kumar",
         "Veena Mayya",
         "Sulatha V. Bhandary",
@@ -825,7 +915,7 @@
       "title": "Adaptive and Explainable Deep Learning for Automated Retinal Disease Diagnosis Using OCT Images",
       "authors": [
         "Finny V. Jacob",
-        "P. Gethsia"
+        "Gethsia P."
       ],
       "year": 2025,
       "venue": "2025 9th International Conference on Electronics, Communication and Aerospace Technology (ICECA)",
@@ -843,7 +933,7 @@
         "Laurent Borderie",
         "Alexandre Le Guilcher",
         "Tanguy Thiery",
-        "B\\'eatrice Cochener",
+        "Béatrice Cochener",
         "Mathieu Lamard"
       ],
       "year": 2025,
@@ -857,7 +947,7 @@
       "title": "The role of artificial intelligence in monitoring glaucoma progression using optical coherence tomography",
       "authors": [
         "Sushmitha Gurumoorthy",
-        "N.V. Meena Lochana Nayaki",
+        "N. V. Meena Lochana Nayaki",
         "K. Ezhil Vendhan"
       ],
       "year": 2025,
@@ -938,7 +1028,7 @@
         "Maziar Mirsalehi",
         "Michael Schwemm",
         "Elias Flockerzi",
-        "N\\'ora Szentm\\'ary",
+        "Nóra Szentmáry",
         "Alaa Din Abdin",
         "Berthold Seitz",
         "Achim Langenbucher"
@@ -973,7 +1063,7 @@
         "Ines Rahmany",
         "Salah Dhahri",
         "Hedi Tabia",
-        "Desir\\'e Sidib\\'e",
+        "Desiré Sidibé",
         "Hsouna Zgolli",
         "Nawres Khlifa"
       ],
@@ -1122,8 +1212,8 @@
       "title": "A Deep Ensemble Learning-Based CNN Architecture for Multiclass Retinal Fluid Segmentation in OCT Images",
       "authors": [
         "Mohammad Rahil",
-        "B.N. Anoop",
-        "G.N. Girish",
+        "B. N. Anoop",
+        "G. N. Girish",
         "Abhishek R. Kothari",
         "Shashidhar G. Koolagudi",
         "Jeny Rajan"
@@ -1158,8 +1248,8 @@
         "Tharindu De Silva",
         "Cameron Duic",
         "Gopal Jayakar",
-        "Tiarnan D L Keenan",
-        "Alisa T Thavikulwat",
+        "Tiarnan D. L. Keenan",
+        "Alisa T. Thavikulwat",
         "Emily Chew",
         "Catherine Cukras"
       ],
@@ -1431,7 +1521,7 @@
       "level": 2,
       "heading": "Annual publication trends by category",
       "slug": "annual-publication-trends-by-category",
-      "html": "<p>Source-specific document types were harmonised into five categories, comprising journal articles, conference papers or proceedings, reviews, books or chapters, and other or unclear records. Annual counts were then aggregated by publication year and harmonised category, as shown in <a href=\"__BASE__visualizations/publication-timeline/\">the publication-type timeline</a>. Because the corpus was assembled during 2026, the total for that year is incomplete and should be interpreted descriptively.</p>\n<p>The clinical-target, method-family, and task-family timelines preserve the annual totals but assign each record a single primary category. The clinical-target timeline uses labels consistent with the other visualisations. When a record had several targets, disease-specific targets took precedence over broader ones. For the shown figure labels, age-related macular degeneration (AMD), choroidal neovascularisation (CNV), diabetic retinopathy (DR), diabetic macular oedema (DME), and retinal nerve fibre layer (RNFL) are abbreviated.</p>\n<p>The method-family timeline groups records by primary method family using the convention in the clinical-target timeline. More specific families, including U-Net or encoder–decoder segmentation, convolutional neural networks (CNNs), vision transformers (ViTs), generative adversarial networks (GANs), foundation models, and large language models (LLMs), took precedence over broader machine-learning (ML) or deep-learning (DL) labels. The other deep-learning category was used only when no more specific method-family target was available. Finally, the task-family timeline groups records by primary task family.</p>"
+      "html": "<p>Source-specific document types were harmonised into five categories, comprising journal articles, conference papers or proceedings, reviews, books or chapters, and other or unclear records. Annual counts were then aggregated by publication year and harmonised category, as shown in <a href=\"__BASE__visualizations/publication-timeline/\">the publication-type timeline</a>. Because the corpus was assembled during 2026, the total for that year is incomplete and should be interpreted descriptively.</p>\n<p>The clinical-target, method-family, and task-family timelines preserve the annual totals but assign each record a single primary clinical target, method family, and task family, respectively. The clinical-target timeline shows annual counts by the primary ophthalmic disease or anatomical target. When a record had several targets, disease-specific targets took precedence over broader ones. For the shown figure labels, age-related macular degeneration (AMD), choroidal neovascularisation (CNV), diabetic retinopathy (DR), diabetic macular oedema (DME), and retinal nerve fibre layer (RNFL) are abbreviated.</p>\n<p>The method-family timeline shows annual counts by method family, assigning one primary family per record. More specific families, including U-Net or encoder–decoder segmentation, convolutional neural networks (CNNs), vision transformers (ViTs), generative adversarial networks (GANs), foundation models, and large language models (LLMs), took precedence over broader machine-learning (ML) or deep-learning (DL) labels. The other deep-learning category was used only when no more specific method-family target was available. The task-family timeline shows annual counts by primary AI task.</p>"
     },
     {
       "level": 2,

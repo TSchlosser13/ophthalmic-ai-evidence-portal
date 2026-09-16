@@ -296,7 +296,7 @@
     "resourceUrl": "https://www.kaggle.com/c/diabetic-retinopathy-detection/data",
     "licence": null,
     "originalPublicationKeys": [
-      "kaggle2015diabetic",
+      "dugas2015diabetic",
       "gulshan2016development"
     ],
     "articleCount": 1,
@@ -310,7 +310,7 @@
     ],
     "originalPublications": [
       {
-        "citationKey": "kaggle2015diabetic",
+        "citationKey": "dugas2015diabetic",
         "title": "Diabetic Retinopathy Detection",
         "doi": null
       },
@@ -335,7 +335,7 @@
     "resourceUrl": "https://zenodo.org/records/6381668",
     "licence": null,
     "originalPublicationKeys": [
-      "zenodo2022faros",
+      "zhongshan2022faros",
       "xiao2022omsn"
     ],
     "articleCount": 1,
@@ -349,7 +349,7 @@
     ],
     "originalPublications": [
       {
-        "citationKey": "zenodo2022faros",
+        "citationKey": "zhongshan2022faros",
         "title": "FAROS: Fully Annotated Retinal OCTA Segmentation Dataset",
         "doi": "10.5281/zenodo.6381668"
       },
@@ -652,7 +652,7 @@
     "resourceUrl": "https://medmnist.com/v2",
     "licence": null,
     "originalPublicationKeys": [
-      "yang2023medmnistdataset",
+      "yang2024medmnistdataset",
       "yang2023medmnist"
     ],
     "articleCount": 1,
@@ -666,7 +666,7 @@
     ],
     "originalPublications": [
       {
-        "citationKey": "yang2023medmnistdataset",
+        "citationKey": "yang2024medmnistdataset",
         "title": "MedMNIST v2",
         "doi": null
       },
@@ -822,7 +822,7 @@
     "resourceUrl": "https://figshare.com/articles/dataset/Retinal_Fundus_Glaucoma_Image_dataset/24549217",
     "licence": null,
     "originalPublicationKeys": [
-      "figshare2023retinal",
+      "fu2023retinal",
       "zhang2010origa"
     ],
     "articleCount": 1,
@@ -836,7 +836,7 @@
     ],
     "originalPublications": [
       {
-        "citationKey": "figshare2023retinal",
+        "citationKey": "fu2023retinal",
         "title": "Retinal Fundus Glaucoma Image Dataset",
         "doi": null
       },
@@ -862,8 +862,8 @@
     "resourceUrl": "https://www.kaggle.com/datasets/obulisainaren/retinal-oct-c8",
     "licence": null,
     "originalPublicationKeys": [
-      "sainaren2021retinal",
-      "subramanian2022classification"
+      "naren2021retinal",
+      "925beb945b38"
     ],
     "articleCount": 4,
     "linkedArticles": [
@@ -894,12 +894,12 @@
     ],
     "originalPublications": [
       {
-        "citationKey": "sainaren2021retinal",
+        "citationKey": "naren2021retinal",
         "title": "Retinal OCT Image Classification - C8",
         "doi": "10.34740/kaggle/dsv/2736749"
       },
       {
-        "citationKey": "subramanian2022classification",
+        "citationKey": "925beb945b38",
         "title": "Classification of Retinal OCT Images Using Deep Learning",
         "doi": "10.1109/iccci54379.2022.9740985"
       }
@@ -982,7 +982,7 @@
     "resourceUrl": "https://imed.nimte.ac.cn/dataofrose.html",
     "licence": null,
     "originalPublicationKeys": [
-      "ma2024rose",
+      "imed2021rose",
       "ma2021rose"
     ],
     "articleCount": 2,
@@ -1002,7 +1002,7 @@
     ],
     "originalPublications": [
       {
-        "citationKey": "ma2024rose",
+        "citationKey": "imed2021rose",
         "title": "ROSE: Retinal OCT-Angiography Vessel Segmentation Dataset",
         "doi": "10.5281/zenodo.12775880"
       },
@@ -1028,7 +1028,7 @@
     "licence": null,
     "originalPublicationKeys": [
       "alsaih2017machine",
-      "perdomo2019classification"
+      "a610a9d426b3"
     ],
     "articleCount": 0,
     "linkedArticles": [],
@@ -1039,7 +1039,7 @@
         "doi": "10.1186/s12938-017-0352-9"
       },
       {
-        "citationKey": "perdomo2019classification",
+        "citationKey": "a610a9d426b3",
         "title": "Classification of Diabetes-Related Retinal Diseases Using a Deep Learning Approach in Optical Coherence Tomography",
         "doi": "10.1016/j.cmpb.2019.06.016"
       }

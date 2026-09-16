@@ -3,11 +3,12 @@ import { ArrowDownToLine, Database, Download, FileCodeCorner, Table2 } from '@lu
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import PageHeader from '@/components/PageHeader.astro';
 import { withBase } from '@/lib/base';
+import metadata from '@/data/generated/review-metadata.json';
 
 const groups = [
   {
     title: 'Included-publication metadata',
-    eyebrow: '427 included publications',
+    eyebrow: `${metadata.statistics.includedStudies.toLocaleString('en-GB')} included publications`,
     description: 'Bibliographic details and public publication-level classifications in analysis-ready formats.',
     icon: Table2,
     accent: 'blue',
@@ -26,9 +27,9 @@ const groups = [
     files: [
       ['datasets.csv', 'Dataset registry with aliases and linked publications', 'CSV'],
       ['datasets.json', 'Machine-readable dataset registry', 'JSON'],
-      ['general-evidence-assignments.csv', 'All 1,287 general evidence-map assignments', 'CSV'],
+      ['general-evidence-assignments.csv', `All ${metadata.statistics.generalEvidenceAssignments.toLocaleString('en-GB')} general evidence-map assignments`, 'CSV'],
       ['general-evidence-assignments.json', 'Structured general evidence-map assignments', 'JSON'],
-      ['ethics-evidence-assignments.csv', 'All 309 ethics evidence-map assignments', 'CSV'],
+      ['ethics-evidence-assignments.csv', `All ${metadata.statistics.ethicsEvidenceAssignments.toLocaleString('en-GB')} ethics evidence-map assignments`, 'CSV'],
       ['ethics-evidence-assignments.json', 'Structured ethics evidence-map assignments', 'JSON'],
       ['visualizations.json', 'Combined normalised visualisation layer', 'JSON']
     ]

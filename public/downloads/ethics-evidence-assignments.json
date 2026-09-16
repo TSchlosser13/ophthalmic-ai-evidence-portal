@@ -18,6 +18,12 @@
     "kind": "ethics"
   },
   {
+    "citationKey": "c08f2f3d3e8b",
+    "dimension": "Privacy",
+    "stance": "caused",
+    "kind": "ethics"
+  },
+  {
     "citationKey": "e8a1de4c2f1b",
     "dimension": "Privacy",
     "stance": "caused",
@@ -72,6 +78,18 @@
     "kind": "ethics"
   },
   {
+    "citationKey": "3756a39ea98c",
+    "dimension": "Transparency",
+    "stance": "caused",
+    "kind": "ethics"
+  },
+  {
+    "citationKey": "39421d06c383",
+    "dimension": "Transparency",
+    "stance": "caused",
+    "kind": "ethics"
+  },
+  {
     "citationKey": "439dfd13b723",
     "dimension": "Transparency",
     "stance": "caused",
@@ -96,6 +114,12 @@
     "kind": "ethics"
   },
   {
+    "citationKey": "8529576161e7",
+    "dimension": "Transparency",
+    "stance": "caused",
+    "kind": "ethics"
+  },
+  {
     "citationKey": "8b31cb8429dc",
     "dimension": "Transparency",
     "stance": "caused",
@@ -109,12 +133,6 @@
   },
   {
     "citationKey": "8f6d0f5c5cf3",
-    "dimension": "Transparency",
-    "stance": "caused",
-    "kind": "ethics"
-  },
-  {
-    "citationKey": "99087a376207",
     "dimension": "Transparency",
     "stance": "caused",
     "kind": "ethics"
@@ -138,6 +156,12 @@
     "kind": "ethics"
   },
   {
+    "citationKey": "e2f6a88e3abc",
+    "dimension": "Transparency",
+    "stance": "caused",
+    "kind": "ethics"
+  },
+  {
     "citationKey": "e4edbaa2c127",
     "dimension": "Transparency",
     "stance": "caused",
@@ -145,6 +169,12 @@
   },
   {
     "citationKey": "e8a1de4c2f1b",
+    "dimension": "Transparency",
+    "stance": "caused",
+    "kind": "ethics"
+  },
+  {
+    "citationKey": "fcf0638d98ab",
     "dimension": "Transparency",
     "stance": "caused",
     "kind": "ethics"
@@ -210,6 +240,12 @@
     "kind": "ethics"
   },
   {
+    "citationKey": "211a1f5e8c68",
+    "dimension": "Transparency",
+    "stance": "resolved",
+    "kind": "ethics"
+  },
+  {
     "citationKey": "260b9335a18b",
     "dimension": "Transparency",
     "stance": "resolved",
@@ -222,7 +258,7 @@
     "kind": "ethics"
   },
   {
-    "citationKey": "28d93b251ada",
+    "citationKey": "2d9526998521",
     "dimension": "Transparency",
     "stance": "resolved",
     "kind": "ethics"
@@ -235,6 +271,12 @@
   },
   {
     "citationKey": "353e3e1970fc",
+    "dimension": "Transparency",
+    "stance": "resolved",
+    "kind": "ethics"
+  },
+  {
+    "citationKey": "3c2419267f61",
     "dimension": "Transparency",
     "stance": "resolved",
     "kind": "ethics"
@@ -306,12 +348,6 @@
     "kind": "ethics"
   },
   {
-    "citationKey": "6f739da64bf7",
-    "dimension": "Transparency",
-    "stance": "resolved",
-    "kind": "ethics"
-  },
-  {
     "citationKey": "7098a160108d",
     "dimension": "Transparency",
     "stance": "resolved",
@@ -331,6 +367,12 @@
   },
   {
     "citationKey": "7abb94fc2719",
+    "dimension": "Transparency",
+    "stance": "resolved",
+    "kind": "ethics"
+  },
+  {
+    "citationKey": "7bda019936ec",
     "dimension": "Transparency",
     "stance": "resolved",
     "kind": "ethics"
@@ -396,12 +438,6 @@
     "kind": "ethics"
   },
   {
-    "citationKey": "a1593fedce90",
-    "dimension": "Transparency",
-    "stance": "resolved",
-    "kind": "ethics"
-  },
-  {
     "citationKey": "a32e088bd521",
     "dimension": "Transparency",
     "stance": "resolved",
@@ -444,6 +480,24 @@
     "kind": "ethics"
   },
   {
+    "citationKey": "b520d4ed8f29",
+    "dimension": "Transparency",
+    "stance": "resolved",
+    "kind": "ethics"
+  },
+  {
+    "citationKey": "bdec5046af38",
+    "dimension": "Transparency",
+    "stance": "resolved",
+    "kind": "ethics"
+  },
+  {
+    "citationKey": "c08be1c96b75",
+    "dimension": "Transparency",
+    "stance": "resolved",
+    "kind": "ethics"
+  },
+  {
     "citationKey": "c3c03d9a26df",
     "dimension": "Transparency",
     "stance": "resolved",
@@ -480,12 +534,6 @@
     "kind": "ethics"
   },
   {
-    "citationKey": "d1c34bb65deb",
-    "dimension": "Transparency",
-    "stance": "resolved",
-    "kind": "ethics"
-  },
-  {
     "citationKey": "d28892d42ec2",
     "dimension": "Transparency",
     "stance": "resolved",
@@ -498,6 +546,12 @@
     "kind": "ethics"
   },
   {
+    "citationKey": "d50d012dbe1d",
+    "dimension": "Transparency",
+    "stance": "resolved",
+    "kind": "ethics"
+  },
+  {
     "citationKey": "d5d70edc6cef",
     "dimension": "Transparency",
     "stance": "resolved",
@@ -505,6 +559,12 @@
   },
   {
     "citationKey": "daaa7bd24f6d",
+    "dimension": "Transparency",
+    "stance": "resolved",
+    "kind": "ethics"
+  },
+  {
+    "citationKey": "de99037c54a3",
     "dimension": "Transparency",
     "stance": "resolved",
     "kind": "ethics"
@@ -523,6 +583,12 @@
   },
   {
     "citationKey": "e783fc3a548e",
+    "dimension": "Transparency",
+    "stance": "resolved",
+    "kind": "ethics"
+  },
+  {
+    "citationKey": "e842ed2e802d",
     "dimension": "Transparency",
     "stance": "resolved",
     "kind": "ethics"
@@ -630,7 +696,19 @@
     "kind": "ethics"
   },
   {
+    "citationKey": "28d93b251ada",
+    "dimension": "Transparency",
+    "stance": "both",
+    "kind": "ethics"
+  },
+  {
     "citationKey": "2b6fbc4f0508",
+    "dimension": "Transparency",
+    "stance": "both",
+    "kind": "ethics"
+  },
+  {
+    "citationKey": "2c2ad7b1aef3",
     "dimension": "Transparency",
     "stance": "both",
     "kind": "ethics"
@@ -649,6 +727,12 @@
   },
   {
     "citationKey": "3610864516d6",
+    "dimension": "Transparency",
+    "stance": "both",
+    "kind": "ethics"
+  },
+  {
+    "citationKey": "38c21f05f613",
     "dimension": "Transparency",
     "stance": "both",
     "kind": "ethics"
@@ -720,25 +804,19 @@
     "kind": "ethics"
   },
   {
+    "citationKey": "6f739da64bf7",
+    "dimension": "Transparency",
+    "stance": "both",
+    "kind": "ethics"
+  },
+  {
     "citationKey": "750835f3e51d",
     "dimension": "Transparency",
     "stance": "both",
     "kind": "ethics"
   },
   {
-    "citationKey": "7bda019936ec",
-    "dimension": "Transparency",
-    "stance": "both",
-    "kind": "ethics"
-  },
-  {
     "citationKey": "7e500df4fae1",
-    "dimension": "Transparency",
-    "stance": "both",
-    "kind": "ethics"
-  },
-  {
-    "citationKey": "8529576161e7",
     "dimension": "Transparency",
     "stance": "both",
     "kind": "ethics"
@@ -762,7 +840,25 @@
     "kind": "ethics"
   },
   {
+    "citationKey": "99087a376207",
+    "dimension": "Transparency",
+    "stance": "both",
+    "kind": "ethics"
+  },
+  {
     "citationKey": "9c51cf880908",
+    "dimension": "Transparency",
+    "stance": "both",
+    "kind": "ethics"
+  },
+  {
+    "citationKey": "Schlosser2024_SciRep",
+    "dimension": "Transparency",
+    "stance": "both",
+    "kind": "ethics"
+  },
+  {
+    "citationKey": "a1593fedce90",
     "dimension": "Transparency",
     "stance": "both",
     "kind": "ethics"
@@ -775,12 +871,6 @@
   },
   {
     "citationKey": "a610a9d426b3",
-    "dimension": "Transparency",
-    "stance": "both",
-    "kind": "ethics"
-  },
-  {
-    "citationKey": "bdec5046af38",
     "dimension": "Transparency",
     "stance": "both",
     "kind": "ethics"
@@ -823,12 +913,6 @@
   },
   {
     "citationKey": "d44a9529bdde",
-    "dimension": "Transparency",
-    "stance": "both",
-    "kind": "ethics"
-  },
-  {
-    "citationKey": "d50d012dbe1d",
     "dimension": "Transparency",
     "stance": "both",
     "kind": "ethics"
@@ -888,9 +972,9 @@
     "kind": "ethics"
   },
   {
-    "citationKey": "Schlosser2024_SciRep",
-    "dimension": "Transparency",
-    "stance": "both",
+    "citationKey": "3610864516d6",
+    "dimension": "Security",
+    "stance": "caused",
     "kind": "ethics"
   },
   {
@@ -924,6 +1008,12 @@
     "kind": "ethics"
   },
   {
+    "citationKey": "05e48832d20e",
+    "dimension": "Non-maleficence",
+    "stance": "caused",
+    "kind": "ethics"
+  },
+  {
     "citationKey": "2d9526998521",
     "dimension": "Non-maleficence",
     "stance": "caused",
@@ -954,7 +1044,13 @@
     "kind": "ethics"
   },
   {
-    "citationKey": "d44a9529bdde",
+    "citationKey": "c9fafe5b4ef7",
+    "dimension": "Non-maleficence",
+    "stance": "caused",
+    "kind": "ethics"
+  },
+  {
+    "citationKey": "d5d70edc6cef",
     "dimension": "Non-maleficence",
     "stance": "caused",
     "kind": "ethics"
@@ -979,12 +1075,6 @@
   },
   {
     "citationKey": "18bd8aebe09b",
-    "dimension": "Non-maleficence",
-    "stance": "resolved",
-    "kind": "ethics"
-  },
-  {
-    "citationKey": "3756a39ea98c",
     "dimension": "Non-maleficence",
     "stance": "resolved",
     "kind": "ethics"
@@ -1026,7 +1116,7 @@
     "kind": "ethics"
   },
   {
-    "citationKey": "88ef6ab637e1",
+    "citationKey": "9c51cf880908",
     "dimension": "Non-maleficence",
     "stance": "resolved",
     "kind": "ethics"
@@ -1110,6 +1200,12 @@
     "kind": "ethics"
   },
   {
+    "citationKey": "88ef6ab637e1",
+    "dimension": "Non-maleficence",
+    "stance": "both",
+    "kind": "ethics"
+  },
+  {
     "citationKey": "8a5b73028348",
     "dimension": "Non-maleficence",
     "stance": "both",
@@ -1117,6 +1213,12 @@
   },
   {
     "citationKey": "ceb81af82ec8",
+    "dimension": "Non-maleficence",
+    "stance": "both",
+    "kind": "ethics"
+  },
+  {
+    "citationKey": "d44a9529bdde",
     "dimension": "Non-maleficence",
     "stance": "both",
     "kind": "ethics"
@@ -1140,13 +1242,19 @@
     "kind": "ethics"
   },
   {
-    "citationKey": "9431a95feac7",
+    "citationKey": "75bba223bc94",
     "dimension": "Trust",
     "stance": "caused",
     "kind": "ethics"
   },
   {
-    "citationKey": "99087a376207",
+    "citationKey": "8b31cb8429dc",
+    "dimension": "Trust",
+    "stance": "caused",
+    "kind": "ethics"
+  },
+  {
+    "citationKey": "9431a95feac7",
     "dimension": "Trust",
     "stance": "caused",
     "kind": "ethics"
@@ -1171,6 +1279,12 @@
   },
   {
     "citationKey": "043684769543",
+    "dimension": "Trust",
+    "stance": "resolved",
+    "kind": "ethics"
+  },
+  {
+    "citationKey": "15409c146949",
     "dimension": "Trust",
     "stance": "resolved",
     "kind": "ethics"
@@ -1230,6 +1344,18 @@
     "kind": "ethics"
   },
   {
+    "citationKey": "5b4074fce93a",
+    "dimension": "Trust",
+    "stance": "resolved",
+    "kind": "ethics"
+  },
+  {
+    "citationKey": "5eda0c15ead9",
+    "dimension": "Trust",
+    "stance": "resolved",
+    "kind": "ethics"
+  },
+  {
     "citationKey": "607838e1b84c",
     "dimension": "Trust",
     "stance": "resolved",
@@ -1248,6 +1374,12 @@
     "kind": "ethics"
   },
   {
+    "citationKey": "94eb03d655e3",
+    "dimension": "Trust",
+    "stance": "resolved",
+    "kind": "ethics"
+  },
+  {
     "citationKey": "9e08b543a80f",
     "dimension": "Trust",
     "stance": "resolved",
@@ -1260,13 +1392,19 @@
     "kind": "ethics"
   },
   {
-    "citationKey": "b43746032b9d",
+    "citationKey": "c08be1c96b75",
     "dimension": "Trust",
     "stance": "resolved",
     "kind": "ethics"
   },
   {
     "citationKey": "c644d5188019",
+    "dimension": "Trust",
+    "stance": "resolved",
+    "kind": "ethics"
+  },
+  {
+    "citationKey": "cf651cb4eb97",
     "dimension": "Trust",
     "stance": "resolved",
     "kind": "ethics"
@@ -1285,6 +1423,12 @@
   },
   {
     "citationKey": "f41ca0b8e8aa",
+    "dimension": "Trust",
+    "stance": "resolved",
+    "kind": "ethics"
+  },
+  {
+    "citationKey": "fbe81ad8d55c",
     "dimension": "Trust",
     "stance": "resolved",
     "kind": "ethics"
@@ -1314,12 +1458,6 @@
     "kind": "ethics"
   },
   {
-    "citationKey": "75bba223bc94",
-    "dimension": "Trust",
-    "stance": "both",
-    "kind": "ethics"
-  },
-  {
     "citationKey": "7e500df4fae1",
     "dimension": "Trust",
     "stance": "both",
@@ -1327,6 +1465,12 @@
   },
   {
     "citationKey": "8a5b73028348",
+    "dimension": "Trust",
+    "stance": "both",
+    "kind": "ethics"
+  },
+  {
+    "citationKey": "99087a376207",
     "dimension": "Trust",
     "stance": "both",
     "kind": "ethics"
@@ -1356,13 +1500,19 @@
     "kind": "ethics"
   },
   {
-    "citationKey": "3610864516d6",
+    "citationKey": "0cd301461c99",
     "dimension": "Accountability",
-    "stance": "caused",
+    "stance": "resolved",
     "kind": "ethics"
   },
   {
-    "citationKey": "0cd301461c99",
+    "citationKey": "15409c146949",
+    "dimension": "Accountability",
+    "stance": "resolved",
+    "kind": "ethics"
+  },
+  {
+    "citationKey": "185bfa237de7",
     "dimension": "Accountability",
     "stance": "resolved",
     "kind": "ethics"
@@ -1404,13 +1554,13 @@
     "kind": "ethics"
   },
   {
-    "citationKey": "a82536bb0043",
+    "citationKey": "b2d92e326400",
     "dimension": "Accountability",
     "stance": "resolved",
     "kind": "ethics"
   },
   {
-    "citationKey": "b2d92e326400",
+    "citationKey": "b42bb6aa4bd0",
     "dimension": "Accountability",
     "stance": "resolved",
     "kind": "ethics"
@@ -1422,13 +1572,13 @@
     "kind": "ethics"
   },
   {
-    "citationKey": "b6aa9a3abc0f",
+    "citationKey": "e2f6a88e3abc",
     "dimension": "Accountability",
     "stance": "resolved",
     "kind": "ethics"
   },
   {
-    "citationKey": "e2f6a88e3abc",
+    "citationKey": "f41ca0b8e8aa",
     "dimension": "Accountability",
     "stance": "resolved",
     "kind": "ethics"
@@ -1452,6 +1602,12 @@
     "kind": "ethics"
   },
   {
+    "citationKey": "3610864516d6",
+    "dimension": "Accountability",
+    "stance": "both",
+    "kind": "ethics"
+  },
+  {
     "citationKey": "050876505c41",
     "dimension": "Equity",
     "stance": "caused",
@@ -1471,12 +1627,6 @@
   },
   {
     "citationKey": "0ce423384fd5",
-    "dimension": "Equity",
-    "stance": "caused",
-    "kind": "ethics"
-  },
-  {
-    "citationKey": "15409c146949",
     "dimension": "Equity",
     "stance": "caused",
     "kind": "ethics"
@@ -1507,12 +1657,6 @@
   },
   {
     "citationKey": "345f15624795",
-    "dimension": "Equity",
-    "stance": "caused",
-    "kind": "ethics"
-  },
-  {
-    "citationKey": "3610864516d6",
     "dimension": "Equity",
     "stance": "caused",
     "kind": "ethics"
@@ -1554,12 +1698,6 @@
     "kind": "ethics"
   },
   {
-    "citationKey": "750835f3e51d",
-    "dimension": "Equity",
-    "stance": "caused",
-    "kind": "ethics"
-  },
-  {
     "citationKey": "75bba223bc94",
     "dimension": "Equity",
     "stance": "caused",
@@ -1567,6 +1705,12 @@
   },
   {
     "citationKey": "853e0b588e73",
+    "dimension": "Equity",
+    "stance": "caused",
+    "kind": "ethics"
+  },
+  {
+    "citationKey": "8b31cb8429dc",
     "dimension": "Equity",
     "stance": "caused",
     "kind": "ethics"
@@ -1602,12 +1746,6 @@
     "kind": "ethics"
   },
   {
-    "citationKey": "e8a1de4c2f1b",
-    "dimension": "Equity",
-    "stance": "caused",
-    "kind": "ethics"
-  },
-  {
     "citationKey": "ef74a70b4670",
     "dimension": "Equity",
     "stance": "caused",
@@ -1620,13 +1758,43 @@
     "kind": "ethics"
   },
   {
+    "citationKey": "fabdee03a10a",
+    "dimension": "Equity",
+    "stance": "caused",
+    "kind": "ethics"
+  },
+  {
+    "citationKey": "0ab3fcfd31cd",
+    "dimension": "Equity",
+    "stance": "resolved",
+    "kind": "ethics"
+  },
+  {
     "citationKey": "1852aed2b535",
     "dimension": "Equity",
     "stance": "resolved",
     "kind": "ethics"
   },
   {
+    "citationKey": "28d93b251ada",
+    "dimension": "Equity",
+    "stance": "resolved",
+    "kind": "ethics"
+  },
+  {
+    "citationKey": "44ce6e703d06",
+    "dimension": "Equity",
+    "stance": "resolved",
+    "kind": "ethics"
+  },
+  {
     "citationKey": "64d31fb56e0d",
+    "dimension": "Equity",
+    "stance": "resolved",
+    "kind": "ethics"
+  },
+  {
+    "citationKey": "7a8d717e87c8",
     "dimension": "Equity",
     "stance": "resolved",
     "kind": "ethics"
@@ -1656,19 +1824,25 @@
     "kind": "ethics"
   },
   {
+    "citationKey": "b43746032b9d",
+    "dimension": "Equity",
+    "stance": "resolved",
+    "kind": "ethics"
+  },
+  {
     "citationKey": "b5784b25a496",
     "dimension": "Equity",
     "stance": "resolved",
     "kind": "ethics"
   },
   {
-    "citationKey": "ceb81af82ec8",
+    "citationKey": "b6aa9a3abc0f",
     "dimension": "Equity",
     "stance": "resolved",
     "kind": "ethics"
   },
   {
-    "citationKey": "d2883190c5b7",
+    "citationKey": "ceb81af82ec8",
     "dimension": "Equity",
     "stance": "resolved",
     "kind": "ethics"
@@ -1692,19 +1866,25 @@
     "kind": "ethics"
   },
   {
-    "citationKey": "043684769543",
-    "dimension": "Equity",
-    "stance": "both",
-    "kind": "ethics"
-  },
-  {
     "citationKey": "12df428f0bc9",
     "dimension": "Equity",
     "stance": "both",
     "kind": "ethics"
   },
   {
+    "citationKey": "15409c146949",
+    "dimension": "Equity",
+    "stance": "both",
+    "kind": "ethics"
+  },
+  {
     "citationKey": "1a2acf19df20",
+    "dimension": "Equity",
+    "stance": "both",
+    "kind": "ethics"
+  },
+  {
+    "citationKey": "3610864516d6",
     "dimension": "Equity",
     "stance": "both",
     "kind": "ethics"
@@ -1734,6 +1914,18 @@
     "kind": "ethics"
   },
   {
+    "citationKey": "685a023a1f71",
+    "dimension": "Equity",
+    "stance": "both",
+    "kind": "ethics"
+  },
+  {
+    "citationKey": "750835f3e51d",
+    "dimension": "Equity",
+    "stance": "both",
+    "kind": "ethics"
+  },
+  {
     "citationKey": "7bda019936ec",
     "dimension": "Equity",
     "stance": "both",
@@ -1747,12 +1939,6 @@
   },
   {
     "citationKey": "88ef6ab637e1",
-    "dimension": "Equity",
-    "stance": "both",
-    "kind": "ethics"
-  },
-  {
-    "citationKey": "b43746032b9d",
     "dimension": "Equity",
     "stance": "both",
     "kind": "ethics"
@@ -1776,6 +1962,12 @@
     "kind": "ethics"
   },
   {
+    "citationKey": "e8a1de4c2f1b",
+    "dimension": "Equity",
+    "stance": "both",
+    "kind": "ethics"
+  },
+  {
     "citationKey": "ea263bf4d04c",
     "dimension": "Equity",
     "stance": "both",
@@ -1794,7 +1986,19 @@
     "kind": "ethics"
   },
   {
+    "citationKey": "185bfa237de7",
+    "dimension": "Autonomy",
+    "stance": "resolved",
+    "kind": "ethics"
+  },
+  {
     "citationKey": "30f9c197297e",
+    "dimension": "Autonomy",
+    "stance": "resolved",
+    "kind": "ethics"
+  },
+  {
+    "citationKey": "3610864516d6",
     "dimension": "Autonomy",
     "stance": "resolved",
     "kind": "ethics"
@@ -1842,6 +2046,12 @@
     "kind": "ethics"
   },
   {
+    "citationKey": "f41ca0b8e8aa",
+    "dimension": "Autonomy",
+    "stance": "resolved",
+    "kind": "ethics"
+  },
+  {
     "citationKey": "f61d97acc9da",
     "dimension": "Autonomy",
     "stance": "resolved",
@@ -1849,6 +2059,12 @@
   },
   {
     "citationKey": "fc6b7ff31bec",
+    "dimension": "Autonomy",
+    "stance": "resolved",
+    "kind": "ethics"
+  },
+  {
+    "citationKey": "fcf0638d98ab",
     "dimension": "Autonomy",
     "stance": "resolved",
     "kind": "ethics"

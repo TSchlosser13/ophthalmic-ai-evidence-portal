@@ -1,11 +1,11 @@
 x,y,x_label,y_label,count
-0,0,Retinal layers / macula morphology,Classification / diagnosis,257
-1,0,Diabetic retinopathy / diabetic macular edema,Classification / diagnosis,164
+0,0,Retinal layers / macula morphology,Classification / diagnosis,258
+1,0,Diabetic retinopathy / diabetic macular edema,Classification / diagnosis,165
 2,0,Retinal fluid / cysts / edema,Classification / diagnosis,147
-3,0,Age-related macular degeneration / CNV / drusen,Classification / diagnosis,138
+3,0,Age-related macular degeneration / CNV / drusen,Classification / diagnosis,139
 4,0,General retina / multi-disease / benchmark,Classification / diagnosis,116
 5,0,Glaucoma / optic nerve / RNFL,Classification / diagnosis,88
-6,0,Retinal vessels / OCTA / vascular disease,Classification / diagnosis,91
+6,0,Retinal vessels / OCTA / vascular disease,Classification / diagnosis,92
 7,0,Other ophthalmic disease,Classification / diagnosis,38
 8,0,Myopia / choroid / axial-related disease,Classification / diagnosis,27
 9,0,Other / unclear,Classification / diagnosis,17
@@ -19,11 +19,11 @@ x,y,x_label,y_label,count
 7,1,Other ophthalmic disease,Detection / localization,19
 8,1,Myopia / choroid / axial-related disease,Detection / localization,13
 9,1,Other / unclear,Detection / localization,7
-0,2,Retinal layers / macula morphology,Prediction / prognosis,124
+0,2,Retinal layers / macula morphology,Prediction / prognosis,125
 1,2,Diabetic retinopathy / diabetic macular edema,Prediction / prognosis,57
 2,2,Retinal fluid / cysts / edema,Prediction / prognosis,59
 3,2,Age-related macular degeneration / CNV / drusen,Prediction / prognosis,52
-4,2,General retina / multi-disease / benchmark,Prediction / prognosis,28
+4,2,General retina / multi-disease / benchmark,Prediction / prognosis,27
 5,2,Glaucoma / optic nerve / RNFL,Prediction / prognosis,52
 6,2,Retinal vessels / OCTA / vascular disease,Prediction / prognosis,46
 7,2,Other ophthalmic disease,Prediction / prognosis,24

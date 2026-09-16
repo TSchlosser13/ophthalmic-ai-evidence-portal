@@ -1,5 +1,5 @@
 x,y,x_label,y_label,count
-0,0,Classification / diagnosis,CNN / convolutional networks,185
+0,0,Classification / diagnosis,CNN / convolutional networks,186
 1,0,Detection / localization,CNN / convolutional networks,122
 2,0,Prediction / prognosis,CNN / convolutional networks,74
 3,0,Segmentation,CNN / convolutional networks,74
@@ -8,7 +8,7 @@ x,y,x_label,y_label,count
 6,0,Explainability / interpretability,CNN / convolutional networks,24
 7,0,Synthesis / augmentation,CNN / convolutional networks,21
 8,0,Registration / reconstruction,CNN / convolutional networks,3
-0,1,Classification / diagnosis,Classical machine learning,104
+0,1,Classification / diagnosis,Classical machine learning,105
 1,1,Detection / localization,Classical machine learning,59
 2,1,Prediction / prognosis,Classical machine learning,38
 3,1,Segmentation,Classical machine learning,39
@@ -17,18 +17,18 @@ x,y,x_label,y_label,count
 6,1,Explainability / interpretability,Classical machine learning,15
 7,1,Synthesis / augmentation,Classical machine learning,10
 8,1,Registration / reconstruction,Classical machine learning,2
-0,2,Classification / diagnosis,Other deep learning,81
+0,2,Classification / diagnosis,Other deep learning,82
 1,2,Detection / localization,Other deep learning,49
-2,2,Prediction / prognosis,Other deep learning,35
+2,2,Prediction / prognosis,Other deep learning,36
 3,2,Segmentation,Other deep learning,40
 4,2,Quality assessment / grading,Other deep learning,15
 5,2,Image enhancement / denoising,Other deep learning,8
 6,2,Explainability / interpretability,Other deep learning,8
 7,2,Synthesis / augmentation,Other deep learning,5
 8,2,Registration / reconstruction,Other deep learning,2
-0,3,Classification / diagnosis,Residual / Dense / Efficient architectures,58
+0,3,Classification / diagnosis,Residual / Dense / Efficient architectures,59
 1,3,Detection / localization,Residual / Dense / Efficient architectures,33
-2,3,Prediction / prognosis,Residual / Dense / Efficient architectures,18
+2,3,Prediction / prognosis,Residual / Dense / Efficient architectures,19
 3,3,Segmentation,Residual / Dense / Efficient architectures,16
 4,3,Quality assessment / grading,Residual / Dense / Efficient architectures,7
 5,3,Image enhancement / denoising,Residual / Dense / Efficient architectures,9
@@ -44,7 +44,7 @@ x,y,x_label,y_label,count
 6,4,Explainability / interpretability,Transformer / attention / ViT,9
 7,4,Synthesis / augmentation,Transformer / attention / ViT,3
 8,4,Registration / reconstruction,Transformer / attention / ViT,1
-0,5,Classification / diagnosis,Ensemble / hybrid methods,43
+0,5,Classification / diagnosis,Ensemble / hybrid methods,44
 1,5,Detection / localization,Ensemble / hybrid methods,27
 2,5,Prediction / prognosis,Ensemble / hybrid methods,19
 3,5,Segmentation,Ensemble / hybrid methods,16

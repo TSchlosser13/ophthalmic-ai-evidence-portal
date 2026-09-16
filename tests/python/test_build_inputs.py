@@ -53,7 +53,7 @@ class BuildInputTests(unittest.TestCase):
         with patch.object(validate_data, "ROOT", self.root), contextlib.redirect_stdout(output):
             validate_data.main()
         self.assertIn("Stored evidence snapshot checked", output.getvalue())
-        self.assertIn("427 articles, 1287 general EGM assignments, 309 ethics EGM assignments", output.getvalue())
+        self.assertIn("427 articles, 1314 general EGM assignments, 345 ethics EGM assignments", output.getvalue())
         self.assertEqual(before, {relative: (self.root / relative).read_bytes() for relative in SNAPSHOT_PATHS})
         self.assertFalse((self.root / ".cache").exists())
 
